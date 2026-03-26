@@ -1,144 +1,203 @@
 # Liceul Tehnologic Turceni — Site Web
 
+Site web complet pentru Liceul Tehnologic Turceni, cu panou de administrare (CMS) pentru secretariat.
+
 ## Cum rulezi local
 
 1. Instalează [Node.js](https://nodejs.org/) (versiunea 18+)
-2. Clonează sau dezarhivează proiectul
-3. Deschide un terminal în folderul proiectului
-4. Rulează comenzile:
+2. Instalează [Git](https://git-scm.com/)
+3. Clonează sau dezarhivează proiectul
+4. Creează fișierul `.env.local` (vezi secțiunea Sanity CMS)
+5. Rulează:
 
 ```bash
+cd C:\LTT
 npm install
 npm run dev
 ```
 
-5. Deschide browser-ul la `http://localhost:3000`
+6. Site: `http://localhost:3000`
+7. Panou administrare: `http://localhost:3000/studio`
 
 ## Structura proiectului
 
 ```
-liceul-turceni/
-├── app/                        # Paginile site-ului (Next.js App Router)
-│   ├── layout.tsx              # Layout global (Header + Footer + ChatBot + WhatsApp)
-│   ├── page.tsx                # Homepage (+ Newsletter)
-│   ├── globals.css             # Stiluri globale + dark mode + print + reduced motion
-│   ├── not-found.tsx           # Pagina 404
-│   ├── admitere/page.tsx       # Admitere 2026 — documente, calendar, profile
-│   ├── oferta/page.tsx         # Oferta educațională — 8 profile detaliate
-│   ├── compara/page.tsx        # ★ Comparator interactiv de profile (2-3 side-by-side)
-│   ├── noutati/page.tsx        # Noutăți și anunțuri
-│   ├── blog/page.tsx           # ★ Jurnal LTT — articole scrise de elevi
-│   ├── examene/page.tsx        # Examene + ★ Grafic BAC + ★ Harta absolvenților
-│   ├── calendar/page.tsx       # ★ Calendar interactiv cu evenimente
-│   ├── faq/page.tsx            # ★ Întrebări frecvente cu accordion + filtre
-│   ├── galerie/page.tsx        # Galerie foto pe categorii
-│   ├── contact/page.tsx        # Contact + formular
-│   ├── transparenta/page.tsx   # Documente oficiale
-│   └── profesori/page.tsx      # Echipa didactică
+C:\LTT/
+├── app/                            # Paginile site-ului (Next.js App Router)
+│   ├── layout.tsx                  # Layout global (Header + Footer + FloatingContact)
+│   ├── page.tsx                    # Homepage
+│   ├── globals.css                 # Stiluri globale + dark mode + print
+│   ├── not-found.tsx               # Pagina 404
+│   ├── studio/                     # Panoul de administrare Sanity
+│   │   ├── layout.tsx              # Layout fullscreen pt Studio
+│   │   └── [[...tool]]/page.tsx    # Sanity Studio
+│   ├── admitere/page.tsx           # Admitere 2026
+│   ├── oferta/page.tsx             # Oferta educațională (8 profile)
+│   ├── compara/                    # Comparator interactiv de profile
+│   ├── noutati/page.tsx            # Noutăți — citește din Sanity CMS
+│   ├── blog/page.tsx               # Jurnal LTT — citește din Sanity CMS
+│   ├── examene/page.tsx            # Examene + Grafic BAC + Harta absolvenți
+│   ├── calendar/page.tsx           # Calendar interactiv cu evenimente
+│   ├── faq/page.tsx                # FAQ cu accordion + filtre
+│   ├── galerie/page.tsx            # Galerie foto pe categorii
+│   ├── contact/page.tsx            # Contact + formular Formspree
+│   ├── transparenta/page.tsx       # Documente oficiale — citește din Sanity CMS
+│   ├── profesori/page.tsx          # Echipa didactică — citește din Sanity CMS
+│   ├── elevi/page.tsx              # Portal pentru elevi
+│   ├── parinti/page.tsx            # Portal pentru părinți
+│   ├── viitori-elevi/page.tsx      # Portal pentru viitori elevi (cls. VIII)
+│   └── pentru-profesori/page.tsx   # Portal pentru cadre didactice
 │
-├── components/                 # Componente reutilizabile
-│   ├── ui/                     # Componente mici
-│   │   ├── Logo.tsx            # Logo LTT (Version C)
-│   │   ├── GlowButton.tsx      # Buton cu efect glow animat
-│   │   ├── GlowCard.tsx        # Card cu efect glow la hover
-│   │   ├── SectionHeader.tsx   # Header de secțiune + AnimatedSection
-│   │   ├── PlaceholderImage.tsx # Imagine cu path auto din /public/imagini/
-│   │   ├── Calendar.tsx        # ★ Calendar interactiv cu evenimente colorate
-│   │   └── Widgets.tsx         # ★ BacChart, AbsolventiMap, ChatBot, WhatsApp,
-│   │                           #   Newsletter, DarkModeToggle
-│   ├── layout/                 # Componente de layout
-│   │   ├── Header.tsx          # Header responsive + hamburger + ★ dark mode toggle
-│   │   ├── Footer.tsx          # Footer 4 coloane cu toate linkurile
-│   │   └── QuickAccess.tsx     # Bară de acces rapid
-│   └── sections/               # Secțiuni homepage
+├── components/                     # Componente reutilizabile
+│   ├── ui/                         # Componente mici
+│   │   ├── Logo.tsx                # Logo LTT (SVG vectorial)
+│   │   ├── GlowButton.tsx          # Buton cu efect glow la hover
+│   │   ├── GlowCard.tsx            # Card cu efect glow la hover
+│   │   ├── SectionHeader.tsx       # Header secțiune + AnimatedSection
+│   │   ├── PlaceholderImage.tsx     # Imagine cu next/image optimizat
+│   │   ├── Calendar.tsx            # Calendar interactiv cu evenimente
+│   │   ├── FaqClient.tsx           # FAQ accordion (client component)
+│   │   └── Widgets.tsx             # FloatingContact, Newsletter, DarkMode,
+│   │                               # BacChart, AbsolventiMap
+│   ├── layout/                     # Layout
+│   │   ├── Header.tsx              # Header responsive + dark mode + hamburger
+│   │   ├── Footer.tsx              # Footer 3 coloane cu toate linkurile
+│   │   ├── QuickAccess.tsx         # Bară acces rapid (scrollabilă pe mobil)
+│   │   └── PortalPage.tsx          # Component reutilizabil pt portaluri
+│   └── sections/                   # Secțiuni homepage
 │       ├── Hero.tsx
 │       ├── OfertaPreview.tsx
-│       └── HomeOtherSections.tsx # Stats, Parteneriate, Noutăți, Testimoniale, CTA
+│       └── HomeOtherSections.tsx
 │
-├── lib/                        # Date și configurare
-│   ├── constants.ts            # Culori, navigare, contact, meta
-│   ├── data.ts                 # Conținut principal: profile, noutăți, testimoniale
-│   └── data-extra.ts           # ★ FAQ, blog, calendar, BAC stats, absolvenți
+├── lib/                            # Date și configurare
+│   ├── constants.ts                # Culori, navigare, contact, meta
+│   ├── data.ts                     # Date statice (profile, noutăți, etc.)
+│   ├── data-extra.ts               # Date statice (FAQ, blog)
+│   ├── fetcher.ts                  # Sanity cu fallback la date statice
+│   └── sanity.ts                   # Sanity client + GROQ queries
 │
-├── public/                     # Fișiere statice
-│   └── imagini/                # ← PUNEȚI IMAGINILE AICI
+├── sanity/                         # Configurare CMS
+│   ├── env.ts                      # Project ID, dataset
+│   └── schemas/                    # Scheme de conținut
+│       ├── index.ts                # Exportă toate schemele
+│       ├── noutate.ts              # Noutăți/Anunțuri
+│       ├── documentOficial.ts      # PDF-uri transparență
+│       ├── eveniment.ts            # Evenimente calendar
+│       ├── articol.ts              # Blog/Jurnal LTT
+│       ├── galerieItem.ts          # Fotografii galerie
+│       ├── profesorFaq.ts          # Profesori + FAQ
+│       └── siteSettings.ts         # Statistici site (nr. elevi, cadre)
 │
-└── [config files]              # package.json, tailwind, tsconfig, etc.
+├── sanity.config.ts                # Configurare Sanity Studio
+├── public/imagini/                 # Poze — copiază placeholder-urile aici
+├── GHID_UTILIZARE.md               # Instrucțiuni pt secretariat
+├── .env.local.example              # Template variabile de mediu
+└── [config files]                  # package.json, tailwind, tsconfig, etc.
 ```
 
-★ = funcționalitate nouă
+## Sanity CMS — Panoul de administrare
+
+Secretariatul gestionează tot conținutul din browser la adresa `/studio`.
+
+### Configurare inițială (o singură dată)
+
+1. Creează cont pe [sanity.io](https://sanity.io)
+2. Creează proiect nou → copiază **Project ID**
+3. Creează fișierul `.env.local` în rădăcina proiectului:
+
+```
+NEXT_PUBLIC_SANITY_PROJECT_ID=codul_tau_aici
+NEXT_PUBLIC_SANITY_DATASET=production
+```
+
+4. Pe sanity.io/manage → API → CORS origins → adaugă:
+   - `http://localhost:3000` (dezvoltare)
+   - `https://liceul-turceni.vercel.app` (producție)
+   - Bifează "Allow credentials" la ambele
+
+### Ce gestionează CMS-ul
+
+| Secțiune | Ce face secretariatul |
+|---|---|
+| Noutăți & Anunțuri | Postează anunțuri cu titlu, text, poză, categorie |
+| Documente oficiale | Urcă PDF-uri (hotărâri CA, regulamente, RAEI) |
+| Evenimente calendar | Adaugă evenimente care apar în calendar |
+| Blog — Jurnal LTT | Publică articole de la elevi/profesori |
+| Galerie foto | Urcă fotografii pe categorii |
+| Cadre didactice | Adaugă/editează profesori și conducerea |
+| FAQ | Adaugă/editează întrebări frecvente |
+| Setări site | Actualizează numărul de elevi, cadre, etc. |
+
+### Cum funcționează fallback-ul
+
+Fiecare pagină verifică mai întâi Sanity CMS. Dacă găsește conținut → îl afișează. Dacă CMS-ul e gol sau neconfigurat → afișează datele statice din cod. Site-ul funcționează mereu, cu sau fără CMS.
+
+## Formular de contact (Formspree)
+
+1. Creează cont pe [formspree.io](https://formspree.io)
+2. Creează un formular nou → copiază Form ID
+3. Deschide `app/contact/page.tsx`
+4. Înlocuiește `FORM_ID_AICI` cu codul tău
+5. Mesajele ajung pe emailul configurat în Formspree
 
 ## Cum adaugi imagini
 
 1. Dezarhivează `LTT_imagini_placeholder.zip` în `public/imagini/`
-2. Structura trebuie să fie: `public/imagini/01_cladire/Cladire_principala_1.jpg`
-3. Când ai fotografii reale, înlocuiește placeholder-ul cu același nume de fișier
-4. Specificații: minim 1920×1080px, JPG, bine iluminate
+2. Structura: `public/imagini/02_laboratoare/Lab_fizica_1.jpg`
+3. Când ai fotografii reale, înlocuiește cu același nume de fișier
+4. Sau urcă poze prin panoul Sanity (Galerie foto) — ajung pe CDN automat
 
-## Cum modifici conținutul
+## Deploy pe Vercel
 
-Tot conținutul este în **`lib/data.ts`**. Deschide fișierul și modifică:
+1. Cont pe [vercel.com](https://vercel.com) → conectează GitHub
+2. Importă repo-ul `liceul-turceni`
+3. Adaugă Environment Variables:
+   - `NEXT_PUBLIC_SANITY_PROJECT_ID` = codul tău
+   - `NEXT_PUBLIC_SANITY_DATASET` = production
+4. Deploy — site-ul e live în 1-2 minute
+5. La fiecare `git push`, Vercel redeploy automat
 
-- **PROFILE** — descrierile celor 8 profile educaționale
-- **NOUTATI** — anunțurile și evenimentele
-- **PARTENERIATE** — informații despre parteneri
-- **TESTIMONIALE** — citatele de la absolvenți/părinți
-- **EXAMENE** — calendarele de examene
-- **ADMITERE** — documentele și calendarul de admitere
-- **TRANSPARENTA** — lista documentelor oficiale
+## Actualizare site
 
-Constantele (adresă, telefon, email) sunt în **`lib/constants.ts`**.
+```bash
+cd C:\LTT
+git add .
+git commit -m "descriere ce am schimbat"
+git push
+```
 
-## Cum faci deploy pe Vercel
+Vercel actualizează automat. Conținutul din Sanity (noutăți, PDF-uri, poze) nu necesită git — se publică direct din `/studio`.
 
-1. Creează un cont pe [vercel.com](https://vercel.com)
-2. Conectează-ți contul GitHub
-3. Importă repo-ul proiectului
-4. Vercel detectează automat Next.js și configurează build-ul
-5. La fiecare push pe `main`, site-ul se actualizează automat
+## Funcționalități
 
-## Ce rămâne de făcut
+- 17 pagini cu navigare pe publicuri (Elevi, Părinți, Viitori elevi, Profesori)
+- Sanity CMS — panou de administrare pentru secretariat
+- Dark mode cu toggle în header
+- Efecte glow pe butoane și carduri (doar la hover)
+- Calendar interactiv cu evenimente colorate
+- Grafic BAC interactiv (2020-2025)
+- Harta absolvenților (unde lucrează)
+- Comparator de profile (2-3 side-by-side)
+- FAQ cu accordion și filtrare pe categorii
+- Blog cu articole de elevi
+- Formular de contact funcțional (Formspree)
+- Buton floating Telefon + Email + FAQ
+- Newsletter (formular abonare)
+- Responsive (hamburger menu pe mobil)
+- Print CSS (header/footer ascunse la print)
+- Accesibilitate (skip-to-content, aria, focus-visible)
+- 404 custom cu linkuri utile
 
-- [ ] Înlocuire imagini placeholder cu fotografii reale
-- [ ] Verificare și actualizare texte cu date reale de la liceu
-- [ ] Conectare formular contact la Formspree/Resend
-- [ ] Conectare Newsletter la Mailchimp/Buttondown
-- [ ] Adăugare Google Maps embed pe pagina Contact
-- [ ] Adăugare PDF-uri reale în /public/documente/
-- [ ] Configurare număr WhatsApp real pentru butonul floating
-- [ ] Setup CMS (Sanity) pentru noutăți dinamice
-- [ ] Setup email profesional (contact@liceulturceni.ro)
-- [ ] Configurare Analytics (Plausible)
-- [ ] Testare dark mode pe toate paginile
-- [ ] Testare cross-browser și cross-device
-- [ ] Audit Lighthouse → target 90+
+## Tehnologii
 
-## Funcționalități incluse
-
-- 🏠 **16 pagini** — homepage, admitere, ofertă, comparator, noutăți, blog, examene, calendar, FAQ, galerie, contact, transparență, profesori, 404
-- ✨ **Efecte glow** — butoane și carduri cu border animat luminos
-- 💬 **ChatBot** — asistent virtual cu arbore de decizii
-- 📱 **WhatsApp** — buton floating de contact rapid
-- 📧 **Newsletter** — formular de abonare pe homepage
-- 🌙 **Dark mode** — toggle light/dark în header
-- 📅 **Calendar interactiv** — vizualizare lunară cu evenimente colorate
-- 📊 **Grafic BAC** — evoluția rezultatelor pe 6 ani cu tooltip
-- 🗺️ **Harta absolvenților** — unde lucrează foștii elevi
-- 🔍 **Comparator** — compară 2-3 profile side-by-side
-- ❓ **FAQ** — 14 întrebări cu accordion și filtrare
-- ✍️ **Blog** — articole de elevi cu format editorial
-- 📱 **Responsive** — hamburger menu pe mobil
-- 🖨️ **Print CSS** — pagini printabile
-- ♿ **Accesibilitate** — focus visible, reduced motion, semantic HTML
-
-## Tehnologii utilizate
-
-- **Next.js 14** — framework React cu routing și SSR
+- **Next.js 14** — framework React
 - **TypeScript** — tipizare strictă
-- **Tailwind CSS** — stilizare utilitar
+- **Tailwind CSS** — stilizare
+- **Sanity v3** — CMS headless
+- **Formspree** — formular de contact
+- **Vercel** — hosting (gratuit)
 - **Playfair Display + DM Sans** — fonturi
-- **Vercel** — hosting recomandat (gratuit)
 
-## Contact dezvoltator
+## Ghid pentru secretariat
 
-Pentru întrebări tehnice sau probleme cu site-ul, contactați dezvoltatorul.
+Fișierul `GHID_UTILIZARE.md` conține instrucțiuni pas cu pas cu capturi de ecran conceptuale. Poate fi printat și lăsat la secretariat.
