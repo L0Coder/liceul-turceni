@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+
+/* Glow animations - FIX #14: doar pe hover, nu continuu */
+@keyframes spinGlow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.glow-spin { animation: spinGlow 3s linear infinite; }
+.glow-spin-slow { animation: spinGlow 4s linear infinite; }
+.glow-btn:hover .glow-spin { animation-duration: 1.8s; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #fafbfd; }
+::-webkit-scrollbar-thumb { background: #1f3b5b33; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #1f3b5b66; }
+.dark ::-webkit-scrollbar-track { background: #0d1117; }
+.dark ::-webkit-scrollbar-thumb { background: #30363d; }
+
+/* Focus */
+*:focus-visible { outline: 2px solid #2aa198; outline-offset: 2px; border-radius: 4px; }
+
+/* Skip to content */
+.skip-link { position: absolute; top: -100px; left: 16px; z-index: 9999; background: #1f3b5b; color: #fff; padding: 12px 24px; border-radius: 0 0 8px 8px; font-size: 14px; transition: top 0.3s; }
+.skip-link:focus { top: 0; }
+
+/* Print - FIX #12 */
+@media print {
+  header, footer, .no-print, .floating-widget { display: none !important; }
+  body { background: white !important; color: black !important; }
+  .dark body { background: white !important; color: black !important; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
