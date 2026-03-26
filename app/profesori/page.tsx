@@ -102,7 +102,7 @@ export default async function ProfesoriPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {cadrePerCatedra ? (
               // CMS data — real professors grouped by catedra
-              cadrePerCatedra.map(([catName, profs]: [string, any[]], i: number) => (
+              (cadrePerCatedra as [string, any[]][]).map(([catName, profs], i) => (
                 <AnimatedSection key={catName} delay={i * 0.08}>
                   <GlowCard glowColor="#1de9b6">
                     <h3 className="font-heading text-base font-bold text-gray-900 dark:text-dark-text mb-3 pb-3 border-b border-gray-100 dark:border-dark-border">{catName}</h3>
