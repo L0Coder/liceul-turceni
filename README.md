@@ -1,6 +1,6 @@
 # Liceul Tehnologic Turceni — Site Web
 
-Site web complet pentru Liceul Tehnologic Turceni (înființat 1982), cu panou de administrare (CMS) pentru secretariat.
+Site web complet pentru Liceul Tehnologic Turceni (înființat 1982), cu panou de administrare (CMS) pentru secretariat, conform cerințelor ARACIP și GDPR.
 
 **Site live:** https://liceul-turceni.vercel.app
 **Panou administrare:** https://liceul-turceni.vercel.app/studio
@@ -25,13 +25,16 @@ Necesită Node.js 18+ și fișierul `.env.local` configurat (vezi secțiunea San
 ## Structura proiectului
 
 ```
-app/                            Paginile site-ului (Next.js 14 App Router)
+app/                            20 pagini publice + studio + 404
 ├── page.tsx                    Homepage
-├── layout.tsx                  Layout global (Header + Footer + FloatingContact)
+├── layout.tsx                  Layout global (Header, Footer, CookieBanner, FloatingContact)
 ├── globals.css                 Stiluri globale + dark mode + print
 ├── not-found.tsx               Pagina 404
+│
 ├── studio/                     Panoul de administrare Sanity (fullscreen)
-├── admitere/                   Admitere 2026 — documente, calendar, profile
+│
+│   ── PAGINI CONȚINUT ──
+├── admitere/                   Admitere — documente, calendar, profile
 ├── oferta/                     Oferta educațională — 8 profile detaliate
 ├── compara/                    Comparator interactiv de profile (2-3 side-by-side)
 ├── noutati/                    Noutăți — citește din Sanity CMS
@@ -43,21 +46,29 @@ app/                            Paginile site-ului (Next.js 14 App Router)
 ├── contact/                    Contact + formular Formspree
 ├── transparenta/               Documente oficiale PDF — citește din Sanity CMS
 ├── profesori/                  Echipa didactică — citește din Sanity CMS
-├── elevi/                      Portal pentru elevi
+│
+│   ── PORTALURI PE PUBLICURI ──
+├── elevi/                      Portal pentru elevi actuali
 ├── parinti/                    Portal pentru părinți
 ├── viitori-elevi/              Portal pentru viitori elevi (cls. VIII)
-└── pentru-profesori/           Portal pentru cadre didactice
+├── pentru-profesori/           Portal pentru cadre didactice
+│
+│   ── PAGINI LEGALE / CONFORMITATE ──
+├── gdpr/                       Politica de confidențialitate (GDPR)
+├── cookies/                    Politica de cookies
+└── accesibilitate/             Declarație de accesibilitate (HG 780/2022)
 
 components/
 ├── ui/                         Logo, GlowButton, GlowCard, SectionHeader,
-│                               PlaceholderImage, Calendar, FaqClient, Widgets
+│                               PlaceholderImage, Calendar, FaqClient,
+│                               Widgets, CookieBanner
 ├── layout/                     Header, Footer, QuickAccess, PortalPage
 └── sections/                   Hero, OfertaPreview, HomeOtherSections
 
 lib/
 ├── constants.ts                Navigare, contact, meta
-├── data.ts                     Date statice (profile, noutăți placeholder)
-├── data-extra.ts               Date statice (FAQ, blog placeholder)
+├── data.ts                     Date statice (profile, noutăți, transparență)
+├── data-extra.ts               Date statice (FAQ, blog)
 ├── fetcher.ts                  Sanity cu fallback la date statice
 └── sanity.ts                   Sanity client + GROQ queries
 
@@ -91,7 +102,7 @@ NEXT_PUBLIC_SANITY_DATASET=production
 
 ### Ce gestionează CMS-ul
 
-| Secțiune | Pagina de pe site |
+| Secțiune din panou | Pagina de pe site |
 |---|---|
 | Noutăți & Anunțuri | /noutati + homepage |
 | Documente oficiale (PDF) | /transparenta |
@@ -101,6 +112,11 @@ NEXT_PUBLIC_SANITY_DATASET=production
 | Cadre didactice | /profesori |
 | FAQ | /faq |
 | Setări site (nr. elevi, an școlar) | Homepage statistici |
+
+### Categorii documente ARACIP
+
+Panoul de administrare include 19 categorii de documente, acoperind toate cerințele ARACIP:
+ROF, RI, PDI, Plan managerial, RAEI, Evaluare ARACIP, Raport activitate, Execuție bugetară, Buget, Hotărâri CA, Declarații avere/interese, Informații publice (Legea 544), GDPR, Mobilitate personal, Organigramă, Cod de etică, Plan școlarizare, Proceduri operaționale.
 
 ### Cum funcționează fallback-ul
 
@@ -114,9 +130,32 @@ Site-ul funcționează mereu, indiferent de starea CMS-ului.
 - Testimonialele de pe homepage (`lib/data.ts`)
 - Informațiile din portaluri (Elevi, Părinți, etc.)
 - Datele de contact (telefon, adresă, email) (`lib/constants.ts`)
+- Paginile legale (GDPR, Cookies, Accesibilitate)
 - Structura paginilor, design, logo
 
 Pentru a modifica acestea, trebuie editat codul și dat `git push`.
+
+---
+
+## Conformitate legală
+
+### GDPR (Regulamentul UE 2016/679)
+- Pagină dedicată `/gdpr` cu: operator de date, DPO, scopuri prelucrare, temei legal, drepturi persoane vizate, protecția minorilor, transfer date
+- Banner de cookies la prima vizită cu Accept/Refuză
+- Pagină `/cookies` cu detalii despre fiecare tip de cookie
+- Honeypot anti-spam pe formularul de contact (fără CAPTCHA intruziv)
+
+### Accesibilitate (HG 780/2022, Directiva UE 2016/2102)
+- Declarație de accesibilitate la `/accesibilitate`
+- Skip-to-content, navigare cu tastatura, focus vizibil
+- Atribute aria, structură semantică HTML
+- Suport `prefers-reduced-motion`
+- Contrast verificat, text redimensionabil
+
+### Transparență instituțională (Legea 544/2001, ARACIP)
+- Pagina `/transparenta` cu 18 categorii de documente
+- Upload PDF prin CMS cu categorii ARACIP
+- Link descărcare directă
 
 ---
 
@@ -132,12 +171,7 @@ Pentru a modifica acestea, trebuie editat codul și dat `git push`.
 
 **Prin CMS (recomandat pentru galerie):** Studio → Galerie foto → Upload → Publish. Ajung pe CDN Sanity automat.
 
-**Prin cod (pentru profiluri, homepage):** Pune fișierele în `public/imagini/` cu structura:
-```
-public/imagini/02_laboratoare/Lab_fizica_1.jpg
-public/imagini/04_club_robotica/Club_robotica_1.jpg
-```
-Apoi `git push`. Numele trebuie să coincidă cu cele din `lib/data.ts`.
+**Prin cod (pentru profiluri, homepage):** Pune fișierele în `public/imagini/` cu structura din `lib/data.ts`. Apoi `git push`.
 
 ---
 
@@ -157,29 +191,19 @@ Vercel redeploy automat în 1-2 minute.
 
 ## Funcționalități
 
-**Pagini:** 17 pagini cu navigare pe publicuri (Elevi, Părinți, Viitori elevi, Profesori)
+**20 pagini publice** cu navigare pe publicuri (Elevi, Părinți, Viitori elevi, Profesori) + 3 pagini legale (GDPR, Cookies, Accesibilitate)
 
 **CMS:** Sanity Studio integrat — secretariatul gestionează conținut din browser
 
-**Interactivitate:**
-- Dark mode cu toggle în header
-- Efecte glow pe butoane și carduri (doar la hover)
-- Calendar interactiv cu evenimente colorate pe tipuri
-- Comparator de profile (2-3 side-by-side)
-- FAQ cu accordion și filtrare pe categorii
+**Interactivitate:** Dark mode, efecte glow la hover, calendar interactiv, comparator de profile, FAQ cu accordion și filtrare
 
-**Comunicare:**
-- Formular de contact (Formspree)
-- Buton floating Telefon + Email + FAQ
-- Newsletter (formular abonare)
+**Comunicare:** Formular de contact (Formspree), buton floating Telefon + Email + FAQ, newsletter
 
-**Tehnic:**
-- Responsive (hamburger menu pe mobil, grid-uri adaptive)
-- Print CSS (header/footer ascunse la print)
-- Accesibilitate (skip-to-content, aria, focus-visible)
-- SEO (metadata pe fiecare pagină)
-- Revalidare automată conținut CMS (60 secunde)
-- Fallback la date statice dacă CMS-ul e indisponibil
+**Conformitate:** GDPR cu aviz de informare, banner cookies, declarație accesibilitate HG 780/2022, documente ARACIP cu 19 categorii, transparență Legea 544/2001
+
+**Tehnic:** Responsive, print CSS, accesibilitate (skip-to-content, aria, focus-visible), SEO (metadata pe fiecare pagină), revalidare CMS 60 secunde, fallback la date statice
+
+**Backup:** Cod pe GitHub, conținut pe Sanity (cloud, cu version history), deploy-uri pe Vercel (reversibile)
 
 ---
 
@@ -209,12 +233,14 @@ Vercel redeploy automat în 1-2 minute.
 
 ## Ghid pentru secretariat
 
-Fișierul `GHID_UTILIZARE.md` conține instrucțiuni complete pas cu pas:
+Fișierul `GHID_UTILIZARE.md` conține instrucțiuni complete:
 - Cum postezi anunțuri, urci PDF-uri, adaugi evenimente
-- Cum gestionezi galeria foto, profesorii, FAQ
+- Cum gestionezi galeria, profesorii, FAQ
+- Categoriile de documente ARACIP
 - Cum actualizezi datele anuale
 - Greșeli frecvente de evitat
 - Întrebări tehnice frecvente
 - Calendar de activități (zilnic/săptămânal/lunar/anual)
+- Informații despre paginile legale (GDPR, Cookies, Accesibilitate)
 
 Poate fi printat și lăsat la secretariat.
