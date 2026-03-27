@@ -77,36 +77,6 @@ export function DarkModeToggle() {
   );
 }
 
-/* ═══ BAC CHART ═══ */
-export function BacChart() {
-  const data = [
-    { year: 2020, rata: 58 }, { year: 2021, rata: 62 }, { year: 2022, rata: 65 },
-    { year: 2023, rata: 68 }, { year: 2024, rata: 70 }, { year: 2025, rata: 72 },
-  ];
-  return (
-    <div className="bg-white dark:bg-dark-card rounded-2xl border border-gray-200 dark:border-dark-border p-6">
-      <h3 className="font-heading text-xl font-bold text-gray-900 dark:text-dark-text mb-6">Evoluția rezultatelor BAC (2020-2025)</h3>
-      <div className="flex items-end gap-3 h-64">
-        {data.map((r, i) => (
-          <div key={r.year} className="flex-1 flex flex-col items-center gap-2">
-            <div className="font-body text-xs font-bold text-brand-accent">{r.rata}%</div>
-            <div className="w-full rounded-t-lg group relative" style={{ height: `${r.rata}%`, background: "linear-gradient(to top, #1f3b5b, #2980b9)" }}>
-              <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-xs font-body opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
-                BAC {r.year}: {r.rata}%
-              </div>
-            </div>
-            <div className="font-body text-xs text-gray-500 dark:text-dark-muted font-medium">{r.year}</div>
-          </div>
-        ))}
-      </div>
-      <div className="mt-4 pt-4 border-t border-gray-100 dark:border-dark-border flex justify-between">
-        <span className="font-body text-xs text-gray-400 dark:text-dark-subtle">Sursă: date interne LTT</span>
-        <span className="font-body text-xs text-brand-teal font-semibold">+14% creștere în 5 ani</span>
-      </div>
-    </div>
-  );
-}
-
 /* ═══ ABSOLVENTI MAP ═══ */
 export function AbsolventiMap() {
   const data = [

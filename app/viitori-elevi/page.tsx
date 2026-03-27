@@ -13,8 +13,8 @@ export default function ViitoriEleviPage() {
     { icon: "🔧", title: "Practică reală", desc: "Ateliere echipate, practică la firme.", glow: "#ff9100" },
     { icon: "🤖", title: "Club Robotică", desc: "Construiești roboți, mergi la competiții.", glow: "#76ff03" },
     { icon: "🌍", title: "Erasmus+", desc: "Mobilități în Italia, Spania, Portugalia.", glow: "#d500f9" },
-    { icon: "💼", title: "Angajare directă", desc: "Școala Profesională: 90%+ angajare la CEO.", glow: "#1de9b6" },
-    { icon: "📈", title: "Rezultate în creștere", desc: "+14% la BAC în 5 ani.", glow: "#00b0ff" },
+    { icon: "💼", title: "Angajare directă", desc: "Școala Profesională: rată ridicată de angajare la CEO.", glow: "#1de9b6" },
+    { icon: "📈", title: "Modernizare recentă", desc: "Mobilier nou, echipamente digitale prin PNRR (2025).", glow: "#00b0ff" },
   ];
   const steps = [
     { n: "1", t: "Informează-te", d: "Explorează profilele, compară-le.", c: "#3498db" },

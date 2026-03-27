@@ -1,3 +1,6 @@
+// Configurare centrală Sanity — folosită de studio și client
+// Valorile reale se pun în .env.local
+
 export const sanityConfig = {
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "not-configured",
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",

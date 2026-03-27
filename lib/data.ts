@@ -57,7 +57,7 @@ export const PROFILE: Profil[] = [
     color: "#2aa198", glowColor: "#1de9b6", imagini: ["03_ateliere/Atelier_constructii_1.jpg", "09_clase/Sala_clasa_2.jpg"] },
   { slug: "scoala-profesionala", icon: "🔥", title: "Școală Profesională",
     shortDesc: "Sudori și electromecanic centrale. Angajare garantată.",
-    fullDesc: "Două specializări de 3 ani: Sudor și Electromecanic Centrale Electrice. Pregătire 70% practică. Rata de angajare: peste 90%.",
+    fullDesc: "Două specializări de 3 ani: Sudor și Electromecanic Centrale Electrice. Pregătire 70% practică. Rată ridicată de angajare la Complexul Energetic Oltenia.",
     discipline: ["Pregătire practică (70%)", "Sudură MIG/MAG/TIG", "Electromecanică", "Protecția muncii", "Matematică aplicată"],
     competente: ["Sudură în toate pozițiile", "Citire desene", "Montaj/demontaj", "Mentenanță", "Certificare profesională"],
     perspective: ["CEO — angajare directă", "Sudor certificat", "Mentenanță centrală", "Angajare în Europa"],
@@ -69,7 +69,7 @@ export const STATS = [
   { number: "1604", label: "Elevi înscriși", icon: "🎓", glowColor: "#00e5ff" },
   { number: "155", label: "Cadre didactice", icon: "👩‍🏫", glowColor: "#76ff03" },
   { number: "8", label: "Profile educaționale", icon: "📚", glowColor: "#00b0ff" },
-  { number: "60+", label: "Ani de excelență", icon: "🏆", glowColor: "#ffd600" },
+  { number: "44", label: "Ani de excelență", icon: "🏆", glowColor: "#ffd600" },
 ];
 
 /* ═══ NOUTĂȚI ═══ */
@@ -80,9 +80,9 @@ export const NOUTATI: Noutate[] = [
     excerpt: "Depuneți dosarele la secretariat între orele 8:00-16:00.",
     content: "Înscrierile pentru anul școlar 2026-2027 sunt deschise. Depuneți dosarele la secretariatul liceului, Str. Educației nr. 1, între orele 8:00-16:00. Lista documentelor este disponibilă pe pagina de Admitere.",
     image: "10_hero/Hero_admitere_1.jpg", glowColor: "#00e5ff" },
-  { slug: "robotica-locul-2", date: "10 Martie 2026", category: "Eveniment", title: "Clubul de Robotică — locul II la regionale",
-    excerpt: "Echipa LTT Robotics a obținut locul II la competiția regională din Craiova.",
-    content: "Echipa LTT Robotics a obținut locul II la competiția regională de robotică din Craiova și s-a calificat la faza națională din mai.",
+  { slug: "robotica-concursuri", date: "10 Martie 2026", category: "Eveniment", title: "Clubul de Robotică — rezultate importante la concursurile naționale",
+    excerpt: "Echipa LTT Robotics a obținut rezultate remarcabile la competițiile de robotică.",
+    content: "Echipa LTT Robotics a participat la competițiile regionale și naționale de robotică, obținând locuri fruntașe. Elevii lucrează cu kituri Arduino, Raspberry Pi și imprimantă 3D în laboratorul dedicat.",
     image: "04_club_robotica/Club_robotica_3.jpg", glowColor: "#76ff03" },
   { slug: "simulari-bac-2026", date: "28 Februarie 2026", category: "Examen", title: "Calendarul simulărilor pentru BAC 2026",
     excerpt: "Simulările pentru Bacalaureat încep pe 18 martie.",
@@ -120,7 +120,7 @@ export const TESTIMONIALE = [
 export const EXAMENE = {
   bac: { title: "Bacalaureat 2026", items: ["Simulare: 18-21 martie", "Examen: 16-19 iunie", "Rezultate: 26 iunie", "Contestații: 27-28 iunie", "Finale: 1 iulie"] },
   evaluare: { title: "Evaluare Națională 2026", items: ["Simulare: 25-27 martie", "Limba română: 23 iunie", "Matematică: 25 iunie", "Limba maternă: 27 iunie", "Rezultate: 2 iulie"] },
-  rezultate: { title: "Rezultate recente", items: ["BAC 2025: 72% promovare", "EN 2025: media 7.2", "3 elevi faza națională Info", "2 elevi faza națională Chimie", "Locul II robotică regională"] },
+  rezultate: { title: "Rezultate recente", items: ["Evaluare Națională 2025: media 7.20", "3 elevi faza județeană Informatică", "2 elevi faza județeană Chimie", "Locuri fruntașe la concursuri naționale de robotică", "Rezultate BAC complete: bacplus.ro"] },
 };
 
 /* ═══ ADMITERE ═══ */

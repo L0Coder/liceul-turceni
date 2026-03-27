@@ -10,7 +10,7 @@ const EVENTS: CalEvent[] = [
   { date: "2026-03-19", title: "Simulare BAC — Matematică", type: "examen" },
   { date: "2026-03-25", title: "Simulare EN — Limba română", type: "examen" },
   { date: "2026-04-04", title: "Vacanță de Paște", type: "vacanta" },
-  { date: "2026-04-25", title: "Robotică — faza națională", type: "competitie" },
+  { date: "2026-04-25", title: "Robotică — concurs național", type: "competitie" },
   { date: "2026-05-15", title: "Ziua Porților Deschise", type: "eveniment" },
   { date: "2026-06-05", title: "Festivitate absolvire XII", type: "eveniment" },
   { date: "2026-06-16", title: "BAC — Limba română", type: "examen" },

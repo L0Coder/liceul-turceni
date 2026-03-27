@@ -72,7 +72,7 @@ export async function fetchFaq() {
 export async function fetchSettings() {
   return safeFetch(getSettings, {
     eleviCount: 1604, cadreCount: 155, profileCount: 8,
-    aniExcelenta: "60+", anScolar: "2025-2026",
+    aniExcelenta: "44", anScolar: "2025-2026",
     perioadaAdmitere: "Înscrierile sunt deschise!",
   });
 }
