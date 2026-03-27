@@ -9,9 +9,9 @@ const cols = [
     { label: "Examene", href: "/examene" }, { label: "Noutăți", href: "/noutati" },
   ]},
   { title: "Transparență", links: [
-    { label: "Regulament", href: "/transparenta" }, { label: "Hotărâri C.A.", href: "/transparenta" },
-    { label: "Declarații de interese", href: "/transparenta" }, { label: "Informații publice", href: "/transparenta" },
-    { label: "GDPR", href: "/transparenta" }, { label: "Mobilitate personal", href: "/transparenta" },
+    { label: "Documente oficiale", href: "/transparenta" }, { label: "Hotărâri C.A.", href: "/transparenta" },
+    { label: "RAEI", href: "/transparenta" }, { label: "Execuție bugetară", href: "/transparenta" },
+    { label: "GDPR — Protecția datelor", href: "/gdpr" }, { label: "Politica de cookies", href: "/cookies" },
   ]},
   { title: "Descoperă", links: [
     { label: "Galerie", href: "/galerie" }, { label: "Profesori", href: "/profesori" },
@@ -35,6 +35,16 @@ export function Footer() {
               <h4 className="font-body text-[13px] font-bold text-white/40 tracking-wider uppercase mb-5">{c.title}</h4>
               {c.links.map(l => <Link key={l.label} href={l.href} className="block font-body text-sm text-white/60 py-1.5 hover:text-white transition-colors">{l.label}</Link>)}
             </div>
+          ))}
+        </div>
+        {/* Legal links */}
+        <div className="flex flex-wrap justify-center gap-4 mb-6 pt-6 border-t border-white/10">
+          {[
+            { label: "GDPR — Protecția datelor", href: "/gdpr" },
+            { label: "Politica de cookies", href: "/cookies" },
+            { label: "Declarație de accesibilitate", href: "/accesibilitate" },
+          ].map(l => (
+            <Link key={l.href} href={l.href} className="font-body text-xs text-white/40 hover:text-white/70 transition-colors">{l.label}</Link>
           ))}
         </div>
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">

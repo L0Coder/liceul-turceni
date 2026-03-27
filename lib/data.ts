@@ -137,10 +137,24 @@ export const ADMITERE = {
 
 /* ═══ TRANSPARENȚĂ ═══ */
 export const TRANSPARENTA = [
-  "Regulament de ordine interioară", "Hotărâri Consiliul de Administrație",
-  "Declarații de avere și interese", "Informații publice (Legea 544/2001)",
-  "Politica GDPR", "Mobilitatea personalului didactic",
-  "Organigrama instituției", "Raport anual (RAEI)", "Bugetul instituției", "Codul de etică",
+  "ROF — Regulament de organizare și funcționare",
+  "RI — Regulament intern",
+  "PDI — Plan de dezvoltare instituțională",
+  "Plan managerial anual",
+  "RAEI — Raport de evaluare internă a calității",
+  "Raport de evaluare externă ARACIP",
+  "Raport de activitate anual",
+  "Execuție bugetară",
+  "Bugetul instituției",
+  "Hotărâri Consiliul de Administrație",
+  "Declarații de avere și interese",
+  "Informații de interes public (Legea 544/2001)",
+  "Politica GDPR — Protecția datelor personale",
+  "Mobilitatea personalului didactic",
+  "Organigrama instituției",
+  "Codul de etică",
+  "Plan de școlarizare",
+  "Proceduri operaționale",
 ];
 
 /* ═══ GALERIE ═══ */
