@@ -56,7 +56,7 @@ export const PROFILE: Profil[] = [
     perspective: ["Constructor", "Instalator", "Diriginte de șantier", "Proiectant", "Antreprenor"],
     color: "#2aa198", glowColor: "#1de9b6", imagini: ["03_ateliere/Atelier_constructii_1.jpg", "09_clase/Sala_clasa_2.jpg"] },
   { slug: "scoala-profesionala", icon: "🔥", title: "Școală Profesională",
-    shortDesc: "Sudori și electromecanic centrale. Rată bună de angajare.",
+    shortDesc: "Sudori și electromecanic centrale. Rată ridicată de angajare.",
     fullDesc: "Două specializări de 3 ani: Sudor și Electromecanic Centrale Electrice. Pregătire 70% practică. Rată ridicată de angajare la Complexul Energetic Oltenia.",
     discipline: ["Pregătire practică (70%)", "Sudură MIG/MAG/TIG", "Electromecanică", "Protecția muncii", "Matematică aplicată"],
     competente: ["Sudură în toate pozițiile", "Citire desene", "Montaj/demontaj", "Mentenanță", "Certificare profesională"],
