@@ -25,7 +25,7 @@ Necesită Node.js 18+ și fișierul `.env.local` configurat (vezi secțiunea San
 ## Structura proiectului
 
 ```
-app/                            20 pagini publice + studio + 404
+app/                            21 pagini publice + studio + 404
 ├── page.tsx                    Homepage
 ├── layout.tsx                  Layout global (Header, Footer, CookieBanner, FloatingContact)
 ├── globals.css                 Stiluri globale + dark mode + print
@@ -34,6 +34,7 @@ app/                            20 pagini publice + studio + 404
 ├── studio/                     Panoul de administrare Sanity (fullscreen)
 │
 │   ── PAGINI CONȚINUT ──
+├── despre/                     Despre noi — istoric, cifre, niveluri, conducere
 ├── admitere/                   Admitere — documente, calendar, profile
 ├── oferta/                     Oferta educațională — 8 profile detaliate
 ├── compara/                    Comparator interactiv de profile (2-3 side-by-side)
@@ -61,7 +62,7 @@ app/                            20 pagini publice + studio + 404
 components/
 ├── ui/                         Logo, GlowButton, GlowCard, SectionHeader,
 │                               PlaceholderImage, Calendar, FaqClient,
-│                               Widgets, CookieBanner
+│                               Widgets, CookieBanner, ScrollToTop, Breadcrumbs
 ├── layout/                     Header, Footer, QuickAccess, PortalPage
 └── sections/                   Hero, OfertaPreview, HomeOtherSections
 
@@ -191,13 +192,13 @@ Vercel redeploy automat în 1-2 minute.
 
 ## Funcționalități
 
-**20 pagini publice** cu navigare pe publicuri (Elevi, Părinți, Viitori elevi, Profesori) + 3 pagini legale (GDPR, Cookies, Accesibilitate)
+**21 pagini publice** cu navigare pe publicuri (Elevi, Părinți, Viitori elevi, Profesori) + 3 pagini legale (GDPR, Cookies, Accesibilitate)
 
 **CMS:** Sanity Studio integrat — secretariatul gestionează conținut din browser
 
-**Interactivitate:** Dark mode, efecte glow la hover, calendar interactiv, comparator de profile, FAQ cu accordion și filtrare
+**Interactivitate:** Dark mode, efecte glow la hover, calendar interactiv, comparator de profile, FAQ cu accordion și filtrare, buton scroll-to-top, breadcrumbs cu schema.org SEO, Google Maps pe pagina de contact
 
-**Comunicare:** Formular de contact (Formspree), buton floating Telefon + Email + FAQ, newsletter
+**Comunicare:** Formular de contact (Formspree), buton floating Telefon + Email + FAQ, newsletter, linkuri instituționale (ISJ Gorj, MEN, ARACIP, BacPlus)
 
 **Conformitate:** GDPR cu aviz de informare, banner cookies, declarație accesibilitate HG 780/2022, documente ARACIP cu 19 categorii, transparență Legea 544/2001
 
@@ -227,7 +228,7 @@ Vercel redeploy automat în 1-2 minute.
 - **Telefon:** 0253-335012 | **Email:** licturceni@yahoo.com
 - **Evaluare Națională 2025:** media 7.20
 - **Rezultate BAC:** consultați [bacplus.ro](https://www.bacplus.ro/i/liceul-tehnologic-turceni)
-- **Modernizare 2025:** dotare cu mobilier și echipamente digitale prin PNRR
+- **Modernizare 2025:** dotare PNRR — mobilier, laptopuri, table interactive, echipamente digitale (2.163.924 lei)
 
 ---
 

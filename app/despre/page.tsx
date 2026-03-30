@@ -13,28 +13,25 @@ const repere = [
   { an: "1990", text: "Reorganizare post-revoluție. Diversificarea ofertei educaționale cu profile teoretice alături de cele tehnice." },
   { an: "2000+", text: "Dezvoltarea parteneriatelor cu Complexul Energetic Oltenia. Introducerea proiectelor Erasmus+ și a mobilităților internaționale." },
   { an: "2012", text: "Redenumirea oficială în Liceul Tehnologic Turceni, conform noii legislații a învățământului." },
-  { an: "2020+", text: "Înființarea Clubului de Robotică, echipat cu Arduino, Raspberry Pi și imprimantă 3D. Participări la competiții naționale." },
-  { an: "2025", text: "Finalizarea proiectului PNRR de dotare cu mobilier modern, materiale didactice și echipamente digitale de ultimă generație." },
+  { an: "2016", text: "Locul II la concursul național de educație ecologică „Școala Zero Waste" — premiu pentru implicarea în protecția mediului." },
+  { an: "2020+", text: "Înființarea Clubului de Robotică. Participare la concursuri naționale. Elevă finalistă la competiția „Solve for Tomorrow" (Samsung România)." },
+  { an: "2025", text: "Finalizarea proiectului PNRR „Dotarea cu mobilier, materiale didactice și echipamente digitale" (Contract nr. 1856DOT/31.08.2023, în valoare de 2.163.924 lei). Dotare completă: laptopuri, table interactive, mobilier modern, imprimante, scannere." },
 ];
 
 const cifre = [
   { nr: "1604", label: "Elevi", icon: "🎓" },
   { nr: "155", label: "Cadre didactice", icon: "👩‍🏫" },
   { nr: "8", label: "Profile educaționale", icon: "📚" },
-  { nr: "36", label: "Săli de clasă", icon: "🏫" },
-  { nr: "7", label: "Laboratoare și cabinete", icon: "🔬" },
-  { nr: "4", label: "Cabinete de informatică", icon: "💻" },
-  { nr: "6", label: "Ateliere practică", icon: "⚙️" },
   { nr: "44", label: "Ani de activitate", icon: "🏆" },
 ];
 
 const niveluri = [
-  "Învățământ preșcolar (grădinițe cu program normal și prelungit)",
-  "Învățământ primar (clasele pregătitoare – IV)",
+  "Învățământ preșcolar (grădiniță) — Turceni și structura Strâmba-Jiu",
+  "Învățământ primar (clasele pregătitoare – IV) — Turceni și structura Strâmba-Jiu",
   "Învățământ gimnazial (clasele V – VIII)",
-  "Liceu teoretic (Matematică-Informatică, Științe ale Naturii, Filologie Bilingv Engleză)",
-  "Liceu tehnologic (Electronică Automatizări, Mecanică, Electromecanică, Construcții Instalații)",
-  "Școală profesională (Sudor, Electromecanic Centrale Electrice)",
+  "Liceu teoretic — Matematică-Informatică, Științe ale Naturii, Filologie Bilingv Engleză",
+  "Liceu tehnologic — Electronică Automatizări, Mecanică, Electromecanică, Construcții Instalații",
+  "Școală profesională — Sudor, Electromecanic Centrale Electrice (3 ani, pregătire 70% practică)",
 ];
 
 export default function DesprePage() {
@@ -58,8 +55,11 @@ export default function DesprePage() {
               <p className="font-body text-[15px] text-gray-600 dark:text-dark-muted leading-relaxed mb-4">
                 De-a lungul a peste 4 decenii, liceul a evoluat de la o instituție industrială la un centru educațional complet, cu profile atât teoretice cât și tehnice, școlarizând elevi din Turceni și din localitățile învecinate ale județului Gorj.
               </p>
-              <p className="font-body text-[15px] text-gray-600 dark:text-dark-muted leading-relaxed">
+              <p className="font-body text-[15px] text-gray-600 dark:text-dark-muted leading-relaxed mb-4">
                 Astăzi, Liceul Tehnologic Turceni este situat în zona centrală a orașului și oferă educație la toate nivelurile — de la grădiniță la liceu și școală profesională — cu <strong className="text-gray-900 dark:text-dark-text">1604 elevi</strong> și <strong className="text-gray-900 dark:text-dark-text">155 cadre didactice</strong>.
+              </p>
+              <p className="font-body text-[15px] text-gray-600 dark:text-dark-muted leading-relaxed">
+                În 2025, liceul a beneficiat de un proiect PNRR în valoare de <strong className="text-gray-900 dark:text-dark-text">2.163.924 lei</strong> pentru dotarea cu mobilier modern, laptopuri, table interactive, imprimante multifuncționale și scannere documente — modernizând laboratoarele de informatică, chimie, fizică, biologie, atelierele și sala de sport.
               </p>
             </GlowCard>
           </AnimatedSection>

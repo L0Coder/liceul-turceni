@@ -79,7 +79,7 @@ export default function ContactPage() {
             <h2 className="font-heading text-2xl font-bold text-gray-900 dark:text-dark-text mb-6 text-center">Unde ne găsești</h2>
             <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-dark-border shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2836.5!2d23.3746695!3d44.6818146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDQwJzU0LjUiTiAyM8KwMjInMjguOCJF!5e0!3m2!1sro!2sro!4v1"
+                src="https://maps.google.com/maps?q=44.681853677773404,23.37467370552185&t=&z=17&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
