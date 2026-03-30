@@ -1,3 +1,4 @@
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
 import { GlowCard } from "@/components/ui/GlowCard";
 import { AnimatedSection } from "@/components/ui/SectionHeader";
@@ -17,6 +18,7 @@ const info = [
 export default function ContactPage() {
   return (
     <div className="pt-28">
+      <Breadcrumbs items={[{ label: "Contact" }]} />
       <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Contact</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Suntem aici pentru tine.</p>
@@ -67,6 +69,31 @@ export default function ContactPage() {
               </button>
             </form>
           </GlowCard></AnimatedSection>
+        </div>
+      </section>
+
+      {/* Google Maps */}
+      <section className="py-20 px-6 bg-[#fef9f3] dark:bg-dark-card">
+        <div className="max-w-5xl mx-auto">
+          <AnimatedSection>
+            <h2 className="font-heading text-2xl font-bold text-gray-900 dark:text-dark-text mb-6 text-center">Unde ne găsești</h2>
+            <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-dark-border shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2836.5!2d23.3746695!3d44.6818146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDQwJzU0LjUiTiAyM8KwMjInMjguOCJF!5e0!3m2!1sro!2sro!4v1"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Locația Liceului Tehnologic Turceni pe Google Maps"
+                className="w-full"
+              />
+            </div>
+            <p className="font-body text-xs text-gray-400 dark:text-dark-subtle text-center mt-3">
+              Str. Educației nr. 1, Turceni 217520, Județul Gorj — pe DN66
+            </p>
+          </AnimatedSection>
         </div>
       </section>
     </div>

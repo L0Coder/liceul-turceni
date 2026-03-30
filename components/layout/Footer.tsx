@@ -4,9 +4,10 @@ import { CONTACT, EXTERNAL_LINKS } from "@/lib/constants";
 
 const cols = [
   { title: "Navigare", links: [
-    { label: "Oferta educațională", href: "/oferta" }, { label: "Compară profile", href: "/compara" },
-    { label: "Admitere 2026", href: "/admitere" }, { label: "Calendar", href: "/calendar" },
-    { label: "Examene", href: "/examene" }, { label: "Noutăți", href: "/noutati" },
+    { label: "Despre noi", href: "/despre" }, { label: "Oferta educațională", href: "/oferta" },
+    { label: "Compară profile", href: "/compara" }, { label: "Admitere 2026", href: "/admitere" },
+    { label: "Calendar", href: "/calendar" }, { label: "Examene", href: "/examene" },
+    { label: "Noutăți", href: "/noutati" },
   ]},
   { title: "Transparență", links: [
     { label: "Documente oficiale", href: "/transparenta" }, { label: "Hotărâri C.A.", href: "/transparenta" },
@@ -35,6 +36,17 @@ export function Footer() {
               <h4 className="font-body text-[13px] font-bold text-white/40 tracking-wider uppercase mb-5">{c.title}</h4>
               {c.links.map(l => <Link key={l.label} href={l.href} className="block font-body text-sm text-white/60 py-1.5 hover:text-white transition-colors">{l.label}</Link>)}
             </div>
+          ))}
+        </div>
+        {/* External institutional links */}
+        <div className="flex flex-wrap justify-center gap-4 mb-4 pt-6 border-t border-white/10">
+          {[
+            { label: "ISJ Gorj", href: "https://www.isjgorj.ro" },
+            { label: "Ministerul Educației", href: "https://www.edu.ro" },
+            { label: "ARACIP", href: "https://aracip.eu" },
+            { label: "BacPlus.ro", href: "https://www.bacplus.ro/i/liceul-tehnologic-turceni" },
+          ].map(l => (
+            <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" className="font-body text-xs text-white/30 hover:text-white/60 transition-colors">{l.label} ↗</a>
           ))}
         </div>
         {/* Legal links */}

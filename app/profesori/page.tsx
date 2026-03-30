@@ -1,3 +1,4 @@
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
 import { GlowCard } from "@/components/ui/GlowCard";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
@@ -59,6 +60,7 @@ export default async function ProfesoriPage() {
 
   return (
     <div className="pt-28">
+      <Breadcrumbs items={[{ label: "Profesori" }]} />
       <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Profesori &amp; Conducere</h1>
         <p className="font-body text-lg text-white/70">155 cadre didactice dedicate excelenței.</p>

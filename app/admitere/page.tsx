@@ -1,3 +1,4 @@
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GlowCard } from "@/components/ui/GlowCard";
@@ -11,6 +12,7 @@ export const metadata: Metadata = { title: "Admitere 2026", description: "Docume
 export default function AdmiterePage() {
   return (
     <div className="pt-28">
+      <Breadcrumbs items={[{ label: "Admitere 2026" }]} />
       <section className="py-20 px-6 text-center" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Admitere 2026</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto mb-8">Depuneți dosarele la secretariat, {CONTACT.adresa}.</p>

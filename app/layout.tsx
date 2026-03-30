@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/ui/Widgets";
 import { CookieBanner } from "@/components/ui/CookieBanner";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { SITE_META } from "@/lib/constants";
 import "./globals.css";
 
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main-content">{children}</main>
         <Footer />
         <FloatingContact />
+        <ScrollToTop />
         <CookieBanner />
       </body>
     </html>
