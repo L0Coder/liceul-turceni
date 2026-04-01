@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/ui/SectionHeader";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { PROFILE } from "@/lib/data";
 
-export const metadata: Metadata = { title: "Oferta educațională", description: "Cele 8 profile educaționale ale Liceului Tehnologic Turceni." };
+export const metadata: Metadata = { title: "Oferta educațională", description: "Cele 8 profiluri educaționale ale Liceului Tehnologic Turceni." };
 
 export default function OfertaPage() {
   return (
@@ -13,7 +13,7 @@ export default function OfertaPage() {
       <Breadcrumbs items={[{ label: "Oferta educațională" }]} />
       <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Oferta educațională</h1>
-        <p className="font-body text-lg text-white/70 max-w-xl mx-auto">8 profile pentru viitorul tău.</p>
+        <p className="font-body text-lg text-white/70 max-w-xl mx-auto">8 profiluri pentru viitorul tău.</p>
       </section>
       <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
         <div className="max-w-5xl mx-auto space-y-12">

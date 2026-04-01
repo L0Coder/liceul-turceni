@@ -112,10 +112,10 @@ export function AdmitereCTA() {
           <div className="rounded-3xl p-12 md:p-16 text-center relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
             <div className="relative z-10">
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Admitere 2026</h2>
-              <p className="font-body text-[17px] text-white/70 leading-relaxed max-w-lg mx-auto mb-9">Înscrierile sunt deschise. Descoperă profilele disponibile și calendarul complet.</p>
+              <p className="font-body text-[17px] text-white/70 leading-relaxed max-w-lg mx-auto mb-9">Înscrierile sunt deschise. Descoperă profilurile disponibile și calendarul complet.</p>
               <div className="flex gap-5 justify-center flex-wrap">
                 <GlowButton href="/admitere" variant="primary">Înscrie-te acum</GlowButton>
-                <GlowButton href="/oferta" variant="secondary">Vezi profilele</GlowButton>
+                <GlowButton href="/oferta" variant="secondary">Vezi profilurile</GlowButton>
               </div>
             </div>
           </div>

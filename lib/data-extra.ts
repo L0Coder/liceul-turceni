@@ -10,7 +10,7 @@ export const FAQ_DATA: FAQItem[] = [
   { category: "scoala", question: "Există activități extrașcolare?", answer: "Club Robotică, echipe sportive, Erasmus+, olimpiade, voluntariat." },
   { category: "scoala", question: "Cum funcționează Clubul de Robotică?", answer: "2 întâlniri/săptămână, laborator dedicat, Arduino, Raspberry Pi, imprimantă 3D, competiții naționale." },
   { category: "scoala", question: "Există cantină sau after-school?", answer: "Nu avem cantină proprie, dar sunt magazine alimentare în apropiere. Nu există after-school organizat." },
-  { category: "scoala", question: "Elevii fac practică la firme?", answer: "Da. Profilele tehnice și școala profesională fac practică la CEO și alți parteneri." },
+  { category: "scoala", question: "Elevii fac practică la firme?", answer: "Da. Profilurile tehnice și școala profesională fac practică la CEO și alți parteneri." },
   { category: "examene", question: "Care e rata de promovare la BAC?", answer: "Rezultatele variază de la an la an. Consultați bacplus.ro/i/liceul-tehnologic-turceni pentru statistici complete pe ani și specializări." },
   { category: "examene", question: "Când sunt simulările?", answer: "De regulă în martie. Datele exacte pe pagina Examene." },
   { category: "general", question: "Cum ajung la liceu?", answer: "Str. Educației nr. 1, Turceni. Pe DN66 sau transport public din Târgu Jiu." },

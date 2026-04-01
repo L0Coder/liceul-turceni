@@ -4,7 +4,7 @@ import { GlowCard } from "@/components/ui/GlowCard";
 import { AnimatedSection } from "@/components/ui/SectionHeader";
 import { CONTACT } from "@/lib/constants";
 
-export const metadata: Metadata = { title: "Contact", description: "Contacteaza Liceul Tehnologic Turceni." };
+export const metadata: Metadata = { title: "Contact", description: "Contactează Liceul Tehnologic Turceni." };
 
 const info = [
   { icon: "📍", label: "Adresă", value: CONTACT.adresa },

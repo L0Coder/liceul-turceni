@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Pentru profesori", description: "Res
 const sections = [
   { title: "Resurse didactice", items: [
     { icon: "📅", label: "Calendar", href: "/calendar", desc: "Examene, simulări, vacanțe, ședințe." },
-    { icon: "📚", label: "Profile", href: "/oferta", desc: "Descrierile celor 8 profile." },
+    { icon: "📚", label: "Profiluri", href: "/oferta", desc: "Descrierile celor 8 profiluri." },
     { icon: "📊", label: "Rezultate", href: "/examene", desc: "Istoric BAC, EN, statistici." },
     { icon: "📸", label: "Galerie", href: "/galerie", desc: "Imagini pentru prezentări." },
   ]},

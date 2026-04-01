@@ -35,6 +35,6 @@ export const EXTERNAL_LINKS = [
 
 export const SITE_META = {
   title: "Liceul Tehnologic Turceni",
-  description: "Liceul Tehnologic Turceni — 8 profile educaționale, 1604 elevi, 155 cadre didactice. Formăm specialiștii de mâine în județul Gorj.",
+  description: "Liceul Tehnologic Turceni — 8 profiluri educaționale, 1604 elevi, 155 cadre didactice. Formăm profesioniștii de mâine în județul Gorj.",
   url: "https://www.liceulturceni.ro",
 } as const;

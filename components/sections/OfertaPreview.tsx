@@ -8,7 +8,7 @@ export function OfertaPreview() {
   return (
     <section className="py-24 px-6 bg-[#fafbfd] dark:bg-dark-bg">
       <div className="max-w-7xl mx-auto">
-        <AnimatedSection><SectionHeader label="Oferta educațională" title="8 profile pentru viitorul tău" subtitle="De la informatică la construcții — găsește drumul care ți se potrivește." /></AnimatedSection>
+        <AnimatedSection><SectionHeader label="Oferta educațională" title="8 profiluri pentru viitorul tău" subtitle="De la informatică la construcții — găsește drumul care ți se potrivește." /></AnimatedSection>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {PROFILE.map((p, i) => (
             <AnimatedSection key={p.slug} delay={i * 0.07}>

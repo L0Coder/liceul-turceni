@@ -12,8 +12,8 @@ export default function ComparaPage() {
   return (
     <div className="pt-28">
       <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Compară profilele</h1>
-        <p className="font-body text-lg text-white/70">Selectează 2-3 profile pentru comparație.</p>
+        <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Compară profilurile</h1>
+        <p className="font-body text-lg text-white/70">Selectează 2-3 profiluri pentru comparație.</p>
       </section>
       <section className="py-6 px-4 bg-white dark:bg-dark-card border-b border-gray-100 dark:border-dark-border sticky top-16 z-40">
         <div className="max-w-5xl mx-auto flex flex-wrap gap-2 justify-center">
@@ -30,7 +30,7 @@ export default function ComparaPage() {
         <div className="max-w-6xl mx-auto">
           {selected.length < 2 ? (
             <div className="text-center py-20"><div className="text-6xl mb-4">{selected.length === 0 ? "☝️" : "✌️"}</div>
-              <p className="font-body text-lg text-gray-400 dark:text-dark-muted">{selected.length === 0 ? "Selectează cel puțin 2 profile." : "Mai selectează unul."}</p></div>
+              <p className="font-body text-lg text-gray-400 dark:text-dark-muted">{selected.length === 0 ? "Selectează cel puțin 2 profiluri." : "Mai selectează unul."}</p></div>
           ) : (
             <AnimatedSection>
               <div className={`grid gap-6 ${selected.length === 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-3"}`}>

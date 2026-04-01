@@ -17,7 +17,7 @@ const sections = [
     { icon: "✍️", label: "Blog LTT", href: "/blog", desc: "Povești de la colegi." },
   ]},
   { title: "Util", items: [
-    { icon: "🔍", label: "Compară profilele", href: "/compara", desc: "Side-by-side, toate detaliile." },
+    { icon: "🔍", label: "Compară profilurile", href: "/compara", desc: "Side-by-side, toate detaliile." },
     { icon: "❓", label: "FAQ", href: "/faq", desc: "Răspunsuri rapide." },
     { icon: "📸", label: "Galerie", href: "/galerie", desc: "Viața la LTT în imagini." },
     { icon: "📞", label: "Contact", href: "/contact", desc: "Secretariat, telefon, email." },

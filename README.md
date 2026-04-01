@@ -35,9 +35,9 @@ app/                            21 pagini publice + studio + 404
 │
 │   ── PAGINI CONȚINUT ──
 ├── despre/                     Despre noi — istoric, cifre, niveluri, conducere
-├── admitere/                   Admitere — documente, calendar, profile
-├── oferta/                     Oferta educațională — 8 profile detaliate
-├── compara/                    Comparator interactiv de profile (2-3 side-by-side)
+├── admitere/                   Admitere — documente, calendar, profiluri
+├── oferta/                     Oferta educațională — 8 profiluri detaliate
+├── compara/                    Comparator interactiv de profiluri (2-3 side-by-side)
 ├── noutati/                    Noutăți — citește din Sanity CMS
 ├── blog/                       Jurnal LTT — citește din Sanity CMS
 ├── examene/                    Examene + linkuri rezultate oficiale + harta absolvenți
@@ -68,7 +68,7 @@ components/
 
 lib/
 ├── constants.ts                Navigare, contact, meta
-├── data.ts                     Date statice (profile, noutăți, transparență)
+├── data.ts                     Date statice (profiluri, noutăți, transparență)
 ├── data-extra.ts               Date statice (FAQ, blog)
 ├── fetcher.ts                  Sanity cu fallback la date statice
 └── sanity.ts                   Sanity client + GROQ queries
@@ -127,7 +127,7 @@ Site-ul funcționează mereu, indiferent de starea CMS-ului.
 
 ### Conținut care NU e în CMS (e în cod)
 
-- Descrierile celor 8 profile educaționale (`lib/data.ts`)
+- Descrierile celor 8 profiluri educaționale (`lib/data.ts`)
 - Testimonialele de pe homepage (`lib/data.ts`)
 - Informațiile din portaluri (Elevi, Părinți, etc.)
 - Datele de contact (telefon, adresă, email) (`lib/constants.ts`)
@@ -196,7 +196,7 @@ Vercel redeploy automat în 1-2 minute.
 
 **CMS:** Sanity Studio integrat — secretariatul gestionează conținut din browser
 
-**Interactivitate:** Dark mode, efecte glow la hover, calendar interactiv, comparator de profile, FAQ cu accordion și filtrare, buton scroll-to-top, breadcrumbs cu schema.org SEO, Google Maps pe pagina de contact
+**Interactivitate:** Dark mode, efecte glow la hover, calendar interactiv, comparator de profiluri, FAQ cu accordion și filtrare, buton scroll-to-top, breadcrumbs cu schema.org SEO, Google Maps pe pagina de contact
 
 **Comunicare:** Formular de contact (Formspree), buton floating Telefon + Email + FAQ, newsletter, linkuri instituționale (ISJ Gorj, MEN, ARACIP, BacPlus)
 

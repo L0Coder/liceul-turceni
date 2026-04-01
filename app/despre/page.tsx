@@ -5,12 +5,12 @@ import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   title: "Despre noi",
-  description: "Istoria și prezentarea Liceului Tehnologic Turceni - înființat în 1982, 1604 elevi, 8 profile educaționale.",
+  description: "Istoria și prezentarea Liceului Tehnologic Turceni - înființat în 1982, 1604 elevi, 8 profiluri educaționale.",
 };
 
 const repere = [
   { an: "1982", text: "Înființarea liceului la 1 septembrie, ca necesitate de instruire a salariaților termocentralei Turceni și de asigurare a forței de muncă viitoare." },
-  { an: "1990", text: "Reorganizare post-revoluție. Diversificarea ofertei educaționale cu profile teoretice alături de cele tehnice." },
+  { an: "1990", text: "Reorganizare post-revoluție. Diversificarea ofertei educaționale cu profiluri teoretice alături de cele tehnice." },
   { an: "2000+", text: "Dezvoltarea parteneriatelor cu Complexul Energetic Oltenia. Introducerea proiectelor Erasmus+ și a mobilităților internaționale." },
   { an: "2012", text: "Redenumirea oficială în Liceul Tehnologic Turceni, conform noii legislații a învățământului." },
   { an: "2016", text: "Locul II la concursul național de educație ecologică Școala Zero Waste - premiu pentru implicarea în protecția mediului." },
@@ -21,7 +21,7 @@ const repere = [
 const cifre = [
   { nr: "1604", label: "Elevi", icon: "🎓" },
   { nr: "155", label: "Cadre didactice", icon: "👩‍🏫" },
-  { nr: "8", label: "Profile educaționale", icon: "📚" },
+  { nr: "8", label: "Profiluri educaționale", icon: "📚" },
   { nr: "44", label: "Ani de activitate", icon: "🏆" },
 ];
 
@@ -53,7 +53,7 @@ export default function DesprePage() {
                 Liceul Tehnologic Turceni a fost înființat la <strong className="text-gray-900 dark:text-dark-text">1 septembrie 1982</strong>, ca o necesitate de instruire a elevilor și a salariaților termocentralei Turceni, cu scopul de a asigura forța de muncă calificată pentru industria energetică a zonei.
               </p>
               <p className="font-body text-[15px] text-gray-600 dark:text-dark-muted leading-relaxed mb-4">
-                De-a lungul a peste 4 decenii, liceul a evoluat de la o instituție industrială la un centru educațional complet, cu profile atât teoretice cât și tehnice, școlarizând elevi din Turceni și din localitățile învecinate ale județului Gorj.
+                De-a lungul a peste 4 decenii, liceul a evoluat de la o instituție industrială la un centru educațional complet, cu profiluri atât teoretice cât și tehnice, școlarizând elevi din Turceni și din localitățile învecinate ale județului Gorj.
               </p>
               <p className="font-body text-[15px] text-gray-600 dark:text-dark-muted leading-relaxed mb-4">
                 Astăzi, Liceul Tehnologic Turceni este situat în zona centrală a orașului și oferă educație la toate nivelurile, de la grădiniță la liceu și școală profesională, cu <strong className="text-gray-900 dark:text-dark-text">1604 elevi</strong> și <strong className="text-gray-900 dark:text-dark-text">155 cadre didactice</strong>.

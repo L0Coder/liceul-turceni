@@ -5,11 +5,11 @@ import { GlowButton } from "@/components/ui/GlowButton";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
 import { PROFILE } from "@/lib/data";
 
-export const metadata: Metadata = { title: "Pentru viitori elevi", description: "Ești în clasa a VIII-a? Descoperă ce oferă LTT: 8 profile, practică reală, Club Robotică." };
+export const metadata: Metadata = { title: "Pentru viitori elevi", description: "Ești în clasa a VIII-a? Descoperă ce oferă LTT: 8 profiluri, practică reală, Club Robotică." };
 
 export default function ViitoriEleviPage() {
   const motives = [
-    { icon: "⚡", title: "8 profile diverse", desc: "De la IT la Mecanică, sigur găsești ceva.", glow: "#00e5ff" },
+    { icon: "⚡", title: "8 profiluri diverse", desc: "De la IT la Mecanică, sigur găsești ceva.", glow: "#00e5ff" },
     { icon: "🔧", title: "Practică reală", desc: "Ateliere echipate, practică la firme.", glow: "#ff9100" },
     { icon: "🤖", title: "Club Robotică", desc: "Construiești roboți, mergi la competiții.", glow: "#76ff03" },
     { icon: "🌍", title: "Erasmus+", desc: "Mobilități în Italia, Spania, Portugalia.", glow: "#d500f9" },
@@ -17,7 +17,7 @@ export default function ViitoriEleviPage() {
     { icon: "📈", title: "Modernizare recentă", desc: "Mobilier nou, echipamente digitale prin PNRR (2025).", glow: "#00b0ff" },
   ];
   const steps = [
-    { n: "1", t: "Informează-te", d: "Explorează profilele, compară-le.", c: "#3498db" },
+    { n: "1", t: "Informează-te", d: "Explorează profilurile, compară-le.", c: "#3498db" },
     { n: "2", t: "Vizitează-ne", d: "Ziua Porților Deschise — mai 2026.", c: "#2aa198" },
     { n: "3", t: "Susține EN", d: "Pregătește-te! Vezi pagina Examene.", c: "#f26b00" },
     { n: "4", t: "Depune dosarul", d: "După repartizare, vino la secretariat.", c: "#27ae60" },
@@ -30,7 +30,7 @@ export default function ViitoriEleviPage() {
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Viitorul tău începe aici</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto mb-8">Ești în clasa a VIII-a? Descoperă de ce 1600+ elevi au ales LTT.</p>
         <div className="flex gap-5 justify-center flex-wrap">
-          <GlowButton href="/compara" variant="primary">Compară profilele</GlowButton>
+          <GlowButton href="/compara" variant="primary">Compară profilurile</GlowButton>
           <GlowButton href="/admitere" variant="secondary">Info admitere</GlowButton>
         </div>
       </section>
@@ -52,7 +52,7 @@ export default function ViitoriEleviPage() {
       </section>
       <section className="py-20 px-6 bg-[#fef9f3] dark:bg-dark-card">
         <div className="max-w-5xl mx-auto">
-          <AnimatedSection><SectionHeader label="Profile" title="Alege-ți drumul" /></AnimatedSection>
+          <AnimatedSection><SectionHeader label="Profiluri" title="Alege-ți drumul" /></AnimatedSection>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {PROFILE.map((p, i) => (
               <AnimatedSection key={p.slug} delay={i * 0.06}><Link href={`/oferta#${p.slug}`} className="block">

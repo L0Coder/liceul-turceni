@@ -12,7 +12,7 @@ const sections = [
   ]},
   { title: "Informații practice", items: [
     { icon: "📋", label: "Admitere 2026", href: "/admitere", desc: "Documente, calendar, locuri." },
-    { icon: "📚", label: "Profile", href: "/oferta", desc: "Ce se învață la fiecare profil." },
+    { icon: "📚", label: "Profiluri", href: "/oferta", desc: "Ce se învață la fiecare profil." },
     { icon: "🔍", label: "Compară", href: "/compara", desc: "Ajută-ți copilul să aleagă." },
     { icon: "❓", label: "FAQ", href: "/faq", desc: "Orar, burse, practică." },
   ]},

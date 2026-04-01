@@ -68,7 +68,7 @@ export const PROFILE: Profil[] = [
 export const STATS = [
   { number: "1604", label: "Elevi înscriși", icon: "🎓", glowColor: "#00e5ff" },
   { number: "155", label: "Cadre didactice", icon: "👩‍🏫", glowColor: "#76ff03" },
-  { number: "8", label: "Profile educaționale", icon: "📚", glowColor: "#00b0ff" },
+  { number: "8", label: "Profiluri educaționale", icon: "📚", glowColor: "#00b0ff" },
   { number: "44", label: "Ani de excelență", icon: "🏆", glowColor: "#ffd600" },
 ];
 

@@ -7,7 +7,7 @@ import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
 import { ADMITERE, PROFILE } from "@/lib/data";
 import { CONTACT } from "@/lib/constants";
 
-export const metadata: Metadata = { title: "Admitere 2026", description: "Documente, calendar și profile disponibile la Liceul Tehnologic Turceni." };
+export const metadata: Metadata = { title: "Admitere 2026", description: "Documente, calendar și profiluri disponibile la Liceul Tehnologic Turceni." };
 
 export default function AdmiterePage() {
   return (
@@ -18,7 +18,7 @@ export default function AdmiterePage() {
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto mb-8">Depuneți dosarele la secretariat, {CONTACT.adresa}.</p>
         <div className="flex gap-5 justify-center flex-wrap">
           <GlowButton href="/contact" variant="primary">Contactează secretariatul</GlowButton>
-          <GlowButton href="/oferta" variant="secondary">Vezi profilele</GlowButton>
+          <GlowButton href="/oferta" variant="secondary">Vezi profilurile</GlowButton>
         </div>
       </section>
       <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
@@ -35,7 +35,7 @@ export default function AdmiterePage() {
       </section>
       <section className="py-20 px-6 bg-[#fef9f3] dark:bg-dark-card">
         <div className="max-w-5xl mx-auto">
-          <AnimatedSection><SectionHeader label="Profile" title="Alege-ți viitorul" /></AnimatedSection>
+          <AnimatedSection><SectionHeader label="Profiluri" title="Alege-ți viitorul" /></AnimatedSection>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {PROFILE.map((p, i) => <AnimatedSection key={p.slug} delay={i*0.06}><Link href={`/oferta#${p.slug}`} className="block">
               <GlowCard glowColor={p.glowColor}><div className="text-center"><div className="text-3xl mb-2">{p.icon}</div><h3 className="font-body text-sm font-bold text-gray-900 dark:text-dark-text">{p.title}</h3></div></GlowCard>

@@ -5,7 +5,7 @@ import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
 import { AbsolventiMap } from "@/components/ui/Widgets";
 import { EXAMENE } from "@/lib/data";
 
-export const metadata: Metadata = { title: "Examene", description: "Calendar BAC, Evaluare Nationala si rezultate LTT." };
+export const metadata: Metadata = { title: "Examene", description: "Calendar BAC, Evaluare Națională și rezultate LTT." };
 
 const secs = [
   { d: EXAMENE.bac, c: "#f26b00", g: "#ff9100" },
@@ -15,9 +15,9 @@ const secs = [
 
 const resurse = [
   { label: "Rezultate BAC — BacPlus.ro", href: "https://www.bacplus.ro/i/liceul-tehnologic-turceni", desc: "Statistici complete pe ani, specializari, clase." },
-  { label: "Rezultate EN — BacPlus.ro", href: "https://www.bacplus.ro/i/liceul-tehnologic-turceni/gimnaziu", desc: "Medii Evaluare Nationala pe ani." },
+  { label: "Rezultate EN — BacPlus.ro", href: "https://www.bacplus.ro/i/liceul-tehnologic-turceni/gimnaziu", desc: "Medii Evaluare Națională pe ani." },
   { label: "Bacalaureat.edu.ro", href: "https://bacalaureat.edu.ro/", desc: "Rezultate oficiale Ministerul Educatiei." },
-  { label: "Evaluare.edu.ro", href: "https://evaluare.edu.ro/", desc: "Rezultate oficiale Evaluare Nationala." },
+  { label: "Evaluare.edu.ro", href: "https://evaluare.edu.ro/", desc: "Rezultate oficiale Evaluare Națională." },
 ];
 
 export default function ExamenePage() {
@@ -45,7 +45,7 @@ export default function ExamenePage() {
       <section className="py-20 px-6 bg-[#fef9f3] dark:bg-dark-card">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
-            <SectionHeader label="Rezultate" title="Rezultate oficiale" subtitle="Consultati sursele oficiale pentru rezultatele complete la BAC si Evaluare Nationala." />
+            <SectionHeader label="Rezultate" title="Rezultate oficiale" subtitle="Consultați sursele oficiale pentru rezultatele complete la BAC și Evaluare Națională." />
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
