@@ -33,7 +33,7 @@ export const PROFILE: Profil[] = [
     discipline: ["Electronică", "Automatizări", "Măsurări electrice", "Informatică aplicată", "Matematică"],
     competente: ["Proiectare circuite", "Programare PLC", "Sisteme SCADA", "Senzori", "Depanare"],
     perspective: ["Inginer automatist", "Tehnician electronist", "CEO", "Industria auto", "Energii regenerabile"],
-    color: "#f26b00", glowColor: "#ff9100", imagini: ["02_laboratoare/Lab_electronnica_1.jpg", "02_laboratoare/Lab_electronica_2.jpg"] },
+    color: "#f26b00", glowColor: "#ff9100", imagini: ["02_laboratoare/Lab_electronica_1.jpg", "02_laboratoare/Lab_electronica_2.jpg"] },
   { slug: "mecanica", icon: "⚙️", title: "Mecanică",
     shortDesc: "Proiectare, fabricare, mentenanță. Baza industriei.",
     fullDesc: "Pregătire practică în prelucrarea metalelor, CAD și mentenanță industrială. Ateliere echipate cu strunguri, freze și CNC.",
@@ -160,7 +160,7 @@ export const TRANSPARENTA = [
 /* ═══ GALERIE ═══ */
 export const GALERIE_CATEGORII = [
   { slug: "laboratoare", label: "Laboratoare", emoji: "🔬", desc: "Fizică, chimie, informatică, electronică.",
-    imagini: ["02_laboratoare/Lab_fizica_1.jpg", "02_laboratoare/Lab_chimie_1.jpg", "02_laboratoare/Lab_informatica_1.jpg", "02_laboratoare/Lab_electronnica_1.jpg"] },
+    imagini: ["02_laboratoare/Lab_fizica_1.jpg", "02_laboratoare/Lab_chimie_1.jpg", "02_laboratoare/Lab_informatica_1.jpg", "02_laboratoare/Lab_electronica_1.jpg"] },
   { slug: "ateliere", label: "Ateliere", emoji: "⚙️", desc: "Mecanică, electromecanică, sudură.",
     imagini: ["03_ateliere/Atelier_mecanica_1.jpg", "03_ateliere/Atelier_electromecanica_1.jpg", "03_ateliere/Atelier_sudura_1.jpg"] },
   { slug: "club-robotica", label: "Club Robotică", emoji: "🤖", desc: "Roboți, Arduino, competiții.",

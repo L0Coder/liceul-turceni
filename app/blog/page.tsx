@@ -54,7 +54,7 @@ export default async function BlogPage() {
           <div className="max-w-3xl mx-auto mt-12 text-center p-8 bg-brand-accent/5 dark:bg-brand-accent/10 rounded-2xl border border-brand-accent/10">
             <h3 className="font-heading text-xl font-bold text-gray-900 dark:text-dark-text mb-2">Vrei să scrii și tu?</h3>
             <p className="font-body text-sm text-gray-500 dark:text-dark-muted">
-              Trimite textul tău la <span className="font-semibold text-brand-accent">licturceni@yahoo.com</span> cu subiectul &quot;Jurnal LTT&quot;.
+              Trimite textul tău la <a href="mailto:licturceni@yahoo.com?subject=Jurnal%20LTT" className="font-semibold text-brand-accent hover:underline">licturceni@yahoo.com</a> cu subiectul &quot;Jurnal LTT&quot;.
             </p>
           </div>
         </AnimatedSection>

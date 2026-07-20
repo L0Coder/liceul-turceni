@@ -1,0 +1,9 @@
+Aici se pun imaginile site-ului.
+
+Dezarhivați LTT_imagini_placeholder.zip în acest folder.
+Structura trebuie să fie:
+  public/imagini/02_laboratoare/Lab_fizica_1.jpg
+  public/imagini/03_ateliere/Atelier_mecanica_1.jpg
+  ... etc
+
+Când aveți fotografii reale, înlocuiți fișierele păstrând EXACT același nume.

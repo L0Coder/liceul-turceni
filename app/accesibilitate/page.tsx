@@ -73,8 +73,8 @@ export default function AccesibilitatePage() {
                 <p className="font-body text-sm text-gray-600 dark:text-dark-muted leading-relaxed">
                   Dacă întâmpinați dificultăți de accesare a oricărei pagini de pe acest site, vă rugăm să ne contactați:<br /><br />
                   <span className="font-semibold text-gray-900 dark:text-dark-text">Liceul Tehnologic Turceni</span><br />
-                  Telefon: 0253-335012<br />
-                  Email: licturceni@yahoo.com<br /><br />
+                  Telefon: <a href="tel:+40253335012" className="text-brand-teal hover:underline">0253-335012</a><br />
+                  Email: <a href="mailto:licturceni@yahoo.com" className="text-brand-teal hover:underline">licturceni@yahoo.com</a><br /><br />
                   Vom încerca să vă oferim informațiile solicitate într-un format accesibil, în termen de 15 zile lucrătoare.
                 </p>
               </div>

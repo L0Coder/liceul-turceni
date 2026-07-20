@@ -49,8 +49,8 @@ export default function GDPRPage() {
                 <p>
                   <strong className="text-gray-900 dark:text-dark-text">Liceul Tehnologic Turceni</strong><br />
                   Str. Educației nr. 1, Turceni 217520, Județul Gorj<br />
-                  Telefon: 0253-335012 | Fax: 0253-335011<br />
-                  Email: licturceni@yahoo.com<br />
+                  Telefon: <a href="tel:+40253335012" className="text-brand-teal hover:underline">0253-335012</a> | Fax: 0253-335011<br />
+                  Email: <a href="mailto:licturceni@yahoo.com" className="text-brand-teal hover:underline">licturceni@yahoo.com</a><br />
                   CUI: 4666290
                 </p>
                 <p>
@@ -68,8 +68,8 @@ export default function GDPRPage() {
                   <p>
                     {/* NOTĂ: Completați cu datele reale ale DPO-ului desemnat prin decizie a directorului */}
                     Datele de contact ale DPO-ului desemnat sunt disponibile la secretariatul liceului.<br />
-                    Telefon: 0253-335012<br />
-                    Email: licturceni@yahoo.com
+                    Telefon: <a href="tel:+40253335012" className="text-brand-teal hover:underline">0253-335012</a><br />
+                    Email: <a href="mailto:licturceni@yahoo.com" className="text-brand-teal hover:underline">licturceni@yahoo.com</a>
                   </p>
                 </div>
                 <p className="text-xs text-gray-400 dark:text-dark-subtle mt-2">
@@ -148,7 +148,7 @@ export default function GDPRPage() {
                 <Bullet><strong className="text-gray-900 dark:text-dark-text">Dreptul de a retrage consimțământul</strong> — în orice moment, fără a afecta legalitatea prelucrării anterioare</Bullet>
 
                 <p className="mt-3">
-                  Pentru exercitarea acestor drepturi, adresați o cerere scrisă la secretariatul liceului (personal, prin poștă sau pe email la licturceni@yahoo.com). Răspunsul va fi transmis în maximum 30 de zile calendaristice.
+                  Pentru exercitarea acestor drepturi, adresați o cerere scrisă la secretariatul liceului (personal, prin poștă sau pe email la <a href="mailto:licturceni@yahoo.com" className="text-brand-teal hover:underline">licturceni@yahoo.com</a>). Răspunsul va fi transmis în maximum 30 de zile calendaristice.
                 </p>
               </Section>
 
@@ -195,7 +195,7 @@ export default function GDPRPage() {
                 <Bullet><strong className="text-gray-900 dark:text-dark-text">Fotografii cu cadre didactice:</strong> se publică cu acordul persoanei respective, în cadrul prezentării echipei didactice.</Bullet>
                 <Bullet><strong className="text-gray-900 dark:text-dark-text">Fotografii realizate de părinți</strong> la evenimentele școlare, pentru uzul personal al familiei, nu intră sub incidența GDPR.</Bullet>
                 <p className="mt-2">
-                  Solicitările de eliminare a fotografiilor se adresează la secretariatul liceului (telefon: 0253-335012, email: licturceni@yahoo.com). Fotografiile vor fi eliminate în maximum 5 zile lucrătoare.
+                  Solicitările de eliminare a fotografiilor se adresează la secretariatul liceului (telefon: <a href="tel:+40253335012" className="text-brand-teal hover:underline">0253-335012</a>, email: <a href="mailto:licturceni@yahoo.com" className="text-brand-teal hover:underline">licturceni@yahoo.com</a>). Fotografiile vor fi eliminate în maximum 5 zile lucrătoare.
                 </p>
               </Section>
 
@@ -246,8 +246,8 @@ export default function GDPRPage() {
                   <p>
                     <strong className="text-gray-900 dark:text-dark-text">Liceul Tehnologic Turceni</strong><br />
                     Str. Educației nr. 1, Turceni 217520, Județul Gorj<br />
-                    Telefon: 0253-335012 | Fax: 0253-335011<br />
-                    Email: licturceni@yahoo.com<br />
+                    Telefon: <a href="tel:+40253335012" className="text-brand-teal hover:underline">0253-335012</a> | Fax: 0253-335011<br />
+                    Email: <a href="mailto:licturceni@yahoo.com" className="text-brand-teal hover:underline">licturceni@yahoo.com</a><br />
                     Program: Luni — Vineri, 8:00 — 16:00
                   </p>
                 </div>

@@ -160,7 +160,7 @@ export default function DesprePage() {
               Str. Educației nr. 1, Turceni 217520, Județul Gorj
             </p>
             <p className="font-body text-sm text-gray-600 dark:text-dark-muted mb-6">
-              Tel: 0253-335012 | Email: licturceni@yahoo.com
+              Tel: <a href="tel:+40253335012" className="text-brand-teal hover:underline">0253-335012</a> | Email: <a href="mailto:licturceni@yahoo.com" className="text-brand-teal hover:underline">licturceni@yahoo.com</a>
             </p>
             <a href="/contact" className="inline-flex items-center gap-2 font-body text-sm font-semibold text-white px-6 py-3 rounded-xl bg-brand-primary hover:bg-brand-primary-light transition-colors">
               Pagina de contact →
