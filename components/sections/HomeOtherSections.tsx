@@ -3,16 +3,24 @@ import Link from "next/link";
 import { GlowCard } from "@/components/ui/GlowCard";
 import { GlowButton } from "@/components/ui/GlowButton";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
-import { STATS, PARTENERIATE, NOUTATI, TESTIMONIALE } from "@/lib/data";
+import { PARTENERIATE, TESTIMONIALE } from "@/lib/data";
 
-export function StatsSection() {
+interface Settings { eleviCount: number; cadreCount: number; profileCount: number; aniExcelenta: string; }
+
+export function StatsSection({ settings }: { settings: Settings }) {
+  const stats = [
+    { number: String(settings.eleviCount), label: "Elevi", icon: "🎓", glowColor: "#00e5ff" },
+    { number: String(settings.cadreCount), label: "Cadre didactice", icon: "👩‍🏫", glowColor: "#1de9b6" },
+    { number: String(settings.profileCount), label: "Profiluri educaționale", icon: "📚", glowColor: "#00b0ff" },
+    { number: settings.aniExcelenta, label: "Ani de excelență", icon: "🏆", glowColor: "#ffd600" },
+  ];
   return (
     <section className="py-20 px-6 relative" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
       <div className="max-w-7xl mx-auto relative z-10">
         <AnimatedSection><SectionHeader label="Rezultate" title="Cifrele care ne definesc" light /></AnimatedSection>
         <AnimatedSection>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {STATS.map(s => (
+            {stats.map(s => (
               <GlowCard key={s.label} glowColor={s.glowColor} dark className="text-center">
                 <div className="text-3xl mb-3">{s.icon}</div>
                 <div className="font-heading text-3xl sm:text-4xl font-bold text-white leading-none mb-2">{s.number}</div>
@@ -47,16 +55,19 @@ export function ParteneriatePreview() {
   );
 }
 
-export function NoutatiPreview() {
+interface NoutateItem { _id?: string; slug: string; title: string; category: string; date: string; excerpt: string; }
+const NOUTATI_COLORS = ["#00e5ff", "#ff9100", "#1de9b6"];
+
+export function NoutatiPreview({ noutati }: { noutati: NoutateItem[] }) {
   return (
     <section className="py-24 px-6 bg-[#fafbfd] dark:bg-dark-bg">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection><SectionHeader label="Noutăți" title="Ce se întâmplă la noi" /></AnimatedSection>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {NOUTATI.slice(0, 3).map((n, i) => (
-            <AnimatedSection key={n.slug} delay={i * 0.1}>
+          {noutati.slice(0, 3).map((n, i) => (
+            <AnimatedSection key={n._id || n.slug} delay={i * 0.1}>
               <Link href={`/noutati#${n.slug}`} className="block h-full">
-                <GlowCard glowColor={n.glowColor} className="h-full">
+                <GlowCard glowColor={NOUTATI_COLORS[i % 3]} className="h-full">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="font-body text-[11px] font-bold text-brand-accent bg-brand-accent/10 px-2.5 py-1 rounded-md uppercase">{n.category}</span>
                     <span className="font-body text-xs text-gray-400 dark:text-dark-subtle">{n.date}</span>

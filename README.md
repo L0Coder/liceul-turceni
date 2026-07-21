@@ -30,6 +30,10 @@ app/                            21 pagini publice + studio + 404
 ├── layout.tsx                  Layout global (Header, Footer, CookieBanner, FloatingContact)
 ├── globals.css                 Stiluri globale + dark mode + print
 ├── not-found.tsx               Pagina 404
+├── icon.svg                    Favicon (logo LTT)
+├── robots.ts                   robots.txt generat (Allow tot, Disallow /studio)
+├── sitemap.ts                  sitemap.xml generat (toate paginile)
+├── opengraph-image.tsx         Imagine share social (WhatsApp/Facebook)
 │
 ├── studio/                     Panoul de administrare Sanity (fullscreen)
 │
@@ -160,7 +164,23 @@ Pentru a modifica acestea, trebuie editat codul și dat `git push`.
 
 ---
 
-## Formular de contact (Formspree)
+## SEO și partajare socială
+
+Site-ul include (generate automat, nu necesită întreținere):
+- **Favicon** (`icon.svg`) — logo LTT în tab-ul browserului
+- **robots.txt** — permite indexarea, blochează `/studio`
+- **sitemap.xml** — toate paginile listate pentru Google
+- **OpenGraph image** — imagine cu logo + "8 profiluri · 1604 elevi · din 1982" care apare când cineva dă share pe WhatsApp/Facebook
+- **Schema.org "School"** — Google înțelege structurat că e o școală (adresă, telefon, coordonate GPS, an înființare)
+- **theme-color** — bara browserului mobil ia culoarea brandului
+
+## Homepage citește din CMS
+
+Homepage-ul afișează automat (revalidare 60s):
+- **Ultimele 3 anunțuri** din secțiunea Noutăți a panoului — când secretariatul publică un anunț, apare și pe prima pagină
+- **Statisticile** din Setări site (număr elevi, cadre, profiluri, ani) — actualizate anual din panou
+
+
 
 1. Cont pe [formspree.io](https://formspree.io) → formular nou → copiază Form ID
 2. În `app/contact/page.tsx` înlocuiește `FORM_ID_AICI` cu codul tău

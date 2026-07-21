@@ -6,16 +6,17 @@ import {
   getNoutati, getDocumente, getEvenimente, getArticole,
   getGalerie, getProfesori, getFaq, getSettings, isSanityConfigured,
 } from "./sanity";
-import { NOUTATI, PARTENERIATE, TESTIMONIALE, STATS, EXAMENE, ADMITERE, TRANSPARENTA, GALERIE_CATEGORII, PROFILE } from "./data";
+import { NOUTATI, PARTENERIATE, TESTIMONIALE, STATS, EXAMENE, ADMITERE, TRANSPARENTA, GALERIE_CATEGORII, PROFILE, EVENIMENTE_STATICE } from "./data";
 import { FAQ_DATA, BLOG_POSTS } from "./data-extra";
 
-// Wrapper sigur — nu crapă dacă Sanity nu e configurat
-async function safeFetch<T>(fetcher: () => Promise<T>, fallback: T): Promise<T> {
+// Wrapper sigur — nu crapă dacă Sanity nu e configurat.
+// Tipul e dictat de `fallback` (care are shape-ul corect), nu de fetcher (care e any din GROQ).
+async function safeFetch<T>(fetcher: () => Promise<unknown>, fallback: T): Promise<T> {
   if (!isSanityConfigured()) return fallback;
   try {
     const result = await fetcher();
     if (!result || (Array.isArray(result) && result.length === 0)) return fallback;
-    return result;
+    return result as T;
   } catch (err) {
     console.warn("[CMS] Fallback la date statice:", err);
     return fallback;
@@ -38,7 +39,7 @@ export function formatDateRO(date: string | null | undefined): string {
 
 // Aplică formatarea pe câmpul `date` al fiecărui element dintr-o listă
 function withRoDates<T extends { date?: string | null }>(items: T[]): T[] {
-  return items.map(item => ({ ...item, date: formatDateRO(item.date) }));
+  return items.map(item => ({ ...item, date: formatDateRO(item.date) } as T));
 }
 
 // ═══ FUNCȚII PUBLICE — importate de pagini ═══
@@ -62,7 +63,9 @@ export async function fetchDocumente() {
 }
 
 export async function fetchEvenimente() {
-  return safeFetch(getEvenimente, []);
+  // NU formatăm data aici — calendarul filtrează după ISO (2026-03-18)
+  // și afișează formatul românesc intern.
+  return safeFetch(getEvenimente, EVENIMENTE_STATICE);
 }
 
 export async function fetchArticole() {
@@ -76,11 +79,11 @@ export async function fetchArticole() {
   return withRoDates(result);
 }
 
-export async function fetchGalerie() {
+export async function fetchGalerie(): Promise<Array<{ _id: string; title: string; category: string; imageUrl: string | null; date: string | null }>> {
   return safeFetch(getGalerie, []);
 }
 
-export async function fetchProfesori() {
+export async function fetchProfesori(): Promise<Array<{ _id: string; name: string; role: string; catedra: string | null; description: string | null; imageUrl: string | null }>> {
   return safeFetch(getProfesori, []);
 }
 

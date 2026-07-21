@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/ui/Widgets";
 import { CookieBanner } from "@/components/ui/CookieBanner";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
-import { SITE_META, CONTACT } from "@/lib/constants";
+import { SITE_META } from "@/lib/constants";
 import "./globals.css";
 
 const playfair = Playfair_Display({ subsets: ["latin", "latin-ext"], variable: "--font-heading", display: "swap" });
@@ -49,6 +49,12 @@ const schoolSchema = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ro" className={`${playfair.variable} ${dmSans.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Anti-flash: aplică dark mode ÎNAINTE de primul paint */}
+        <script dangerouslySetInnerHTML={{ __html:
+          `try{var s=localStorage.getItem("ltt-dark-mode");if(s==="true"||(!s&&window.matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}`
+        }} />
+      </head>
       <body className="font-body bg-[#fafbfd] dark:bg-dark-bg text-gray-900 dark:text-dark-text antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schoolSchema) }} />
         <a href="#main-content" className="skip-link">Salt la conținut</a>

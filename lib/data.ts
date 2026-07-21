@@ -172,3 +172,18 @@ export const GALERIE_CATEGORII = [
   { slug: "erasmus", label: "Erasmus+", emoji: "🌍", desc: "Mobilități internaționale.",
     imagini: ["07_erasmus/Erasmus_Italia_1.jpg", "07_erasmus/Erasmus_Spania_1.jpg", "07_erasmus/Erasmus_grup_1.jpg"] },
 ];
+
+/* ═══ EVENIMENTE CALENDAR (fallback static) ═══ */
+export const EVENIMENTE_STATICE = [
+  { date: "2026-03-18", title: "Simulare BAC — Limba română", type: "examen", description: null },
+  { date: "2026-03-19", title: "Simulare BAC — Matematică", type: "examen", description: null },
+  { date: "2026-03-25", title: "Simulare EN — Limba română", type: "examen", description: null },
+  { date: "2026-04-04", title: "Vacanță de Paște", type: "vacanta", description: null },
+  { date: "2026-04-25", title: "Robotică — concurs național", type: "competitie", description: null },
+  { date: "2026-05-15", title: "Ziua Porților Deschise", type: "eveniment", description: "Vă așteptăm să descoperiți liceul!" },
+  { date: "2026-06-05", title: "Festivitate absolvire XII", type: "eveniment", description: null },
+  { date: "2026-06-16", title: "BAC — Limba română (proba scrisă)", type: "examen", description: null },
+  { date: "2026-06-23", title: "EN — Limba română (proba scrisă)", type: "examen", description: null },
+  { date: "2026-07-10", title: "Repartizare computerizată — Etapa I", type: "administrativ", description: null },
+  { date: "2026-09-09", title: "Primul clopoțel — deschiderea anului școlar", type: "eveniment", description: null },
+];

@@ -47,7 +47,7 @@ Din panoul din stânga ai acces la:
    - **Imagine**: opțional — click "Upload" și alege o poză de pe calculator
 4. Click **"Publish"** (butonul verde din dreapta sus)
 
-**Anunțul apare pe site în maxim 60 de secunde.**
+**Anunțul apare pe site în maxim 60 de secunde** — atât pe pagina Noutăți, cât și pe **prima pagină** (ultimele 3 anunțuri apar automat pe homepage).
 
 **Important:** Dacă nu dai "Publish", anunțul rămâne ca draft (ciornă) și NU apare pe site.
 
