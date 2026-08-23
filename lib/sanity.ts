@@ -96,7 +96,7 @@ export async function getFaq() {
 export async function getSettings() {
   return query(
     `*[_type == "siteSettings"][0] {
-      eleviCount, cadreCount, profileCount, aniExcelenta, anScolar, perioadaAdmitere
+      eleviCount, cadreCount, profileCount
     }`
   );
 }

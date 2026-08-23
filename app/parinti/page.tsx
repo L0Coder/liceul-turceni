@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { anAdmitere } from "@/lib/constants";
 import { PortalPage } from "@/components/layout/PortalPage";
 
 export const metadata: Metadata = { title: "Pentru părinți", description: "Informații pentru părinți: rezultate, examene, transparență, contact." };
@@ -11,7 +12,7 @@ const sections = [
     { icon: "🏆", label: "Olimpiade", href: "/noutati", desc: "Rezultate deosebite." },
   ]},
   { title: "Informații practice", items: [
-    { icon: "📋", label: "Admitere 2026", href: "/admitere", desc: "Documente, calendar, locuri." },
+    { icon: "📋", label: `Admitere ${anAdmitere()}`, href: "/admitere", desc: "Documente, calendar, locuri." },
     { icon: "📚", label: "Profiluri", href: "/oferta", desc: "Ce se învață la fiecare profil." },
     { icon: "🔍", label: "Compară", href: "/compara", desc: "Ajută-ți copilul să aleagă." },
     { icon: "❓", label: "FAQ", href: "/faq", desc: "Orar, burse, practică." },

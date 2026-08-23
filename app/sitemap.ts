@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://liceul-turceni.vercel.app";
+import { SITE_URL } from "@/lib/constants";
+
+const BASE = SITE_URL;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [

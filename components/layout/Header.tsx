@@ -6,7 +6,7 @@ import { Logo } from "@/components/ui/Logo";
 import { DarkModeToggle } from "@/components/ui/Widgets";
 import { NAV_ITEMS } from "@/lib/constants";
 
-export function Header() {
+export function Header({ admitere }: { admitere: number }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
@@ -61,7 +61,7 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <Link href="/admitere" className="font-body text-[13px] font-semibold text-white px-4 py-2 rounded-[10px] bg-brand-accent shadow-lg shadow-brand-accent/30 hover:-translate-y-0.5 transition-all ml-1.5">Admitere 2026</Link>
+          <Link href="/admitere" className="font-body text-[13px] font-semibold text-white px-4 py-2 rounded-[10px] bg-brand-accent shadow-lg shadow-brand-accent/30 hover:-translate-y-0.5 transition-all ml-1.5">Admitere {admitere}</Link>
           <DarkModeToggle />
         </nav>
         {/* Mobile */}
@@ -83,7 +83,7 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <Link href="/admitere" onClick={() => setMenuOpen(false)} className="font-body text-[15px] font-semibold text-white text-center px-6 py-3 rounded-[10px] bg-brand-accent mt-2">Admitere 2026</Link>
+          <Link href="/admitere" onClick={() => setMenuOpen(false)} className="font-body text-[15px] font-semibold text-white text-center px-6 py-3 rounded-[10px] bg-brand-accent mt-2">Admitere {admitere}</Link>
         </nav>
       </div>
     </header>

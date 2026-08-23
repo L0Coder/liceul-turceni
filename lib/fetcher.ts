@@ -6,6 +6,7 @@ import {
   getNoutati, getDocumente, getEvenimente, getArticole,
   getGalerie, getProfesori, getFaq, getSettings, isSanityConfigured,
 } from "./sanity";
+import { aniDeActivitate, anScolarCurent } from "./constants";
 import { NOUTATI, PARTENERIATE, TESTIMONIALE, STATS, EXAMENE, ADMITERE, TRANSPARENTA, GALERIE_CATEGORII, PROFILE, EVENIMENTE_STATICE } from "./data";
 import { FAQ_DATA, BLOG_POSTS } from "./data-extra";
 
@@ -95,11 +96,12 @@ export async function fetchFaq() {
 }
 
 export async function fetchSettings() {
-  return safeFetch(getSettings, {
+  const cms = await safeFetch(getSettings, {
     eleviCount: 1604, cadreCount: 155, profileCount: 8,
-    aniExcelenta: "44", anScolar: "2025-2026",
-    perioadaAdmitere: "Înscrierile sunt deschise!",
   });
+  // Anii de activitate și anul școlar NU se editează manual: sunt calculate
+  // din data curentă, ca să nu rămână în urmă la 1 septembrie.
+  return { ...cms, aniExcelenta: String(aniDeActivitate()), anScolar: anScolarCurent() };
 }
 
 // Re-export date statice care nu sunt în CMS (încă)

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { GlowCard } from "@/components/ui/GlowCard";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
+import { CONDUCERE, aniDeActivitate } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Despre noi",
@@ -22,7 +23,7 @@ const cifre = [
   { nr: "1604", label: "Elevi", icon: "🎓" },
   { nr: "155", label: "Cadre didactice", icon: "👩‍🏫" },
   { nr: "8", label: "Profiluri educaționale", icon: "📚" },
-  { nr: "44", label: "Ani de activitate", icon: "🏆" },
+  { nr: String(aniDeActivitate()), label: "Ani de activitate", icon: "🏆" },
 ];
 
 const niveluri = [
@@ -128,19 +129,23 @@ export default function DesprePage() {
       <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection><SectionHeader label="Conducere" title="Echipa de conducere" /></AnimatedSection>
-          <AnimatedSection delay={0.1}>
-            <GlowCard glowColor="#00e5ff">
-              <div className="flex gap-5 items-center">
-                <div className="w-20 h-20 rounded-xl bg-brand-primary/10 dark:bg-brand-primary/20 flex items-center justify-center flex-shrink-0">
-                  <span className="font-heading text-3xl font-bold text-brand-primary dark:text-brand-teal">C</span>
-                </div>
-                <div>
-                  <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-dark-text">Prof. Cornescu Doru-Ion</h3>
-                  <div className="font-body text-xs font-bold text-brand-accent tracking-wider uppercase">Director</div>
-                </div>
-              </div>
-            </GlowCard>
-          </AnimatedSection>
+          <div className="space-y-4">
+            {CONDUCERE.map((p, i) => (
+              <AnimatedSection key={p.nume} delay={0.1 + i * 0.08}>
+                <GlowCard glowColor={i === 0 ? "#00e5ff" : "#1de9b6"}>
+                  <div className="flex gap-5 items-center">
+                    <div className="w-20 h-20 rounded-xl bg-brand-primary/10 dark:bg-brand-primary/20 flex items-center justify-center flex-shrink-0">
+                      <span className="font-heading text-3xl font-bold text-brand-primary dark:text-brand-teal">{p.nume.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-dark-text">{p.titlu} {p.nume}</h3>
+                      <div className="font-body text-xs font-bold text-brand-accent tracking-wider uppercase">{p.functie}</div>
+                    </div>
+                  </div>
+                </GlowCard>
+              </AnimatedSection>
+            ))}
+          </div>
           <AnimatedSection delay={0.15}>
             <div className="mt-6 text-center">
               <a href="/profesori" className="font-body text-sm text-brand-teal hover:underline">

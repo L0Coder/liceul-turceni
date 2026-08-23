@@ -4,6 +4,7 @@ import { OfertaPreview } from "@/components/sections/OfertaPreview";
 import { StatsSection, ParteneriatePreview, NoutatiPreview, TestimonialeSection, AdmitereCTA } from "@/components/sections/HomeOtherSections";
 import { Newsletter } from "@/components/ui/Widgets";
 import { fetchNoutati, fetchSettings } from "@/lib/fetcher";
+import { anAdmitere } from "@/lib/constants";
 
 // Homepage-ul citește din CMS — anunțurile noi și statisticile actualizate
 // apar aici în maxim 60 de secunde, ca pe restul paginilor.
@@ -20,7 +21,7 @@ export default async function HomePage() {
     <ParteneriatePreview />
     <NoutatiPreview noutati={noutati} />
     <TestimonialeSection />
-    <AdmitereCTA />
+    <AdmitereCTA admitere={anAdmitere()} />
     <Newsletter />
   </>);
 }

@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { anAdmitere } from "@/lib/constants";
 import { Logo } from "@/components/ui/Logo";
 import { CONTACT, EXTERNAL_LINKS } from "@/lib/constants";
 
 const cols = [
   { title: "Navigare", links: [
     { label: "Despre noi", href: "/despre" }, { label: "Oferta educațională", href: "/oferta" },
-    { label: "Compară profiluri", href: "/compara" }, { label: "Admitere 2026", href: "/admitere" },
+    { label: "Compară profiluri", href: "/compara" }, { label: `Admitere ${anAdmitere()}`, href: "/admitere" },
     { label: "Calendar", href: "/calendar" }, { label: "Examene", href: "/examene" },
     { label: "Noutăți", href: "/noutati" },
   ]},

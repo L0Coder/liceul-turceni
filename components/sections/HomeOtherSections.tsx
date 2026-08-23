@@ -115,14 +115,14 @@ export function TestimonialeSection() {
   );
 }
 
-export function AdmitereCTA() {
+export function AdmitereCTA({ admitere }: { admitere: number }) {
   return (
     <section className="py-24 px-6 bg-[#fafbfd] dark:bg-dark-bg">
       <div className="max-w-3xl mx-auto">
         <AnimatedSection>
           <div className="rounded-3xl p-12 md:p-16 text-center relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
             <div className="relative z-10">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Admitere 2026</h2>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Admitere {admitere}</h2>
               <p className="font-body text-[17px] text-white/70 leading-relaxed max-w-lg mx-auto mb-9">Înscrierile sunt deschise. Descoperă profilurile disponibile și calendarul complet.</p>
               <div className="flex gap-5 justify-center flex-wrap">
                 <GlowButton href="/admitere" variant="primary">Înscrie-te acum</GlowButton>

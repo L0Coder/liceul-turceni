@@ -1,15 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, DM_Sans } from "next/font/google";
+
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/ui/Widgets";
 import { CookieBanner } from "@/components/ui/CookieBanner";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
-import { SITE_META } from "@/lib/constants";
+import { SITE_META, anAdmitere } from "@/lib/constants";
 import "./globals.css";
 
-const playfair = Playfair_Display({ subsets: ["latin", "latin-ext"], variable: "--font-heading", display: "swap" });
-const dmSans = DM_Sans({ subsets: ["latin", "latin-ext"], variable: "--font-body", display: "swap" });
+const playfair = { variable: "--font-heading" };
+const dmSans = { variable: "--font-body" };
 
 export const metadata: Metadata = {
   title: { default: SITE_META.title, template: `%s | ${SITE_META.title}` },
@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_META.url),
   openGraph: { title: SITE_META.title, description: SITE_META.description, url: SITE_META.url, siteName: SITE_META.title, locale: "ro_RO", type: "website" },
 };
+
+// Paginile se regenerează din oră în oră. Fără asta, valorile calculate din
+// dată (anul admiterii, anul școlar, anii de activitate) ar rămâne înghețate
+// la momentul ultimului deploy. Paginile cu CMS își păstrează propriul interval.
+export const revalidate = 3600;
 
 export const viewport: Viewport = {
   themeColor: [
@@ -58,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-body bg-[#fafbfd] dark:bg-dark-bg text-gray-900 dark:text-dark-text antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schoolSchema) }} />
         <a href="#main-content" className="skip-link">Salt la conținut</a>
-        <Header />
+        <Header admitere={anAdmitere()} />
         <main id="main-content">{children}</main>
         <Footer />
         <FloatingContact />

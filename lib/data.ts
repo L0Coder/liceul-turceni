@@ -1,3 +1,4 @@
+import { aniDeActivitate } from "./constants";
 /* ═══ PROFILE EDUCAȚIONALE ═══ */
 export interface Profil {
   slug: string; icon: string; title: string; shortDesc: string; fullDesc: string;
@@ -69,7 +70,7 @@ export const STATS = [
   { number: "1604", label: "Elevi înscriși", icon: "🎓", glowColor: "#00e5ff" },
   { number: "155", label: "Cadre didactice", icon: "👩‍🏫", glowColor: "#76ff03" },
   { number: "8", label: "Profiluri educaționale", icon: "📚", glowColor: "#00b0ff" },
-  { number: "44", label: "Ani de excelență", icon: "🏆", glowColor: "#ffd600" },
+  { number: String(aniDeActivitate()), label: "Ani de excelență", icon: "🏆", glowColor: "#ffd600" },
 ];
 
 /* ═══ NOUTĂȚI ═══ */

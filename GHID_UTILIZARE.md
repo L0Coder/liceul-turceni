@@ -164,7 +164,9 @@ Profesorii cu funcția "Director" sau "Director adjunct" apar în secțiunea de 
 ## 9. Cum actualizez datele anuale?
 
 La începutul fiecărui an școlar:
-1. **"Setări site"** → actualizează: Număr elevi, Număr cadre, An școlar curent, Perioada admitere
+1. **"Setări site"** → actualizează: Număr elevi, Număr cadre, Număr profiluri, Perioada admitere
+
+**Nu mai trebuie completate manual:** anul școlar, anul admiterii și numărul de ani de activitate se calculează automat din data curentă și se actualizeaza singure la 1 septembrie.
 2. Click **"Publish"**
 
 ---

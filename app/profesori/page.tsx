@@ -3,15 +3,20 @@ import type { Metadata } from "next";
 import { GlowCard } from "@/components/ui/GlowCard";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
 import { fetchProfesori } from "@/lib/fetcher";
+import { CONDUCERE } from "@/lib/constants";
 
 export const metadata: Metadata = { title: "Profesori", description: "Echipa didactică LTT." };
 export const revalidate = 60;
 
 // Fallback static dacă CMS-ul e gol
-const staticConducere = [
-  { _id: "d1", name: "Prof. Cornescu Doru-Ion", role: "director", catedra: null, imageUrl: null },
-  { _id: "d2", name: "Director adjunct", role: "director-adjunct", catedra: null, imageUrl: null },
-];
+const staticConducere = CONDUCERE.map((p, i) => ({
+  _id: `cond-${i}`,
+  name: `${p.titlu} ${p.nume}`,
+  role: p.functie === "Director" ? "director" : "director-adjunct",
+  catedra: null,
+  imageUrl: null,
+  description: null,
+}));
 
 const staticCatedre = [
   { name: "Matematică și Informatică", count: 3 },
@@ -38,7 +43,8 @@ const catedraLabels: Record<string, string> = {
 
 export default async function ProfesoriPage() {
   const profesori = await fetchProfesori();
-  const hasCmsData = profesori.length > 0 && profesori[0]._id !== "d1";
+  // fetchProfesori întoarce [] când CMS-ul e gol, deci lungimea decide singură.
+  const hasCmsData = profesori.length > 0;
 
   // Separate conducere from teachers
   const conducere = hasCmsData

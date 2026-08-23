@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_URL } from "@/lib/constants";
 
 interface Crumb {
   label: string;
@@ -16,7 +17,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
       "@type": "ListItem",
       position: i + 1,
       name: c.label,
-      ...(c.href ? { item: `https://liceul-turceni.vercel.app${c.href}` } : {}),
+      ...(c.href ? { item: `${SITE_URL}${c.href}` } : {}),
     })),
   };
 

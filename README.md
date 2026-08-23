@@ -196,6 +196,20 @@ Homepage-ul afișează automat (revalidare 60s):
 
 ---
 
+## Conectarea domeniului liceulturceni.ro
+
+Adresa site-ului e definită într-un singur loc (`SITE_URL` din `lib/constants.ts`) si
+alimenteaza sitemap-ul, robots.txt, breadcrumbs, OpenGraph si Schema.org. Toate trebuie
+sa indice acelasi domeniu, altfel Google si retelele sociale primesc semnale
+contradictorii, iar imaginea de partajare apare rupta.
+
+La mutarea pe domeniul propriu **nu se modifica niciun fisier**:
+
+1. Vercel → Settings → Domains → adauga `liceulturceni.ro` si `www.liceulturceni.ro`
+2. Vercel → Settings → Environment Variables → adauga:
+   `NEXT_PUBLIC_SITE_URL` = `https://www.liceulturceni.ro`
+3. Redeploy
+
 ## Deploy și actualizare
 
 **Conținut (noutăți, PDF-uri, poze, FAQ):** Secretariatul publică din `/studio` → apare pe site în 60 secunde. Fără git, fără redeploy.
@@ -243,11 +257,13 @@ Vercel redeploy automat în 1-2 minute.
 
 - **Înființat:** 1 septembrie 1982
 - **Elevi:** 1604 | **Cadre didactice:** 155
-- **Director:** Prof. Cornescu Doru-Ion
+- **Director:** Prof. Manolache Mihai
+- **Directori adjuncți:** Prof. Bîcleșeanu Marin, Prof. înv. primar Bivolaru Elena-Cristina
 - **Adresa:** Str. Educației nr. 1, Turceni 217520, Gorj
 - **Telefon:** 0253-335012 | **Email:** licturceni@yahoo.com
 - **Evaluare Națională 2025:** media 7.20
 - **Rezultate BAC:** consultați [bacplus.ro](https://www.bacplus.ro/i/liceul-tehnologic-turceni)
+- **Conducere:** vezi `lib/constants.ts` (sursă unică, se propagă în Despre/Profesori/Contact)
 - **Modernizare 2025:** dotare PNRR — mobilier, laptopuri, table interactive, echipamente digitale (2.163.924 lei)
 
 ---
