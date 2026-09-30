@@ -16,7 +16,7 @@ export default function OGImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)",
+          background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)",
           fontFamily: "sans-serif",
         }}
       >
@@ -37,7 +37,7 @@ export default function OGImage() {
           Turceni
         </div>
         <div style={{ fontSize: 26, color: "rgba(255,255,255,0.75)", marginTop: 28 }}>
-          8 profiluri educaționale · 1604 elevi · din 1982
+          8 profiluri educaționale · județul Gorj · din 1982
         </div>
       </div>
     ),

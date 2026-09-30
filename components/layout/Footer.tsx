@@ -30,12 +30,12 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-4"><Logo white /></div>
             <h3 className="font-heading text-[15px] font-bold text-white mb-1">Liceul Tehnologic Turceni</h3>
-            <p className="font-body text-sm text-white/50 leading-relaxed">{CONTACT.adresa}<br />Tel: {CONTACT.telefon}<br />{CONTACT.email}</p>
+            <p className="font-body text-sm text-white/65 leading-relaxed">{CONTACT.adresa}<br />Tel: {CONTACT.telefon}<br />{CONTACT.email}</p>
           </div>
           {cols.map(c => (
             <div key={c.title}>
-              <h4 className="font-body text-[13px] font-bold text-white/40 tracking-wider uppercase mb-5">{c.title}</h4>
-              {c.links.map(l => <Link key={l.label} href={l.href} className="block font-body text-sm text-white/60 py-1.5 hover:text-white transition-colors">{l.label}</Link>)}
+              <h4 className="font-body text-[13px] font-bold text-white/65 tracking-wider uppercase mb-5">{c.title}</h4>
+              {c.links.map(l => <Link key={l.label} href={l.href} className="block font-body text-sm text-white/65 py-1.5 hover:text-white transition-colors">{l.label}</Link>)}
             </div>
           ))}
         </div>
@@ -47,7 +47,7 @@ export function Footer() {
             { label: "ARACIP", href: "https://aracip.eu" },
             { label: "BacPlus.ro", href: "https://www.bacplus.ro/i/liceul-tehnologic-turceni" },
           ].map(l => (
-            <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" className="font-body text-xs text-white/30 hover:text-white/60 transition-colors">{l.label} ↗</a>
+            <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" className="font-body text-xs text-white/65 hover:text-white/65 transition-colors">{l.label} ↗</a>
           ))}
         </div>
         {/* Legal links */}
@@ -57,12 +57,12 @@ export function Footer() {
             { label: "Politica de cookies", href: "/cookies" },
             { label: "Declarație de accesibilitate", href: "/accesibilitate" },
           ].map(l => (
-            <Link key={l.href} href={l.href} className="font-body text-xs text-white/40 hover:text-white/70 transition-colors">{l.label}</Link>
+            <Link key={l.href} href={l.href} className="font-body text-xs text-white/65 hover:text-white/70 transition-colors">{l.label}</Link>
           ))}
         </div>
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <div className="font-body text-[13px] text-white/35">© 2026 Liceul Tehnologic Turceni. Toate drepturile rezervate.</div>
-          <div className="font-body text-xs text-white/25">Construit cu dedicare pentru comunitatea din Turceni</div>
+          <div className="font-body text-[13px] text-white/65">© {new Date().getFullYear()} Liceul Tehnologic Turceni. Toate drepturile rezervate.</div>
+          <div className="font-body text-xs text-white/65">Construit cu dedicare pentru comunitatea din Turceni</div>
         </div>
       </div>
     </footer>

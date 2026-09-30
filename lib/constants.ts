@@ -81,8 +81,13 @@ export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://liceul-turceni.vercel.app"
 ).replace(/\/+$/, "");
 
+/** Site-ul se lasă indexat de Google DOAR după ce NEXT_PUBLIC_SITE_URL e setat
+    (adică după mutarea pe domeniul propriu). Până atunci, copia de pe vercel.app
+    — cu conținut demonstrativ — nu trebuie să apară în căutări sub numele liceului. */
+export const IS_PRODUCTION_DOMAIN = Boolean(process.env.NEXT_PUBLIC_SITE_URL);
+
 export const SITE_META = {
   title: "Liceul Tehnologic Turceni",
-  description: "Liceul Tehnologic Turceni — 8 profiluri educaționale, 1604 elevi, 155 cadre didactice. Formăm profesioniștii de mâine în județul Gorj.",
+  description: "Liceul Tehnologic Turceni, județul Gorj — liceu teoretic, tehnologic și școală profesională, 8 profiluri educaționale. Din 1982 formăm profesioniștii de mâine.",
   url: SITE_URL,
 } as const;

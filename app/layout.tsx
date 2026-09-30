@@ -1,20 +1,23 @@
 import type { Metadata, Viewport } from "next";
-
+import { Big_Shoulders_Display, DM_Sans } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/ui/Widgets";
 import { CookieBanner } from "@/components/ui/CookieBanner";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
-import { SITE_META, anAdmitere } from "@/lib/constants";
+import { SITE_META, anAdmitere, IS_PRODUCTION_DOMAIN } from "@/lib/constants";
 import "./globals.css";
 
-const playfair = { variable: "--font-heading" };
-const dmSans = { variable: "--font-body" };
+// Titluri: font condensat industrial (orașul s-a construit în jurul termocentralei).
+// Ambele cu latin-ext, pentru diacriticele românești.
+const playfair = Big_Shoulders_Display({ subsets: ["latin", "latin-ext"], variable: "--font-heading", display: "swap" });
+const dmSans = DM_Sans({ subsets: ["latin", "latin-ext"], variable: "--font-body", display: "swap" });
 
 export const metadata: Metadata = {
   title: { default: SITE_META.title, template: `%s | ${SITE_META.title}` },
   description: SITE_META.description,
   metadataBase: new URL(SITE_META.url),
+  robots: IS_PRODUCTION_DOMAIN ? { index: true, follow: true } : { index: false, follow: false },
   openGraph: { title: SITE_META.title, description: SITE_META.description, url: SITE_META.url, siteName: SITE_META.title, locale: "ro_RO", type: "website" },
 };
 

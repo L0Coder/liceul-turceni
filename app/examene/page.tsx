@@ -24,7 +24,7 @@ export default function ExamenePage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Examene" }]} />
-      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
+      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Examene</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Calendare, rezultate, resurse.</p>
       </section>
@@ -52,7 +52,7 @@ export default function ExamenePage() {
               {resurse.map((r, i) => (
                 <a key={i} href={r.href} target="_blank" rel="noopener noreferrer"
                   className="block p-5 bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-dark-border hover:border-brand-teal/50 hover:translate-x-1 transition-all">
-                  <div className="font-body text-sm font-semibold text-brand-primary dark:text-brand-teal mb-1">{r.label} <span className="text-gray-400">&#8599;</span></div>
+                  <div className="font-body text-sm font-semibold text-brand-primary dark:text-brand-teal mb-1">{r.label} <span className="text-gray-500">&#8599;</span></div>
                   <div className="font-body text-xs text-gray-500 dark:text-dark-muted">{r.desc}</div>
                 </a>
               ))}

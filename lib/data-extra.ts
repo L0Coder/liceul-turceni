@@ -3,7 +3,7 @@ export interface FAQItem { question: string; answer: string; category: "admitere
 
 export const FAQ_DATA: FAQItem[] = [
   { category: "admitere", question: "Când încep înscrierile pentru admitere?", answer: "Înscrierile se fac conform calendarului MEN, de regulă în iulie. Ziua Porților Deschise: mai. Urmăriți pagina Admitere." },
-  { category: "admitere", question: "Ce documente sunt necesare?", answer: "Cerere, certificat naștere (copie legalizată), foaie matricolă V-VIII, fișa medicală, CI copie, adeverință absolvire, 2 poze." },
+  { category: "admitere", question: "Ce documente sunt necesare?", answer: "Cerere, certificat de naștere (copie certificată conform cu originalul la secretariat; nu e nevoie de copie legalizată), foaie matricolă V-VIII, fișa medicală, CI copie, adeverință absolvire, 2 poze." },
   { category: "admitere", question: "Câte locuri sunt pe profil?", answer: "28 locuri/clasă. Numărul de clase variază anual (plan ISJ Gorj)." },
   { category: "admitere", question: "Există burse?", answer: "Da: burse de merit și burse sociale. Detalii la secretariat." },
   { category: "scoala", question: "Ce orar au elevii?", answer: "Două schimburi: dimineața (8:00-14:00) și după-amiaza (14:00-20:00)." },

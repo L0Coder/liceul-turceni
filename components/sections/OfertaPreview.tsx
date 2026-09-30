@@ -18,7 +18,7 @@ export function OfertaPreview() {
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style={{ background: p.color + "15" }}>{p.icon}</div>
                   <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-dark-text mb-2.5 leading-snug">{p.title}</h3>
                   <p className="font-body text-sm text-gray-500 dark:text-dark-muted leading-relaxed">{p.shortDesc}</p>
-                  <div className="mt-5 font-body text-[13px] font-semibold flex items-center gap-1.5" style={{ color: p.color }}>Află mai multe →</div>
+                  <div className="mt-5 font-body text-[13px] font-semibold flex items-center gap-1.5 text-brand-primary dark:text-brand-teal">Află mai multe →</div>
                 </GlowCard>
               </Link>
             </AnimatedSection>

@@ -14,7 +14,7 @@ export function GlowCard({ children, glowColor = "#00e5ff", dark = false, classN
       <div className={`glow-spin-slow absolute top-1/2 left-1/2 w-[250%] pb-[250%] pointer-events-none blur-[16px] transition-opacity duration-500 ${h ? "opacity-70" : "opacity-0"}`}
         style={{ background: `conic-gradient(from 0deg, transparent 0%, ${glowColor}55 6%, transparent 18%, transparent 48%, ${glowColor}44 54%, transparent 66%)` }} />
       {/* Inner card */}
-      <div className={`relative z-10 m-[2px] rounded-2xl p-7 transition-shadow duration-[400ms] ${dark ? "bg-brand-primary-dark/85 dark:bg-dark-card" : "bg-white dark:bg-dark-card"} ${h ? "shadow-xl" : "shadow-sm"}`}>
+      <div className={`relative z-10 m-[2px] h-[calc(100%-4px)] rounded-2xl p-7 transition-shadow duration-[400ms] ${dark ? "bg-brand-primary-dark/85 dark:bg-dark-card" : "bg-white dark:bg-dark-card"} ${h ? "shadow-xl" : "shadow-sm"}`}>
         {children}
       </div>
       {/* Static border */}

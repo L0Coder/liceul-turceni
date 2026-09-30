@@ -11,7 +11,7 @@ export default function AccesibilitatePage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Accesibilitate" }]} />
-      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
+      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Declarație de accesibilitate</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Conform HG 780/2022</p>
       </section>
@@ -37,7 +37,7 @@ export default function AccesibilitatePage() {
                   {[
                     "Navigare cu tastatura — toate elementele interactive sunt accesibile prin Tab",
                     "Link 'Salt la conținut' (skip-to-content) — permite navigarea rapidă la conținutul principal",
-                    "Contrast de culoare — text lizibil pe toate fundalurile, în ambele moduri (light/dark)",
+                    "Contrast de culoare — verificat automat cu axe-core pe paginile principale, în ambele moduri (light/dark): textul respectă raportul minim WCAG 2.1 AA de 4,5:1",
                     "Atribute aria — butoane, meniuri și elemente interactive au etichete descriptive",
                     "Focus vizibil — indicatori vizuali clari pentru elementul activ",
                     "Text redimensionabil — conținutul se adaptează la mărirea textului în browser",
@@ -86,8 +86,8 @@ export default function AccesibilitatePage() {
                 </p>
               </div>
 
-              <p className="font-body text-xs text-gray-400 dark:text-dark-subtle text-center">
-                Această declarație a fost întocmită la data de martie 2026.
+              <p className="font-body text-xs text-gray-500 dark:text-dark-subtle text-center">
+                Această declarație a fost întocmită în martie 2026 și revizuită în septembrie 2026.
               </p>
             </div>
           </AnimatedSection>

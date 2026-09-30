@@ -3,7 +3,7 @@ import { Logo } from "@/components/ui/Logo";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
+    <div className="min-h-screen flex items-center justify-center px-6" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
       <div className="text-center max-w-md">
         <Logo white className="mx-auto mb-8" />
         <div className="font-heading text-8xl font-bold text-white/20 mb-4">404</div>

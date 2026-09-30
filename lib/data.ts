@@ -1,4 +1,4 @@
-import { aniDeActivitate } from "./constants";
+import { aniDeActivitate, anAdmitere } from "./constants";
 /* ═══ PROFILE EDUCAȚIONALE ═══ */
 export interface Profil {
   slug: string; icon: string; title: string; shortDesc: string; fullDesc: string;
@@ -77,28 +77,15 @@ export const STATS = [
 export interface Noutate { slug: string; date: string; category: string; title: string; excerpt: string; content: string; image?: string; glowColor: string; }
 
 export const NOUTATI: Noutate[] = [
-  { slug: "inscrieri-2026-2027", date: "15 Martie 2026", category: "Admitere", title: "Înscrierile pentru anul școlar 2026-2027 sunt deschise",
-    excerpt: "Depuneți dosarele la secretariat între orele 8:00-16:00.",
-    content: "Înscrierile pentru anul școlar 2026-2027 sunt deschise. Depuneți dosarele la secretariatul liceului, Str. Educației nr. 1, între orele 8:00-16:00. Lista documentelor este disponibilă pe pagina de Admitere.",
-    image: "10_hero/Hero_admitere_1.jpg", glowColor: "#00e5ff" },
-  { slug: "robotica-concursuri", date: "10 Martie 2026", category: "Eveniment", title: "Clubul de Robotică — rezultate importante la concursurile naționale",
-    excerpt: "Echipa LTT Robotics a obținut rezultate remarcabile la competițiile de robotică.",
-    content: "Echipa LTT Robotics a participat la competițiile regionale și naționale de robotică, obținând locuri fruntașe. Elevii lucrează cu kituri Arduino, Raspberry Pi și imprimantă 3D în laboratorul dedicat.",
-    image: "04_club_robotica/Club_robotica_3.jpg", glowColor: "#76ff03" },
-  { slug: "simulari-bac-2026", date: "28 Februarie 2026", category: "Examen", title: "Calendarul simulărilor pentru BAC 2026",
-    excerpt: "Simulările pentru Bacalaureat încep pe 18 martie.",
-    content: "Simulările BAC 2026: 18 martie — Limba română, 19 martie — Matematică/Istorie, 20 martie — Proba profil, 21 martie — Competențe digitale.", glowColor: "#ff9100" },
-  { slug: "erasmus-green-energy", date: "15 Februarie 2026", category: "Proiect", title: "Proiect Erasmus+ aprobat: 'Green Energy Schools'",
-    excerpt: "Finanțare pentru un proiect de 2 ani focusat pe energie verde.",
-    content: "Finanțare Erasmus+ pentru proiectul 'Green Energy Schools', 2 ani, mobilități în Italia și Spania pentru 20 elevi și 8 profesori.",
-    image: "07_erasmus/Erasmus_activitate_1.jpg", glowColor: "#1de9b6" },
-  { slug: "olimpiada-info", date: "1 Februarie 2026", category: "Olimpiadă", title: "3 elevi calificați la faza județeană — Informatică",
-    excerpt: "Mihai P., Ana R. și Vlad C. s-au calificat cu rezultate remarcabile.",
-    content: "Trei elevi s-au calificat la faza județeană a Olimpiadei de Informatică 2026. Le urăm succes!", glowColor: "#d500f9" },
-  { slug: "ziua-portilor-deschise", date: "20 Ianuarie 2026", category: "Activitate", title: "Ziua Porților Deschise — 25 ianuarie 2026",
-    excerpt: "Invităm elevii de clasa a VIII-a și părinții lor.",
-    content: "Ziua Porților Deschise: 25 ianuarie, 9:00-14:00. Prezentări, tur ghidat, demonstrații robotică.",
-    image: "06_evenimente/Porti_deschise_1.jpg", glowColor: "#00b0ff" },
+  { slug: "an-scolar-2026-2027", date: "7 Septembrie 2026", category: "Eveniment", title: "A început anul școlar 2026-2027",
+    excerpt: "Cursurile au început luni, 7 septembrie 2026. Anul școlar are 36 de săptămâni, organizate în 5 module.",
+    content: "Anul școlar 2026-2027 a început luni, 7 septembrie 2026, și are 36 de săptămâni de cursuri, organizate în 5 module separate de vacanțe. Cursurile se încheie pe 4 iunie 2027 pentru clasa a XII-a, pe 11 iunie 2027 pentru clasa a VIII-a, pe 18 iunie 2027 pentru majoritatea claselor și pe 25 iunie 2027 pentru clasele de la filiera tehnologică, cu excepțiile prevăzute în ordin. Sursa: Ordinul ministrului educației nr. 3194/2026.", glowColor: "#00e5ff" },
+  { slug: "bac-2027-calendar", date: "7 Septembrie 2026", category: "Examen", title: "Calendarul Bacalaureatului 2027",
+    excerpt: "Probele de competențe în aprilie, probele scrise între 14 și 18 iunie 2027.",
+    content: "Calendarul bacalaureatului 2027 a fost aprobat prin Ordinul nr. 5211/2026, publicat în Monitorul Oficial nr. 758 din 7 septembrie 2026. Probele de competențe: 12 - 23 aprilie 2027 (înscriere 5 - 9 aprilie). Probele scrise: 14 iunie - limba și literatura română; 15 iunie - proba obligatorie a profilului; 17 iunie - proba la alegere a profilului și specializării; 18 iunie - limba și literatura maternă. Rezultate inițiale: 23 iunie 2027.", glowColor: "#ff9100" },
+  { slug: "vacante-2026-2027", date: "16 Februarie 2026", category: "Calendar", title: "Vacanțele anului școlar 2026-2027",
+    excerpt: "Toamnă, iarnă, februarie, primăvară și vară - datele oficiale.",
+    content: "Vacanța de toamnă: 24 octombrie - 1 noiembrie 2026. Vacanța de iarnă: 23 decembrie 2026 - 10 ianuarie 2027. Vacanța din februarie: o săptămână între 15 februarie și 7 martie 2027, stabilită de Inspectoratul Școlar Județean Gorj. Vacanța de primăvară: 24 aprilie - 4 mai 2027. Vacanța de vară: 19 iunie - 5 septembrie 2027. Sursa: Ordinul nr. 3194/2026, Monitorul Oficial nr. 126 din 16 februarie 2026.", glowColor: "#1de9b6" },
 ];
 
 /* ═══ PARTENERIATE ═══ */
@@ -119,22 +106,25 @@ export const TESTIMONIALE = [
 
 /* ═══ EXAMENE ═══ */
 export const EXAMENE = {
-  bac: { title: "Bacalaureat 2026", items: ["Simulare: 18-21 martie", "Examen: 16-19 iunie", "Rezultate: 26 iunie", "Contestații: 27-28 iunie", "Finale: 1 iulie"] },
-  evaluare: { title: "Evaluare Națională 2026", items: ["Simulare: 25-27 martie", "Limba română: 23 iunie", "Matematică: 25 iunie", "Limba maternă: 27 iunie", "Rezultate: 2 iulie"] },
-  rezultate: { title: "Rezultate recente", items: ["Evaluare Națională 2025: media 7.20", "3 elevi faza județeană Informatică", "2 elevi faza județeană Chimie", "Locuri fruntașe la concursuri naționale de robotică", "Rezultate BAC complete: bacplus.ro"] },
+  bac: { title: "Bacalaureat 2027", items: ["Simulare: 22-25 martie 2027", "Competențe: 12-23 aprilie 2027", "Probe scrise: 14-18 iunie 2027", "Rezultate inițiale: 23 iunie 2027", "Sursa: OM 5211/2026 (MO nr. 758/07.09.2026)"] },
+  evaluare: { title: "Evaluare Națională 2027", items: ["Limba română: 22 iunie 2027", "Matematică: 24 iunie 2027", "Limba maternă: 25 iunie 2027", "Simulare: 16-18 martie 2027", "Date din proiectul de ordin - forma finală se aprobă prin ordin de ministru"] },
+  rezultate: { title: "Rezultate recente", items: ["Evaluare Națională 2025: media 7.20", "Locuri fruntașe la concursuri naționale de robotică", "Rezultate BAC complete: bacplus.ro"] },
 };
 
 /* ═══ ADMITERE ═══ */
 export const ADMITERE = {
-  documente: ["Cerere de înscriere (de la secretariat)", "Certificat de naștere — copie legalizată", "Foaie matricolă V-VIII — original", "Fișa medicală — original", "Carte de identitate — copie", "Adeverință absolvire cls. VIII", "2 fotografii tip buletin"],
-  calendar: [
-    { data: "Mai 2026", eveniment: "Ziua Porților Deschise" },
-    { data: "Iunie 2026", eveniment: "Evaluare Națională" },
-    { data: "Iulie 2026", eveniment: "Repartizare Etapa I" },
-    { data: "August 2026", eveniment: "Repartizare Etapa II" },
-    { data: "Septembrie 2026", eveniment: "Înmatriculare" },
-  ],
+  documente: ["Cerere de înscriere (de la secretariat)", "Certificat de naștere — copie (certificată conform cu originalul la secretariat)", "Foaie matricolă V-VIII — original", "Fișa medicală — original", "Carte de identitate — copie", "Adeverință absolvire cls. VIII", "2 fotografii tip buletin"],
 };
+
+/** Calendar orientativ al admiterii; anul se calculează la randare. */
+export function calendarAdmitere(an: number = anAdmitere()) {
+  return [
+    { data: `Iunie ${an}`, eveniment: "Evaluare Națională" },
+    { data: `Iulie ${an}`, eveniment: "Repartizare computerizată - etapa I" },
+    { data: `Iulie - August ${an}`, eveniment: "Etapa a II-a de admitere" },
+    { data: `Septembrie ${an}`, eveniment: "Începerea cursurilor" },
+  ];
+}
 
 /* ═══ TRANSPARENȚĂ ═══ */
 export const TRANSPARENTA = [
@@ -176,15 +166,17 @@ export const GALERIE_CATEGORII = [
 
 /* ═══ EVENIMENTE CALENDAR (fallback static) ═══ */
 export const EVENIMENTE_STATICE = [
-  { date: "2026-03-18", title: "Simulare BAC — Limba română", type: "examen", description: null },
-  { date: "2026-03-19", title: "Simulare BAC — Matematică", type: "examen", description: null },
-  { date: "2026-03-25", title: "Simulare EN — Limba română", type: "examen", description: null },
-  { date: "2026-04-04", title: "Vacanță de Paște", type: "vacanta", description: null },
-  { date: "2026-04-25", title: "Robotică — concurs național", type: "competitie", description: null },
-  { date: "2026-05-15", title: "Ziua Porților Deschise", type: "eveniment", description: "Vă așteptăm să descoperiți liceul!" },
-  { date: "2026-06-05", title: "Festivitate absolvire XII", type: "eveniment", description: null },
-  { date: "2026-06-16", title: "BAC — Limba română (proba scrisă)", type: "examen", description: null },
-  { date: "2026-06-23", title: "EN — Limba română (proba scrisă)", type: "examen", description: null },
-  { date: "2026-07-10", title: "Repartizare computerizată — Etapa I", type: "administrativ", description: null },
-  { date: "2026-09-09", title: "Primul clopoțel — deschiderea anului școlar", type: "eveniment", description: null },
+  { date: "2026-09-07", title: "Începutul anului școlar 2026-2027", type: "eveniment", description: "Prima zi de cursuri (OM 3194/2026)." },
+  { date: "2026-10-24", title: "Vacanța de toamnă", type: "vacanta", description: "24 octombrie - 1 noiembrie 2026." },
+  { date: "2026-11-02", title: "Reluarea cursurilor - modulul 2", type: "eveniment", description: null },
+  { date: "2026-12-23", title: "Vacanța de iarnă", type: "vacanta", description: "23 decembrie 2026 - 10 ianuarie 2027." },
+  { date: "2027-01-11", title: "Reluarea cursurilor - modulul 3", type: "eveniment", description: null },
+  { date: "2027-02-22", title: "Vacanța din februarie (Gorj)", type: "vacanta", description: "22 - 28 februarie 2027, conform grupării publicate. De verificat decizia ISJ Gorj." },
+  { date: "2027-03-22", title: "Simulare Bacalaureat 2027", type: "examen", description: "22 - 25 martie 2027." },
+  { date: "2027-04-12", title: "Bacalaureat 2027 - probele de competențe", type: "examen", description: "12 - 23 aprilie 2027." },
+  { date: "2027-04-24", title: "Vacanța de primăvară", type: "vacanta", description: "24 aprilie - 4 mai 2027." },
+  { date: "2027-06-04", title: "Ultima zi de cursuri - clasa a XII-a", type: "administrativ", description: null },
+  { date: "2027-06-14", title: "Bacalaureat 2027 - probele scrise", type: "examen", description: "14 - 18 iunie 2027." },
+  { date: "2027-06-18", title: "Încheierea cursurilor", type: "administrativ", description: "Pentru majoritatea claselor. Filiera tehnologică: 25 iunie 2027, cu excepțiile din ordin." },
+  { date: "2027-06-22", title: "Evaluare Națională 2027", type: "examen", description: "22 - 25 iunie 2027, conform proiectului de calendar." },
 ];

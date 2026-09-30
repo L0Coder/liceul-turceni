@@ -48,7 +48,7 @@ export function FaqClient({ data }: { data: FaqItem[] }) {
         ))}
       </div>
       {filtered.length === 0 && (
-        <p className="text-center font-body text-gray-400 dark:text-dark-subtle py-8">Nicio întrebare în această categorie.</p>
+        <p className="text-center font-body text-gray-500 dark:text-dark-subtle py-8">Nicio întrebare în această categorie.</p>
       )}
     </div>
   );

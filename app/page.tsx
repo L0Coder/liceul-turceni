@@ -14,7 +14,7 @@ export default async function HomePage() {
   const [noutati, settings] = await Promise.all([fetchNoutati(), fetchSettings()]);
 
   return (<>
-    <Hero />
+    <Hero profileCount={settings.profileCount} admitere={anAdmitere()} />
     <QuickAccess />
     <OfertaPreview />
     <StatsSection settings={settings} />

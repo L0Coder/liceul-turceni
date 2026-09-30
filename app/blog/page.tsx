@@ -13,7 +13,7 @@ export default async function BlogPage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Blog" }]} />
-      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
+      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Jurnal LTT</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Povești scrise de elevii și profesorii noștri.</p>
       </section>
@@ -30,7 +30,7 @@ export default async function BlogPage() {
                   )}
                   <div className="flex items-center gap-3 mb-4">
                     <span className="font-body text-[11px] font-bold text-brand-teal bg-brand-teal/10 px-2.5 py-1 rounded-md uppercase">{post.category}</span>
-                    <span className="font-body text-xs text-gray-400 dark:text-dark-subtle">{post.date}</span>
+                    <span className="font-body text-xs text-gray-500 dark:text-dark-subtle">{post.date}</span>
                   </div>
                   <h2 className="font-heading text-2xl font-bold text-gray-900 dark:text-dark-text mb-3">{post.title}</h2>
                   <div className="flex items-center gap-2 mb-5">
@@ -39,7 +39,7 @@ export default async function BlogPage() {
                     </div>
                     <div>
                       <div className="font-body text-sm font-semibold text-gray-900 dark:text-dark-text">{post.author}</div>
-                      <div className="font-body text-xs text-gray-400 dark:text-dark-subtle">{post.authorRole}</div>
+                      <div className="font-body text-xs text-gray-500 dark:text-dark-subtle">{post.authorRole}</div>
                     </div>
                   </div>
                   {post.content?.split("\n\n").map((p: string, j: number) => (

@@ -9,7 +9,7 @@ interface Props { emoji: string; title: string; subtitle: string; sections: Port
 export function PortalPage({ emoji, title, subtitle, sections, glowColor = "#00e5ff" }: Props) {
   return (
     <div className="pt-28">
-      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
+      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
         <div className="text-5xl mb-4">{emoji}</div>
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">{title}</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto">{subtitle}</p>
@@ -27,7 +27,7 @@ export function PortalPage({ emoji, title, subtitle, sections, glowColor = "#00e
                         <div className="flex gap-4">
                           <div className="text-3xl flex-shrink-0">{item.icon}</div>
                           <div>
-                            <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-dark-text mb-1">{item.label} <span className="text-sm text-gray-400">↗</span></h3>
+                            <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-dark-text mb-1">{item.label} <span className="text-sm text-gray-500">↗</span></h3>
                             <p className="font-body text-sm text-gray-500 dark:text-dark-muted leading-relaxed">{item.desc}</p>
                           </div>
                         </div>

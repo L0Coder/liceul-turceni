@@ -15,7 +15,7 @@ export function StatsSection({ settings }: { settings: Settings }) {
     { number: settings.aniExcelenta, label: "Ani de excelență", icon: "🏆", glowColor: "#ffd600" },
   ];
   return (
-    <section className="py-20 px-6 relative" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
+    <section className="py-20 px-6 relative" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
       <div className="max-w-7xl mx-auto relative z-10">
         <AnimatedSection><SectionHeader label="Rezultate" title="Cifrele care ne definesc" light /></AnimatedSection>
         <AnimatedSection>
@@ -70,7 +70,7 @@ export function NoutatiPreview({ noutati }: { noutati: NoutateItem[] }) {
                 <GlowCard glowColor={NOUTATI_COLORS[i % 3]} className="h-full">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="font-body text-[11px] font-bold text-brand-accent bg-brand-accent/10 px-2.5 py-1 rounded-md uppercase">{n.category}</span>
-                    <span className="font-body text-xs text-gray-400 dark:text-dark-subtle">{n.date}</span>
+                    <span className="font-body text-xs text-gray-500 dark:text-dark-subtle">{n.date}</span>
                   </div>
                   <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-dark-text mb-2.5 leading-snug">{n.title}</h3>
                   <p className="font-body text-sm text-gray-500 dark:text-dark-muted">{n.excerpt}</p>
@@ -120,12 +120,12 @@ export function AdmitereCTA({ admitere }: { admitere: number }) {
     <section className="py-24 px-6 bg-[#fafbfd] dark:bg-dark-bg">
       <div className="max-w-3xl mx-auto">
         <AnimatedSection>
-          <div className="rounded-3xl p-12 md:p-16 text-center relative overflow-hidden" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
+          <div className="rounded-3xl p-12 md:p-16 text-center relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
             <div className="relative z-10">
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Admitere {admitere}</h2>
-              <p className="font-body text-[17px] text-white/70 leading-relaxed max-w-lg mx-auto mb-9">Înscrierile sunt deschise. Descoperă profilurile disponibile și calendarul complet.</p>
+              <p className="font-body text-[17px] text-white/70 leading-relaxed max-w-lg mx-auto mb-9">Descoperă profilurile, documentele necesare și calendarul admiterii.</p>
               <div className="flex gap-5 justify-center flex-wrap">
-                <GlowButton href="/admitere" variant="primary">Înscrie-te acum</GlowButton>
+                <GlowButton href="/admitere" variant="primary">Află cum te înscrii</GlowButton>
                 <GlowButton href="/oferta" variant="secondary">Vezi profilurile</GlowButton>
               </div>
             </div>

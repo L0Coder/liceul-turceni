@@ -49,3 +49,20 @@ body { overflow-x: hidden; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Aburul din turnurile termocentralei — singura animație permanentă de pe homepage */
+.ltt-steam { transform-box: fill-box; transform-origin: center; opacity: 0; animation: ltt-steam 7s ease-out infinite; }
+@keyframes ltt-steam {
+  0%   { transform: translateY(0) scale(0.6); opacity: 0; }
+  20%  { opacity: 0.3; }
+  100% { transform: translateY(-120px) scale(2.3); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .ltt-steam { animation: none; opacity: 0.35; } }
+
+/* Titlurile folosesc un font condensat industrial; la greutate mare rămâne lizibil și la dimensiuni mici. */
+.font-heading { font-weight: 800; letter-spacing: 0.005em; }
+
+/* Contrast WCAG AA în dark mode: ca TEXT pe fundal închis, portocaliul și turcoazul
+   folosesc nuanțe deschise. Ca FUNDAL de buton (cu text alb) rămân tonurile închise din tailwind. */
+html.dark .text-brand-accent, html.dark .dark\:text-brand-accent { color: #ff8f4d; }
+html.dark .text-brand-teal, html.dark .dark\:text-brand-teal { color: #3cc4b8; }

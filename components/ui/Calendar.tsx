@@ -35,7 +35,7 @@ export function InteractiveCalendar({ events }: { events: CalEvent[] }) {
           <button onClick={next} className="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-border hover:bg-gray-200 dark:hover:bg-dark-subtle/30 flex items-center justify-center font-body" aria-label="Luna următoare">→</button>
         </div>
         <div className="grid grid-cols-7 gap-1 mb-2">
-          {DAYS.map(d => <div key={d} className="text-center font-body text-xs font-semibold text-gray-400 dark:text-dark-subtle py-2">{d}</div>)}
+          {DAYS.map(d => <div key={d} className="text-center font-body text-xs font-semibold text-gray-500 dark:text-dark-subtle py-2">{d}</div>)}
         </div>
         <div className="grid grid-cols-7 gap-1" role="grid" aria-label="Calendar">
           {Array.from({ length: first }).map((_, i) => <div key={`e${i}`} className="h-12" />)}
@@ -65,14 +65,14 @@ export function InteractiveCalendar({ events }: { events: CalEvent[] }) {
             <div key={e._id || i} className="p-3 rounded-xl bg-gray-50 dark:bg-dark-border/50 flex gap-3 items-start cursor-pointer" onClick={() => setSel(e.date)}>
               <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${typeColor[e.type] || "bg-gray-400"}`} />
               <div>
-                <div className="font-body text-xs text-gray-400 dark:text-dark-subtle">{parseInt(e.date.split("-")[2])} {MONTHS[parseInt(e.date.split("-")[1]) - 1]}</div>
+                <div className="font-body text-xs text-gray-500 dark:text-dark-subtle">{parseInt(e.date.split("-")[2])} {MONTHS[parseInt(e.date.split("-")[1]) - 1]}</div>
                 <div className="font-body text-sm font-semibold text-gray-900 dark:text-dark-text">{e.title}</div>
                 {e.description && <div className="font-body text-xs text-gray-500 dark:text-dark-muted mt-1">{e.description}</div>}
               </div>
             </div>
           ))}
           {(sel ? events.filter(e => e.date === sel) : monthEvents).length === 0 && (
-            <p className="font-body text-sm text-gray-400 dark:text-dark-subtle py-4 text-center">Niciun eveniment în {sel ? "această zi" : "această lună"}.</p>
+            <p className="font-body text-sm text-gray-500 dark:text-dark-subtle py-4 text-center">Niciun eveniment în {sel ? "această zi" : "această lună"}.</p>
           )}
         </div>
         <div className="mt-5 pt-4 border-t border-gray-100 dark:border-dark-border flex flex-wrap gap-3">

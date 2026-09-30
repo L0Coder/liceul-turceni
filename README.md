@@ -210,6 +210,11 @@ La mutarea pe domeniul propriu **nu se modifica niciun fisier**:
    `NEXT_PUBLIC_SITE_URL` = `https://www.liceulturceni.ro`
 3. Redeploy
 
+**Indexarea în Google e legată de aceeași variabilă.** Cât timp `NEXT_PUBLIC_SITE_URL`
+nu e setată, site-ul (copia de lucru de pe vercel.app, cu conținut demonstrativ)
+trimite `noindex` și `robots.txt` blochează totul, ca să nu apară în căutări sub
+numele liceului. Setarea variabilei la lansare face site-ul indexabil automat.
+
 ## Deploy și actualizare
 
 **Conținut (noutăți, PDF-uri, poze, FAQ):** Secretariatul publică din `/studio` → apare pe site în 60 secunde. Fără git, fără redeploy.

@@ -24,7 +24,7 @@ export default function GDPRPage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "GDPR" }]} />
-      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(135deg, #1f3b5b 0%, #2980b9 50%, #1a6e5e 100%)" }}>
+      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Politica de confidențialitate</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Protecția datelor cu caracter personal</p>
       </section>
@@ -72,7 +72,7 @@ export default function GDPRPage() {
                     Email: <a href="mailto:licturceni@yahoo.com" className="text-brand-teal hover:underline">licturceni@yahoo.com</a>
                   </p>
                 </div>
-                <p className="text-xs text-gray-400 dark:text-dark-subtle mt-2">
+                <p className="text-xs text-gray-500 dark:text-dark-subtle mt-2">
                   Notă: DPO-ul este desemnat prin decizia directorului unității de învățământ. Datele sale de contact vor fi actualizate pe această pagină la fiecare schimbare.
                 </p>
               </Section>
@@ -129,7 +129,7 @@ export default function GDPRPage() {
                 <Bullet><strong className="text-gray-900 dark:text-dark-text">Părinții/tutorii legali pot solicita oricând:</strong> eliminarea fotografiilor care îi includ pe copiii lor, accesul la datele personale ale copilului, rectificarea sau ștergerea datelor.</Bullet>
                 <Bullet><strong className="text-gray-900 dark:text-dark-text">Consimțământul</strong> pentru prelucrarea datelor elevilor sub 16 ani este dat de părintele/tutorele legal, conform Art. 8 din GDPR coroborat cu Art. 2 din Legea 190/2018.</Bullet>
 
-                <p className="mt-2 text-xs text-gray-400 dark:text-dark-subtle">
+                <p className="mt-2 text-xs text-gray-500 dark:text-dark-subtle">
                   Notă: Fotografiile realizate de părinți la evenimentele școlare, pentru uzul personal al familiei, nu intră sub incidența GDPR (excepția de uz casnic/personal).
                 </p>
               </Section>
@@ -253,7 +253,7 @@ export default function GDPRPage() {
                 </div>
               </Section>
 
-              <p className="font-body text-xs text-gray-400 dark:text-dark-subtle text-center">
+              <p className="font-body text-xs text-gray-500 dark:text-dark-subtle text-center">
                 Ultima actualizare: martie 2026
               </p>
 

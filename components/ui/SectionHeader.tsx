@@ -4,7 +4,6 @@ import { useRef, useState, useEffect } from "react";
 export function SectionHeader({ label, title, subtitle, light = false }: { label?: string; title: string; subtitle?: string; light?: boolean; }) {
   return (
     <div className="text-center mb-14">
-      {label && <div className={`font-body text-xs font-semibold tracking-[3px] uppercase mb-3 ${light ? "text-white/60" : "text-brand-accent"}`}>{label}</div>}
       <h2 className={`font-heading text-3xl md:text-4xl font-bold leading-tight mb-4 ${light ? "text-white" : "text-gray-900 dark:text-dark-text"}`}>{title}</h2>
       {subtitle && <p className={`font-body text-[17px] leading-relaxed max-w-xl mx-auto ${light ? "text-white/70" : "text-gray-500 dark:text-dark-muted"}`}>{subtitle}</p>}
     </div>
