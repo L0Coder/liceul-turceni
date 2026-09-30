@@ -30,7 +30,9 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-4"><Logo white /></div>
             <h3 className="font-heading text-[15px] font-bold text-white mb-1">Liceul Tehnologic Turceni</h3>
-            <p className="font-body text-sm text-white/65 leading-relaxed">{CONTACT.adresa}<br />Tel: {CONTACT.telefon}<br />{CONTACT.email}</p>
+            <p className="font-body text-sm text-white/65 leading-relaxed">{CONTACT.adresa}<br />
+              Tel: <a href="tel:+40253335012" className="hover:text-white underline-offset-2 hover:underline">{CONTACT.telefon}</a><br />
+              <a href={`mailto:${CONTACT.email}`} className="hover:text-white underline-offset-2 hover:underline">{CONTACT.email}</a></p>
           </div>
           {cols.map(c => (
             <div key={c.title}>
