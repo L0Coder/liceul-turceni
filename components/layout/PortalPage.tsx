@@ -4,9 +4,9 @@ import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
 
 interface PortalItem { icon: string; label: string; href: string; desc: string; external?: boolean; }
 interface PortalSection { title: string; items: PortalItem[]; }
-interface Props { emoji: string; title: string; subtitle: string; sections: PortalSection[]; glowColor?: string; }
+interface Props { emoji: string; title: string; subtitle: string; sections: PortalSection[]; glowColor?: string; children?: React.ReactNode; }
 
-export function PortalPage({ emoji, title, subtitle, sections, glowColor = "#00e5ff" }: Props) {
+export function PortalPage({ emoji, title, subtitle, sections, glowColor = "#00e5ff", children }: Props) {
   return (
     <div className="pt-28">
       <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
@@ -52,6 +52,7 @@ export function PortalPage({ emoji, title, subtitle, sections, glowColor = "#00e
           </div>
         </section>
       ))}
+      {children}
     </div>
   );
 }

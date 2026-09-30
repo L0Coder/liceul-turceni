@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { anAdmitere } from "@/lib/constants";
 import { PortalPage } from "@/components/layout/PortalPage";
+import { ProgramOre } from "@/components/ui/ProgramOre";
 
 export const metadata: Metadata = { title: "Pentru părinți", description: "Informații pentru părinți: rezultate, examene, transparență, contact." };
 
@@ -26,5 +27,5 @@ const sections = [
 ];
 
 export default function ParintiPage() {
-  return <PortalPage emoji="👨‍👩‍👧‍👦" title="Pentru părinți" subtitle="Rezultate, transparență, comunicare." sections={sections} glowColor="#76ff03" />;
+  return <PortalPage emoji="👨‍👩‍👧‍👦" title="Pentru părinți" subtitle="Rezultate, transparență, comunicare." sections={sections} glowColor="#76ff03"><ProgramOre /></PortalPage>;
 }

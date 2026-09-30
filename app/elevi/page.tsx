@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PortalPage } from "@/components/layout/PortalPage";
+import { ProgramOre } from "@/components/ui/ProgramOre";
 
 export const metadata: Metadata = { title: "Pentru elevi", description: "Resurse pentru elevii LTT: calendar, examene, Club Robotică, Erasmus+." };
 
@@ -25,5 +26,5 @@ const sections = [
 ];
 
 export default function EleviPage() {
-  return <PortalPage emoji="🎓" title="Pentru elevi" subtitle="Tot ce ai nevoie într-un singur loc." sections={sections} glowColor="#00e5ff" />;
+  return <PortalPage emoji="🎓" title="Pentru elevi" subtitle="Tot ce ai nevoie într-un singur loc." sections={sections} glowColor="#00e5ff"><ProgramOre /></PortalPage>;
 }

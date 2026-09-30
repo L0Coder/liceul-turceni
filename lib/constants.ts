@@ -43,6 +43,23 @@ export function aniDeActivitate(d: Date = new Date()): number {
   return anulScolarStart(d) - ANUL_INFIINTARII + 1;
 }
 
+/* ═══ PROGRAMUL ORELOR — gimnaziu și liceu ═══
+   Din anul școlar 2026-2027: numai dimineața. Se modifică DOAR aici;
+   FAQ-ul și tabelul de pe paginile Elevi/Părinți se generează din aceste valori. */
+export const PROGRAM_ORE = { start: "7:45", durata: 50, pauza: 10, maxOre: 7 } as const;
+
+/** Intervalele orelor, ex. [{ nr: 1, de: "7:45", pana: "8:35" }, ...] */
+export function graficOre() {
+  const [h, m] = PROGRAM_ORE.start.split(":").map(Number);
+  const fmt = (t: number) => `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`;
+  let t = h * 60 + m;
+  return Array.from({ length: PROGRAM_ORE.maxOre }, (_, i) => {
+    const de = t, pana = t + PROGRAM_ORE.durata;
+    t = pana + PROGRAM_ORE.pauza;
+    return { nr: i + 1, de: fmt(de), pana: fmt(pana) };
+  });
+}
+
 /* ═══ CONDUCEREA UNITĂȚII ═══
    SURSĂ UNICĂ. La schimbarea conducerii se modifică DOAR aici — se propagă
    automat în paginile Despre, Profesori și Contact.

@@ -135,6 +135,7 @@ Site-ul funcționează mereu, indiferent de starea CMS-ului.
 - Testimonialele de pe homepage (`lib/data.ts`)
 - Informațiile din portaluri (Elevi, Părinți, etc.)
 - Datele de contact (telefon, adresă, email) (`lib/constants.ts`)
+- Programul orelor pentru gimnaziu și liceu — ora de început, durata orei și a pauzei (`PROGRAM_ORE` în `lib/constants.ts`); tabelul de pe paginile Elevi/Părinți și răspunsul din FAQ se generează automat
 - Paginile legale (GDPR, Cookies, Accesibilitate)
 - Structura paginilor, design, logo
 
