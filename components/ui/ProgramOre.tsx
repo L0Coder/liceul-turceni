@@ -8,8 +8,8 @@ export function ProgramOre() {
       <div className="max-w-3xl mx-auto">
         <h2 className="font-heading text-3xl md:text-4xl text-gray-900 dark:text-dark-text mb-3">Programul orelor</h2>
         <p className="font-body text-[15px] text-gray-600 dark:text-dark-muted leading-relaxed mb-6">
-          Gimnaziu și liceu, numai dimineața. Orele durează {PROGRAM_ORE.durata} de minute, cu pauze de {PROGRAM_ORE.pauza} minute.
-          Majoritatea zilelor au 6 sau 7 ore, mai rar 5.
+          Gimnaziu și liceu, numai dimineața. Orele durează {PROGRAM_ORE.durata} de minute, cu pauze de {PROGRAM_ORE.pauza} minute între ele.
+          Majoritatea claselor au 6 sau 7 ore pe zi, mai rar 5.
         </p>
         <div className="bg-white dark:bg-dark-card rounded-2xl border border-gray-200 dark:border-dark-border overflow-hidden">
           <table className="w-full font-body text-sm">
@@ -31,7 +31,7 @@ export function ProgramOre() {
           </table>
         </div>
         <p className="font-body text-sm text-gray-600 dark:text-dark-muted mt-4">
-          Ultima oră se încheie la {ore[4].pana} (5 ore), {ore[5].pana} (6 ore) sau {ore[6].pana} (7 ore).
+          Ultima oră se termină la {ore[4].pana} (5 ore), {ore[5].pana} (6 ore) sau {ore[6].pana} (7 ore).
         </p>
       </div>
     </section>
