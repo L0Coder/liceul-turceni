@@ -14,8 +14,11 @@ export interface Profil {
   slug: string; icon: string; title: string; shortDesc: string; fullDesc: string;
   discipline: string[]; competente: string[]; perspective: string[];
   color: string; glowColor: string; imagini: string[];
-  /** Setat când specializarea nu mai primește elevi noi: textul explică situația claselor rămase. */
-  lichidare?: string;
+  /** Specializările (calificările) din clasa a IX-a, la profilurile tehnice. */
+  specializari?: string[];
+  /** Setat când profilul nu mai primește elevi în clasa a IX-a: textul explică situația claselor rămase.
+      Profilul dispare din homepage, comparator și admitere și rămâne doar ca notă pe pagina Ofertă. */
+  faraInscrieri?: string;
 }
 
 export const PROFILE: Profil[] = [
@@ -33,28 +36,31 @@ export const PROFILE: Profil[] = [
     competente: ["Analiză de laborator", "Metode experimentale", "Chimie organică", "Biologie celulară", "Cercetare"],
     perspective: ["Medicină", "Farmacie", "Biologie", "Chimie", "Biotehnologie"],
     color: "#27ae60", glowColor: "#00e676", imagini: ["02_laboratoare/Lab_chimie_1.jpg", "02_laboratoare/Lab_fizica_1.jpg"] },
-  { slug: "filologie-bilingv-engleza", icon: "🌍", title: "Filologie Bilingv Engleză",
+  { slug: "filologie-bilingv-engleza", icon: "🌍", title: "Filologie — bilingv engleză",
     shortDesc: "Limbi moderne, literatură, comunicare. Deschidere internațională.",
     fullDesc: "Pregătire intensivă în limba engleză, literatură universală și comunicare. Certificări Cambridge și proiecte Erasmus+ internaționale.",
     discipline: ["Limba engleză (intensiv)", "Limba română", "Literatură universală", "Limba franceză", "Istorie"],
     competente: ["Nivel B2-C1 engleză", "Comunicare interculturală", "Traducere", "Redactare academică", "Analiză literară"],
     perspective: ["Litere", "Relații Internaționale", "Comunicare", "Jurnalism", "Traducere"],
     color: "#8e44ad", glowColor: "#d500f9", imagini: ["09_clase/Sala_clasa_1.jpg", "07_erasmus/Erasmus_grup_1.jpg"] },
-  { slug: "electronica-automatizari", icon: "⚡", title: "Electronică Automatizări",
-    shortDesc: "Circuite, PLC-uri, sisteme automate. Industria viitorului.",
-    fullDesc: "Specialiști în circuite electronice, automatizare industrială și programare PLC. Laborator echipat modern. Absolvenți angajați la Complexul Energetic Oltenia.",
-    discipline: ["Electronică", "Automatizări", "Măsurări electrice", "Informatică aplicată", "Matematică"],
-    competente: ["Proiectare circuite", "Programare PLC", "Sisteme SCADA", "Senzori", "Depanare"],
-    perspective: ["Inginer automatist", "Tehnician electronist", "Sectorul energetic", "Industria auto", "Energii regenerabile"],
-    color: "#f26b00", glowColor: "#ff9100", imagini: ["02_laboratoare/Lab_electronica_1.jpg", "02_laboratoare/Lab_electronica_2.jpg"] },
   { slug: "mecanica", icon: "⚙️", title: "Mecanică",
+    specializari: ["Tehnician mecanic pentru întreținere și reparații", "Lăcătuș construcții metalice și utilaj tehnologic"],
     shortDesc: "Proiectare, fabricare, mentenanță. Baza industriei.",
     fullDesc: "Pregătire practică în prelucrarea metalelor, CAD și mentenanță industrială. Ateliere echipate cu strunguri, freze și CNC.",
     discipline: ["Mecanică", "Desen tehnic", "Tehnologie mecanică", "Rezistența materialelor", "Matematică"],
     competente: ["Operare strung/freză", "Desen tehnic CAD", "Citire scheme", "Măsurători de precizie", "Mentenanță"],
     perspective: ["Inginer mecanic", "Operator CNC", "Mentenanță industrială", "Industria auto", "Industria energetică"],
     color: "#2c3e50", glowColor: "#00e5ff", imagini: ["03_ateliere/Atelier_mecanica_1.jpg", "03_ateliere/Atelier_mecanica_2.jpg"] },
+  { slug: "electronica-automatizari", icon: "⚡", title: "Electronică și automatizări",
+    specializari: ["Tehnician în automatizări", "Electronist aparate și echipamente"],
+    shortDesc: "Circuite, PLC-uri, sisteme automate. Industria viitorului.",
+    fullDesc: "Specialiști în circuite electronice, automatizare industrială și programare PLC. Laborator echipat modern. Absolvenți angajați la Complexul Energetic Oltenia.",
+    discipline: ["Electronică", "Automatizări", "Măsurări electrice", "Informatică aplicată", "Matematică"],
+    competente: ["Proiectare circuite", "Programare PLC", "Sisteme SCADA", "Senzori", "Depanare"],
+    perspective: ["Inginer automatist", "Tehnician electronist", "Sectorul energetic", "Industria auto", "Energii regenerabile"],
+    color: "#f26b00", glowColor: "#ff9100", imagini: ["02_laboratoare/Lab_electronica_1.jpg", "02_laboratoare/Lab_electronica_2.jpg"] },
   { slug: "electromecanica", icon: "🔧", title: "Electromecanică",
+    specializari: ["Tehnician electromecanic", "Electromecanic centrale electrice"],
     shortDesc: "Motoare, generatoare, sisteme energetice. Parteneriat cu CEO.",
     fullDesc: "Specialiști în motoare electrice, generatoare și sisteme energetice. Parteneriat direct cu Complexul Energetic Oltenia — practică în centrale.",
     discipline: ["Electromecanică", "Mașini electrice", "Instalații electrice", "Automatizări", "Protecția muncii"],
@@ -67,7 +73,8 @@ export const PROFILE: Profil[] = [
     discipline: ["Construcții", "Instalații sanitare", "Instalații termice", "Topografie", "Desen tehnic"],
     competente: ["Citire planuri", "Execuție zidărie", "Montaj instalații", "Montaj termice", "Topografie"],
     perspective: ["Constructor", "Instalator", "Diriginte de șantier", "Proiectant", "Antreprenor"],
-    color: "#2aa198", glowColor: "#1de9b6", imagini: ["03_ateliere/Atelier_constructii_1.jpg", "09_clase/Sala_clasa_2.jpg"] },
+    color: "#2aa198", glowColor: "#1de9b6", imagini: ["03_ateliere/Atelier_constructii_1.jpg", "09_clase/Sala_clasa_2.jpg"],
+    faraInscrieri: "În anul școlar 2026–2027 nu s-a format clasă a IX-a la acest profil. Elevii din clasele mai mari își continuă studiile până la absolvire." },
   { slug: "scoala-profesionala", icon: "🔥", title: "Școală Profesională",
     shortDesc: "Sudori și electromecanic centrale. Rată ridicată de angajare.",
     fullDesc: "Două specializări de 3 ani: Sudor și Electromecanic Centrale Electrice. Pregătire 70% practică. Rată ridicată de angajare la Complexul Energetic Oltenia.",
@@ -75,12 +82,14 @@ export const PROFILE: Profil[] = [
     competente: ["Sudură în toate pozițiile", "Citire desene", "Montaj/demontaj", "Mentenanță", "Certificare profesională"],
     perspective: ["Sudor certificat", "Sectorul energetic", "Mentenanță industrială", "Angajare în Europa"],
     color: "#d35400", glowColor: "#ff6d00", imagini: ["03_ateliere/Atelier_sudura_1.jpg", "11_parteneriate/CEO_centrala_1.jpg"],
-    lichidare: "Școala profesională este în lichidare. Din anul școlar 2026–2027 nu se mai fac înscrieri în clasa a IX-a; elevii din clasele a X-a și a XI-a își continuă studiile până la absolvire." },
+    specializari: ["Sudor", "Electromecanic centrale electrice"],
+    faraInscrieri: "Școala profesională este în lichidare. Din anul școlar 2026–2027 nu se mai fac înscrieri în clasa a IX-a; elevii din clasele a X-a și a XI-a își continuă studiile până la absolvire." },
 ];
 
-/** Profilurile la care se fac înscrieri (fără cele în lichidare). De aici vine și numărul de profiluri afișat pe site. */
-export const PROFILE_ADMITERE = PROFILE.filter(p => !p.lichidare);
-export const PROFILE_LICHIDARE = PROFILE.filter(p => p.lichidare);
+/** Profilurile la care se fac înscrieri în clasa a IX-a. De aici vine și numărul de profiluri afișat pe site. */
+export const PROFILE_ADMITERE = PROFILE.filter(p => !p.faraInscrieri);
+/** Profilurile fără clasă a IX-a, cu elevi doar în clasele mai mari. */
+export const PROFILE_FARA_INSCRIERI = PROFILE.filter(p => p.faraInscrieri);
 
 /** „Șapte profiluri.” — numărul scris în litere, pentru titluri. */
 export function numarInLitere(n: number): string {
@@ -95,7 +104,7 @@ export const FILIERA: Record<string, string> = {
   "electronica-automatizari": "Tehnologic · Tehnic",
   mecanica: "Tehnologic · Tehnic",
   electromecanica: "Tehnologic · Tehnic",
-  "constructii-instalatii": "Tehnologic · Tehnic",
+  "constructii-instalatii": "Tehnologic · fără clasa a IX-a",
   "scoala-profesionala": "Profesional · în lichidare",
 };
 

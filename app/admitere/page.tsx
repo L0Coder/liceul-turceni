@@ -46,7 +46,7 @@ export default function AdmiterePage() {
       </section>
       <section className="py-20 md:py-24 px-6 ltt-nuanta">
         <div className="max-w-6xl mx-auto">
-          <AnimatedSection><SectionHeader label="Profiluri" title="Alege-ți viitorul" subtitle={`Pentru ${anAdmitere()} se fac înscrieri la cele ${PROFILE_ADMITERE.length} profiluri de liceu, teoretic și tehnologic. Școala profesională nu mai primește elevi în clasa a IX-a.`} /></AnimatedSection>
+          <AnimatedSection><SectionHeader label="Profiluri" title="Alege-ți viitorul" subtitle={`În 2026–2027, clasele a IX-a au fost la aceste ${PROFILE_ADMITERE.length} profiluri, teoretic și tehnologic. Oferta pentru ${anAdmitere()} se confirmă prin planul de școlarizare aprobat de ISJ Gorj. Școala profesională nu mai primește elevi în clasa a IX-a.`} /></AnimatedSection>
           <GrilaProfiluri />
         </div>
       </section>

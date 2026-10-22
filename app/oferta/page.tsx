@@ -2,10 +2,10 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
 import { AnimatedSection } from "@/components/ui/SectionHeader";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
-import { PROFILE_ADMITERE as PROFILE, PROFILE_LICHIDARE, FILIERA } from "@/lib/data";
+import { PROFILE_ADMITERE as PROFILE, PROFILE_FARA_INSCRIERI, FILIERA } from "@/lib/data";
 import { anAdmitere } from "@/lib/constants";
 import { PaginaAntet } from "@/components/ui/PaginaAntet";
-import { ButonCerneala, LinkSubliniat } from "@/components/ui/Buton";
+import { ButonCerneala, LinkSubliniat, Kicker } from "@/components/ui/Buton";
 import { DESEN_PROFIL } from "@/components/home/Desene";
 
 export const metadata: Metadata = { title: "Oferta educațională", description: `Cele ${PROFILE.length} profiluri de liceu ale Liceului Tehnologic Turceni: teoretic și tehnologic.` };
@@ -51,6 +51,9 @@ export default function OfertaPage() {
                 <div>
                   <div className="ltt-kicker ltt-accent">{FILIERA[p.slug]}</div>
                   <h2 className="font-heading text-4xl md:text-5xl text-ink mt-3 leading-tight">{p.title}</h2>
+                  {p.specializari && (
+                    <p className="font-body text-[15px] text-ink mt-4 leading-relaxed"><span className="ltt-kicker !text-[10px] text-ink-soft mr-2">Specializări</span>{p.specializari.join(" / ")}</p>
+                  )}
                   <p className="font-heading italic text-xl text-ink-soft mt-3">{p.shortDesc}</p>
                   <p className="font-body text-[15px] text-ink-soft leading-[1.85] mt-6">{p.fullDesc}</p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-10">
@@ -68,17 +71,22 @@ export default function OfertaPage() {
         })}
       </div>
 
-      {/* Specializările fără înscrieri noi: doar o notă, pentru elevii și părinții din clasele rămase */}
-      {PROFILE_LICHIDARE.map(p => (
-        <section key={p.slug} id={p.slug} className="scroll-mt-28 px-6 py-16 md:py-20 ltt-nuanta">
+      {/* Profilurile fără clasă a IX-a: doar o notă, pentru elevii și părinții din clasele mai mari */}
+      {PROFILE_FARA_INSCRIERI.length > 0 && (
+        <div className="px-6 pt-16 md:pt-20 ltt-nuanta">
+          <div className="max-w-6xl mx-auto"><Kicker className="text-ink-soft">Fără înscrieri în clasa a IX-a</Kicker></div>
+        </div>
+      )}
+      {PROFILE_FARA_INSCRIERI.map(p => (
+        <section key={p.slug} id={p.slug} className="scroll-mt-28 px-6 py-12 md:py-14 ltt-nuanta">
           <div className="max-w-6xl mx-auto grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)] gap-6 md:gap-16">
             <div>
               <div className="ltt-kicker ltt-accent">{FILIERA[p.slug]}</div>
               <h2 className="font-heading text-3xl md:text-4xl text-ink mt-3">{p.title}</h2>
             </div>
             <div className="max-w-2xl">
-              <p className="font-body text-[16px] text-ink leading-[1.85]">{p.lichidare}</p>
-              <p className="font-body text-[14px] text-ink-soft leading-[1.85] mt-3">Specializări: sudor și electromecanic centrale electrice. Pentru întrebări despre clasele a X-a și a XI-a, secretariatul vă stă la dispoziție.</p>
+              <p className="font-body text-[16px] text-ink leading-[1.85]">{p.faraInscrieri}</p>
+              {p.specializari && <p className="font-body text-[14px] text-ink-soft leading-[1.85] mt-3">Specializări: {p.specializari.join(", ").toLowerCase()}.</p>}
             </div>
           </div>
         </section>

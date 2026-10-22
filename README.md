@@ -133,7 +133,7 @@ Site-ul funcționează mereu, indiferent de starea CMS-ului.
 
 ### Conținut care NU e în CMS (e în cod)
 
-- Descrierile profilurilor (`lib/data.ts`). O specializare fără înscrieri noi primește câmpul `lichidare`: dispare din homepage, comparator și admitere, rămâne doar ca notă pe pagina Ofertă, iar numărul de profiluri afișat pe site se recalculează singur
+- Descrierile profilurilor (`lib/data.ts`). Un profil fără clasă a IX-a primește câmpul `faraInscrieri` (textul notei): dispare din homepage, comparator și admitere, rămâne doar ca notă pe pagina Ofertă, iar numărul de profiluri afișat pe site se recalculează singur
 - Testimonialele de pe homepage și graficul absolvenților (`lib/data.ts`) — **fictive, ascunse** până când `CONTINUT_VERIFICAT` din același fișier e trecut pe `true` după înlocuirea lor cu date reale. La fel articolele-exemplu de blog.
 - Informațiile din portaluri (Elevi, Părinți, etc.)
 - Datele de contact (telefon, adresă, email) (`lib/constants.ts`)
@@ -173,7 +173,7 @@ Site-ul include (generate automat, nu necesită întreținere):
 - **Favicon** (`icon.svg`) — logo LTT în tab-ul browserului
 - **robots.txt** — permite indexarea, blochează `/studio`
 - **sitemap.xml** — toate paginile listate pentru Google
-- **OpenGraph image** — imagine cu logo + „7 profiluri de liceu · județul Gorj · din 1982” (numărul se calculează din date) care apare când cineva dă share pe WhatsApp/Facebook
+- **OpenGraph image** — imagine cu logo + „N profiluri de liceu · județul Gorj · din 1982” (N se calculează din date) care apare când cineva dă share pe WhatsApp/Facebook
 - **Schema.org "School"** — Google înțelege structurat că e o școală (adresă, telefon, coordonate GPS, an înființare)
 - **theme-color** — bara browserului mobil ia culoarea brandului
 

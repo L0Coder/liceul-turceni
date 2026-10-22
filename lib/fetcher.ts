@@ -104,7 +104,7 @@ export async function fetchSettings() {
   // Anii de activitate și anul școlar NU se editează manual: sunt calculate
   // din data curentă, ca să nu rămână în urmă la 1 septembrie.
   // Numărul de profiluri se calculează din profilurile cu admitere (lib/data.ts), nu din CMS:
-  // așa nu poate rămâne „8” după ce o specializare intră în lichidare.
+  // așa nu poate rămâne „8” după ce un profil nu mai are clasă a IX-a.
   return { ...cms, profileCount: PROFILE_ADMITERE.length, aniExcelenta: String(aniDeActivitate()), anScolar: anScolarCurent() };
 }
 

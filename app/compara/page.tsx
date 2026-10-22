@@ -43,6 +43,7 @@ export default function ComparaPage() {
                       {Desen && <Desen className="w-20 text-ink" />}
                       <div className="ltt-kicker ltt-accent !text-[10px] mt-5">{FILIERA[p.slug]}</div>
                       <h2 className="font-heading text-3xl text-ink mt-2">{p.title}</h2>
+                      {p.specializari && <p className="font-body text-[13px] text-ink mt-2 leading-snug">{p.specializari.join(" / ")}</p>}
                       <p className="font-heading italic text-ink-soft mt-2">{p.shortDesc}</p>
                       {[{ t: "Discipline", d: p.discipline }, { t: "Competențe", d: p.competente }, { t: "Perspective", d: p.perspective }].map(sec => (
                         <div key={sec.t} className="mt-8">

@@ -272,6 +272,7 @@ function FisaProfil({ pr, n }: { pr: (typeof PROFILE_ADMITERE)[number]; n: numbe
       <div className="ltt-rise min-w-0">
         <div className="ltt-kicker ltt-accent">{FILIERA[pr.slug]}</div>
         <h3 className="font-heading text-[1.7rem] sm:text-3xl md:text-4xl text-ink mt-3 leading-tight">{pr.title}</h3>
+        {pr.specializari && <p className="font-body text-[13px] text-ink mt-2 leading-snug">{pr.specializari.join(" / ")}</p>}
         <p className="font-heading italic text-lg text-ink-soft mt-2">{pr.shortDesc}</p>
         <p className="hidden sm:block font-body text-[14px] leading-[1.85] text-ink-soft mt-5">{pr.fullDesc}</p>
         <p className="font-body text-[12px] text-ink-soft border-y border-line py-3 mt-4 sm:mt-6">{pr.discipline.slice(0, 4).join(" · ")}</p>

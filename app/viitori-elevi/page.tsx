@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Pentru viitori elevi", description: 
 
 export default function ViitoriEleviPage() {
   const motives = [
-    { title: `${PROFILE_ADMITERE.length} profiluri de liceu`, desc: "De la informatică la construcții, teoretic sau tehnologic." },
+    { title: `${PROFILE_ADMITERE.length} profiluri de liceu`, desc: "De la informatică la electromecanică, teoretic sau tehnologic." },
     { title: "Practică reală", desc: "Ateliere echipate, practică la firme." },
     { title: "Club Robotică", desc: "Construiești roboți, mergi la competiții." },
     { title: "Erasmus+", desc: "Mobilități în Italia, Spania, Portugalia." },
