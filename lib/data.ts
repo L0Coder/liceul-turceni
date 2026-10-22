@@ -1,4 +1,4 @@
-import { aniDeActivitate, anAdmitere } from "./constants";
+import { anAdmitere } from "./constants";
 /* ═══ CONȚINUT DE VERIFICAT ═══
    Testimonialele, cifrele despre absolvenți și articolele-exemplu de pe blog au fost scrise
    ca demonstrație, nu vin de la oameni reali. Rămân ascunse până când școala le confirmă
@@ -108,14 +108,6 @@ export const FILIERA: Record<string, string> = {
   "scoala-profesionala": "Profesional · în lichidare",
 };
 
-/* ═══ STATISTICI ═══ */
-export const STATS = [
-  { number: "1604", label: "Elevi înscriși", icon: "🎓", glowColor: "#00e5ff" },
-  { number: "155", label: "Cadre didactice", icon: "👩‍🏫", glowColor: "#76ff03" },
-  { number: "8", label: "Profiluri educaționale", icon: "📚", glowColor: "#00b0ff" },
-  { number: String(aniDeActivitate()), label: "Ani de excelență", icon: "🏆", glowColor: "#ffd600" },
-];
-
 /* ═══ NOUTĂȚI ═══ */
 export interface Noutate { slug: string; date: string; category: string; title: string; excerpt: string; content: string; image?: string; glowColor: string; }
 
@@ -129,14 +121,6 @@ export const NOUTATI: Noutate[] = [
   { slug: "vacante-2026-2027", date: "16 februarie 2026", category: "Calendar", title: "Vacanțele anului școlar 2026-2027",
     excerpt: "Toamnă, iarnă, februarie, primăvară și vară - datele oficiale.",
     content: "Vacanța de toamnă: 24 octombrie - 1 noiembrie 2026. Vacanța de iarnă: 23 decembrie 2026 - 10 ianuarie 2027. Vacanța din februarie: o săptămână între 15 februarie și 7 martie 2027, stabilită de Inspectoratul Școlar Județean Gorj. Vacanța de primăvară: 24 aprilie - 4 mai 2027. Vacanța de vară: 19 iunie - 5 septembrie 2027. Sursa: Ordinul nr. 3194/2026, Monitorul Oficial nr. 126 din 16 februarie 2026.", glowColor: "#1de9b6" },
-];
-
-/* ═══ PARTENERIATE ═══ */
-export const PARTENERIATE = [
-  { title: "Complexul Energetic Oltenia", desc: "Partener strategic nr. 1. Practică directă în centralele din Turceni și Rovinari. Zeci de absolvenți angajați anual.", tag: "Partener strategic", color: "#1f3b5b", glowColor: "#00e5ff" },
-  { title: "Club Robotică LTT", desc: "Competiții naționale, laborator cu Arduino, Raspberry Pi și imprimantă 3D.", tag: "Excelență", color: "#27ae60", glowColor: "#76ff03" },
-  { title: "Proiecte Erasmus+", desc: "4 proiecte în ultimii 5 ani. Mobilități în Italia, Spania, Portugalia, Turcia.", tag: "Internațional", color: "#f26b00", glowColor: "#ff9100" },
-  { title: "Primăria Turceni", desc: "Colaborare pentru infrastructură, burse de merit și stagii de practică.", tag: "Comunitate", color: "#2aa198", glowColor: "#1de9b6" },
 ];
 
 /* ═══ TESTIMONIALE ═══ */

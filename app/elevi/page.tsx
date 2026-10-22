@@ -13,7 +13,7 @@ const sections = [
   ]},
   { title: "Activități", items: [
     { icon: "🤖", label: "Club Robotică", href: "/galerie#club-robotica", desc: "Arduino, competiții, imprimantă 3D." },
-    { icon: "🌍", label: "Erasmus+", href: "/blog", desc: "Mobilități internaționale." },
+    { icon: "🌍", label: "Erasmus+", href: "/galerie#erasmus", desc: "Mobilități internaționale, în imagini." },
     { icon: "⚽", label: "Sport", href: "/galerie#sport", desc: "Echipe, competiții." },
     { icon: "✍️", label: "Blog LTT", href: "/blog", desc: "Povești de la colegi." },
   ]},

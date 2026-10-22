@@ -25,7 +25,7 @@ export default async function TransparentaPage() {
                 const inner = (
                   <>
                                         <span className="flex-1">{doc.title}</span>
-                    {doc.fileUrl ? <span className="ltt-kicker ltt-accent !text-[10px]">PDF ↓</span> : <span className="ltt-kicker text-ink-soft/70 !text-[10px]">În curând</span>}
+                    {doc.fileUrl ? <span className="ltt-kicker ltt-accent !text-[10px]">PDF ↓</span> : <span className="ltt-kicker text-ink-soft !text-[10px]">În curând</span>}
                   </>
                 );
                 const cls = "font-body text-[15px] text-ink py-4 border-b border-line flex items-center gap-4 transition-colors";
