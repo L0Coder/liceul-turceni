@@ -47,14 +47,11 @@ html.dark {
   --ink: 236 232 224; --ink-soft: 166 160 150; --line: 52 56 63;
 }
 body { color: rgb(var(--ink)); }
-/* Textura de hârtie: zgomot fin și fibre, peste tot site-ul (multiply, deci nu acoperă nimic)
-   și fără să prindă click-uri. */
-body::after {
-  content: ""; position: fixed; inset: 0; z-index: 45; pointer-events: none;
-  background-image: url(/textura-hartie.svg); background-size: 320px 320px; mix-blend-mode: multiply;
-}
-html.dark body::after { mix-blend-mode: screen; filter: invert(1); opacity: 0.35; }
-@media print { body::after { display: none; } }
+/* Textura de hârtie (zgomot fin și fibre) pe suprafețele de hârtie. E fundal obișnuit, nu un strat
+   peste pagină: un strat fix cu mix-blend-mode recompune tot ecranul la fiecare cadru de scroll. */
+body, .bg-paper, .bg-paper-2 { background-image: url(/textura-hartie.svg); background-size: 320px 320px; }
+html.dark body, html.dark .bg-paper, html.dark .bg-paper-2 { background-image: none; }
+@media print { body, .bg-paper, .bg-paper-2 { background-image: none; } }
 
 /* În dark mode, pozele (inclusiv placeholderele crem) se estompează puțin, ca să nu orbească */
 html.dark img[src*="imagini"] { filter: brightness(0.8) contrast(1.05); }
@@ -66,6 +63,9 @@ html.dark .ltt-accent { color: #ff8f4d; }
 /* Titlurile: serif editorial, greutate normală, ca în tipar */
 .font-heading { font-weight: 400; letter-spacing: -0.012em; }
 .font-heading.font-bold, .font-heading.font-extrabold { font-weight: 500; }
+
+/* Secțiunile fixate la scroll: înălțimea vizibilă reală (pe iPad bara Safari nu mai acoperă nimic) */
+.ltt-sticky { height: 100vh; height: 100svh; }
 
 /* Etichete mici, spațiate (— 01 · LICEUL) */
 .ltt-kicker { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; }

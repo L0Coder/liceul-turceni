@@ -23,17 +23,17 @@ export const FAQ_DATA: FAQItem[] = [
 export interface BlogPost { slug: string; title: string; date: string; author: string; authorRole: string; excerpt: string; content: string; category: string; image?: string; }
 
 export const BLOG_POSTS: BlogPost[] = [
-  { slug: "experienta-erasmus-italia", title: "Experiența mea Erasmus+ în Italia", date: "5 Martie 2026",
+  { slug: "experienta-erasmus-italia", title: "Experiența mea Erasmus+ în Italia", date: "5 martie 2026",
     author: "Elena S.", authorRole: "Elevă clasa a XII-a, Filologie",
     excerpt: "Două săptămâni în Roma m-au schimbat perspectiva.",
     content: "Am plecat în Italia cu emoții — era prima călătorie fără familie. Dar din momentul în care am ajuns la Fiumicino, totul a fost o aventură.\n\nAm lucrat alături de elevi din Spania, Portugalia și Turcia pe un proiect despre energia verde. Am vizitat o fermă solară, am construit maquete de turbine și am prezentat în fața unui juriu internațional.\n\nCe m-a impresionat cel mai mult? Că elevii din alte țări nu sunt diferiți de noi. Am legat prietenii care durează.\n\nCând m-am întors, încrederea mea în engleză crescuse enorm. Dar mai important, am înțeles că lumea e mult mai mică decât pare de pe băncile școlii din Turceni.",
     category: "Erasmus+", image: "07_erasmus/Erasmus_Italia_1.jpg" },
-  { slug: "cum-am-construit-primul-robot", title: "Cum am construit primul nostru robot", date: "20 Februarie 2026",
+  { slug: "cum-am-construit-primul-robot", title: "Cum am construit primul nostru robot", date: "20 februarie 2026",
     author: "Mihai P.", authorRole: "Elev clasa a XI-a, Mate-Info",
     excerpt: "De la un kit Arduino la concursurile naționale de robotică.",
     content: "Totul a început în octombrie, când profesorul ne-a arătat un videoclip de la First Tech Challenge. Am zis: 'Noi putem face asta?'\n\nPrimele luni au fost haotice. Nu știam să lipim, nu înțelegeam senzorii, iar codul C++ avea mai multe bug-uri decât linii.\n\nDar încet-încet am învățat. Ana s-a ocupat de mecanică, eu de programare, Vlad de electronică. Fiecare joi rămâneam până la 8 în laborator.\n\nCând robotul a funcționat autonom prima dată — a mers 3 metri și a ridicat un cub — am sărit toți de bucurie. La competiție am obținut un rezultat de care suntem mândri. Anul viitor vrem și mai mult.",
     category: "Club Robotică", image: "04_club_robotica/Club_robotica_2.jpg" },
-  { slug: "o-zi-profil-mecanica", title: "O zi din viața unui elev la Mecanică", date: "10 Februarie 2026",
+  { slug: "o-zi-profil-mecanica", title: "O zi din viața unui elev la Mecanică", date: "10 februarie 2026",
     author: "Andrei P.", authorRole: "Elev clasa a XII-a, Mecanică",
     excerpt: "De la ore de matematică la strung.",
     content: "Ziua începe la 7:30. Primele ore sunt de matematică — și la mecanică facem mate. Trebuie să calculez toleranțe, unghiuri, viteze.\n\nOrele 3 și 4 sunt cele care mă fac să vin cu plăcere: atelierul. Astăzi lucrăm la strung. Profesorul ne arată cum se fixează semifabricatul, cum se alege viteza.\n\nDupă pauză avem tehnologie și desen tehnic — e ca o altă limbă, dar fascinant.\n\nCe îmi place cel mai mult? La sfârșitul zilei am ceva concret în mână — o piesă pe care am făcut-o eu, de la zero.",

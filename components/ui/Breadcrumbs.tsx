@@ -24,7 +24,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <nav aria-label="Breadcrumb" className="max-w-5xl mx-auto px-6 py-3">
+      <nav aria-label="Breadcrumb" className="max-w-6xl mx-auto px-6 py-3">
         <ol className="flex flex-wrap items-center gap-1 font-body text-xs text-ink-soft">
           {crumbs.map((c, i) => (
             <li key={i} className="flex items-center gap-1">

@@ -40,7 +40,7 @@ export default async function DesprePage() {
     { nr: String(settings.eleviCount), label: `Elevi în anul școlar ${settings.anScolar}` },
     { nr: String(settings.cadreCount), label: "Cadre didactice" },
     { nr: String(settings.profileCount), label: "Profiluri de liceu și profesionale" },
-    { nr: settings.aniExcelenta, label: "Ani de la înființare" },
+    { nr: settings.aniExcelenta, label: "Ani școlari, din 1982–1983 până azi" },
   ];
   return (
     <div className="pt-28">
@@ -52,7 +52,7 @@ export default async function DesprePage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.15fr] gap-14 md:gap-20 items-start">
           <AnimatedSection className="text-ink">
             <DesenScoala className="w-full max-w-md" />
-            <p className="font-heading italic text-3xl md:text-4xl text-ink leading-snug mt-8">„Carte și meserie, sub același acoperiș.”</p>
+            <p className="font-heading italic text-3xl md:text-4xl text-ink leading-snug mt-8">Carte și meserie, sub același acoperiș.</p>
           </AnimatedSection>
           <AnimatedSection delay={0.1} className="font-body text-[16px] text-ink-soft leading-[1.9] space-y-5">
             <p className="first-letter:font-heading first-letter:text-6xl first-letter:float-left first-letter:mr-3 first-letter:leading-[0.8] first-letter:text-ink">

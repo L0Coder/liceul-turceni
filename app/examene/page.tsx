@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
 import { AbsolventiMap } from "@/components/ui/Widgets";
+import { CONTINUT_VERIFICAT } from "@/lib/data";
 import { EXAMENE } from "@/lib/data";
 import { PaginaAntet } from "@/components/ui/PaginaAntet";
 
@@ -24,7 +25,7 @@ export default function ExamenePage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Examene" }]} />
-      <PaginaAntet eticheta="Bacalaureat · Evaluare Națională" titlu="Examene" subtitlu="Calendarul bacalaureatului și al Evaluării Naționale, rezultate oficiale și unde ajung absolvenții." />
+      <PaginaAntet eticheta="Bacalaureat · Evaluare Națională" titlu="Examene" subtitlu="Calendarul bacalaureatului și al Evaluării Naționale, cu linkuri către rezultatele oficiale." />
 
       {/* Calendare BAC, EN, Rezultate */}
       <section className="py-20 md:py-24 px-6 bg-paper">
@@ -63,13 +64,15 @@ export default function ExamenePage() {
         </div>
       </section>
 
-      {/* Harta absolventilor */}
+      {/* Harta absolvenților — doar după ce școala confirmă cifrele (lib/data.ts) */}
+      {CONTINUT_VERIFICAT.absolventi && (
       <section id="absolventi" className="py-20 px-6 bg-paper scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection><SectionHeader label="Absolvenți" title="Unde ajung elevii noștri" /></AnimatedSection>
           <AnimatedSection delay={0.1}><AbsolventiMap /></AnimatedSection>
         </div>
       </section>
+      )}
     </div>
   );
 }

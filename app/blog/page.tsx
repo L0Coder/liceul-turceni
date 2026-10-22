@@ -42,6 +42,9 @@ export default async function BlogPage() {
               </article>
             </AnimatedSection>
           ))}
+          {articole.length === 0 && (
+            <p className="font-heading text-2xl text-ink-soft py-12">Primele articole ale elevilor și profesorilor apar aici în curând.</p>
+          )}
         </div>
         <AnimatedSection delay={0.1}>
           <div className="max-w-6xl mx-auto mt-14 grid md:grid-cols-[12rem_1fr] gap-3 md:gap-10">

@@ -15,7 +15,8 @@ export function FormularContact() {
 
   async function trimite(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const date = new FormData(e.currentTarget);
+    const form = e.currentTarget; // după await, e.currentTarget devine null
+    const date = new FormData(form);
     if (!FORMSPREE_ID) {
       const corp = `${date.get("message")}\n\n— ${date.get("name")} (${date.get("email")})`;
       window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(String(date.get("subject") || "Mesaj de pe site"))}&body=${encodeURIComponent(corp)}`;
@@ -26,7 +27,7 @@ export function FormularContact() {
     try {
       const r = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, { method: "POST", body: date, headers: { Accept: "application/json" } });
       setStare(r.ok ? "trimis" : "eroare");
-      if (r.ok) e.currentTarget?.reset();
+      if (r.ok) form.reset();
     } catch {
       setStare("eroare");
     }

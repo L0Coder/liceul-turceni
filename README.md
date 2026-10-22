@@ -134,7 +134,7 @@ Site-ul funcționează mereu, indiferent de starea CMS-ului.
 ### Conținut care NU e în CMS (e în cod)
 
 - Descrierile celor 8 profiluri educaționale (`lib/data.ts`)
-- Testimonialele de pe homepage (`lib/data.ts`)
+- Testimonialele de pe homepage și graficul absolvenților (`lib/data.ts`) — **fictive, ascunse** până când `CONTINUT_VERIFICAT` din același fișier e trecut pe `true` după înlocuirea lor cu date reale. La fel articolele-exemplu de blog.
 - Informațiile din portaluri (Elevi, Părinți, etc.)
 - Datele de contact (telefon, adresă, email) (`lib/constants.ts`)
 - Programul orelor pentru gimnaziu și liceu — ora de început, durata orei și a pauzei (`PROGRAM_ORE` în `lib/constants.ts`); tabelul de pe paginile Elevi/Părinți și răspunsul din FAQ se generează automat

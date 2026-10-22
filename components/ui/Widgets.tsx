@@ -6,6 +6,12 @@ const icon = { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none", stroke
 /* ═══ CONTACT RAPID: telefon, email, întrebări frecvente ═══ */
 export function FloatingContact() {
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (!open) return;
+    const k = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    window.addEventListener("keydown", k);
+    return () => window.removeEventListener("keydown", k);
+  }, [open]);
   const rand = "flex items-center justify-between gap-6 px-5 py-4 border-b border-line last:border-0 hover:bg-paper-2 transition-colors";
   return (
     <div className="floating-widget fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">

@@ -94,7 +94,7 @@ export function DesenCaiet({ className = "" }: D) {
 export function DesenBalon({ className = "" }: D) {
   return (
     <svg viewBox="0 0 320 320" className={`ltt-draw ${className}`} aria-hidden="true">
-      <path className="ltt-fill" d="M100 192 Q160 180 220 192 L248 242 Q254 264 232 264 L88 264 Q66 264 72 242 Z" fill={ACCENT} opacity="0.14" />
+      <path className="ltt-fill" d="M100 192 Q160 180 220 192 L248 242 Q254 264 232 264 L88 264 Q66 264 72 242 Z" fill={ACCENT} fillOpacity={0.14} />
       <g {...linie}>
         <P d="M130 62 L130 132 L72 242 Q66 264 88 264 L232 264 Q254 264 248 242 L190 132 L190 62" />
         <P d="M118 60 L202 60" strokeWidth={3} />

@@ -20,14 +20,14 @@ export default function OGImage() {
           fontFamily: "serif",
         }}
       >
-        {/* Logo simplificat */}
+        {/* Logo-ul liceului, ca în antetul site-ului */}
         <div style={{ display: "flex", alignItems: "flex-end", gap: 14, marginBottom: 40 }}>
-          <svg width="90" height="90" viewBox="0 0 64 64">
-            <path d="M14 14 v24 h12" fill="none" stroke="#00e5ff" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
-            <rect x="32" y="14" width="9" height="9" rx="2" fill="#f26b00" />
-            <rect x="35.5" y="23" width="2.5" height="15" fill="#f26b00" />
-            <rect x="47" y="14" width="9" height="9" rx="2" fill="#1de9b6" />
-            <rect x="50.5" y="23" width="2.5" height="15" fill="#1de9b6" />
+          <svg width="200" height="93" viewBox="60 20 280 130">
+            <path d="M80 30 L80 120 L100 140 L162 140" stroke="#f1ece2" fill="none" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
+            <rect x="190" y="28" width="28" height="110" rx="2" fill="#f26b00" />
+            <rect x="162" y="28" width="84" height="28" rx="2" fill="#f26b00" />
+            <rect x="274" y="28" width="28" height="110" rx="2" fill="#2aa198" />
+            <rect x="246" y="28" width="84" height="28" rx="2" fill="#2aa198" />
           </svg>
         </div>
         <div style={{ fontSize: 64, fontWeight: 400, color: "#f1ece2", textAlign: "center", lineHeight: 1.15 }}>

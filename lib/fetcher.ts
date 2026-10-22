@@ -7,7 +7,7 @@ import {
   getGalerie, getProfesori, getFaq, getSettings, isSanityConfigured,
 } from "./sanity";
 import { aniDeActivitate, anScolarCurent } from "./constants";
-import { NOUTATI, PARTENERIATE, TESTIMONIALE, STATS, EXAMENE, ADMITERE, TRANSPARENTA, GALERIE_CATEGORII, PROFILE, EVENIMENTE_STATICE } from "./data";
+import { NOUTATI, PARTENERIATE, TESTIMONIALE, STATS, EXAMENE, ADMITERE, TRANSPARENTA, GALERIE_CATEGORII, PROFILE, EVENIMENTE_STATICE, CONTINUT_VERIFICAT } from "./data";
 import { FAQ_DATA, BLOG_POSTS } from "./data-extra";
 
 // Wrapper sigur — nu crapă dacă Sanity nu e configurat.
@@ -27,8 +27,9 @@ async function safeFetch<T>(fetcher: () => Promise<unknown>, fallback: T): Promi
 // ═══ FORMATARE DATE ═══
 // Sanity livrează date ISO (2026-03-15). Datele statice sunt deja în română.
 // Convertim ISO → "15 Martie 2026" pentru afișare consistentă.
-const LUNI_RO = ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie",
-  "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"];
+// În română lunile se scriu cu literă mică: „7 septembrie 2026”.
+const LUNI_RO = ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie",
+  "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"];
 
 export function formatDateRO(date: string | null | undefined): string {
   if (!date) return "";
@@ -70,7 +71,8 @@ export async function fetchEvenimente() {
 }
 
 export async function fetchArticole() {
-  const staticData = BLOG_POSTS.map(p => ({
+  // Articolele-exemplu (fictive) apar doar dacă școala le-a validat — vezi CONTINUT_VERIFICAT.
+  const staticData = (CONTINUT_VERIFICAT.articoleDemo ? BLOG_POSTS : []).map(p => ({
     _id: p.slug, title: p.title, slug: p.slug, author: p.author,
     authorRole: p.authorRole, date: p.date, category: p.category,
     excerpt: p.excerpt, content: p.content,

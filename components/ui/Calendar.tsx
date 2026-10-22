@@ -58,14 +58,14 @@ export function InteractiveCalendar({ events }: { events: CalEvent[] }) {
       </div>
       <div className="lg:col-span-2 bg-paper rounded-sm border border-line p-6">
         <h3 className="font-heading text-lg font-bold text-ink mb-4">
-          {sel ? `${parseInt(sel.split("-")[2])} ${MONTHS[month]}` : `${MONTHS[month]} — evenimente`}
+          {sel ? `${parseInt(sel.split("-")[2])} ${MONTHS[month].toLowerCase()}` : `${MONTHS[month]} — evenimente`}
         </h3>
         <div className="space-y-3 max-h-96 overflow-y-auto">
           {(sel ? events.filter(e => e.date === sel) : monthEvents).map((e, i) => (
             <div key={e._id || i} className="p-3 rounded-sm bg-paper-2 flex gap-3 items-start cursor-pointer" onClick={() => setSel(e.date)}>
               <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${typeColor[e.type] || "bg-gray-400"}`} />
               <div>
-                <div className="font-body text-xs text-ink-soft">{parseInt(e.date.split("-")[2])} {MONTHS[parseInt(e.date.split("-")[1]) - 1]}</div>
+                <div className="font-body text-xs text-ink-soft">{parseInt(e.date.split("-")[2])} {MONTHS[parseInt(e.date.split("-")[1]) - 1].toLowerCase()}</div>
                 <div className="font-body text-sm font-semibold text-ink">{e.title}</div>
                 {e.description && <div className="font-body text-xs text-ink-soft mt-1">{e.description}</div>}
               </div>
