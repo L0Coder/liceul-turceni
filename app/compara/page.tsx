@@ -11,7 +11,7 @@ export default function ComparaPage() {
   const selected = PROFILE.filter(p => sel.includes(p.slug));
   return (
     <div className="pt-28">
-      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
+      <section className="ltt-sky py-16 px-6 text-center">
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Compară profilurile</h1>
         <p className="font-body text-lg text-white/70">Selectează 2-3 profiluri pentru comparație.</p>
       </section>

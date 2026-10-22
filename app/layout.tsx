@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Big_Shoulders_Display, DM_Sans } from "next/font/google";
+import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/ui/Widgets";
@@ -8,9 +8,9 @@ import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { SITE_META, anAdmitere, IS_PRODUCTION_DOMAIN } from "@/lib/constants";
 import "./globals.css";
 
-// Titluri: font condensat industrial (orașul s-a construit în jurul termocentralei).
+// Titluri: grotesc modern, cald și ușor de citit.
 // Ambele cu latin-ext, pentru diacriticele românești.
-const playfair = Big_Shoulders_Display({ subsets: ["latin", "latin-ext"], variable: "--font-heading", display: "swap" });
+const heading = Bricolage_Grotesque({ subsets: ["latin", "latin-ext"], variable: "--font-heading", display: "swap" });
 const dmSans = DM_Sans({ subsets: ["latin", "latin-ext"], variable: "--font-body", display: "swap" });
 
 export const metadata: Metadata = {
@@ -56,7 +56,7 @@ const schoolSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ro" className={`${playfair.variable} ${dmSans.variable}`} suppressHydrationWarning>
+    <html lang="ro" className={`${heading.variable} ${dmSans.variable}`} suppressHydrationWarning>
       <head>
         {/* Anti-flash: aplică dark mode ÎNAINTE de primul paint */}
         <script dangerouslySetInnerHTML={{ __html:

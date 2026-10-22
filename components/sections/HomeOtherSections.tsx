@@ -15,7 +15,7 @@ export function StatsSection({ settings }: { settings: Settings }) {
     { number: settings.aniExcelenta, label: "Ani de excelență", icon: "🏆", glowColor: "#ffd600" },
   ];
   return (
-    <section className="py-20 px-6 relative" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
+    <section className="ltt-sky py-20 px-6 relative">
       <div className="max-w-7xl mx-auto relative z-10">
         <AnimatedSection><SectionHeader label="Rezultate" title="Cifrele care ne definesc" light /></AnimatedSection>
         <AnimatedSection>
@@ -120,7 +120,7 @@ export function AdmitereCTA({ admitere }: { admitere: number }) {
     <section className="py-24 px-6 bg-[#fafbfd] dark:bg-dark-bg">
       <div className="max-w-3xl mx-auto">
         <AnimatedSection>
-          <div className="rounded-3xl p-12 md:p-16 text-center relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
+          <div className="ltt-sky rounded-3xl p-12 md:p-16 text-center relative overflow-hidden">
             <div className="relative z-10">
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Admitere {admitere}</h2>
               <p className="font-body text-[17px] text-white/70 leading-relaxed max-w-lg mx-auto mb-9">Descoperă profilurile, documentele necesare și calendarul admiterii.</p>

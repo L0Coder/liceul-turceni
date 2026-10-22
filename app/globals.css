@@ -50,17 +50,42 @@ body { overflow-x: hidden; }
   }
 }
 
-/* Aburul din turnurile termocentralei — singura animație permanentă de pe homepage */
-.ltt-steam { transform-box: fill-box; transform-origin: center; opacity: 0; animation: ltt-steam 7s ease-out infinite; }
-@keyframes ltt-steam {
-  0%   { transform: translateY(0) scale(0.6); opacity: 0; }
-  20%  { opacity: 0.3; }
-  100% { transform: translateY(-120px) scale(2.3); opacity: 0; }
+/* Antetul paginilor: cer albastru de zi, cu o lumină caldă în colț.
+   Fundalul rămâne destul de închis ca textul alb (și alb/70) să treacă WCAG AA. */
+.ltt-sky {
+  background:
+    radial-gradient(ellipse at 88% -20%, rgba(255, 206, 128, 0.30), transparent 55%),
+    linear-gradient(180deg, #133d6b 0%, #1a5088 55%, #1d5a93 100%);
 }
-@media (prefers-reduced-motion: reduce) { .ltt-steam { animation: none; opacity: 0.35; } }
+html.dark .ltt-sky { background: linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%); }
 
-/* Titlurile folosesc un font condensat industrial; la greutate mare rămâne lizibil și la dimensiuni mici. */
-.font-heading { font-weight: 800; letter-spacing: 0.005em; }
+/* Peisajul din homepage (Hero.tsx): culorile zilei; în dark mode, seara. */
+.ltt-hero {
+  --h-sky: #1d5a93; --h-hz1: #8cc4e8; --h-hz2: #f6e3bb; --h-sun: #ffd27a; --h-cloud: #ffffff; --h-bird: #1d4f7a;
+  --h-hill1: #9cc9a6; --h-hill2: #6eab79; --h-ground: #3d7f4d; --h-river: #cfeaf7;
+  --h-wall: #f6f1e7; --h-wall2: #e9e2d4; --h-roof: #b5542b; --h-door: #7a4a2c; --h-pole: #4a5a6a;
+  --h-win: #8fbcdd; --h-lit: #8fbcdd; --h-tree: #2f7d48; --h-tree2: #45995c; --h-trunk: #6b4a32;
+  background: linear-gradient(180deg, #123a66 0%, #1d5a93 100%);
+}
+html.dark .ltt-hero {
+  --h-sky: #12304b; --h-hz1: #1f3d5f; --h-hz2: #3f4a6a; --h-sun: #e9edf5; --h-cloud: #2c4260; --h-bird: transparent;
+  --h-hill1: #1b3248; --h-hill2: #152a3d; --h-ground: #0e1f30; --h-river: #284766;
+  --h-wall: #22364d; --h-wall2: #1c2e43; --h-roof: #2d4058; --h-door: #142233; --h-pole: #8a9bb0;
+  --h-win: #2a3f58; --h-lit: #ffc56b; --h-tree: #12302c; --h-tree2: #173a35; --h-trunk: #0f1d2a;
+  background: linear-gradient(180deg, #0b1b2c 0%, #12304b 100%);
+}
+.ltt-hero .ltt-win { fill: var(--h-win); }
+.ltt-hero .ltt-lit { fill: var(--h-lit); }
+.ltt-hero .ltt-stars { display: none; }
+html.dark .ltt-hero .ltt-stars { display: inline; opacity: 0.7; }
+
+/* Norii plutesc încet — singura animație permanentă de pe homepage */
+.ltt-cloud { opacity: 0.9; animation: ltt-drift 60s ease-in-out infinite alternate; }
+@keyframes ltt-drift { from { transform: translateX(-40px); } to { transform: translateX(60px); } }
+@media (prefers-reduced-motion: reduce) { .ltt-cloud { animation: none; } }
+
+/* Titlurile: grotesc prietenos, cu caracter; bold, ușor strâns. */
+.font-heading { font-weight: 700; letter-spacing: -0.015em; }
 
 /* Contrast WCAG AA în dark mode: ca TEXT pe fundal închis, portocaliul și turcoazul
    folosesc nuanțe deschise. Ca FUNDAL de buton (cu text alb) rămân tonurile închise din tailwind. */
