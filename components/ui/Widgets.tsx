@@ -8,7 +8,7 @@ export function FloatingContact() {
     <div className="floating-widget fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       {open && (
         <div className="flex flex-col gap-2 mb-2">
-          <a href="tel:0253335012" className="flex items-center gap-2 bg-brand-primary dark:bg-dark-card text-white px-4 py-3 rounded-xl shadow-xl hover:-translate-y-0.5 transition-all text-sm font-body font-semibold">
+          <a href="tel:0253335012" className="flex items-center gap-2 bg-ink text-paper px-4 py-3 rounded-xl shadow-xl hover:-translate-y-0.5 transition-all text-sm font-body font-semibold">
             📞 Sună: 0253-335012
           </a>
           <a href="mailto:licturceni@yahoo.com" className="flex items-center gap-2 bg-brand-teal dark:bg-brand-teal text-white px-4 py-3 rounded-xl shadow-xl hover:-translate-y-0.5 transition-all text-sm font-body font-semibold">
@@ -20,35 +20,11 @@ export function FloatingContact() {
         </div>
       )}
       <button onClick={() => setOpen(!open)}
-        className="w-14 h-14 rounded-full bg-brand-primary dark:bg-brand-accent text-white shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center text-2xl"
+        className="w-14 h-14 rounded-full bg-ink text-paper hover:bg-[#c2410c] hover:text-white shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center text-2xl"
         aria-label={open ? "Închide" : "Ai nevoie de ajutor?"}>
         {open ? "✕" : "💬"}
       </button>
     </div>
-  );
-}
-
-/* ═══ NEWSLETTER ═══ */
-export function Newsletter() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setSubmitted(true); };
-  return (
-    <section className="py-16 px-6 bg-brand-primary dark:bg-dark-bg">
-      <div className="max-w-2xl mx-auto text-center">
-        <h2 className="font-heading text-2xl font-bold text-white mb-3">Abonează-te la noutăți</h2>
-        <p className="font-body text-sm text-white/60 mb-8">Primește anunțurile importante direct pe email.</p>
-        {submitted ? (
-          <div className="font-body text-sm text-brand-teal font-semibold bg-white/10 px-6 py-4 rounded-xl inline-block">✓ Mulțumim! Vei primi noutățile pe email.</div>
-        ) : (
-          <form onSubmit={handleSubmit} className="flex gap-3 max-w-md mx-auto flex-wrap sm:flex-nowrap">
-            <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="adresa@email.ro" required
-              className="flex-1 min-w-0 px-5 py-3.5 rounded-xl font-body text-sm outline-none border-2 border-transparent focus:border-brand-teal dark:bg-dark-card dark:text-dark-text" />
-            <button type="submit" className="px-6 py-3.5 rounded-xl bg-brand-accent text-white font-body text-sm font-semibold hover:bg-brand-accent-light transition-colors flex-shrink-0">Abonează-te</button>
-          </form>
-        )}
-      </div>
-    </section>
   );
 }
 

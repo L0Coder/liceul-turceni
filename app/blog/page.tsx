@@ -13,11 +13,11 @@ export default async function BlogPage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Blog" }]} />
-      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
+      <section className="ltt-sky py-16 px-6 text-center">
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Jurnal LTT</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Povești scrise de elevii și profesorii noștri.</p>
       </section>
-      <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
         <div className="max-w-4xl mx-auto space-y-8">
           {articole.map((post: any, i: number) => (
             <AnimatedSection key={post._id || post.slug} delay={i * 0.1}>

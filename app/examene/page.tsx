@@ -24,13 +24,13 @@ export default function ExamenePage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Examene" }]} />
-      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
+      <section className="ltt-sky py-16 px-6 text-center">
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Examene</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Calendare, rezultate, resurse.</p>
       </section>
 
       {/* Calendare BAC, EN, Rezultate */}
-      <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {secs.map((s, i) => (
             <AnimatedSection key={s.d.title} delay={i*0.12}><GlowCard glowColor={s.g} className="h-full">
@@ -42,7 +42,7 @@ export default function ExamenePage() {
       </section>
 
       {/* Rezultate oficiale — linkuri externe */}
-      <section className="py-20 px-6 bg-[#fef9f3] dark:bg-dark-card">
+      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
             <SectionHeader label="Rezultate" title="Rezultate oficiale" subtitle="Consultați sursele oficiale pentru rezultatele complete la BAC și Evaluare Națională." />
@@ -62,7 +62,7 @@ export default function ExamenePage() {
       </section>
 
       {/* Harta absolventilor */}
-      <section id="absolventi" className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg scroll-mt-24">
+      <section id="absolventi" className="py-20 px-6 bg-paper dark:bg-dark-bg scroll-mt-24">
         <div className="max-w-5xl mx-auto">
           <AnimatedSection><SectionHeader label="Absolventi" title="Unde ajung elevii nostri" /></AnimatedSection>
           <AnimatedSection delay={0.1}><AbsolventiMap /></AnimatedSection>

@@ -1,8 +1,4 @@
-import { Hero } from "@/components/sections/Hero";
-import { QuickAccess } from "@/components/layout/QuickAccess";
-import { OfertaPreview } from "@/components/sections/OfertaPreview";
-import { StatsSection, ParteneriatePreview, NoutatiPreview, TestimonialeSection, AdmitereCTA } from "@/components/sections/HomeOtherSections";
-import { Newsletter } from "@/components/ui/Widgets";
+import { HeroAcasa, Liceul, Drumul, Profiluri, Noutati, Voci, Admitere } from "@/components/home/Sectiuni";
 import { fetchNoutati, fetchSettings } from "@/lib/fetcher";
 import { anAdmitere } from "@/lib/constants";
 
@@ -12,16 +8,15 @@ export const revalidate = 60;
 
 export default async function HomePage() {
   const [noutati, settings] = await Promise.all([fetchNoutati(), fetchSettings()]);
+  const admitere = anAdmitere();
 
   return (<>
-    <Hero profileCount={settings.profileCount} admitere={anAdmitere()} />
-    <QuickAccess />
-    <OfertaPreview />
-    <StatsSection settings={settings} />
-    <ParteneriatePreview />
-    <NoutatiPreview noutati={noutati} />
-    <TestimonialeSection />
-    <AdmitereCTA admitere={anAdmitere()} />
-    <Newsletter />
+    <HeroAcasa admitere={admitere} elevi={settings.eleviCount} ani={settings.aniExcelenta} profileCount={settings.profileCount} />
+    <Liceul elevi={settings.eleviCount} cadre={settings.cadreCount} profileCount={settings.profileCount} anScolar={settings.anScolar} />
+    <Drumul />
+    <Profiluri />
+    <Noutati noutati={noutati} />
+    <Voci />
+    <Admitere admitere={admitere} />
   </>);
 }

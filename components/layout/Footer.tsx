@@ -24,19 +24,19 @@ const cols = [
 
 export function Footer() {
   return (
-    <footer className="bg-brand-primary-dark dark:bg-[#010409] pt-16 pb-8 px-6">
+    <footer className="bg-[#1f1d1a] dark:bg-[#0c0d10] pt-20 pb-8 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           <div className="lg:col-span-2">
             <div className="mb-4"><Logo white /></div>
-            <h3 className="font-heading text-[15px] font-bold text-white mb-1">Liceul Tehnologic Turceni</h3>
+            <h3 className="font-heading text-xl text-white mb-2">Liceul Tehnologic Turceni</h3>
             <p className="font-body text-sm text-white/65 leading-relaxed">{CONTACT.adresa}<br />
               Tel: <a href="tel:+40253335012" className="hover:text-white underline-offset-2 hover:underline">{CONTACT.telefon}</a><br />
               <a href={`mailto:${CONTACT.email}`} className="hover:text-white underline-offset-2 hover:underline">{CONTACT.email}</a></p>
           </div>
           {cols.map(c => (
             <div key={c.title}>
-              <h4 className="font-body text-[13px] font-bold text-white/65 tracking-wider uppercase mb-5">{c.title}</h4>
+              <h4 className="ltt-kicker text-white/65 mb-5">{c.title}</h4>
               {c.links.map(l => <Link key={l.label} href={l.href} className="block font-body text-sm text-white/65 py-1.5 hover:text-white transition-colors">{l.label}</Link>)}
             </div>
           ))}

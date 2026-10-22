@@ -25,7 +25,7 @@ export default function ViitoriEleviPage() {
   ];
   return (
     <div className="pt-28">
-      <section className="py-20 px-6 text-center" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
+      <section className="ltt-sky py-20 px-6 text-center">
         <div className="text-5xl mb-4">🚀</div>
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Viitorul tău începe aici</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto mb-8">Ești în clasa a VIII-a? Descoperă de ce 1600+ elevi au ales LTT.</p>
@@ -34,7 +34,7 @@ export default function ViitoriEleviPage() {
           <GlowButton href="/admitere" variant="secondary">Info admitere</GlowButton>
         </div>
       </section>
-      <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
         <div className="max-w-5xl mx-auto">
           <AnimatedSection><SectionHeader label="De ce noi?" title="Ce te așteaptă la LTT" /></AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -50,7 +50,7 @@ export default function ViitoriEleviPage() {
           </div>
         </div>
       </section>
-      <section className="py-20 px-6 bg-[#fef9f3] dark:bg-dark-card">
+      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
         <div className="max-w-5xl mx-auto">
           <AnimatedSection><SectionHeader label="Profiluri" title="Alege-ți drumul" /></AnimatedSection>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -62,7 +62,7 @@ export default function ViitoriEleviPage() {
           </div>
         </div>
       </section>
-      <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection><SectionHeader label="Pași" title="Cum te înscrii" /></AnimatedSection>
           <div className="space-y-6">

@@ -20,7 +20,7 @@ body { overflow-x: hidden; }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #fafbfd; }
+::-webkit-scrollbar-track { background: rgb(var(--paper)); }
 ::-webkit-scrollbar-thumb { background: #1f3b5b33; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #1f3b5b66; }
 .dark ::-webkit-scrollbar-track { background: #0d1117; }
@@ -50,17 +50,70 @@ body { overflow-x: hidden; }
   }
 }
 
-/* Aburul din turnurile termocentralei — singura animație permanentă de pe homepage */
-.ltt-steam { transform-box: fill-box; transform-origin: center; opacity: 0; animation: ltt-steam 7s ease-out infinite; }
-@keyframes ltt-steam {
-  0%   { transform: translateY(0) scale(0.6); opacity: 0; }
-  20%  { opacity: 0.3; }
-  100% { transform: translateY(-120px) scale(2.3); opacity: 0; }
+/* ═══ HÂRTIE ȘI CERNEALĂ ═══
+   Paleta întregului site. Culorile sunt canale RGB, ca tailwind să poată pune opacitate
+   (bg-paper/80, text-ink/60). În dark mode hârtia devine noapte, cerneala devine cretă. */
+:root {
+  --paper: 244 240 232; --paper-2: 236 231 220;
+  --ink: 31 29 26; --ink-soft: 88 84 77; --line: 216 208 194;
 }
-@media (prefers-reduced-motion: reduce) { .ltt-steam { animation: none; opacity: 0.35; } }
+html.dark {
+  --paper: 19 21 25; --paper-2: 26 29 34;
+  --ink: 236 232 224; --ink-soft: 166 160 150; --line: 52 56 63;
+}
+body { color: rgb(var(--ink)); }
+/* Textura de hârtie: zgomot fin și fibre, peste tot site-ul (multiply, deci nu acoperă nimic)
+   și fără să prindă click-uri. */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 45; pointer-events: none;
+  background-image: url(/textura-hartie.svg); background-size: 320px 320px; mix-blend-mode: multiply;
+}
+html.dark body::after { mix-blend-mode: screen; filter: invert(1); opacity: 0.35; }
+@media print { body::after { display: none; } }
 
-/* Titlurile folosesc un font condensat industrial; la greutate mare rămâne lizibil și la dimensiuni mici. */
-.font-heading { font-weight: 800; letter-spacing: 0.005em; }
+/* Accentul ca text mic: portocaliul liceului, închis destul pentru AA pe ambele hârtii */
+.ltt-accent { color: #b03c0b; }
+html.dark .ltt-accent { color: #ff8f4d; }
+
+/* Antetul paginilor interioare: o fâșie de cerneală, cu o lumină caldă în colț */
+.ltt-sky {
+  background:
+    radial-gradient(ellipse at 85% -30%, rgba(242, 107, 0, 0.22), transparent 55%),
+    linear-gradient(180deg, #1f1d1a 0%, #2a2621 100%);
+}
+html.dark .ltt-sky { background: radial-gradient(ellipse at 85% -30%, rgba(242, 107, 0, 0.16), transparent 55%), #0c0d10; }
+
+/* Titlurile: serif editorial, greutate normală, ca în tipar */
+.font-heading { font-weight: 400; letter-spacing: -0.012em; }
+.font-heading.font-bold, .font-heading.font-extrabold { font-weight: 500; }
+
+/* Etichete mici, spațiate (— 01 · LICEUL) */
+.ltt-kicker { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; }
+
+/* Desene „în cerneală”: fiecare linie are pathLength=1 și se trasează când părintele primește .is-in */
+.ltt-draw path, .ltt-draw circle, .ltt-draw line, .ltt-draw rect, .ltt-draw ellipse, .ltt-draw polyline {
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.8s cubic-bezier(.6, .05, .25, 1);
+}
+.is-in .ltt-draw path, .is-in .ltt-draw circle, .is-in .ltt-draw line, .is-in .ltt-draw rect,
+.is-in .ltt-draw ellipse, .is-in .ltt-draw polyline { stroke-dashoffset: 0; }
+.ltt-draw .ltt-fill { stroke-dasharray: none; opacity: 0; transition: opacity 1s ease 1.2s; }
+.is-in .ltt-draw .ltt-fill { opacity: 1; }
+
+/* Apariție la scroll: textul urcă ușor din hârtie */
+.ltt-rise { opacity: 0; transform: translateY(24px); transition: opacity 1s ease, transform 1s cubic-bezier(.2, .7, .2, 1); }
+.is-in .ltt-rise, .ltt-rise.is-in { opacity: 1; transform: none; }
+
+/* Scântei de sudură în etapa „Atelierul” */
+@keyframes ltt-spark { 0% { transform: translate(0, 0); opacity: 1; } 100% { transform: translate(var(--sx), var(--sy)); opacity: 0; } }
+.ltt-spark { animation: ltt-spark 0.9s ease-out infinite; transform-box: fill-box; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ltt-draw path, .ltt-draw circle, .ltt-draw line, .ltt-draw rect, .ltt-draw ellipse, .ltt-draw polyline { stroke-dashoffset: 0; transition: none; }
+  .ltt-draw .ltt-fill { opacity: 1; }
+  .ltt-rise { opacity: 1; transform: none; }
+  .ltt-spark { animation: none; opacity: 0; }
+}
 
 /* Contrast WCAG AA în dark mode: ca TEXT pe fundal închis, portocaliul și turcoazul
    folosesc nuanțe deschise. Ca FUNDAL de buton (cu text alb) rămân tonurile închise din tailwind. */

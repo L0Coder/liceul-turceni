@@ -16,8 +16,8 @@ export default function OGImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)",
-          fontFamily: "sans-serif",
+          background: "radial-gradient(circle at 80% 15%, rgba(242,107,0,0.30), transparent 50%), linear-gradient(180deg, #1f1d1a 0%, #2a2621 100%)",
+          fontFamily: "serif",
         }}
       >
         {/* Logo simplificat */}
@@ -30,10 +30,10 @@ export default function OGImage() {
             <rect x="50.5" y="23" width="2.5" height="15" fill="#1de9b6" />
           </svg>
         </div>
-        <div style={{ fontSize: 64, fontWeight: 700, color: "#ffffff", textAlign: "center", lineHeight: 1.15 }}>
+        <div style={{ fontSize: 64, fontWeight: 400, color: "#f1ece2", textAlign: "center", lineHeight: 1.15 }}>
           Liceul Tehnologic
         </div>
-        <div style={{ fontSize: 64, fontWeight: 700, color: "#ffffff", textAlign: "center", lineHeight: 1.15 }}>
+        <div style={{ fontSize: 64, fontWeight: 400, color: "#f1ece2", textAlign: "center", lineHeight: 1.15 }}>
           Turceni
         </div>
         <div style={{ fontSize: 26, color: "rgba(255,255,255,0.75)", marginTop: 28 }}>

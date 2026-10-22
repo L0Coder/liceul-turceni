@@ -40,13 +40,13 @@ export default function DesprePage() {
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Despre noi" }]} />
 
-      <section className="py-16 px-6 text-center" style={{ background: "linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%)" }}>
+      <section className="ltt-sky py-16 px-6 text-center">
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Despre noi</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto">De peste 4 decenii formăm generații de profesioniști.</p>
       </section>
 
       {/* Intro */}
-      <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
             <GlowCard glowColor="#00e5ff">
@@ -68,7 +68,7 @@ export default function DesprePage() {
       </section>
 
       {/* Cifre */}
-      <section className="py-20 px-6 bg-[#fef9f3] dark:bg-dark-card">
+      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection><SectionHeader label="Cifre" title="Liceul în numere" /></AnimatedSection>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -86,7 +86,7 @@ export default function DesprePage() {
       </section>
 
       {/* Niveluri de scolarizare */}
-      <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection><SectionHeader label="Structură" title="Niveluri de școlarizare" /></AnimatedSection>
           <AnimatedSection delay={0.1}>
@@ -105,7 +105,7 @@ export default function DesprePage() {
       </section>
 
       {/* Repere istorice */}
-      <section className="py-20 px-6 bg-[#fef9f3] dark:bg-dark-card">
+      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection><SectionHeader label="Istorie" title="Repere istorice" /></AnimatedSection>
           <div className="space-y-4">
@@ -126,7 +126,7 @@ export default function DesprePage() {
       </section>
 
       {/* Conducere */}
-      <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection><SectionHeader label="Conducere" title="Echipa de conducere" /></AnimatedSection>
           <div className="space-y-4">
@@ -157,7 +157,7 @@ export default function DesprePage() {
       </section>
 
       {/* Contact */}
-      <section className="py-20 px-6 bg-[#fef9f3] dark:bg-dark-card">
+      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
         <div className="max-w-3xl mx-auto text-center">
           <AnimatedSection>
             <h2 className="font-heading text-2xl font-bold text-gray-900 dark:text-dark-text mb-4">Contactează-ne</h2>
