@@ -173,7 +173,7 @@ Site-ul include (generate automat, nu necesită întreținere):
 - **Favicon** (`icon.svg`) — logo LTT în tab-ul browserului
 - **robots.txt** — permite indexarea, blochează `/studio`
 - **sitemap.xml** — toate paginile listate pentru Google
-- **OpenGraph image** — imagine cu logo + „7 profiluri de liceu · județul Gorj · din 1982” (numărul se calculează din date) care apare când cineva dă share pe WhatsApp/Facebook
+- **OpenGraph image** — imagine cu logo + „N profiluri de liceu · județul Gorj · din 1982” (N se calculează din date) care apare când cineva dă share pe WhatsApp/Facebook
 - **Schema.org "School"** — Google înțelege structurat că e o școală (adresă, telefon, coordonate GPS, an înființare)
 - **theme-color** — bara browserului mobil ia culoarea brandului
 

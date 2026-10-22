@@ -51,6 +51,9 @@ export default function OfertaPage() {
                 <div>
                   <div className="ltt-kicker ltt-accent">{FILIERA[p.slug]}</div>
                   <h2 className="font-heading text-4xl md:text-5xl text-ink mt-3 leading-tight">{p.title}</h2>
+                  {p.specializari && (
+                    <p className="font-body text-[15px] text-ink mt-4 leading-relaxed"><span className="ltt-kicker !text-[10px] text-ink-soft mr-2">Specializări</span>{p.specializari.join(" / ")}</p>
+                  )}
                   <p className="font-heading italic text-xl text-ink-soft mt-3">{p.shortDesc}</p>
                   <p className="font-body text-[15px] text-ink-soft leading-[1.85] mt-6">{p.fullDesc}</p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-10">

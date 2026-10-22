@@ -98,6 +98,6 @@ export const IS_PRODUCTION_DOMAIN = Boolean(process.env.NEXT_PUBLIC_SITE_URL);
 
 export const SITE_META = {
   title: "Liceul Tehnologic Turceni",
-  description: "Liceul Tehnologic Turceni, județul Gorj — liceu teoretic și tehnologic, cu profiluri de la informatică la construcții. Din 1982 formăm profesioniștii de mâine.",
+  description: "Liceul Tehnologic Turceni, județul Gorj — liceu teoretic și tehnologic, cu profiluri de la informatică la electromecanică. Din 1982 formăm profesioniștii de mâine.",
   url: SITE_URL,
 } as const;

@@ -242,24 +242,6 @@ function Motor({ className = "" }: D) {
     </svg>
   );
 }
-function Casa({ className = "" }: D) {
-  return (
-    <svg viewBox="0 0 240 240" className={`ltt-draw ${className}`} aria-hidden="true">
-      <g {...linie}>
-        <P d="M24 196 L216 196" />
-        <P d="M50 196 L50 112 L118 62 L186 112 L186 196" />
-        <P d="M40 118 L118 58 L196 118" strokeWidth={3} />
-        <P d="M84 196 L84 150 L112 150 L112 196" />
-        <P d="M132 136 L162 136 L162 162 L132 162 Z M147 136 L147 162" strokeWidth={1.6} />
-        <P d="M50 156 L186 156" strokeWidth={1.1} />
-      </g>
-      <g fill="none" stroke={ACCENT} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-        <P d="M210 40 L210 120" />
-        <P d="M204 120 L216 120 L210 134 Z" />
-      </g>
-    </svg>
-  );
-}
 function Sudura({ className = "" }: D) {
   return (
     <svg viewBox="0 0 240 240" className={`ltt-draw ${className}`} aria-hidden="true">
@@ -286,6 +268,5 @@ export const DESEN_PROFIL: Record<string, (p: D) => JSX.Element> = {
   "electronica-automatizari": Cip,
   mecanica: Roti,
   electromecanica: Motor,
-  "constructii-instalatii": Casa,
   "scoala-profesionala": Sudura,
 };
