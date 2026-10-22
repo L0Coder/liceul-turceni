@@ -43,7 +43,7 @@ export default async function TransparentaPage() {
             </div>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
-            <div className="mt-14 p-8 bg-paper-2 border border-line max-w-3xl">
+            <div id="solicitare" className="scroll-mt-28 mt-14 p-8 bg-paper-2 border border-line max-w-3xl">
               <h3 className="font-heading text-2xl text-ink mb-3">Solicitare informații publice</h3>
               <p className="font-body text-sm text-ink-soft leading-relaxed">
                 Conform Legii 544/2001, puteți solicita informații la adresa: Str. Educației nr. 1, Turceni 217520 sau pe email la{" "}

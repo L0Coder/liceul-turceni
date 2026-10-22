@@ -79,13 +79,6 @@ export const CONTACT = {
   facebook: "https://www.facebook.com/Turceni/",
 } as const;
 
-export const EXTERNAL_LINKS = [
-  { label: "ISJ Gorj", href: "https://www.isjgorj.ro/" },
-  { label: "Ministerul Educației", href: "https://www.edu.ro/" },
-  { label: "Primăria Turceni", href: "https://www.primariaturceni.ro/" },
-  { label: "Complexul Energetic Oltenia", href: "https://ceoltenia.ro/" },
-] as const;
-
 /* ═══ ADRESA SITE-ULUI ═══
    SURSĂ UNICĂ. Folosită de sitemap, robots.txt, breadcrumbs, OpenGraph și
    Schema.org — toate trebuie să indice ACELAȘI domeniu, altfel Google și

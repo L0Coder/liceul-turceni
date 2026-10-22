@@ -19,6 +19,13 @@ export function Header({ admitere }: { admitere: number }) {
 
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const k = (e: KeyboardEvent) => { if (e.key === "Escape") setMenuOpen(false); };
+    window.addEventListener("keydown", k);
+    return () => window.removeEventListener("keydown", k);
+  }, [menuOpen]);
+
   const activ = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
