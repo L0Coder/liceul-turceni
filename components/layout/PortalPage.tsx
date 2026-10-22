@@ -15,7 +15,7 @@ export function PortalPage({ emoji, title, subtitle, sections, glowColor = "#00e
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto">{subtitle}</p>
       </section>
       {sections.map((section, si) => (
-        <section key={section.title} className={`py-16 px-6 ${si % 2 === 0 ? "bg-[#fafbfd] dark:bg-dark-bg" : "bg-[#fef9f3] dark:bg-dark-card"}`}>
+        <section key={section.title} className={`py-16 px-6 ${si % 2 === 0 ? "bg-paper dark:bg-dark-bg" : "bg-paper-2 dark:bg-dark-card"}`}>
           <div className="max-w-5xl mx-auto">
             <AnimatedSection><SectionHeader title={section.title} /></AnimatedSection>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

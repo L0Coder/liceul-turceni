@@ -16,7 +16,7 @@ export default async function FAQPage() {
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Întrebări frecvente</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Răspunsuri rapide la cele mai comune întrebări.</p>
       </section>
-      <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
         <FaqClient data={faq} />
       </section>
     </div>

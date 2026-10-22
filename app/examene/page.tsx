@@ -30,7 +30,7 @@ export default function ExamenePage() {
       </section>
 
       {/* Calendare BAC, EN, Rezultate */}
-      <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {secs.map((s, i) => (
             <AnimatedSection key={s.d.title} delay={i*0.12}><GlowCard glowColor={s.g} className="h-full">
@@ -42,7 +42,7 @@ export default function ExamenePage() {
       </section>
 
       {/* Rezultate oficiale — linkuri externe */}
-      <section className="py-20 px-6 bg-[#fef9f3] dark:bg-dark-card">
+      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
             <SectionHeader label="Rezultate" title="Rezultate oficiale" subtitle="Consultați sursele oficiale pentru rezultatele complete la BAC și Evaluare Națională." />
@@ -62,7 +62,7 @@ export default function ExamenePage() {
       </section>
 
       {/* Harta absolventilor */}
-      <section id="absolventi" className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg scroll-mt-24">
+      <section id="absolventi" className="py-20 px-6 bg-paper dark:bg-dark-bg scroll-mt-24">
         <div className="max-w-5xl mx-auto">
           <AnimatedSection><SectionHeader label="Absolventi" title="Unde ajung elevii nostri" /></AnimatedSection>
           <AnimatedSection delay={0.1}><AbsolventiMap /></AnimatedSection>

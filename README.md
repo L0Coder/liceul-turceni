@@ -67,8 +67,9 @@ components/
 ├── ui/                         Logo, GlowButton, GlowCard, SectionHeader,
 │                               PlaceholderImage, Calendar, FaqClient,
 │                               Widgets, CookieBanner, ScrollToTop, Breadcrumbs
-├── layout/                     Header, Footer, QuickAccess, PortalPage
-└── sections/                   Hero, OfertaPreview, HomeOtherSections
+├── layout/                     Header, Footer, PortalPage
+└── home/                       Homepage: Sectiuni (hero, drumul, profiluri…),
+                                Desene (ilustrații SVG), scroll (efecte la derulare)
 
 lib/
 ├── constants.ts                Navigare, contact, meta

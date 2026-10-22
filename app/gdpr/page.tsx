@@ -29,7 +29,7 @@ export default function GDPRPage() {
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Protecția datelor cu caracter personal</p>
       </section>
 
-      <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
             <div className="space-y-6">

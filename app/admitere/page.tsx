@@ -22,7 +22,7 @@ export default function AdmiterePage() {
           <GlowButton href="/oferta" variant="secondary">Vezi profilurile</GlowButton>
         </div>
       </section>
-      <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <AnimatedSection><GlowCard glowColor="#ff9100" className="h-full">
             <h2 className="font-heading text-2xl font-bold text-gray-900 dark:text-dark-text mb-6 pb-4 border-b-2 border-brand-accent/20">Documente necesare</h2>
@@ -35,7 +35,7 @@ export default function AdmiterePage() {
           </GlowCard></AnimatedSection>
         </div>
       </section>
-      <section className="py-20 px-6 bg-[#fef9f3] dark:bg-dark-card">
+      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
         <div className="max-w-5xl mx-auto">
           <AnimatedSection><SectionHeader label="Profiluri" title="Alege-ți viitorul" /></AnimatedSection>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

@@ -23,7 +23,7 @@ export default function ContactPage() {
         <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Contact</h1>
         <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Suntem aici pentru tine.</p>
       </section>
-      <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <AnimatedSection><GlowCard glowColor="#00e5ff" className="h-full">
             <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-dark-text mb-6">Informatii de contact</h2>
@@ -73,7 +73,7 @@ export default function ContactPage() {
       </section>
 
       {/* Google Maps */}
-      <section className="py-20 px-6 bg-[#fef9f3] dark:bg-dark-card">
+      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
         <div className="max-w-5xl mx-auto">
           <AnimatedSection>
             <h2 className="font-heading text-2xl font-bold text-gray-900 dark:text-dark-text mb-6 text-center">Unde ne găsești</h2>

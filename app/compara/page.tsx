@@ -26,7 +26,7 @@ export default function ComparaPage() {
           ))}
         </div>
       </section>
-      <section className="py-16 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-16 px-6 bg-paper dark:bg-dark-bg">
         <div className="max-w-6xl mx-auto">
           {selected.length < 2 ? (
             <div className="text-center py-20"><div className="text-6xl mb-4">{selected.length === 0 ? "☝️" : "✌️"}</div>

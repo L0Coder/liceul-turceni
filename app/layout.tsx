@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
+import { Newsreader, DM_Sans } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/ui/Widgets";
@@ -8,9 +8,9 @@ import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { SITE_META, anAdmitere, IS_PRODUCTION_DOMAIN } from "@/lib/constants";
 import "./globals.css";
 
-// Titluri: grotesc modern, cald și ușor de citit.
+// Titluri: serif editorial (Newsreader), corp de text: DM Sans.
 // Ambele cu latin-ext, pentru diacriticele românești.
-const heading = Bricolage_Grotesque({ subsets: ["latin", "latin-ext"], variable: "--font-heading", display: "swap" });
+const heading = Newsreader({ subsets: ["latin", "latin-ext"], variable: "--font-heading", display: "swap", style: ["normal", "italic"], axes: ["opsz"] });
 const dmSans = DM_Sans({ subsets: ["latin", "latin-ext"], variable: "--font-body", display: "swap" });
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export const revalidate = 3600;
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#1f3b5b" },
+    { media: "(prefers-color-scheme: light)", color: "#f4f0e8" },
     { media: "(prefers-color-scheme: dark)", color: "#0f1420" },
   ],
 };
@@ -63,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `try{var s=localStorage.getItem("ltt-dark-mode");if(s==="true"||(!s&&window.matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}`
         }} />
       </head>
-      <body className="font-body bg-[#fafbfd] dark:bg-dark-bg text-gray-900 dark:text-dark-text antialiased">
+      <body className="font-body bg-paper text-gray-900 dark:text-dark-text antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schoolSchema) }} />
         <a href="#main-content" className="skip-link">Salt la conținut</a>
         <Header admitere={anAdmitere()} />

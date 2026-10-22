@@ -20,7 +20,7 @@ body { overflow-x: hidden; }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #fafbfd; }
+::-webkit-scrollbar-track { background: rgb(var(--paper)); }
 ::-webkit-scrollbar-thumb { background: #1f3b5b33; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #1f3b5b66; }
 .dark ::-webkit-scrollbar-track { background: #0d1117; }
@@ -50,42 +50,70 @@ body { overflow-x: hidden; }
   }
 }
 
-/* Antetul paginilor: cer albastru de zi, cu o lumină caldă în colț.
-   Fundalul rămâne destul de închis ca textul alb (și alb/70) să treacă WCAG AA. */
+/* ═══ HÂRTIE ȘI CERNEALĂ ═══
+   Paleta întregului site. Culorile sunt canale RGB, ca tailwind să poată pune opacitate
+   (bg-paper/80, text-ink/60). În dark mode hârtia devine noapte, cerneala devine cretă. */
+:root {
+  --paper: 244 240 232; --paper-2: 236 231 220;
+  --ink: 31 29 26; --ink-soft: 88 84 77; --line: 216 208 194;
+}
+html.dark {
+  --paper: 19 21 25; --paper-2: 26 29 34;
+  --ink: 236 232 224; --ink-soft: 166 160 150; --line: 52 56 63;
+}
+body { color: rgb(var(--ink)); }
+/* Textura de hârtie: zgomot fin și fibre, peste tot site-ul (multiply, deci nu acoperă nimic)
+   și fără să prindă click-uri. */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 45; pointer-events: none;
+  background-image: url(/textura-hartie.svg); background-size: 320px 320px; mix-blend-mode: multiply;
+}
+html.dark body::after { mix-blend-mode: screen; filter: invert(1); opacity: 0.35; }
+@media print { body::after { display: none; } }
+
+/* Accentul ca text mic: portocaliul liceului, închis destul pentru AA pe ambele hârtii */
+.ltt-accent { color: #b03c0b; }
+html.dark .ltt-accent { color: #ff8f4d; }
+
+/* Antetul paginilor interioare: o fâșie de cerneală, cu o lumină caldă în colț */
 .ltt-sky {
   background:
-    radial-gradient(ellipse at 88% -20%, rgba(255, 206, 128, 0.30), transparent 55%),
-    linear-gradient(180deg, #133d6b 0%, #1a5088 55%, #1d5a93 100%);
+    radial-gradient(ellipse at 85% -30%, rgba(242, 107, 0, 0.22), transparent 55%),
+    linear-gradient(180deg, #1f1d1a 0%, #2a2621 100%);
 }
-html.dark .ltt-sky { background: linear-gradient(180deg, #0b1b2c 0%, #12304b 60%, #2b3c58 100%); }
+html.dark .ltt-sky { background: radial-gradient(ellipse at 85% -30%, rgba(242, 107, 0, 0.16), transparent 55%), #0c0d10; }
 
-/* Peisajul din homepage (Hero.tsx): culorile zilei; în dark mode, seara. */
-.ltt-hero {
-  --h-sky: #1d5a93; --h-hz1: #8cc4e8; --h-hz2: #f6e3bb; --h-sun: #ffd27a; --h-cloud: #ffffff; --h-bird: #1d4f7a;
-  --h-hill1: #9cc9a6; --h-hill2: #6eab79; --h-ground: #3d7f4d; --h-river: #cfeaf7;
-  --h-wall: #f6f1e7; --h-wall2: #e9e2d4; --h-roof: #b5542b; --h-door: #7a4a2c; --h-pole: #4a5a6a;
-  --h-win: #8fbcdd; --h-lit: #8fbcdd; --h-tree: #2f7d48; --h-tree2: #45995c; --h-trunk: #6b4a32;
-  background: linear-gradient(180deg, #123a66 0%, #1d5a93 100%);
+/* Titlurile: serif editorial, greutate normală, ca în tipar */
+.font-heading { font-weight: 400; letter-spacing: -0.012em; }
+.font-heading.font-bold, .font-heading.font-extrabold { font-weight: 500; }
+
+/* Etichete mici, spațiate (— 01 · LICEUL) */
+.ltt-kicker { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; }
+
+/* Desene „în cerneală”: fiecare linie are pathLength=1 și se trasează când părintele primește .is-in */
+.ltt-draw path, .ltt-draw circle, .ltt-draw line, .ltt-draw rect, .ltt-draw ellipse, .ltt-draw polyline {
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.8s cubic-bezier(.6, .05, .25, 1);
 }
-html.dark .ltt-hero {
-  --h-sky: #12304b; --h-hz1: #1f3d5f; --h-hz2: #3f4a6a; --h-sun: #e9edf5; --h-cloud: #2c4260; --h-bird: transparent;
-  --h-hill1: #1b3248; --h-hill2: #152a3d; --h-ground: #0e1f30; --h-river: #284766;
-  --h-wall: #22364d; --h-wall2: #1c2e43; --h-roof: #2d4058; --h-door: #142233; --h-pole: #8a9bb0;
-  --h-win: #2a3f58; --h-lit: #ffc56b; --h-tree: #12302c; --h-tree2: #173a35; --h-trunk: #0f1d2a;
-  background: linear-gradient(180deg, #0b1b2c 0%, #12304b 100%);
+.is-in .ltt-draw path, .is-in .ltt-draw circle, .is-in .ltt-draw line, .is-in .ltt-draw rect,
+.is-in .ltt-draw ellipse, .is-in .ltt-draw polyline { stroke-dashoffset: 0; }
+.ltt-draw .ltt-fill { stroke-dasharray: none; opacity: 0; transition: opacity 1s ease 1.2s; }
+.is-in .ltt-draw .ltt-fill { opacity: 1; }
+
+/* Apariție la scroll: textul urcă ușor din hârtie */
+.ltt-rise { opacity: 0; transform: translateY(24px); transition: opacity 1s ease, transform 1s cubic-bezier(.2, .7, .2, 1); }
+.is-in .ltt-rise, .ltt-rise.is-in { opacity: 1; transform: none; }
+
+/* Scântei de sudură în etapa „Atelierul” */
+@keyframes ltt-spark { 0% { transform: translate(0, 0); opacity: 1; } 100% { transform: translate(var(--sx), var(--sy)); opacity: 0; } }
+.ltt-spark { animation: ltt-spark 0.9s ease-out infinite; transform-box: fill-box; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ltt-draw path, .ltt-draw circle, .ltt-draw line, .ltt-draw rect, .ltt-draw ellipse, .ltt-draw polyline { stroke-dashoffset: 0; transition: none; }
+  .ltt-draw .ltt-fill { opacity: 1; }
+  .ltt-rise { opacity: 1; transform: none; }
+  .ltt-spark { animation: none; opacity: 0; }
 }
-.ltt-hero .ltt-win { fill: var(--h-win); }
-.ltt-hero .ltt-lit { fill: var(--h-lit); }
-.ltt-hero .ltt-stars { display: none; }
-html.dark .ltt-hero .ltt-stars { display: inline; opacity: 0.7; }
-
-/* Norii plutesc încet — singura animație permanentă de pe homepage */
-.ltt-cloud { opacity: 0.9; animation: ltt-drift 60s ease-in-out infinite alternate; }
-@keyframes ltt-drift { from { transform: translateX(-40px); } to { transform: translateX(60px); } }
-@media (prefers-reduced-motion: reduce) { .ltt-cloud { animation: none; } }
-
-/* Titlurile: grotesc prietenos, cu caracter; bold, ușor strâns. */
-.font-heading { font-weight: 700; letter-spacing: -0.015em; }
 
 /* Contrast WCAG AA în dark mode: ca TEXT pe fundal închis, portocaliul și turcoazul
    folosesc nuanțe deschise. Ca FUNDAL de buton (cu text alb) rămân tonurile închise din tailwind. */

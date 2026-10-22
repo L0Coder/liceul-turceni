@@ -73,7 +73,7 @@ export default async function ProfesoriPage() {
       </section>
 
       {/* Conducere */}
-      <section className="py-20 px-6 bg-[#fafbfd] dark:bg-dark-bg">
+      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection><SectionHeader label="Conducere" title="Echipa de conducere" /></AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -104,7 +104,7 @@ export default async function ProfesoriPage() {
       </section>
 
       {/* Cadre didactice */}
-      <section className="py-20 px-6 bg-[#fef9f3] dark:bg-dark-card">
+      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection><SectionHeader label="Colectiv" title="Cadre didactice pe catedre" /></AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
