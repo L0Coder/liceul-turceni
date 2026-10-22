@@ -21,7 +21,7 @@ export default function ContactPage() {
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Contact" }]} />
       <PaginaAntet eticheta="Secretariat" titlu="Contact" subtitlu="Ne găsiți la secretariat, la telefon sau pe email." />
-      <section className="py-20 md:py-24 px-6 bg-paper">
+      <section className="py-20 md:py-24 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.4fr] gap-14 md:gap-20">
           <AnimatedSection>
             <SectionHeader label="Date de contact" title="Secretariatul" />
@@ -42,7 +42,7 @@ export default function ContactPage() {
       </section>
 
       {/* Google Maps */}
-      <section className="py-20 px-6 bg-paper-2">
+      <section className="py-20 px-6 ltt-nuanta">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
             <SectionHeader label="Hartă" title="Unde ne găsești" />

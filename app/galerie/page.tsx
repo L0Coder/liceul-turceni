@@ -12,7 +12,7 @@ export default function GaleriePage() {
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Galerie" }]} />
       <PaginaAntet eticheta="Viața la liceu" titlu="Galerie foto" subtitlu="Laboratoare, ateliere, clubul de robotică, sport, evenimente și mobilități Erasmus+." />
-      <section className="py-20 px-6 bg-paper">
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto space-y-16">
           {GALERIE_CATEGORII.map((cat, ci) => (
             <AnimatedSection key={cat.slug}><div id={cat.slug} className="scroll-mt-28">

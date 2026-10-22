@@ -72,7 +72,7 @@ export default async function DesprePage() {
       </section>
 
       {/* Cifre */}
-      <section className="py-16 md:py-20 px-6 border-y border-line bg-paper-2">
+      <section className="py-16 md:py-20 px-6 border-y border-line ltt-nuanta">
         <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
           {cifre.map((c, i) => (
             <AnimatedSection key={c.label} delay={i * 0.06}>
@@ -104,7 +104,7 @@ export default async function DesprePage() {
       </section>
 
       {/* Repere istorice */}
-      <section className="py-20 md:py-24 px-6 bg-paper-2">
+      <section className="py-20 md:py-24 px-6 ltt-nuanta">
         <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.6fr] gap-12">
           <AnimatedSection><SectionHeader label="Istorie" title="Repere istorice" subtitle="Patru decenii, pe scurt." /></AnimatedSection>
           <ol className="relative border-l border-line ml-2">
@@ -143,7 +143,7 @@ export default async function DesprePage() {
       </section>
 
       {/* Contact */}
-      <section className="py-20 md:py-24 px-6 border-t border-line bg-paper-2">
+      <section className="py-20 md:py-24 px-6 border-t border-line ltt-nuanta">
         <AnimatedSection className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
             <h2 className="font-heading text-4xl md:text-5xl text-ink">Vino să ne cunoști.</h2>

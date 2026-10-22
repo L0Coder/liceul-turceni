@@ -44,7 +44,7 @@ export default function AdmiterePage() {
           </AnimatedSection>
         </div>
       </section>
-      <section className="py-20 md:py-24 px-6 bg-paper-2">
+      <section className="py-20 md:py-24 px-6 ltt-nuanta">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection><SectionHeader label="Profiluri" title="Alege-ți viitorul" /></AnimatedSection>
           <GrilaProfiluri />

@@ -28,7 +28,7 @@ export default function ViitoriEleviPage() {
         <ButonCerneala href="/compara">Compară profilurile</ButonCerneala>
         <LinkSubliniat href="/admitere">Info admitere</LinkSubliniat>
       </PaginaAntet>
-      <section className="py-20 md:py-24 px-6 bg-paper">
+      <section className="py-20 md:py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection><SectionHeader label="De ce noi" title="Ce te așteaptă la LTT" /></AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-line">
@@ -42,13 +42,13 @@ export default function ViitoriEleviPage() {
           </div>
         </div>
       </section>
-      <section className="py-20 md:py-24 px-6 bg-paper-2">
+      <section className="py-20 md:py-24 px-6 ltt-nuanta">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection><SectionHeader label="Profiluri" title="Alege-ți drumul" /></AnimatedSection>
           <GrilaProfiluri />
         </div>
       </section>
-      <section className="py-20 md:py-24 px-6 bg-paper">
+      <section className="py-20 md:py-24 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.4fr] gap-12">
           <AnimatedSection><SectionHeader label="Pași" title="Cum te înscrii" subtitle="De la prima vizită până la primul clopoțel." /></AnimatedSection>
           <div className="border-t border-line">

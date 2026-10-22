@@ -157,11 +157,11 @@ const ETAPE = [
 function TextEtapa({ e, light }: { e: (typeof ETAPE)[number]; light: boolean }) {
   return (
     <div className="flex gap-6 md:gap-8 items-start">
-      <div className={`font-heading text-6xl md:text-8xl leading-none w-24 md:w-36 shrink-0 ${light ? "text-[#f1ece2]" : "text-ink"}`}>{e.cls}</div>
+      <div className={`hidden sm:block font-heading text-6xl md:text-8xl leading-none w-24 md:w-36 shrink-0 ${light ? "text-[#f1ece2]" : "text-ink"}`}>{e.cls}</div>
       <div className="max-w-md pt-1">
-        <div className={`ltt-kicker ${light ? "text-[#ff8f4d]" : "ltt-accent"}`}>{e.nr} · {e.nume}</div>
-        <h3 className={`font-heading text-2xl md:text-3xl mt-3 leading-snug ${light ? "text-[#f1ece2]" : "text-ink"}`}>{e.titlu}</h3>
-        <p className={`font-body text-[14px] leading-[1.85] mt-4 ${light ? "text-[#f1ece2]/75" : "text-ink-soft"}`}>{e.text}</p>
+        <div className={`ltt-kicker ${light ? "text-[#ff8f4d]" : "ltt-accent"}`}><span className="sm:hidden">Clasa a {e.cls}-a · </span>{e.nume}</div>
+        <h3 className={`font-heading text-xl sm:text-2xl md:text-3xl mt-2 sm:mt-3 leading-snug ${light ? "text-[#f1ece2]" : "text-ink"}`}>{e.titlu}</h3>
+        <p className={`font-body text-[13px] sm:text-[14px] leading-[1.75] sm:leading-[1.85] mt-2 sm:mt-4 ${light ? "text-[#f1ece2]/75" : "text-ink-soft"}`}>{e.text}</p>
       </div>
     </div>
   );
@@ -180,7 +180,7 @@ function Scantei() {
 }
 
 export function Drumul() {
-  const pinned = usePinned();
+  const pinned = usePinned(0);
   const [ref, p] = useScrollProgress<HTMLElement>();
   const i = Math.min(ETAPE.length - 1, Math.floor(p * ETAPE.length));
   const intuneric = i === 2;
@@ -195,7 +195,7 @@ export function Drumul() {
   const titlu = (light: boolean) => (
     <div>
       <Kicker className={light ? "text-white/60" : "text-ink-soft"}>De la admitere la absolvire</Kicker>
-      <h2 className={`font-heading text-4xl md:text-5xl leading-[1.1] mt-5 transition-colors duration-700 ${light ? "text-[#f1ece2]" : "text-ink"}`}>Patru ani,<br />patru etape.</h2>
+      <h2 className={`font-heading text-[1.7rem] sm:text-4xl md:text-5xl leading-[1.1] mt-3 sm:mt-5 transition-colors duration-700 ${light ? "text-[#f1ece2]" : "text-ink"}`}>Patru ani,{" "}<br className="hidden sm:inline" />patru etape.</h2>
     </div>
   );
 
@@ -222,36 +222,36 @@ export function Drumul() {
           style={{ background: "radial-gradient(circle at 64% 46%, rgba(255,122,26,0.38), rgba(255,122,26,0.08) 30%, transparent 55%)" }} />
         <Sina n="02" eticheta="Drumul" light={intuneric} />
 
-        <div className="relative h-full max-w-7xl mx-auto px-12 lg:px-24 pt-24 pb-16 grid grid-rows-[auto_1fr_auto]">
+        <div className="relative h-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-24 pt-20 sm:pt-24 pb-14 sm:pb-16 grid grid-rows-[auto_1fr_auto] gap-2">
           {titlu(intuneric)}
 
           <div className="relative">
             {ETAPE.map((e, k) => (
               <div key={e.cls} className={`absolute inset-0 flex items-center justify-center md:justify-end md:pr-[18%] transition-all duration-700 ${k === i ? "opacity-100 scale-100 is-in" : "opacity-0 scale-95"}`}>
-                <e.Desen className={`h-[min(46vh,420px)] w-auto transition-colors duration-700 ${intuneric ? "text-[#f1ece2]" : "text-ink"}`} />
+                <e.Desen className={`h-[min(30svh,240px)] sm:h-[min(46vh,420px)] w-auto transition-colors duration-700 ${intuneric ? "text-[#f1ece2]" : "text-ink"}`} />
               </div>
             ))}
             {intuneric && <Scantei />}
           </div>
 
-          <div key={i} className="is-in" aria-hidden="true"><div className="ltt-rise"><TextEtapa e={ETAPE[i]} light={intuneric} /></div></div>
+          <div key={i} className="is-in pr-14 sm:pr-0" aria-hidden="true"><div className="ltt-rise"><TextEtapa e={ETAPE[i]} light={intuneric} /></div></div>
           <ol className="sr-only">
             {ETAPE.map((e) => <li key={e.cls}>Clasa a {e.cls}-a, {e.nume}: {e.titlu} {e.text}</li>)}
           </ol>
         </div>
 
         {/* navigarea pe etape */}
-        <nav aria-label="Etapele" className="absolute right-6 xl:right-12 top-1/2 -translate-y-1/2 flex flex-col gap-4">
+        <nav aria-label="Etapele" className="absolute right-4 sm:right-6 xl:right-12 top-1/2 -translate-y-1/2 flex flex-col gap-3 sm:gap-4">
           {ETAPE.map((e, k) => (
             <button key={e.cls} onClick={() => mergiLa(k)} className="group flex items-center gap-3" aria-current={k === i ? "step" : undefined}>
-              <span className={`w-8 h-8 rounded-full grid place-items-center font-heading text-[12px] border transition-all ${
+              <span className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full grid place-items-center font-heading text-[11px] sm:text-[12px] border transition-all ${
                 k <= i ? (intuneric ? "bg-[#ff7a1a] border-[#ff7a1a] text-[#15120f]" : "bg-ink border-ink text-paper") : (intuneric ? "border-white/25 text-white/50" : "border-line text-ink-soft")}`}>{e.cls}</span>
-              <span className={`ltt-kicker !text-[10px] transition-opacity ${k === i ? "opacity-100" : "opacity-50 group-hover:opacity-100"} ${intuneric ? "text-white/80" : "text-ink-soft"}`}>{e.nume}</span>
+              <span className={`hidden md:inline ltt-kicker !text-[10px] transition-opacity ${k === i ? "opacity-100" : "opacity-50 group-hover:opacity-100"} ${intuneric ? "text-white/80" : "text-ink-soft"}`}>{e.nume}</span>
             </button>
           ))}
         </nav>
 
-        <div className="absolute bottom-8 left-12 lg:left-24 right-12 lg:right-24 h-px">
+        <div className="absolute bottom-8 left-6 sm:left-12 lg:left-24 right-6 sm:right-12 lg:right-24 h-px">
           <div className={`absolute inset-0 ${intuneric ? "bg-white/20" : "bg-line"}`} />
           <div className="absolute left-0 -top-px h-[2px] bg-[#c2410c]" style={{ width: `${p * 100}%` }} />
         </div>
@@ -268,21 +268,21 @@ function FisaProfil({ pr, n }: { pr: (typeof PROFILE)[number]; n: number }) {
   return (
     <InView threshold={0.35} className="h-full grid sm:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:grid-cols-[4rem_minmax(0,0.85fr)_minmax(0,1.15fr)] items-center gap-6 lg:gap-14">
       <div className="hidden lg:block font-heading text-[4.5rem] leading-[0.95] text-ink/15 [writing-mode:vertical-rl] [text-orientation:upright]">{String(n).padStart(2, "0")}</div>
-      <div className="text-ink">{Desen && <Desen className="w-48 md:w-full max-w-[300px] mx-auto" />}</div>
+      <div className="text-ink">{Desen && <Desen className="w-28 sm:w-48 md:w-full max-w-[300px] sm:mx-auto" />}</div>
       <div className="ltt-rise min-w-0">
         <div className="ltt-kicker ltt-accent">{FILIERA[pr.slug]}</div>
-        <h3 className="font-heading text-3xl md:text-4xl text-ink mt-3 leading-tight">{pr.title}</h3>
+        <h3 className="font-heading text-[1.7rem] sm:text-3xl md:text-4xl text-ink mt-3 leading-tight">{pr.title}</h3>
         <p className="font-heading italic text-lg text-ink-soft mt-2">{pr.shortDesc}</p>
-        <p className="font-body text-[14px] leading-[1.85] text-ink-soft mt-5">{pr.fullDesc}</p>
-        <p className="font-body text-[12px] text-ink-soft border-y border-line py-3 mt-6">{pr.discipline.slice(0, 4).join(" · ")}</p>
-        <div className="mt-6"><ButonCerneala href={`/oferta#${pr.slug}`}>Detalii profil</ButonCerneala></div>
+        <p className="hidden sm:block font-body text-[14px] leading-[1.85] text-ink-soft mt-5">{pr.fullDesc}</p>
+        <p className="font-body text-[12px] text-ink-soft border-y border-line py-3 mt-4 sm:mt-6">{pr.discipline.slice(0, 4).join(" · ")}</p>
+        <div className="mt-5 sm:mt-6"><ButonCerneala href={`/oferta#${pr.slug}`}>Detalii profil</ButonCerneala></div>
       </div>
     </InView>
   );
 }
 
 export function Profiluri() {
-  const pinned = usePinned(1024);
+  const pinned = usePinned(0);
   const [ref, p] = useScrollProgress<HTMLElement>();
   const pista = useRef<HTMLDivElement>(null);
   const fixat = useRef<HTMLDivElement>(null);
@@ -303,15 +303,16 @@ export function Profiluri() {
     if (!sec) return;
     // la focus, browserul ar derula și containerul pe orizontală, peste deplasarea noastră
     if (fixat.current) fixat.current.scrollLeft = 0;
-    const tinta = Math.min(dist, Math.max(0, e.currentTarget.offsetLeft - 112));
+    const margine = pista.current ? parseFloat(getComputedStyle(pista.current).paddingLeft) : 0;
+    const tinta = Math.min(dist, Math.max(0, e.currentTarget.offsetLeft - margine));
     if (Math.abs(tinta - p * dist) < 8) return;
     window.scrollTo({ top: sec.getBoundingClientRect().top + window.scrollY + tinta, behavior: "instant" });
   };
 
   const intro = (
-    <InView className="shrink-0 w-[86vw] md:w-[38vw] pr-10 self-center">
+    <InView className="shrink-0 w-[84vw] md:w-[38vw] pr-8 md:pr-10 self-center">
       <Kicker className="ltt-rise text-ink-soft">Oferta educațională</Kicker>
-      <h2 className="ltt-rise font-heading text-4xl md:text-5xl text-ink leading-[1.1] mt-5">Opt profiluri.<br />Fiecare cu drumul lui.</h2>
+      <h2 className="ltt-rise font-heading text-[2rem] sm:text-4xl md:text-5xl text-ink leading-[1.1] mt-5">Opt profiluri.<br />Fiecare cu drumul lui.</h2>
       <p className="ltt-rise font-body text-[15px] leading-[1.85] text-ink-soft mt-6 max-w-sm">
         Liceu teoretic, filieră tehnologică și școală profesională. Le poți pune față în față în comparator.
       </p>
@@ -336,15 +337,15 @@ export function Profiluri() {
     <section id="profiluri" ref={ref} className="relative" style={{ height: `calc(100vh + ${dist}px)` }}>
       <div ref={fixat} className="ltt-sticky sticky top-0 overflow-hidden [overflow:clip]">
         <Sina n="03" eticheta="Profiluri" />
-        <div ref={pista} className="flex h-full items-center pl-12 lg:pl-28 will-change-transform" style={{ transform: `translateX(${-p * dist}px)` }}>
+        <div ref={pista} className="flex h-full items-center pl-6 md:pl-12 lg:pl-28 will-change-transform" style={{ transform: `translateX(${-p * dist}px)` }}>
           {intro}
           {PROFILE.map((pr, k) => (
-            <div key={pr.slug} onFocus={aduInEcran} className="shrink-0 w-[82vw] lg:w-[68vw] max-w-[1100px] h-[70vh] pr-28"><FisaProfil pr={pr} n={k + 1} /></div>
+            <div key={pr.slug} onFocus={aduInEcran} className="shrink-0 w-[84vw] lg:w-[68vw] max-w-[1100px] h-[70svh] pr-8 sm:pr-16 lg:pr-28"><FisaProfil pr={pr} n={k + 1} /></div>
           ))}
         </div>
-        <div className="absolute bottom-10 left-12 lg:left-28 right-12 lg:right-28 flex items-center gap-6">
+        <div className="absolute bottom-8 sm:bottom-10 left-6 md:left-12 lg:left-28 right-6 md:right-12 lg:right-28 flex items-center gap-6">
           <div className="relative flex-1 h-px bg-line"><div className="absolute left-0 -top-px h-[2px] bg-ink" style={{ width: `${p * 100}%` }} /></div>
-          <span className="ltt-kicker !text-[10px] text-ink-soft whitespace-nowrap">Derulează — profilurile trec ca filele unui caiet →</span>
+          <span className="hidden sm:inline ltt-kicker !text-[10px] text-ink-soft whitespace-nowrap">Derulează — profilurile trec ca filele unui caiet →</span>
         </div>
       </div>
     </section>
@@ -357,7 +358,7 @@ interface NoutateItem { _id?: string; slug: string; title: string; category: str
 
 export function Noutati({ noutati }: { noutati: NoutateItem[] }) {
   return (
-    <section id="noutati" className="relative py-28 md:py-36 bg-paper-2">
+    <section id="noutati" className="relative py-28 md:py-36 ltt-nuanta">
       <Sina n="04" eticheta="Noutăți" />
       <div className="max-w-6xl mx-auto px-6 md:px-12 grid lg:grid-cols-[1.6fr_1fr] gap-16">
         <InView>

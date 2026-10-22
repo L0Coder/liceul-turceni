@@ -28,7 +28,7 @@ export default function ExamenePage() {
       <PaginaAntet eticheta="Bacalaureat · Evaluare Națională" titlu="Examene" subtitlu="Calendarul bacalaureatului și al Evaluării Naționale, cu linkuri către rezultatele oficiale." />
 
       {/* Calendare BAC, EN, Rezultate */}
-      <section className="py-20 md:py-24 px-6 bg-paper">
+      <section className="py-20 md:py-24 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           {secs.map((s, i) => (
             <AnimatedSection key={s.d.title} delay={i * 0.1}>
@@ -41,7 +41,7 @@ export default function ExamenePage() {
       </section>
 
       {/* Rezultate oficiale — linkuri externe */}
-      <section className="py-20 px-6 bg-paper-2">
+      <section className="py-20 px-6 ltt-nuanta">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
             <SectionHeader label="Rezultate" title="Rezultate oficiale" subtitle="Consultați sursele oficiale pentru rezultatele complete la BAC și Evaluare Națională." />
@@ -66,7 +66,7 @@ export default function ExamenePage() {
 
       {/* Harta absolvenților — doar după ce școala confirmă cifrele (lib/data.ts) */}
       {CONTINUT_VERIFICAT.absolventi && (
-      <section id="absolventi" className="py-20 px-6 bg-paper scroll-mt-24">
+      <section id="absolventi" className="py-20 px-6 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection><SectionHeader label="Absolvenți" title="Unde ajung elevii noștri" /></AnimatedSection>
           <AnimatedSection delay={0.1}><AbsolventiMap /></AnimatedSection>

@@ -73,9 +73,9 @@ export default async function ProfesoriPage() {
       <section className="py-20 md:py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection><SectionHeader label="Conducere" title="Echipa de conducere" /></AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-line border border-line">
+          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-line">
             {conducere.map((p: any, i: number) => (
-              <AnimatedSection key={p._id} delay={i * 0.1} className="bg-paper p-7">
+              <AnimatedSection key={p._id} delay={i * 0.1} className="border-r border-b border-line p-7">
                 {p.imageUrl ? (
                   <div className="aspect-[4/5] overflow-hidden bg-paper-2 border border-line">
                     <img src={p.imageUrl} alt={p.name} className="w-full h-full object-cover" />
@@ -95,7 +95,7 @@ export default async function ProfesoriPage() {
       </section>
 
       {/* Cadre didactice */}
-      <section className="py-20 md:py-24 px-6 bg-paper-2">
+      <section className="py-20 md:py-24 px-6 ltt-nuanta">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
             <SectionHeader label="Colectiv" title="Cadre didactice pe catedre"

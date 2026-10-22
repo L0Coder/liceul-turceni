@@ -14,7 +14,7 @@ export default function AccesibilitatePage() {
       <Breadcrumbs items={[{ label: "Accesibilitate" }]} />
       <PaginaAntet eticheta="Pentru toți vizitatorii" titlu="Declarație de accesibilitate" subtitlu="Conform HG 780/2022" />
 
-      <section className="py-20 px-6 bg-paper">
+      <section className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
             <div className="space-y-6">

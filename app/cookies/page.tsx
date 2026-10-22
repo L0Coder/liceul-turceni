@@ -14,7 +14,7 @@ export default function CookiesPage() {
       <Breadcrumbs items={[{ label: "Politica de cookies" }]} />
       <PaginaAntet eticheta="Legal" titlu="Politica de cookies" />
 
-      <section className="py-20 px-6 bg-paper">
+      <section className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
             <div className="space-y-6">

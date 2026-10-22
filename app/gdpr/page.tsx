@@ -27,7 +27,7 @@ export default function GDPRPage() {
       <Breadcrumbs items={[{ label: "GDPR" }]} />
       <PaginaAntet eticheta="Date personale" titlu="Politica de confidențialitate" subtitlu="Protecția datelor cu caracter personal" />
 
-      <section className="py-20 px-6 bg-paper">
+      <section className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
             <div className="space-y-6">
