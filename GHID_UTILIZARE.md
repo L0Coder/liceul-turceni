@@ -117,7 +117,7 @@ Aceasta e funcția principală pentru conformitatea cu cerințele ARACIP și Leg
 
 1. Click pe **"Blog — Jurnal LTT"** → **"+"**
 2. Completează:
-   - **Titlu**: ex. "Experiența mea la Erasmus+ în Italia"
+   - **Titlu**: ex. "Experiența mea la Erasmus+ în Grecia"
    - **Slug**: click "Generate"
    - **Autor**: numele elevului/profesorului
    - **Rol autor**: ex. "Elevă clasa a XII-a, Filologie"

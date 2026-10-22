@@ -28,7 +28,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "Elena S.", authorRole: "Elevă clasa a XII-a, Filologie",
     excerpt: "Două săptămâni în Roma m-au schimbat perspectiva.",
     content: "Am plecat în Italia cu emoții — era prima călătorie fără familie. Dar din momentul în care am ajuns la Fiumicino, totul a fost o aventură.\n\nAm lucrat alături de elevi din Spania, Portugalia și Turcia pe un proiect despre energia verde. Am vizitat o fermă solară, am construit maquete de turbine și am prezentat în fața unui juriu internațional.\n\nCe m-a impresionat cel mai mult? Că elevii din alte țări nu sunt diferiți de noi. Am legat prietenii care durează.\n\nCând m-am întors, încrederea mea în engleză crescuse enorm. Dar mai important, am înțeles că lumea e mult mai mică decât pare de pe băncile școlii din Turceni.",
-    category: "Erasmus+", image: "07_erasmus/Erasmus_Italia_1.jpg" },
+    category: "Erasmus+", image: "07_erasmus/Erasmus_Grecia_1.jpg" },
   { slug: "cum-am-construit-primul-robot", title: "Cum am construit primul nostru robot", date: "20 februarie 2026",
     author: "Mihai P.", authorRole: "Elev clasa a XI-a, Mate-Info",
     excerpt: "De la un kit Arduino la concursurile naționale de robotică.",

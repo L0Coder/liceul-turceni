@@ -7,10 +7,9 @@ export const metadata: Metadata = { title: "Pentru părinți", description: "Inf
 
 const sections = [
   { title: "Rezultate & Examene", items: [
-    { icon: "📊", label: "Rezultate BAC", href: "/examene", desc: "Grafice interactive, evoluție 5 ani." },
+    { icon: "📊", label: "Examene", href: "/examene", desc: "Calendarul BAC și EN, rezultatele oficiale." },
     { icon: "📅", label: "Calendar", href: "/calendar", desc: "Simulări, examene, vacanțe." },
-    { icon: "🗺️", label: "Absolvenți", href: "/examene", desc: "Unde lucrează foștii elevi." },
-    { icon: "🏆", label: "Olimpiade", href: "/noutati", desc: "Rezultate deosebite." },
+    { icon: "📸", label: "Galerie", href: "/galerie", desc: "Laboratoare, ateliere, viața la liceu." },
   ]},
   { title: "Informații practice", items: [
     { icon: "📋", label: `Admitere ${anAdmitere()}`, href: "/admitere", desc: "Documente, calendar, locuri." },

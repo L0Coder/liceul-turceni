@@ -7,7 +7,7 @@ import {
   getGalerie, getProfesori, getFaq, getSettings, isSanityConfigured,
 } from "./sanity";
 import { aniDeActivitate, anScolarCurent } from "./constants";
-import { NOUTATI, PARTENERIATE, TESTIMONIALE, STATS, EXAMENE, ADMITERE, TRANSPARENTA, GALERIE_CATEGORII, PROFILE, PROFILE_ADMITERE, EVENIMENTE_STATICE, CONTINUT_VERIFICAT } from "./data";
+import { NOUTATI, TESTIMONIALE, EXAMENE, ADMITERE, TRANSPARENTA, GALERIE_CATEGORII, PROFILE, PROFILE_ADMITERE, EVENIMENTE_STATICE, CONTINUT_VERIFICAT } from "./data";
 import { FAQ_DATA, BLOG_POSTS } from "./data-extra";
 
 // Wrapper sigur — nu crapă dacă Sanity nu e configurat.
@@ -109,4 +109,4 @@ export async function fetchSettings() {
 }
 
 // Re-export date statice care nu sunt în CMS (încă)
-export { PROFILE, PARTENERIATE, TESTIMONIALE, STATS, EXAMENE, ADMITERE, GALERIE_CATEGORII };
+export { PROFILE, TESTIMONIALE, EXAMENE, ADMITERE, GALERIE_CATEGORII };

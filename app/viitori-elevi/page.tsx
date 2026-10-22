@@ -12,7 +12,7 @@ export default function ViitoriEleviPage() {
     { title: `${PROFILE_ADMITERE.length} profiluri de liceu`, desc: "De la informatică la electromecanică, teoretic sau tehnologic." },
     { title: "Practică reală", desc: "Ateliere echipate, practică la firme." },
     { title: "Club Robotică", desc: "Construiești roboți, mergi la competiții." },
-    { title: "Erasmus+", desc: "Mobilități în Italia, Spania, Portugalia." },
+    { title: "Erasmus+", desc: "Mobilitate în Grecia, septembrie–octombrie 2026." },
     { title: "Meserie cu certificat", desc: "Profilurile tehnice se încheie și cu certificat de calificare profesională." },
     { title: "Modernizare recentă", desc: "Mobilier nou, echipamente digitale prin PNRR (2025)." },
   ];
