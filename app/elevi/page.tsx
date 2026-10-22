@@ -26,5 +26,5 @@ const sections = [
 ];
 
 export default function EleviPage() {
-  return <PortalPage emoji="🎓" title="Pentru elevi" subtitle="Tot ce ai nevoie într-un singur loc." sections={sections} glowColor="#00e5ff"><ProgramOre /></PortalPage>;
+  return <PortalPage title="Pentru elevi" subtitle="Tot ce ai nevoie într-un singur loc." sections={sections}><ProgramOre /></PortalPage>;
 }

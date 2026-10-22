@@ -27,5 +27,5 @@ const sections = [
 ];
 
 export default function ParintiPage() {
-  return <PortalPage emoji="👨‍👩‍👧‍👦" title="Pentru părinți" subtitle="Rezultate, transparență, comunicare." sections={sections} glowColor="#76ff03"><ProgramOre /></PortalPage>;
+  return <PortalPage title="Pentru părinți" subtitle="Rezultate, transparență, comunicare." sections={sections}><ProgramOre /></PortalPage>;
 }

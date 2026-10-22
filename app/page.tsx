@@ -1,6 +1,7 @@
 import { HeroAcasa, Liceul, Drumul, Profiluri, Noutati, Voci, Admitere } from "@/components/home/Sectiuni";
 import { fetchNoutati, fetchSettings } from "@/lib/fetcher";
 import { anAdmitere } from "@/lib/constants";
+import { CONTINUT_VERIFICAT } from "@/lib/data";
 
 // Homepage-ul citește din CMS — anunțurile noi și statisticile actualizate
 // apar aici în maxim 60 de secunde, ca pe restul paginilor.
@@ -16,7 +17,7 @@ export default async function HomePage() {
     <Drumul />
     <Profiluri />
     <Noutati noutati={noutati} />
-    <Voci />
+    {CONTINUT_VERIFICAT.testimoniale && <Voci />}
     <Admitere admitere={admitere} />
   </>);
 }

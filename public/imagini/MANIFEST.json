@@ -120,8 +120,8 @@
     "replace_with": "Fotografie reală: Elevii la calculatoare"
   },
   {
-    "file": "Lab_electronnica_1.jpg",
-    "path": "02_laboratoare/Lab_electronnica_1.jpg",
+    "file": "Lab_electronica_1.jpg",
+    "path": "02_laboratoare/Lab_electronica_1.jpg",
     "folder": "02_laboratoare",
     "category": "laborator",
     "title": "Laborator electronică",
@@ -437,11 +437,11 @@
     "folder": "08_profesori",
     "category": "profesori",
     "title": "Director",
-    "description": "Prof. Cornescu Doru-Ion",
+    "description": "Portretul directorului",
     "width": 800,
     "height": 1000,
     "status": "placeholder",
-    "replace_with": "Fotografie reală: Prof. Cornescu Doru-Ion"
+    "replace_with": "Fotografie reală: portretul directorului"
   },
   {
     "file": "Director_adjunct_1.jpg",
@@ -449,11 +449,11 @@
     "folder": "08_profesori",
     "category": "profesori",
     "title": "Director adjunct",
-    "description": "Portret director adjunct",
+    "description": "Portretul directorului adjunct",
     "width": 800,
     "height": 1000,
     "status": "placeholder",
-    "replace_with": "Fotografie reală: Portret director adjunct"
+    "replace_with": "Fotografie reală: portretul directorului adjunct"
   },
   {
     "file": "Profesor_placeholder_1.jpg",
@@ -461,11 +461,11 @@
     "folder": "08_profesori",
     "category": "profesori",
     "title": "Cadru didactic",
-    "description": "Placeholder portret profesor",
+    "description": "Portret cadru didactic",
     "width": 800,
     "height": 1000,
     "status": "placeholder",
-    "replace_with": "Fotografie reală: Placeholder portret profesor"
+    "replace_with": "Fotografie reală: portret cadru didactic"
   },
   {
     "file": "Profesor_placeholder_2.jpg",
@@ -473,11 +473,11 @@
     "folder": "08_profesori",
     "category": "profesori",
     "title": "Cadru didactic",
-    "description": "Placeholder portret profesor",
+    "description": "Portret cadru didactic",
     "width": 800,
     "height": 1000,
     "status": "placeholder",
-    "replace_with": "Fotografie reală: Placeholder portret profesor"
+    "replace_with": "Fotografie reală: portret cadru didactic"
   },
   {
     "file": "Colectiv_profesori_1.jpg",

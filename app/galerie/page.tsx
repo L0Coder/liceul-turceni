@@ -1,9 +1,9 @@
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
-import { GlowCard } from "@/components/ui/GlowCard";
 import { AnimatedSection } from "@/components/ui/SectionHeader";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { GALERIE_CATEGORII } from "@/lib/data";
+import { PaginaAntet } from "@/components/ui/PaginaAntet";
 
 export const metadata: Metadata = { title: "Galerie", description: "Galerie foto — laboratoare, ateliere, evenimente la LTT." };
 
@@ -11,24 +11,21 @@ export default function GaleriePage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Galerie" }]} />
-      <section className="ltt-sky py-16 px-6 text-center">
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Galerie foto</h1>
-      </section>
-      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
+      <PaginaAntet eticheta="Viața la liceu" titlu="Galerie foto" subtitlu="Laboratoare, ateliere, clubul de robotică, sport, evenimente și mobilități Erasmus+." />
+      <section className="py-20 px-6 bg-paper">
         <div className="max-w-6xl mx-auto space-y-16">
-          {GALERIE_CATEGORII.map(cat => (
-            <AnimatedSection key={cat.slug}><div id={cat.slug} className="scroll-mt-24">
-              <div className="flex items-center gap-3 mb-6"><span className="text-3xl">{cat.emoji}</span><div>
-                <h2 className="font-heading text-2xl font-bold text-gray-900 dark:text-dark-text">{cat.label}</h2>
-                <p className="font-body text-sm text-gray-500 dark:text-dark-muted">{cat.desc}</p>
-              </div></div>
+          {GALERIE_CATEGORII.map((cat, ci) => (
+            <AnimatedSection key={cat.slug}><div id={cat.slug} className="scroll-mt-28">
+              <div className="flex items-baseline gap-5 mb-6 pb-4 border-b border-line">
+                <span className="font-heading text-sm ltt-accent">{String(ci + 1).padStart(2, "0")}</span>
+                <h2 className="font-heading text-3xl text-ink">{cat.label}</h2>
+                <p className="hidden sm:block font-body text-[14px] text-ink-soft ml-auto">{cat.desc}</p>
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {cat.imagini.map(img => (
-                  <GlowCard key={img} glowColor="#00e5ff">
-                    <div className="relative h-48 rounded-lg overflow-hidden bg-gray-100 dark:bg-dark-border -m-7 mb-0">
-                      <PlaceholderImage src={img} alt={`${cat.label}`} fill />
-                    </div>
-                  </GlowCard>
+                  <figure key={img} className="relative aspect-[16/10] overflow-hidden border border-line bg-paper-2 group">
+                    <PlaceholderImage src={img} alt={cat.label} fill className="transition-transform duration-700 group-hover:scale-[1.03]" />
+                  </figure>
                 ))}
               </div>
             </div></AnimatedSection>

@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { GlowCard } from "@/components/ui/GlowCard";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
-import { CONDUCERE, aniDeActivitate } from "@/lib/constants";
+import { CONDUCERE } from "@/lib/constants";
+import { fetchSettings } from "@/lib/fetcher";
+import { ButonCerneala, LinkSubliniat } from "@/components/ui/Buton";
+import { DesenScoala } from "@/components/home/Desene";
+import { PaginaAntet } from "@/components/ui/PaginaAntet";
 
 export const metadata: Metadata = {
   title: "Despre noi",
-  description: "Istoria și prezentarea Liceului Tehnologic Turceni - înființat în 1982, 1604 elevi, 8 profiluri educaționale.",
+  description: "Istoria și prezentarea Liceului Tehnologic Turceni, înființat în 1982: niveluri de școlarizare, repere istorice, echipa de conducere.",
 };
+
+// Cifrele vin din CMS (Setări site), ca pe homepage.
+export const revalidate = 60;
 
 const repere = [
   { an: "1982", text: "Înființarea liceului la 1 septembrie, ca necesitate de instruire a salariaților termocentralei Turceni și de asigurare a forței de muncă viitoare." },
@@ -19,13 +25,6 @@ const repere = [
   { an: "2025", text: "Finalizarea proiectului PNRR de dotare cu mobilier, materiale didactice și echipamente digitale (Contract nr. 1856DOT/31.08.2023). Dotare completă: laptopuri, table interactive, mobilier modern, imprimante, scannere." },
 ];
 
-const cifre = [
-  { nr: "1604", label: "Elevi", icon: "🎓" },
-  { nr: "155", label: "Cadre didactice", icon: "👩‍🏫" },
-  { nr: "8", label: "Profiluri educaționale", icon: "📚" },
-  { nr: String(aniDeActivitate()), label: "Ani de activitate", icon: "🏆" },
-];
-
 const niveluri = [
   "Învățământ preșcolar (grădiniță) - Turceni și structura Strâmba-Jiu",
   "Învățământ primar (clasele pregătitoare - IV) - Turceni și structura Strâmba-Jiu",
@@ -35,143 +34,125 @@ const niveluri = [
   "Școală profesională - Sudor, Electromecanic Centrale Electrice (3 ani, pregătire 70% practică)",
 ];
 
-export default function DesprePage() {
+export default async function DesprePage() {
+  const settings = await fetchSettings();
+  const cifre = [
+    { nr: String(settings.eleviCount), label: `Elevi în anul școlar ${settings.anScolar}` },
+    { nr: String(settings.cadreCount), label: "Cadre didactice" },
+    { nr: String(settings.profileCount), label: "Profiluri de liceu și profesionale" },
+    { nr: settings.aniExcelenta, label: "Ani școlari, din 1982–1983 până azi" },
+  ];
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Despre noi" }]} />
-
-      <section className="ltt-sky py-16 px-6 text-center">
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Despre noi</h1>
-        <p className="font-body text-lg text-white/70 max-w-xl mx-auto">De peste 4 decenii formăm generații de profesioniști.</p>
-      </section>
+      <PaginaAntet eticheta="Din 1982" titlu="Despre noi" subtitlu="Un liceu complet pentru Turceni și satele din jur: de la grădiniță până la bacalaureat și certificat de calificare." />
 
       {/* Intro */}
-      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
-        <div className="max-w-3xl mx-auto">
-          <AnimatedSection>
-            <GlowCard glowColor="#00e5ff">
-              <p className="font-body text-[15px] text-gray-600 dark:text-dark-muted leading-relaxed mb-4">
-                Liceul Tehnologic Turceni a fost înființat la <strong className="text-gray-900 dark:text-dark-text">1 septembrie 1982</strong>, ca o necesitate de instruire a elevilor și a salariaților termocentralei Turceni, cu scopul de a asigura forța de muncă calificată pentru industria energetică a zonei.
-              </p>
-              <p className="font-body text-[15px] text-gray-600 dark:text-dark-muted leading-relaxed mb-4">
-                De-a lungul a peste 4 decenii, liceul a evoluat de la o instituție industrială la un centru educațional complet, cu profiluri atât teoretice cât și tehnice, școlarizând elevi din Turceni și din localitățile învecinate ale județului Gorj.
-              </p>
-              <p className="font-body text-[15px] text-gray-600 dark:text-dark-muted leading-relaxed mb-4">
-                Astăzi, Liceul Tehnologic Turceni este situat în zona centrală a orașului și oferă educație la toate nivelurile, de la grădiniță la liceu și școală profesională, cu <strong className="text-gray-900 dark:text-dark-text">1604 elevi</strong> și <strong className="text-gray-900 dark:text-dark-text">155 cadre didactice</strong>.
-              </p>
-              <p className="font-body text-[15px] text-gray-600 dark:text-dark-muted leading-relaxed">
-                În 2025, liceul a beneficiat de un proiect PNRR în valoare de <strong className="text-gray-900 dark:text-dark-text">2.163.924 lei</strong> pentru dotarea cu mobilier modern, laptopuri, table interactive, imprimante multifuncționale și scannere documente, modernizând laboratoarele de informatică, chimie, fizică, biologie, atelierele și sala de sport.
-              </p>
-            </GlowCard>
+      <section className="py-20 md:py-28 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.15fr] gap-14 md:gap-20 items-start">
+          <AnimatedSection className="text-ink">
+            <DesenScoala className="w-full max-w-md" />
+            <p className="font-heading italic text-3xl md:text-4xl text-ink leading-snug mt-8">Carte și meserie, sub același acoperiș.</p>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1} className="font-body text-[16px] text-ink-soft leading-[1.9] space-y-5">
+            <p className="first-letter:font-heading first-letter:text-6xl first-letter:float-left first-letter:mr-3 first-letter:leading-[0.8] first-letter:text-ink">
+              Liceul Tehnologic Turceni a fost înființat la <strong className="text-ink font-medium">1 septembrie 1982</strong>, ca o necesitate de instruire a elevilor și a salariaților termocentralei Turceni, cu scopul de a asigura forța de muncă calificată pentru industria energetică a zonei.
+            </p>
+            <p>
+              De-a lungul a peste patru decenii, liceul a evoluat de la o instituție industrială la un centru educațional complet, cu profiluri atât teoretice cât și tehnice, școlarizând elevi din Turceni și din localitățile învecinate ale județului Gorj.
+            </p>
+            <p>
+              Astăzi, liceul este situat în zona centrală a orașului și oferă educație la toate nivelurile, de la grădiniță la liceu și școală profesională, cu <strong className="text-ink font-medium">{settings.eleviCount} de elevi</strong> și <strong className="text-ink font-medium">{settings.cadreCount} de cadre didactice</strong>.
+            </p>
+            <p>
+              În 2025, liceul a beneficiat de un proiect PNRR în valoare de <strong className="text-ink font-medium">2.163.924 lei</strong> pentru dotarea cu mobilier modern, laptopuri, table interactive, imprimante multifuncționale și scannere, modernizând laboratoarele de informatică, chimie, fizică, biologie, atelierele și sala de sport.
+            </p>
           </AnimatedSection>
         </div>
       </section>
 
       {/* Cifre */}
-      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
-        <div className="max-w-4xl mx-auto">
-          <AnimatedSection><SectionHeader label="Cifre" title="Liceul în numere" /></AnimatedSection>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {cifre.map((c, i) => (
-              <AnimatedSection key={c.label} delay={i * 0.06}>
-                <div className="text-center p-5 bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-dark-border">
-                  <div className="text-2xl mb-2">{c.icon}</div>
-                  <div className="font-heading text-2xl font-bold text-brand-primary dark:text-brand-teal">{c.nr}</div>
-                  <div className="font-body text-xs text-gray-500 dark:text-dark-muted mt-1">{c.label}</div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
+      <section className="py-16 md:py-20 px-6 border-y border-line bg-paper-2">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+          {cifre.map((c, i) => (
+            <AnimatedSection key={c.label} delay={i * 0.06}>
+              <div className="font-heading text-5xl md:text-6xl text-ink leading-none">{c.nr}</div>
+              <p className="font-body text-[13px] text-ink-soft mt-3 max-w-[14rem]">{c.label}</p>
+            </AnimatedSection>
+          ))}
         </div>
       </section>
 
-      {/* Niveluri de scolarizare */}
-      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
-        <div className="max-w-3xl mx-auto">
+      {/* Niveluri de școlarizare */}
+      <section className="py-20 md:py-24 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.6fr] gap-12">
           <AnimatedSection><SectionHeader label="Structură" title="Niveluri de școlarizare" /></AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <GlowCard glowColor="#1de9b6">
-              <div className="space-y-3">
-                {niveluri.map((n, i) => (
-                  <div key={i} className="font-body text-sm text-gray-600 dark:text-dark-muted flex items-center gap-3 py-2 border-b border-gray-100 dark:border-dark-border last:border-0">
-                    <div className="w-2 h-2 rounded-full bg-brand-teal flex-shrink-0" />
-                    {n}
-                  </div>
-                ))}
-              </div>
-            </GlowCard>
+            <ol className="border-t border-line">
+              {niveluri.map((n, i) => {
+                const [nivel, detalii] = n.split(" - ");
+                return (
+                  <li key={i} className="grid grid-cols-[3rem_1fr] gap-4 py-5 border-b border-line">
+                    <span className="font-heading ltt-accent">{String(i + 1).padStart(2, "0")}</span>
+                    <div><div className="font-heading text-xl text-ink">{nivel}</div>{detalii && <div className="font-body text-[14px] text-ink-soft mt-1">{detalii}</div>}</div>
+                  </li>
+                );
+              })}
+            </ol>
           </AnimatedSection>
         </div>
       </section>
 
       {/* Repere istorice */}
-      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
-        <div className="max-w-3xl mx-auto">
-          <AnimatedSection><SectionHeader label="Istorie" title="Repere istorice" /></AnimatedSection>
-          <div className="space-y-4">
+      <section className="py-20 md:py-24 px-6 bg-paper-2">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.6fr] gap-12">
+          <AnimatedSection><SectionHeader label="Istorie" title="Repere istorice" subtitle="Patru decenii, pe scurt." /></AnimatedSection>
+          <ol className="relative border-l border-line ml-2">
             {repere.map((r, i) => (
-              <AnimatedSection key={r.an} delay={i * 0.08}>
-                <div className="flex gap-5 items-start">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-brand-primary/10 dark:bg-brand-primary/20 flex items-center justify-center">
-                    <span className="font-heading text-lg font-bold text-brand-primary dark:text-brand-teal">{r.an}</span>
-                  </div>
-                  <div className="flex-1 pt-1">
-                    <p className="font-body text-sm text-gray-600 dark:text-dark-muted leading-relaxed">{r.text}</p>
-                  </div>
-                </div>
+              <AnimatedSection key={r.an} delay={i * 0.05}>
+                <li className="relative pl-8 pb-10 last:pb-0">
+                  <span aria-hidden="true" className="absolute -left-[5px] top-3 w-[9px] h-[9px] rounded-full bg-[#c2410c]" />
+                  <div className="font-heading text-3xl text-ink">{r.an}</div>
+                  <p className="font-body text-[15px] text-ink-soft leading-relaxed mt-2 max-w-xl">{r.text}</p>
+                </li>
               </AnimatedSection>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
       {/* Conducere */}
-      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
-        <div className="max-w-3xl mx-auto">
+      <section className="py-20 md:py-24 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.6fr] gap-12">
           <AnimatedSection><SectionHeader label="Conducere" title="Echipa de conducere" /></AnimatedSection>
-          <div className="space-y-4">
-            {CONDUCERE.map((p, i) => (
-              <AnimatedSection key={p.nume} delay={0.1 + i * 0.08}>
-                <GlowCard glowColor={i === 0 ? "#00e5ff" : "#1de9b6"}>
-                  <div className="flex gap-5 items-center">
-                    <div className="w-20 h-20 rounded-xl bg-brand-primary/10 dark:bg-brand-primary/20 flex items-center justify-center flex-shrink-0">
-                      <span className="font-heading text-3xl font-bold text-brand-primary dark:text-brand-teal">{p.nume.charAt(0)}</span>
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-dark-text">{p.titlu} {p.nume}</h3>
-                      <div className="font-body text-xs font-bold text-brand-accent tracking-wider uppercase">{p.functie}</div>
-                    </div>
+          <AnimatedSection delay={0.1}>
+            <ul className="border-t border-line">
+              {CONDUCERE.map(p => (
+                <li key={p.nume} className="flex gap-6 items-center py-6 border-b border-line">
+                  <span aria-hidden="true" className="w-16 h-16 border border-line bg-paper-2 grid place-items-center font-heading text-3xl text-ink flex-shrink-0">{p.nume.charAt(0)}</span>
+                  <div>
+                    <div className="ltt-kicker ltt-accent !text-[10px]">{p.functie}</div>
+                    <h3 className="font-heading text-2xl text-ink mt-1">{p.titlu} {p.nume}</h3>
                   </div>
-                </GlowCard>
-              </AnimatedSection>
-            ))}
-          </div>
-          <AnimatedSection delay={0.15}>
-            <div className="mt-6 text-center">
-              <a href="/profesori" className="font-body text-sm text-brand-teal hover:underline">
-                Vezi echipa completă de cadre didactice →
-              </a>
-            </div>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8"><LinkSubliniat href="/profesori">Toate cadrele didactice</LinkSubliniat></div>
           </AnimatedSection>
         </div>
       </section>
 
       {/* Contact */}
-      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
-        <div className="max-w-3xl mx-auto text-center">
-          <AnimatedSection>
-            <h2 className="font-heading text-2xl font-bold text-gray-900 dark:text-dark-text mb-4">Contactează-ne</h2>
-            <p className="font-body text-sm text-gray-600 dark:text-dark-muted mb-2">
-              Str. Educației nr. 1, Turceni 217520, Județul Gorj
+      <section className="py-20 md:py-24 px-6 border-t border-line bg-paper-2">
+        <AnimatedSection className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div>
+            <h2 className="font-heading text-4xl md:text-5xl text-ink">Vino să ne cunoști.</h2>
+            <p className="font-body text-[15px] text-ink-soft mt-4">
+              Str. Educației nr. 1, Turceni · <a href="tel:+40253335012" className="hover:underline underline-offset-4">0253-335012</a> · <a href="mailto:licturceni@yahoo.com" className="hover:underline underline-offset-4">licturceni@yahoo.com</a>
             </p>
-            <p className="font-body text-sm text-gray-600 dark:text-dark-muted mb-6">
-              Tel: <a href="tel:+40253335012" className="text-brand-teal hover:underline">0253-335012</a> | Email: <a href="mailto:licturceni@yahoo.com" className="text-brand-teal hover:underline">licturceni@yahoo.com</a>
-            </p>
-            <a href="/contact" className="inline-flex items-center gap-2 font-body text-sm font-semibold text-white px-6 py-3 rounded-xl bg-brand-primary hover:bg-brand-primary-light transition-colors">
-              Pagina de contact →
-            </a>
-          </AnimatedSection>
-        </div>
+          </div>
+          <ButonCerneala href="/contact">Pagina de contact</ButonCerneala>
+        </AnimatedSection>
       </section>
     </div>
   );

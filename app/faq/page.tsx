@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
 import { FaqClient } from "@/components/ui/FaqClient";
 import { fetchFaq } from "@/lib/fetcher";
+import { PaginaAntet } from "@/components/ui/PaginaAntet";
 
 export const metadata: Metadata = { title: "Întrebări frecvente", description: "Răspunsuri la cele mai comune întrebări despre LTT." };
 export const revalidate = 60;
@@ -12,12 +13,9 @@ export default async function FAQPage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "FAQ" }]} />
-      <section className="ltt-sky py-16 px-6 text-center">
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Întrebări frecvente</h1>
-        <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Răspunsuri rapide la cele mai comune întrebări.</p>
-      </section>
-      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
-        <FaqClient data={faq} />
+      <PaginaAntet eticheta="Răspunsuri" titlu="Întrebări frecvente" subtitlu="Admitere, orar, burse, examene, practică — răspunsurile pe care le căutați cel mai des." />
+      <section className="py-16 md:py-20 px-6">
+        <div className="max-w-6xl mx-auto"><FaqClient data={faq} /></div>
       </section>
     </div>
   );

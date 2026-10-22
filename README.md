@@ -64,9 +64,10 @@ app/                            21 pagini publice + studio + 404
 └── accesibilitate/             Declarație de accesibilitate (HG 780/2022)
 
 components/
-├── ui/                         Logo, GlowButton, GlowCard, SectionHeader,
-│                               PlaceholderImage, Calendar, FaqClient,
-│                               Widgets, CookieBanner, ScrollToTop, Breadcrumbs
+├── ui/                         Logo, Buton, PaginaAntet, SectionHeader,
+│                               GrilaProfiluri, FormularContact, PlaceholderImage,
+│                               Calendar, FaqClient, Widgets, CookieBanner,
+│                               ScrollToTop, Breadcrumbs
 ├── layout/                     Header, Footer, PortalPage
 └── home/                       Homepage: Sectiuni (hero, drumul, profiluri…),
                                 Desene (ilustrații SVG), scroll (efecte la derulare)
@@ -133,7 +134,7 @@ Site-ul funcționează mereu, indiferent de starea CMS-ului.
 ### Conținut care NU e în CMS (e în cod)
 
 - Descrierile celor 8 profiluri educaționale (`lib/data.ts`)
-- Testimonialele de pe homepage (`lib/data.ts`)
+- Testimonialele de pe homepage și graficul absolvenților (`lib/data.ts`) — **fictive, ascunse** până când `CONTINUT_VERIFICAT` din același fișier e trecut pe `true` după înlocuirea lor cu date reale. La fel articolele-exemplu de blog.
 - Informațiile din portaluri (Elevi, Părinți, etc.)
 - Datele de contact (telefon, adresă, email) (`lib/constants.ts`)
 - Programul orelor pentru gimnaziu și liceu — ora de început, durata orei și a pauzei (`PROGRAM_ORE` în `lib/constants.ts`); tabelul de pe paginile Elevi/Părinți și răspunsul din FAQ se generează automat
@@ -184,9 +185,11 @@ Homepage-ul afișează automat (revalidare 60s):
 
 
 
-1. Cont pe [formspree.io](https://formspree.io) → formular nou → copiază Form ID
-2. În `app/contact/page.tsx` înlocuiește `FORM_ID_AICI` cu codul tău
-3. `git push` — mesajele ajung pe emailul configurat
+1. Cont pe [formspree.io](https://formspree.io) → formular nou → copiază Form ID (ex. `xpzvqkld`)
+2. În Vercel → Settings → Environment Variables adaugă `NEXT_PUBLIC_FORMSPREE_ID` cu acel cod
+3. Redeploy — mesajele ajung pe emailul configurat în Formspree
+
+Până atunci formularul nu pierde mesaje: deschide aplicația de email a vizitatorului, cu mesajul completat, către adresa secretariatului.
 
 ---
 
@@ -237,9 +240,9 @@ Vercel redeploy automat în 1-2 minute.
 
 **CMS:** Sanity Studio integrat — secretariatul gestionează conținut din browser
 
-**Interactivitate:** Dark mode, efecte glow la hover, calendar interactiv, comparator de profiluri, FAQ cu accordion și filtrare, buton scroll-to-top, breadcrumbs cu schema.org SEO, Google Maps pe pagina de contact
+**Interactivitate:** Dark mode, homepage cu efecte la derulare (etapele IX–XII, profiluri care alunecă orizontal, desene care se trasează singure), calendar interactiv, comparator de profiluri, FAQ cu accordion și filtrare, buton scroll-to-top, breadcrumbs cu schema.org SEO, Google Maps pe pagina de contact
 
-**Comunicare:** Formular de contact (Formspree), buton floating Telefon + Email + FAQ, newsletter, linkuri instituționale (ISJ Gorj, MEN, ARACIP, BacPlus)
+**Comunicare:** Formular de contact (Formspree), buton floating Telefon + Email + FAQ, linkuri instituționale (ISJ Gorj, MEN, ARACIP, BacPlus)
 
 **Conformitate:** GDPR cu aviz de informare, banner cookies, declarație accesibilitate HG 780/2022, documente ARACIP cu 19 categorii, transparență Legea 544/2001
 

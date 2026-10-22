@@ -1,9 +1,10 @@
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
-import { GlowCard } from "@/components/ui/GlowCard";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
 import { AbsolventiMap } from "@/components/ui/Widgets";
+import { CONTINUT_VERIFICAT } from "@/lib/data";
 import { EXAMENE } from "@/lib/data";
+import { PaginaAntet } from "@/components/ui/PaginaAntet";
 
 export const metadata: Metadata = { title: "Examene", description: "Calendar BAC, Evaluare Națională și rezultate LTT." };
 
@@ -14,9 +15,9 @@ const secs = [
 ];
 
 const resurse = [
-  { label: "Rezultate BAC — BacPlus.ro", href: "https://www.bacplus.ro/i/liceul-tehnologic-turceni", desc: "Statistici complete pe ani, specializari, clase." },
+  { label: "Rezultate BAC — BacPlus.ro", href: "https://www.bacplus.ro/i/liceul-tehnologic-turceni", desc: "Statistici complete pe ani, specializări, clase." },
   { label: "Rezultate EN — BacPlus.ro", href: "https://www.bacplus.ro/i/liceul-tehnologic-turceni/gimnaziu", desc: "Medii Evaluare Națională pe ani." },
-  { label: "Bacalaureat.edu.ro", href: "https://bacalaureat.edu.ro/", desc: "Rezultate oficiale Ministerul Educatiei." },
+  { label: "Bacalaureat.edu.ro", href: "https://bacalaureat.edu.ro/", desc: "Rezultate oficiale, Ministerul Educației." },
   { label: "Evaluare.edu.ro", href: "https://evaluare.edu.ro/", desc: "Rezultate oficiale Evaluare Națională." },
 ];
 
@@ -24,50 +25,54 @@ export default function ExamenePage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Examene" }]} />
-      <section className="ltt-sky py-16 px-6 text-center">
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Examene</h1>
-        <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Calendare, rezultate, resurse.</p>
-      </section>
+      <PaginaAntet eticheta="Bacalaureat · Evaluare Națională" titlu="Examene" subtitlu="Calendarul bacalaureatului și al Evaluării Naționale, cu linkuri către rezultatele oficiale." />
 
       {/* Calendare BAC, EN, Rezultate */}
-      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="py-20 md:py-24 px-6 bg-paper">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           {secs.map((s, i) => (
-            <AnimatedSection key={s.d.title} delay={i*0.12}><GlowCard glowColor={s.g} className="h-full">
-              <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-dark-text mb-5 pb-4" style={{ borderBottom: `2px solid ${s.c}22` }}>{s.d.title}</h2>
-              {s.d.items.map((it, j) => <div key={j} className="font-body text-sm text-gray-600 dark:text-dark-muted py-2.5 flex items-center gap-3 border-b border-gray-100 dark:border-dark-border last:border-0"><div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: s.c }} />{it}</div>)}
-            </GlowCard></AnimatedSection>
+            <AnimatedSection key={s.d.title} delay={i * 0.1}>
+              <span className="font-heading text-sm ltt-accent">{String(i + 1).padStart(2, "0")}</span>
+              <h2 className="font-heading text-3xl text-ink mt-2 pb-4 border-b border-ink/30">{s.d.title}</h2>
+              <ul>{s.d.items.map((it, j) => <li key={j} className="font-body text-[14px] text-ink-soft py-3 border-b border-line">{it}</li>)}</ul>
+            </AnimatedSection>
           ))}
         </div>
       </section>
 
       {/* Rezultate oficiale — linkuri externe */}
-      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
-        <div className="max-w-3xl mx-auto">
+      <section className="py-20 px-6 bg-paper-2">
+        <div className="max-w-6xl mx-auto">
           <AnimatedSection>
             <SectionHeader label="Rezultate" title="Rezultate oficiale" subtitle="Consultați sursele oficiale pentru rezultatele complete la BAC și Evaluare Națională." />
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 border-t border-line">
               {resurse.map((r, i) => (
-                <a key={i} href={r.href} target="_blank" rel="noopener noreferrer"
-                  className="block p-5 bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-dark-border hover:border-brand-teal/50 hover:translate-x-1 transition-all">
-                  <div className="font-body text-sm font-semibold text-brand-primary dark:text-brand-teal mb-1">{r.label} <span className="text-gray-500">&#8599;</span></div>
-                  <div className="font-body text-xs text-gray-500 dark:text-dark-muted">{r.desc}</div>
-                </a>
+                <li key={i} className="border-b border-line">
+                  <a href={r.href} target="_blank" rel="noopener noreferrer" className="group flex justify-between items-center gap-6 py-5">
+                    <span>
+                      <span className="block font-heading text-xl text-ink group-hover:text-[#c2410c] dark:group-hover:text-[#ff8f4d] transition-colors">{r.label}</span>
+                      <span className="block font-body text-[13px] text-ink-soft mt-1">{r.desc}</span>
+                    </span>
+                    <span aria-hidden="true" className="text-ink-soft">↗</span>
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Harta absolventilor */}
-      <section id="absolventi" className="py-20 px-6 bg-paper dark:bg-dark-bg scroll-mt-24">
-        <div className="max-w-5xl mx-auto">
-          <AnimatedSection><SectionHeader label="Absolventi" title="Unde ajung elevii nostri" /></AnimatedSection>
+      {/* Harta absolvenților — doar după ce școala confirmă cifrele (lib/data.ts) */}
+      {CONTINUT_VERIFICAT.absolventi && (
+      <section id="absolventi" className="py-20 px-6 bg-paper scroll-mt-24">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedSection><SectionHeader label="Absolvenți" title="Unde ajung elevii noștri" /></AnimatedSection>
           <AnimatedSection delay={0.1}><AbsolventiMap /></AnimatedSection>
         </div>
       </section>
+      )}
     </div>
   );
 }

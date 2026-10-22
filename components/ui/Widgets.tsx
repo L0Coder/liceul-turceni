@@ -1,28 +1,34 @@
 "use client";
 import { useState, useEffect } from "react";
 
-/* ═══ FIX #5: PHONE + EMAIL BUTTONS instead of WhatsApp ═══ */
+const icon = { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, "aria-hidden": true };
+
+/* ═══ CONTACT RAPID: telefon, email, întrebări frecvente ═══ */
 export function FloatingContact() {
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (!open) return;
+    const k = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    window.addEventListener("keydown", k);
+    return () => window.removeEventListener("keydown", k);
+  }, [open]);
+  const rand = "flex items-center justify-between gap-6 px-5 py-4 border-b border-line last:border-0 hover:bg-paper-2 transition-colors";
   return (
     <div className="floating-widget fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       {open && (
-        <div className="flex flex-col gap-2 mb-2">
-          <a href="tel:0253335012" className="flex items-center gap-2 bg-ink text-paper px-4 py-3 rounded-xl shadow-xl hover:-translate-y-0.5 transition-all text-sm font-body font-semibold">
-            📞 Sună: 0253-335012
-          </a>
-          <a href="mailto:licturceni@yahoo.com" className="flex items-center gap-2 bg-brand-teal dark:bg-brand-teal text-white px-4 py-3 rounded-xl shadow-xl hover:-translate-y-0.5 transition-all text-sm font-body font-semibold">
-            ✉️ Email secretariat
-          </a>
-          <a href="/faq" className="flex items-center gap-2 bg-brand-accent text-white px-4 py-3 rounded-xl shadow-xl hover:-translate-y-0.5 transition-all text-sm font-body font-semibold">
-            ❓ Întrebări frecvente
-          </a>
+        <div id="contact-rapid" className="w-72 bg-paper border border-line shadow-2xl mb-1">
+          <div className="ltt-kicker !text-[10px] text-ink-soft px-5 pt-4 pb-2">Secretariat</div>
+          <a href="tel:+40253335012" className={rand}><span className="font-heading text-lg text-ink">0253-335012</span><span className="ltt-kicker !text-[10px] ltt-accent">Sună</span></a>
+          <a href="mailto:licturceni@yahoo.com" className={rand}><span className="font-heading text-lg text-ink">licturceni@yahoo.com</span><span className="ltt-kicker !text-[10px] ltt-accent">Email</span></a>
+          <a href="/faq" className={rand}><span className="font-heading text-lg text-ink">Întrebări frecvente</span><span aria-hidden="true" className="text-ink-soft">→</span></a>
         </div>
       )}
-      <button onClick={() => setOpen(!open)}
-        className="w-14 h-14 rounded-full bg-ink text-paper hover:bg-[#c2410c] hover:text-white shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center justify-center text-2xl"
-        aria-label={open ? "Închide" : "Ai nevoie de ajutor?"}>
-        {open ? "✕" : "💬"}
+      <button onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="contact-rapid"
+        className="w-14 h-14 rounded-full bg-ink text-paper hover:bg-[#c2410c] hover:text-white shadow-xl transition-colors grid place-items-center"
+        aria-label={open ? "Închide contactul rapid" : "Contact rapid: telefon și email"}>
+        {open
+          ? <svg {...icon}><path d="M6 6l12 12M18 6L6 18" /></svg>
+          : <svg {...icon} width={22} height={22}><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg>}
       </button>
     </div>
   );
@@ -46,9 +52,11 @@ export function DarkModeToggle() {
   };
   if (!mounted) return <div className="w-9 h-9" />;
   return (
-    <button onClick={toggle} className={`w-9 h-9 rounded-full flex items-center justify-center transition-all text-sm ${dark ? "bg-white/10 hover:bg-white/20" : "bg-gray-900/10 hover:bg-gray-900/20"}`}
+    <button onClick={toggle} className="w-9 h-9 rounded-full grid place-items-center text-ink-soft border border-line hover:text-ink hover:border-ink/40 transition-colors"
       aria-label={dark ? "Mod luminos" : "Mod întunecat"} title={dark ? "Mod luminos" : "Mod întunecat"}>
-      {dark ? "☀️" : "🌙"}
+      {dark
+        ? <svg {...icon} width={16} height={16}><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+        : <svg {...icon} width={16} height={16}><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" /></svg>}
     </button>
   );
 }
@@ -67,23 +75,22 @@ export function AbsolventiMap() {
   ];
   const max = Math.max(...data.map(d => d.count));
   return (
-    <div className="bg-white dark:bg-dark-card rounded-2xl border border-gray-200 dark:border-dark-border p-6">
-      <h3 className="font-heading text-xl font-bold text-gray-900 dark:text-dark-text mb-6">Unde lucrează absolvenții noștri</h3>
-      <div className="space-y-3">
+    <div>
+      <h3 className="ltt-kicker text-ink-soft mb-6">Unde lucrează și studiază absolvenții</h3>
+      <ul className="border-t border-line">
         {data.map((d, i) => (
-          <div key={i}>
-            <div className="flex justify-between mb-1">
-              <span className="font-body text-sm font-semibold text-gray-900 dark:text-dark-text">{d.loc}</span>
-              <span className="font-body text-xs text-brand-accent font-bold">{d.count}</span>
+          <li key={i} className="grid grid-cols-[1fr_auto] sm:grid-cols-[16rem_1fr_3rem] items-center gap-x-6 gap-y-2 py-4 border-b border-line">
+            <div>
+              <div className="font-heading text-lg text-ink">{d.loc}</div>
+              <div className="font-body text-[12px] text-ink-soft">{d.type}</div>
             </div>
-            <div className="h-5 bg-gray-100 dark:bg-dark-border rounded-full overflow-hidden">
-              <div className="h-full rounded-full flex items-center px-2" style={{ width: `${(d.count / max) * 100}%`, background: "linear-gradient(to right, #1f3b5b, #2aa198)" }}>
-                <span className="font-body text-[10px] text-white truncate">{d.type}</span>
-              </div>
+            <div className="order-3 sm:order-none col-span-2 sm:col-span-1 h-[3px] bg-line">
+              <div className="h-full bg-ink" style={{ width: `${(d.count / max) * 100}%` }} />
             </div>
-          </div>
+            <span className="font-heading text-2xl text-ink text-right">{d.count}</span>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

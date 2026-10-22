@@ -62,8 +62,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html:
           `try{var s=localStorage.getItem("ltt-dark-mode");if(s==="true"||(!s&&window.matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}`
         }} />
+        {/* Fără JavaScript, conținutul animat la scroll trebuie să fie vizibil de la început */}
+        <noscript><style dangerouslySetInnerHTML={{ __html:
+          `.ltt-rise{opacity:1!important;transform:none!important}.ltt-draw *{stroke-dashoffset:0!important}.ltt-draw .ltt-fill{opacity:1!important}main [style*="opacity: 0"]{opacity:1!important;transform:none!important}`
+        }} /></noscript>
       </head>
-      <body className="font-body bg-paper text-gray-900 dark:text-dark-text antialiased">
+      <body className="font-body bg-paper text-ink antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schoolSchema) }} />
         <a href="#main-content" className="skip-link">Salt la conținut</a>
         <Header admitere={anAdmitere()} />

@@ -1,12 +1,12 @@
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { anAdmitere } from "@/lib/constants";
 import type { Metadata } from "next";
-import Link from "next/link";
-import { GlowCard } from "@/components/ui/GlowCard";
-import { GlowButton } from "@/components/ui/GlowButton";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
-import { ADMITERE, PROFILE, calendarAdmitere } from "@/lib/data";
+import { ADMITERE, calendarAdmitere } from "@/lib/data";
 import { CONTACT } from "@/lib/constants";
+import { PaginaAntet } from "@/components/ui/PaginaAntet";
+import { GrilaProfiluri } from "@/components/ui/GrilaProfiluri";
+import { ButonCerneala, LinkSubliniat } from "@/components/ui/Buton";
 
 export const metadata: Metadata = { title: `Admitere ${anAdmitere()}`, description: "Documente, calendar și profiluri disponibile la Liceul Tehnologic Turceni." };
 
@@ -14,35 +14,40 @@ export default function AdmiterePage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: `Admitere ${anAdmitere()}` }]} />
-      <section className="ltt-sky py-20 px-6 text-center">
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Admitere {anAdmitere()}</h1>
-        <p className="font-body text-lg text-white/70 max-w-xl mx-auto mb-8">Depuneți dosarele la secretariat, {CONTACT.adresa}.</p>
-        <div className="flex gap-5 justify-center flex-wrap">
-          <GlowButton href="/contact" variant="primary">Contactează secretariatul</GlowButton>
-          <GlowButton href="/oferta" variant="secondary">Vezi profilurile</GlowButton>
+      <PaginaAntet eticheta="Clasa a IX-a" titlu={<>Admitere {anAdmitere()}</>} subtitlu={<>Depuneți dosarele la secretariat, {CONTACT.adresa}.</>}>
+        <ButonCerneala href="/contact">Contactează secretariatul</ButonCerneala>
+        <LinkSubliniat href="/oferta">Vezi profilurile</LinkSubliniat>
+      </PaginaAntet>
+      <section className="py-20 md:py-24 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20">
+          <AnimatedSection>
+            <SectionHeader label="Dosarul" title="Documente necesare" />
+            <ol className="border-t border-line">
+              {ADMITERE.documente.map((d, i) => (
+                <li key={i} className="grid grid-cols-[2.5rem_1fr] gap-3 py-4 border-b border-line font-body text-[15px] text-ink">
+                  <span className="font-heading ltt-accent">{String(i + 1).padStart(2, "0")}</span>{d}
+                </li>
+              ))}
+            </ol>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <SectionHeader label="Termene" title="Calendar admitere" />
+            <ol className="border-t border-line">
+              {calendarAdmitere().map((c, i) => (
+                <li key={i} className="grid grid-cols-[9rem_1fr] gap-4 py-4 border-b border-line">
+                  <span className="ltt-kicker !text-[10px] ltt-accent pt-1.5">{c.data}</span>
+                  <span className="font-heading text-xl text-ink">{c.eveniment}</span>
+                </li>
+              ))}
+            </ol>
+            <p className="font-body text-[13px] text-ink-soft mt-4">Calendar orientativ. Datele exacte se stabilesc prin ordin al ministrului educației și se publică în secțiunea Noutăți.</p>
+          </AnimatedSection>
         </div>
       </section>
-      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          <AnimatedSection><GlowCard glowColor="#ff9100" className="h-full">
-            <h2 className="font-heading text-2xl font-bold text-gray-900 dark:text-dark-text mb-6 pb-4 border-b-2 border-brand-accent/20">Documente necesare</h2>
-            {ADMITERE.documente.map((d, i) => <div key={i} className="font-body text-sm text-gray-600 dark:text-dark-muted py-3 flex items-start gap-3 border-b border-gray-100 dark:border-dark-border last:border-0"><span className="text-brand-accent font-bold flex-shrink-0">{i+1}.</span>{d}</div>)}
-          </GlowCard></AnimatedSection>
-          <AnimatedSection delay={0.15}><GlowCard glowColor="#00e5ff" className="h-full">
-            <h2 className="font-heading text-2xl font-bold text-gray-900 dark:text-dark-text mb-6 pb-4 border-b-2 border-brand-teal/20">Calendar admitere</h2>
-            {calendarAdmitere().map((c, i) => <div key={i} className="font-body text-sm text-gray-600 dark:text-dark-muted py-3 flex justify-between border-b border-gray-100 dark:border-dark-border last:border-0"><span className="font-semibold text-gray-900 dark:text-dark-text">{c.data}</span><span>{c.eveniment}</span></div>)}
-            <p className="font-body text-xs text-gray-500 dark:text-dark-subtle pt-4">Calendar orientativ. Datele exacte se stabilesc prin ordin al ministrului educației și se publică în secțiunea Noutăți.</p>
-          </GlowCard></AnimatedSection>
-        </div>
-      </section>
-      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-20 md:py-24 px-6 bg-paper-2">
+        <div className="max-w-6xl mx-auto">
           <AnimatedSection><SectionHeader label="Profiluri" title="Alege-ți viitorul" /></AnimatedSection>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {PROFILE.map((p, i) => <AnimatedSection key={p.slug} delay={i*0.06}><Link href={`/oferta#${p.slug}`} className="block">
-              <GlowCard glowColor={p.glowColor}><div className="text-center"><div className="text-3xl mb-2">{p.icon}</div><h3 className="font-body text-sm font-bold text-gray-900 dark:text-dark-text">{p.title}</h3></div></GlowCard>
-            </Link></AnimatedSection>)}
-          </div>
+          <GrilaProfiluri />
         </div>
       </section>
     </div>

@@ -212,9 +212,11 @@ Site-ul are 3 pagini legale care asigură conformitatea cu legislația:
 
 ## 13. Ce se întâmplă cu conținutul demonstrativ?
 
-Site-ul are conținut demonstrativ (texte exemplu, testimoniale fictive, noutăți de test). Acest conținut apare automat atât timp cât panoul Sanity e gol.
+Site-ul are conținut demonstrativ (texte exemplu, noutăți de test). Acest conținut apare automat atât timp cât panoul Sanity e gol.
 
 **Odată ce adaugi primul anunț real, conținutul demonstrativ dispare** pentru acel tip de conținut.
+
+**Excepție — conținutul fictiv e ascuns de la început.** Testimonialele („Ce spun cei care ne cunosc”), graficul „Unde ajung elevii noștri” și articolele-exemplu din Jurnal LTT au fost scrise ca demonstrație și nu vin de la oameni reali, așa că nu apar pe site. Testimonialele și graficul nu au loc în panoul Sanity: se modifică în cod, în `lib/data.ts`. Ca să le publicați, cereți persoanei care întreține site-ul să le înlocuiască cu texte și cifre reale (cu acordul celor citați) și să treacă pe `true` comutatorul corespunzător din `CONTINUT_VERIFICAT`, în același fișier. Articolele reale de blog se publică normal din panou și apar imediat.
 
 **Ordinea recomandată de migrare:**
 1. Adaugă noutățile/anunțurile reale

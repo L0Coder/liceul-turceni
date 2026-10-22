@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { InteractiveCalendar } from "@/components/ui/Calendar";
 import { AnimatedSection } from "@/components/ui/SectionHeader";
 import { fetchEvenimente } from "@/lib/fetcher";
+import { PaginaAntet } from "@/components/ui/PaginaAntet";
 
 export const metadata: Metadata = { title: "Calendar", description: "Calendarul evenimentelor Liceului Tehnologic Turceni — examene, vacanțe, competiții." };
 export const revalidate = 60;
@@ -13,11 +14,8 @@ export default async function CalendarPage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Calendar" }]} />
-      <section className="ltt-sky py-16 px-6 text-center">
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Calendar școlar</h1>
-        <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Examene, vacanțe, competiții — totul într-un loc.</p>
-      </section>
-      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
+      <PaginaAntet eticheta="Anul școlar" titlu="Calendar școlar" subtitlu="Examene, vacanțe, competiții — totul într-un loc." />
+      <section className="py-20 px-6 bg-paper">
         <div className="max-w-6xl mx-auto"><AnimatedSection><InteractiveCalendar events={events} /></AnimatedSection></div>
       </section>
     </div>

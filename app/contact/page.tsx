@@ -1,83 +1,52 @@
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
-import { GlowCard } from "@/components/ui/GlowCard";
-import { AnimatedSection } from "@/components/ui/SectionHeader";
+import { AnimatedSection, SectionHeader } from "@/components/ui/SectionHeader";
+import { FormularContact } from "@/components/ui/FormularContact";
 import { CONTACT } from "@/lib/constants";
+import { PaginaAntet } from "@/components/ui/PaginaAntet";
 
 export const metadata: Metadata = { title: "Contact", description: "Contactează Liceul Tehnologic Turceni." };
 
-const info = [
-  { icon: "📍", label: "Adresă", value: CONTACT.adresa },
-  { icon: "📞", label: "Telefon", value: CONTACT.telefon },
-  { icon: "📠", label: "Fax", value: CONTACT.fax },
-  { icon: "✉️", label: "Email", value: CONTACT.email },
-  { icon: "🕐", label: "Program", value: CONTACT.program },
-  { icon: "👤", label: "Director", value: CONTACT.director },
+const info: { label: string; value: string; href?: string }[] = [
+  { label: "Adresă", value: CONTACT.adresa },
+  { label: "Telefon", value: CONTACT.telefon, href: "tel:+40253335012" },
+  { label: "Fax", value: CONTACT.fax },
+  { label: "Email", value: CONTACT.email, href: `mailto:${CONTACT.email}` },
+  { label: "Program", value: CONTACT.program },
+  { label: "Director", value: CONTACT.director },
 ];
 
 export default function ContactPage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Contact" }]} />
-      <section className="ltt-sky py-16 px-6 text-center">
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Contact</h1>
-        <p className="font-body text-lg text-white/70 max-w-xl mx-auto">Suntem aici pentru tine.</p>
-      </section>
-      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          <AnimatedSection><GlowCard glowColor="#00e5ff" className="h-full">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-dark-text mb-6">Informatii de contact</h2>
-            {info.map((it, i) => (
-              <div key={i} className="font-body text-sm py-3 flex gap-3 border-b border-gray-100 dark:border-dark-border last:border-0">
-                <span className="text-lg flex-shrink-0">{it.icon}</span>
-                <div><div className="font-semibold text-gray-900 dark:text-dark-text mb-0.5">{it.label}</div><div className="text-gray-500 dark:text-dark-muted">{it.value}</div></div>
-              </div>
-            ))}
-          </GlowCard></AnimatedSection>
-          <AnimatedSection delay={0.15}><GlowCard glowColor="#ff9100" className="h-full">
-            <h2 className="font-heading text-xl font-bold text-gray-900 dark:text-dark-text mb-6">Trimite un mesaj</h2>
-            {/* 
-              FORMSPREE: Inlocuieste FORM_ID_AICI cu codul tau de pe formspree.io
-              Exemplu: daca ID-ul e xpzvqkld, pune https://formspree.io/f/xpzvqkld
-            */}
-            <form action="https://formspree.io/f/FORM_ID_AICI" method="POST" className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block font-body text-[13px] font-semibold text-gray-900 dark:text-dark-text mb-1.5">Nume complet</label>
-                <input type="text" id="name" name="name" required placeholder="Numele dvs."
-                  className="w-full px-4 py-3 rounded-[10px] border border-gray-200 dark:border-dark-border dark:bg-dark-bg dark:text-dark-text font-body text-sm outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/10" />
-              </div>
-              <div>
-                <label htmlFor="email" className="block font-body text-[13px] font-semibold text-gray-900 dark:text-dark-text mb-1.5">Email</label>
-                <input type="email" id="email" name="email" required placeholder="email@exemplu.ro"
-                  className="w-full px-4 py-3 rounded-[10px] border border-gray-200 dark:border-dark-border dark:bg-dark-bg dark:text-dark-text font-body text-sm outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/10" />
-              </div>
-              <div>
-                <label htmlFor="_subject" className="block font-body text-[13px] font-semibold text-gray-900 dark:text-dark-text mb-1.5">Subiect</label>
-                <input type="text" id="_subject" name="_subject" required placeholder="Subiectul mesajului"
-                  className="w-full px-4 py-3 rounded-[10px] border border-gray-200 dark:border-dark-border dark:bg-dark-bg dark:text-dark-text font-body text-sm outline-none focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/10" />
-              </div>
-              <div>
-                <label htmlFor="message" className="block font-body text-[13px] font-semibold text-gray-900 dark:text-dark-text mb-1.5">Mesaj</label>
-                <textarea id="message" name="message" rows={4} required placeholder="Scrie mesajul..."
-                  className="w-full px-4 py-3 rounded-[10px] border border-gray-200 dark:border-dark-border dark:bg-dark-bg dark:text-dark-text font-body text-sm outline-none resize-y focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/10" />
-              </div>
-              {/* Anti-spam honeypot */}
-              <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
-              <button type="submit"
-                className="w-full py-3.5 rounded-[10px] bg-brand-accent text-white font-body text-[15px] font-semibold hover:bg-brand-accent-light transition-all cursor-pointer">
-                Trimite mesajul
-              </button>
-            </form>
-          </GlowCard></AnimatedSection>
+      <PaginaAntet eticheta="Secretariat" titlu="Contact" subtitlu="Ne găsiți la secretariat, la telefon sau pe email." />
+      <section className="py-20 md:py-24 px-6 bg-paper">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.4fr] gap-14 md:gap-20">
+          <AnimatedSection>
+            <SectionHeader label="Date de contact" title="Secretariatul" />
+            <dl className="border-t border-line">
+              {info.map(it => (
+                <div key={it.label} className="grid grid-cols-[7rem_1fr] gap-4 py-4 border-b border-line">
+                  <dt className="ltt-kicker !text-[10px] text-ink-soft pt-1">{it.label}</dt>
+                  <dd className="font-body text-[15px] text-ink">{it.href ? <a href={it.href} className="hover:underline underline-offset-4">{it.value}</a> : it.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </AnimatedSection>
+          <AnimatedSection delay={0.1}>
+            <SectionHeader label="Scrie-ne" title="Trimite un mesaj" />
+            <FormularContact />
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Google Maps */}
-      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-20 px-6 bg-paper-2">
+        <div className="max-w-6xl mx-auto">
           <AnimatedSection>
-            <h2 className="font-heading text-2xl font-bold text-gray-900 dark:text-dark-text mb-6 text-center">Unde ne găsești</h2>
-            <div className="rounded-2xl overflow-hidden border border-gray-200 dark:border-dark-border shadow-lg">
+            <SectionHeader label="Hartă" title="Unde ne găsești" />
+            <div className="overflow-hidden border border-line">
               <iframe
                 src="https://maps.google.com/maps?q=44.681853677773404,23.37467370552185&t=&z=17&ie=UTF8&iwloc=&output=embed"
                 width="100%"
@@ -90,7 +59,7 @@ export default function ContactPage() {
                 className="w-full"
               />
             </div>
-            <p className="font-body text-xs text-gray-500 dark:text-dark-subtle text-center mt-3">
+            <p className="font-body text-[13px] text-ink-soft mt-3">
               Str. Educației nr. 1, Turceni 217520, Județul Gorj — pe DN66
             </p>
           </AnimatedSection>

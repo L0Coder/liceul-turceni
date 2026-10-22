@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { InView, useScrollProgress, usePinned } from "./scroll";
 import { DesenScoala, DesenCaiet, DesenBalon, DesenAtelier, DesenToca, DESEN_PROFIL } from "./Desene";
-import { PROFILE, TESTIMONIALE, calendarAdmitere } from "@/lib/data";
+import { PROFILE, TESTIMONIALE, FILIERA, calendarAdmitere } from "@/lib/data";
 import { QUICK_ACCESS } from "@/lib/constants";
+import { ButonCerneala, LinkSubliniat, Kicker } from "@/components/ui/Buton";
 
 /* ═══ PIESE COMUNE ═══ */
 
@@ -19,41 +20,18 @@ function Sina({ n, eticheta, light = false }: { n: string; eticheta: string; lig
   );
 }
 
-function Kicker({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div className={`ltt-kicker flex items-center gap-3 ${className}`}>
-      <span className="w-8 h-px bg-current opacity-60" />{children}
-    </div>
-  );
-}
-
-function ButonCerneala({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link href={href} className="group inline-flex items-center gap-3 bg-ink text-paper px-7 py-4 ltt-kicker !text-[12px] hover:bg-[#c2410c] hover:text-white transition-colors">
-      {children}<span className="transition-transform group-hover:translate-x-1">→</span>
-    </Link>
-  );
-}
-
-function LinkSubliniat({ href, children, light = false }: { href: string; children: React.ReactNode; light?: boolean }) {
-  return (
-    <Link href={href} className={`ltt-kicker !text-[12px] py-3 border-b transition-colors ${light ? "text-white border-white/40 hover:border-white" : "text-ink border-ink/40 hover:border-ink"}`}>
-      {children}
-    </Link>
-  );
-}
-
 /** Tușa de pensulă: o linie groasă, cu marginile „mâncate” de hârtie. */
 function Tusa({ d, viewBox, className = "", width = 16 }: { d: string; viewBox: string; className?: string; width?: number }) {
+  const id = `ltt-brush-${useId().replace(/:/g, "")}`;
   return (
     <svg viewBox={viewBox} className={`ltt-draw ltt-brush ${className}`} preserveAspectRatio="none" aria-hidden="true">
       <defs>
-        <filter id="ltt-brush" x="-10%" y="-10%" width="120%" height="120%">
+        <filter id={id} x="-10%" y="-10%" width="120%" height="120%">
           <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="4" />
           <feDisplacementMap in="SourceGraphic" scale="10" />
         </filter>
       </defs>
-      <path pathLength={1} d={d} fill="none" stroke="currentColor" strokeWidth={width} strokeLinecap="round" filter="url(#ltt-brush)" />
+      <path pathLength={1} d={d} fill="none" stroke="currentColor" strokeWidth={width} strokeLinecap="round" filter={`url(#${id})`} />
     </svg>
   );
 }
@@ -63,14 +41,14 @@ function Tusa({ d, viewBox, className = "", width = 16 }: { d: string; viewBox: 
 export function HeroAcasa({ admitere, elevi, ani, profileCount }: { admitere: number; elevi: number; ani: string; profileCount: number }) {
   return (
     <InView as="section" threshold={0.05} className="relative min-h-screen flex items-center pt-28 pb-24 md:pb-16">
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 grid md:grid-cols-[1fr_1.05fr] gap-12 md:gap-10 items-center">
-        <div className="relative order-2 md:order-1 text-ink max-w-[560px] mx-auto w-full">
+      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 grid lg:grid-cols-[1fr_1.05fr] gap-12 lg:gap-10 items-center">
+        <div className="relative order-2 lg:order-1 text-ink max-w-[560px] mx-auto w-full">
           <Tusa viewBox="0 0 520 420" width={11} className="absolute -inset-[8%] w-[116%] h-[116%] opacity-90 [&_path]:![transition-duration:2.6s]"
             d="M170 404 C50 370 6 236 70 140 C140 36 340 8 448 80 C500 116 516 168 500 214" />
           <DesenScoala className="relative w-full" />
         </div>
 
-        <div className="order-1 md:order-2">
+        <div className="order-1 lg:order-2">
           <Kicker className="ltt-rise text-ink-soft">Liceu teoretic și tehnologic · Turceni, Gorj</Kicker>
           <h1 className="ltt-rise font-heading text-ink text-[3.1rem] sm:text-6xl lg:text-[5.2rem] leading-[1.02] mt-7" style={{ transitionDelay: "0.1s" }}>
             Învață temeinic.<br />Alege-ți <span className="italic text-[#c2410c] dark:text-[#ff8f4d]">drumul.</span>
@@ -84,7 +62,7 @@ export function HeroAcasa({ admitere, elevi, ani, profileCount }: { admitere: nu
             <LinkSubliniat href="/admitere">Admitere {admitere}</LinkSubliniat>
           </div>
           <dl className="ltt-rise grid grid-cols-3 border-t border-line mt-12 pt-6 max-w-lg" style={{ transitionDelay: "0.4s" }}>
-            {[[String(profileCount), "profiluri"], [String(elevi), "elevi"], [ani, "ani de istorie"]].map(([n, t], i) => (
+            {[[String(profileCount), "profiluri"], [String(elevi), "elevi"], [ani, "ani școlari"]].map(([n, t], i) => (
               <div key={t} className={`px-4 first:pl-0 ${i ? "border-l border-line" : ""}`}>
                 <dt className="sr-only">{t}</dt>
                 <dd><span className="font-heading text-2xl text-ink">{n}</span> <span className="font-body text-[13px] text-ink-soft">{t}</span></dd>
@@ -94,7 +72,7 @@ export function HeroAcasa({ admitere, elevi, ani, profileCount }: { admitere: nu
         </div>
       </div>
 
-      <p className="hidden md:block absolute bottom-8 left-12 ltt-kicker !text-[10px] text-ink-soft">
+      <p className="hidden lg:block absolute bottom-8 left-12 ltt-kicker !text-[10px] text-ink-soft">
         Derulează încet — patru ani încap într-o singură pagină.
       </p>
       <div className="hidden xl:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col items-center gap-5 text-ink-soft" aria-hidden="true">
@@ -239,7 +217,7 @@ export function Drumul() {
 
   return (
     <section id="drumul" ref={ref} className="relative" style={{ height: `${ETAPE.length * 100 + 60}vh` }}>
-      <div className={`sticky top-0 h-screen overflow-hidden transition-colors duration-700 ${intuneric ? "bg-[#15120f]" : "bg-transparent"}`}>
+      <div className={`ltt-sticky sticky top-0 overflow-hidden transition-colors duration-700 ${intuneric ? "bg-[#15120f]" : "bg-transparent"}`}>
         <div className={`absolute inset-0 transition-opacity duration-700 pointer-events-none ${intuneric ? "opacity-100" : "opacity-0"}`}
           style={{ background: "radial-gradient(circle at 64% 46%, rgba(255,122,26,0.38), rgba(255,122,26,0.08) 30%, transparent 55%)" }} />
         <Sina n="02" eticheta="Drumul" light={intuneric} />
@@ -256,7 +234,10 @@ export function Drumul() {
             {intuneric && <Scantei />}
           </div>
 
-          <div key={i} className="is-in"><div className="ltt-rise"><TextEtapa e={ETAPE[i]} light={intuneric} /></div></div>
+          <div key={i} className="is-in" aria-hidden="true"><div className="ltt-rise"><TextEtapa e={ETAPE[i]} light={intuneric} /></div></div>
+          <ol className="sr-only">
+            {ETAPE.map((e) => <li key={e.cls}>Clasa a {e.cls}-a, {e.nume}: {e.titlu} {e.text}</li>)}
+          </ol>
         </div>
 
         {/* navigarea pe etape */}
@@ -281,22 +262,12 @@ export function Drumul() {
 
 /* ═══ 03 · PROFILURI ═══ */
 
-const FILIERA: Record<string, string> = {
-  "matematica-informatica": "Teoretic · Real",
-  "stiinte-ale-naturii": "Teoretic · Real",
-  "filologie-bilingv-engleza": "Teoretic · Uman",
-  "electronica-automatizari": "Tehnologic · Tehnic",
-  mecanica: "Tehnologic · Tehnic",
-  electromecanica: "Tehnologic · Tehnic",
-  "constructii-instalatii": "Tehnologic · Tehnic",
-  "scoala-profesionala": "Profesional · 3 ani",
-};
 
 function FisaProfil({ pr, n }: { pr: (typeof PROFILE)[number]; n: number }) {
   const Desen = DESEN_PROFIL[pr.slug];
   return (
-    <InView threshold={0.35} className="h-full grid md:grid-cols-[auto_minmax(0,0.85fr)_minmax(0,1.15fr)] items-center gap-6 md:gap-12">
-      <div className="hidden md:block font-heading text-[4.5rem] leading-[0.95] text-ink/15 [writing-mode:vertical-rl] [text-orientation:upright]">{String(n).padStart(2, "0")}</div>
+    <InView threshold={0.35} className="h-full grid sm:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:grid-cols-[4rem_minmax(0,0.85fr)_minmax(0,1.15fr)] items-center gap-6 lg:gap-14">
+      <div className="hidden lg:block font-heading text-[4.5rem] leading-[0.95] text-ink/15 [writing-mode:vertical-rl] [text-orientation:upright]">{String(n).padStart(2, "0")}</div>
       <div className="text-ink">{Desen && <Desen className="w-48 md:w-full max-w-[300px] mx-auto" />}</div>
       <div className="ltt-rise min-w-0">
         <div className="ltt-kicker ltt-accent">{FILIERA[pr.slug]}</div>
@@ -311,9 +282,10 @@ function FisaProfil({ pr, n }: { pr: (typeof PROFILE)[number]; n: number }) {
 }
 
 export function Profiluri() {
-  const pinned = usePinned();
+  const pinned = usePinned(1024);
   const [ref, p] = useScrollProgress<HTMLElement>();
   const pista = useRef<HTMLDivElement>(null);
+  const fixat = useRef<HTMLDivElement>(null);
   const [dist, setDist] = useState(0);
 
   useEffect(() => {
@@ -323,6 +295,18 @@ export function Profiluri() {
     window.addEventListener("resize", m);
     return () => window.removeEventListener("resize", m);
   }, [pinned]);
+
+  // Cu Tab, un link dintr-o fișă încă nevăzută aduce fișa în ecran: derularea verticală
+  // e chiar deplasarea orizontală, deci derulăm până la poziția fișei pe pistă.
+  const aduInEcran = (e: React.FocusEvent<HTMLDivElement>) => {
+    const sec = ref.current;
+    if (!sec) return;
+    // la focus, browserul ar derula și containerul pe orizontală, peste deplasarea noastră
+    if (fixat.current) fixat.current.scrollLeft = 0;
+    const tinta = Math.min(dist, Math.max(0, e.currentTarget.offsetLeft - 112));
+    if (Math.abs(tinta - p * dist) < 8) return;
+    window.scrollTo({ top: sec.getBoundingClientRect().top + window.scrollY + tinta, behavior: "instant" });
+  };
 
   const intro = (
     <InView className="shrink-0 w-[86vw] md:w-[38vw] pr-10 self-center">
@@ -341,7 +325,7 @@ export function Profiluri() {
         <div className="px-6">{intro}</div>
         <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory px-6 pb-6 mt-10">
           {PROFILE.map((pr, k) => (
-            <div key={pr.slug} className="snap-center shrink-0 w-[85vw] bg-paper-2 border border-line p-6"><FisaProfil pr={pr} n={k + 1} /></div>
+            <div key={pr.slug} className="snap-center shrink-0 w-[85vw] max-w-[760px] bg-paper-2 border border-line p-6 sm:p-8"><FisaProfil pr={pr} n={k + 1} /></div>
           ))}
         </div>
       </section>
@@ -350,12 +334,12 @@ export function Profiluri() {
 
   return (
     <section id="profiluri" ref={ref} className="relative" style={{ height: `calc(100vh + ${dist}px)` }}>
-      <div className="sticky top-0 h-screen overflow-hidden">
+      <div ref={fixat} className="ltt-sticky sticky top-0 overflow-hidden [overflow:clip]">
         <Sina n="03" eticheta="Profiluri" />
         <div ref={pista} className="flex h-full items-center pl-12 lg:pl-28 will-change-transform" style={{ transform: `translateX(${-p * dist}px)` }}>
           {intro}
           {PROFILE.map((pr, k) => (
-            <div key={pr.slug} className="shrink-0 w-[82vw] lg:w-[68vw] max-w-[1100px] h-[70vh] pr-20"><FisaProfil pr={pr} n={k + 1} /></div>
+            <div key={pr.slug} onFocus={aduInEcran} className="shrink-0 w-[82vw] lg:w-[68vw] max-w-[1100px] h-[70vh] pr-28"><FisaProfil pr={pr} n={k + 1} /></div>
           ))}
         </div>
         <div className="absolute bottom-10 left-12 lg:left-28 right-12 lg:right-28 flex items-center gap-6">
