@@ -187,8 +187,8 @@ export const GALERIE_CATEGORII = [
     imagini: ["06_evenimente/Festivitate_absolvire_1.jpg", "06_evenimente/Porti_deschise_1.jpg", "06_evenimente/Olimpiada_1.jpg"] },
   { slug: "sport", label: "Sport", emoji: "⚽", desc: "Sala de sport, teren, competiții.",
     imagini: ["05_sport/Sala_sport_1.jpg", "05_sport/Teren_sport_1.jpg", "05_sport/Competitie_sport_1.jpg"] },
-  { slug: "erasmus", label: "Erasmus+", emoji: "🌍", desc: "Mobilități internaționale.",
-    imagini: ["07_erasmus/Erasmus_Italia_1.jpg", "07_erasmus/Erasmus_Spania_1.jpg", "07_erasmus/Erasmus_grup_1.jpg"] },
+  { slug: "erasmus", label: "Erasmus+", emoji: "🌍", desc: "Mobilitatea din Grecia, septembrie–octombrie 2026.",
+    imagini: ["07_erasmus/Erasmus_Grecia_1.jpg", "07_erasmus/Erasmus_Grecia_2.jpg", "07_erasmus/Erasmus_grup_1.jpg"] },
 ];
 
 /* ═══ EVENIMENTE CALENDAR (fallback static) ═══ */

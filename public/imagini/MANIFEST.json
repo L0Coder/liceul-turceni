@@ -384,28 +384,28 @@
     "replace_with": "Fotografie reală: Elevi participând la concurs"
   },
   {
-    "file": "Erasmus_Italia_1.jpg",
-    "path": "07_erasmus/Erasmus_Italia_1.jpg",
+    "file": "Erasmus_Grecia_1.jpg",
+    "path": "07_erasmus/Erasmus_Grecia_1.jpg",
     "folder": "07_erasmus",
     "category": "erasmus",
-    "title": "Erasmus+ Italia",
-    "description": "Mobilitate în Italia",
+    "title": "Erasmus+ Grecia",
+    "description": "Mobilitate în Grecia, septembrie–octombrie 2026",
     "width": 1920,
     "height": 1080,
     "status": "placeholder",
-    "replace_with": "Fotografie reală: Mobilitate în Italia"
+    "replace_with": "Fotografie reală: mobilitatea Erasmus+ din Grecia"
   },
   {
-    "file": "Erasmus_Spania_1.jpg",
-    "path": "07_erasmus/Erasmus_Spania_1.jpg",
+    "file": "Erasmus_Grecia_2.jpg",
+    "path": "07_erasmus/Erasmus_Grecia_2.jpg",
     "folder": "07_erasmus",
     "category": "erasmus",
-    "title": "Erasmus+ Spania",
-    "description": "Mobilitate în Spania",
+    "title": "Erasmus+ Grecia",
+    "description": "Activități în timpul mobilității",
     "width": 1920,
     "height": 1080,
     "status": "placeholder",
-    "replace_with": "Fotografie reală: Mobilitate în Spania"
+    "replace_with": "Fotografie reală: activități din mobilitatea Erasmus+ din Grecia"
   },
   {
     "file": "Erasmus_grup_1.jpg",

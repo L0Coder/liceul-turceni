@@ -23,7 +23,7 @@ const repere = [
   { an: "2016", text: "Locul II la concursul național de educație ecologică Școala Zero Waste - premiu pentru implicarea în protecția mediului." },
   { an: "2020+", text: "Înființarea Clubului de Robotică. Participare la concursuri naționale. Elevă finalistă la competiția Solve for Tomorrow (Samsung România)." },
   { an: "2025", text: "Finalizarea proiectului PNRR de dotare cu mobilier, materiale didactice și echipamente digitale (Contract nr. 1856DOT/31.08.2023). Dotare completă: laptopuri, table interactive, mobilier modern, imprimante, scannere." },
-  { an: "2026", text: "Școala profesională intră în lichidare: din anul școlar 2026–2027 nu se mai fac înscrieri în clasa a IX-a profesională." },
+  { an: "2026", text: "Mobilitate Erasmus+ în Grecia (septembrie–octombrie). Școala profesională intră în lichidare: din anul școlar 2026–2027 nu se mai fac înscrieri în clasa a IX-a profesională." },
 ];
 
 const niveluri = [
