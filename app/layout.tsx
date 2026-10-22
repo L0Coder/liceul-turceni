@@ -63,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `try{var s=localStorage.getItem("ltt-dark-mode");if(s==="true"||(!s&&window.matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}`
         }} />
       </head>
-      <body className="font-body bg-paper text-gray-900 dark:text-dark-text antialiased">
+      <body className="font-body bg-paper text-ink antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schoolSchema) }} />
         <a href="#main-content" className="skip-link">Salt la conținut</a>
         <Header admitere={anAdmitere()} />

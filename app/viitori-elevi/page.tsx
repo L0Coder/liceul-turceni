@@ -1,76 +1,62 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { GlowCard } from "@/components/ui/GlowCard";
-import { GlowButton } from "@/components/ui/GlowButton";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
-import { PROFILE } from "@/lib/data";
+import { GrilaProfiluri } from "@/components/ui/GrilaProfiluri";
+import { PaginaAntet } from "@/components/ui/PaginaAntet";
+import { ButonCerneala, LinkSubliniat } from "@/components/ui/Buton";
 
 export const metadata: Metadata = { title: "Pentru viitori elevi", description: "Ești în clasa a VIII-a? Descoperă ce oferă LTT: 8 profiluri, practică reală, Club Robotică." };
 
 export default function ViitoriEleviPage() {
   const motives = [
-    { icon: "⚡", title: "8 profiluri diverse", desc: "De la IT la Mecanică, sigur găsești ceva.", glow: "#00e5ff" },
-    { icon: "🔧", title: "Practică reală", desc: "Ateliere echipate, practică la firme.", glow: "#ff9100" },
-    { icon: "🤖", title: "Club Robotică", desc: "Construiești roboți, mergi la competiții.", glow: "#76ff03" },
-    { icon: "🌍", title: "Erasmus+", desc: "Mobilități în Italia, Spania, Portugalia.", glow: "#d500f9" },
-    { icon: "💼", title: "Angajare directă", desc: "Școala Profesională: rată ridicată de angajare la CEO.", glow: "#1de9b6" },
-    { icon: "📈", title: "Modernizare recentă", desc: "Mobilier nou, echipamente digitale prin PNRR (2025).", glow: "#00b0ff" },
+    { title: "8 profiluri diverse", desc: "De la IT la Mecanică, sigur găsești ceva." },
+    { title: "Practică reală", desc: "Ateliere echipate, practică la firme." },
+    { title: "Club Robotică", desc: "Construiești roboți, mergi la competiții." },
+    { title: "Erasmus+", desc: "Mobilități în Italia, Spania, Portugalia." },
+    { title: "Meserie cu certificat", desc: "Școala Profesională: 3 ani, cu 70% pregătire practică." },
+    { title: "Modernizare recentă", desc: "Mobilier nou, echipamente digitale prin PNRR (2025)." },
   ];
   const steps = [
-    { n: "1", t: "Informează-te", d: "Explorează profilurile, compară-le.", c: "#3498db" },
-    { n: "2", t: "Vizitează-ne", d: "Ziua Porților Deschise — data se anunță în secțiunea Noutăți.", c: "#2aa198" },
-    { n: "3", t: "Susține EN", d: "Pregătește-te! Vezi pagina Examene.", c: "#f26b00" },
-    { n: "4", t: "Depune dosarul", d: "După repartizare, vino la secretariat.", c: "#27ae60" },
-    { n: "5", t: "Bun venit!", d: "Primul clopoțel: septembrie.", c: "#8e44ad" },
+    { n: "1", t: "Informează-te", d: "Explorează profilurile, compară-le." },
+    { n: "2", t: "Vizitează-ne", d: "Ziua Porților Deschise — data se anunță în secțiunea Noutăți." },
+    { n: "3", t: "Susține Evaluarea Națională", d: "Datele și resursele sunt pe pagina Examene." },
+    { n: "4", t: "Depune dosarul", d: "După repartizare, vino la secretariat." },
+    { n: "5", t: "Bun venit!", d: "Primul clopoțel: septembrie." },
   ];
   return (
     <div className="pt-28">
-      <section className="ltt-sky py-20 px-6 text-center">
-        <div className="text-5xl mb-4">🚀</div>
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Viitorul tău începe aici</h1>
-        <p className="font-body text-lg text-white/70 max-w-xl mx-auto mb-8">Ești în clasa a VIII-a? Descoperă de ce 1600+ elevi au ales LTT.</p>
-        <div className="flex gap-5 justify-center flex-wrap">
-          <GlowButton href="/compara" variant="primary">Compară profilurile</GlowButton>
-          <GlowButton href="/admitere" variant="secondary">Info admitere</GlowButton>
-        </div>
-      </section>
-      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
-        <div className="max-w-5xl mx-auto">
-          <AnimatedSection><SectionHeader label="De ce noi?" title="Ce te așteaptă la LTT" /></AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <PaginaAntet eticheta="Pentru clasa a VIII-a" titlu="Viitorul tău începe aici" subtitlu="Ești în clasa a VIII-a? Află ce poți învăța aici, cum arată cei patru ani și cum te înscrii.">
+        <ButonCerneala href="/compara">Compară profilurile</ButonCerneala>
+        <LinkSubliniat href="/admitere">Info admitere</LinkSubliniat>
+      </PaginaAntet>
+      <section className="py-20 md:py-24 px-6 bg-paper">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedSection><SectionHeader label="De ce noi" title="Ce te așteaptă la LTT" /></AnimatedSection>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-line">
             {motives.map((m, i) => (
-              <AnimatedSection key={m.title} delay={i * 0.08}>
-                <GlowCard glowColor={m.glow} className="h-full">
-                  <div className="text-3xl mb-3">{m.icon}</div>
-                  <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-dark-text mb-2">{m.title}</h3>
-                  <p className="font-body text-sm text-gray-500 dark:text-dark-muted">{m.desc}</p>
-                </GlowCard>
+              <AnimatedSection key={m.title} delay={i * 0.06} className="border-r border-b border-line p-8">
+                <div className="font-heading text-sm ltt-accent">{String(i + 1).padStart(2, "0")}</div>
+                <h3 className="font-heading text-2xl text-ink mt-4 mb-2">{m.title}</h3>
+                <p className="font-body text-[14px] leading-relaxed text-ink-soft">{m.desc}</p>
               </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
-      <section className="py-20 px-6 bg-paper-2 dark:bg-dark-card">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-20 md:py-24 px-6 bg-paper-2">
+        <div className="max-w-6xl mx-auto">
           <AnimatedSection><SectionHeader label="Profiluri" title="Alege-ți drumul" /></AnimatedSection>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {PROFILE.map((p, i) => (
-              <AnimatedSection key={p.slug} delay={i * 0.06}><Link href={`/oferta#${p.slug}`} className="block">
-                <GlowCard glowColor={p.glowColor}><div className="text-center"><div className="text-3xl mb-2">{p.icon}</div><h3 className="font-body text-sm font-bold text-gray-900 dark:text-dark-text">{p.title}</h3></div></GlowCard>
-              </Link></AnimatedSection>
-            ))}
-          </div>
+          <GrilaProfiluri />
         </div>
       </section>
-      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
-        <div className="max-w-3xl mx-auto">
-          <AnimatedSection><SectionHeader label="Pași" title="Cum te înscrii" /></AnimatedSection>
-          <div className="space-y-6">
+      <section className="py-20 md:py-24 px-6 bg-paper">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.4fr] gap-12">
+          <AnimatedSection><SectionHeader label="Pași" title="Cum te înscrii" subtitle="De la prima vizită până la primul clopoțel." /></AnimatedSection>
+          <div className="border-t border-line">
             {steps.map((s, i) => (
-              <AnimatedSection key={s.n} delay={i * 0.1}>
-                <div className="flex gap-5 items-start">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center font-heading text-xl font-bold text-white flex-shrink-0" style={{ background: s.c }}>{s.n}</div>
-                  <div><h3 className="font-heading text-lg font-bold text-gray-900 dark:text-dark-text mb-1">{s.t}</h3><p className="font-body text-sm text-gray-500 dark:text-dark-muted">{s.d}</p></div>
+              <AnimatedSection key={s.n} delay={i * 0.08}>
+                <div className="grid grid-cols-[4rem_1fr] gap-4 py-6 border-b border-line">
+                  <span className="font-heading text-4xl text-ink/25 leading-none">{s.n}</span>
+                  <div><h3 className="font-heading text-2xl text-ink">{s.t}</h3><p className="font-body text-[14px] text-ink-soft mt-1">{s.d}</p></div>
                 </div>
               </AnimatedSection>
             ))}

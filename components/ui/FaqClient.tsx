@@ -7,16 +7,19 @@ const cats = [
   { k: "scoala", l: "Școală" }, { k: "examene", l: "Examene" }, { k: "general", l: "General" },
 ];
 
-function Acc({ q, a }: { q: string; a: string }) {
+function Acc({ id, q, a }: { id: string; q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border border-gray-200 dark:border-dark-border rounded-xl overflow-hidden">
-      <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-6 py-5 text-left bg-white dark:bg-dark-card hover:bg-gray-50 dark:hover:bg-dark-border/50 transition-colors" aria-expanded={open}>
-        <span className="font-body text-[15px] font-semibold text-gray-900 dark:text-dark-text pr-4">{q}</span>
-        <span className={`text-brand-accent text-xl flex-shrink-0 transition-transform duration-300 ${open ? "rotate-45" : ""}`}>+</span>
+    <div className="border-b border-line">
+      <button onClick={() => setOpen(!open)} aria-expanded={open} aria-controls={`faq-${id}`}
+        className="group w-full flex items-start justify-between gap-6 py-6 text-left">
+        <span className="font-heading text-xl md:text-2xl text-ink group-hover:text-[#c2410c] dark:group-hover:text-[#ff8f4d] transition-colors">{q}</span>
+        <span aria-hidden="true" className={`mt-1 w-7 h-7 rounded-full border border-line grid place-items-center text-ink-soft flex-shrink-0 transition-transform duration-300 ${open ? "rotate-45" : ""}`}>+</span>
       </button>
-      <div className={`overflow-hidden transition-all duration-[400ms] ${open ? "max-h-96" : "max-h-0"}`}>
-        <div className="px-6 pb-5 font-body text-sm text-gray-600 dark:text-dark-muted leading-relaxed border-t border-gray-100 dark:border-dark-border pt-4">{a}</div>
+      <div id={`faq-${id}`} className={`grid transition-[grid-template-rows] duration-300 ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+        <div className="overflow-hidden">
+          <p className="font-body text-[15px] text-ink-soft leading-[1.85] pb-6 max-w-2xl">{a}</p>
+        </div>
       </div>
     </div>
   );
@@ -29,26 +32,26 @@ export function FaqClient({ data }: { data: FaqItem[] }) {
   const filtered = f === "all" ? data : data.filter(x => x.category === f);
 
   return (
-    <div className="max-w-3xl mx-auto">
-      <div className="flex flex-wrap gap-2 mb-10 justify-center">
+    <div className="max-w-4xl">
+      <div aria-label="Categorii" className="flex flex-wrap gap-x-8 gap-y-3 mb-10">
         {cats.map(c => (
-          <button key={c.k} onClick={() => setF(c.k)}
-            className={`font-body text-sm font-medium px-5 py-2.5 rounded-full transition-all ${
-              f === c.k ? "bg-brand-primary text-white" : "bg-white dark:bg-dark-card text-gray-600 dark:text-dark-muted border border-gray-200 dark:border-dark-border"
+          <button key={c.k} aria-pressed={f === c.k} onClick={() => setF(c.k)}
+            className={`ltt-kicker !text-[11px] pb-2 border-b-2 transition-colors ${
+              f === c.k ? "text-ink border-[#c2410c]" : "text-ink-soft border-transparent hover:text-ink"
             }`}>
             {c.l}
           </button>
         ))}
       </div>
-      <div className="space-y-3">
+      <div className="border-t border-line">
         {filtered.map((faq, i) => (
           <AnimatedSection key={faq._id} delay={i * 0.05}>
-            <Acc q={faq.question} a={faq.answer} />
+            <Acc id={faq._id} q={faq.question} a={faq.answer} />
           </AnimatedSection>
         ))}
       </div>
       {filtered.length === 0 && (
-        <p className="text-center font-body text-gray-500 dark:text-dark-subtle py-8">Nicio întrebare în această categorie.</p>
+        <p className="font-body text-ink-soft py-8">Nicio întrebare în această categorie.</p>
       )}
     </div>
   );

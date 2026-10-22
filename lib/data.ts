@@ -33,7 +33,7 @@ export const PROFILE: Profil[] = [
     fullDesc: "Specialiști în circuite electronice, automatizare industrială și programare PLC. Laborator echipat modern. Absolvenți angajați la Complexul Energetic Oltenia.",
     discipline: ["Electronică", "Automatizări", "Măsurări electrice", "Informatică aplicată", "Matematică"],
     competente: ["Proiectare circuite", "Programare PLC", "Sisteme SCADA", "Senzori", "Depanare"],
-    perspective: ["Inginer automatist", "Tehnician electronist", "CEO", "Industria auto", "Energii regenerabile"],
+    perspective: ["Inginer automatist", "Tehnician electronist", "Sectorul energetic", "Industria auto", "Energii regenerabile"],
     color: "#f26b00", glowColor: "#ff9100", imagini: ["02_laboratoare/Lab_electronica_1.jpg", "02_laboratoare/Lab_electronica_2.jpg"] },
   { slug: "mecanica", icon: "⚙️", title: "Mecanică",
     shortDesc: "Proiectare, fabricare, mentenanță. Baza industriei.",
@@ -47,7 +47,7 @@ export const PROFILE: Profil[] = [
     fullDesc: "Specialiști în motoare electrice, generatoare și sisteme energetice. Parteneriat direct cu Complexul Energetic Oltenia — practică în centrale.",
     discipline: ["Electromecanică", "Mașini electrice", "Instalații electrice", "Automatizări", "Protecția muncii"],
     competente: ["Montaj motoare", "Bobinare", "Instalații de forță", "Securitate electrică", "Diagnosticare"],
-    perspective: ["CEO — angajare directă", "Electrician industrial", "Energii regenerabile", "Mentenanță centrale"],
+    perspective: ["Sectorul energetic", "Electrician industrial", "Energii regenerabile", "Mentenanță centrale"],
     color: "#c0392b", glowColor: "#ff1744", imagini: ["03_ateliere/Atelier_electromecanica_1.jpg", "11_parteneriate/CEO_practica_1.jpg"] },
   { slug: "constructii-instalatii", icon: "🏗️", title: "Construcții Instalații",
     shortDesc: "Proiectare clădiri, instalații sanitare și termice.",
@@ -61,9 +61,21 @@ export const PROFILE: Profil[] = [
     fullDesc: "Două specializări de 3 ani: Sudor și Electromecanic Centrale Electrice. Pregătire 70% practică. Rată ridicată de angajare la Complexul Energetic Oltenia.",
     discipline: ["Pregătire practică (70%)", "Sudură MIG/MAG/TIG", "Electromecanică", "Protecția muncii", "Matematică aplicată"],
     competente: ["Sudură în toate pozițiile", "Citire desene", "Montaj/demontaj", "Mentenanță", "Certificare profesională"],
-    perspective: ["CEO — angajare directă", "Sudor certificat", "Mentenanță centrală", "Angajare în Europa"],
+    perspective: ["Sudor certificat", "Sectorul energetic", "Mentenanță industrială", "Angajare în Europa"],
     color: "#d35400", glowColor: "#ff6d00", imagini: ["03_ateliere/Atelier_sudura_1.jpg", "11_parteneriate/CEO_centrala_1.jpg"] },
 ];
+
+/** Filiera și profilul fiecărei specializări, pentru etichete. */
+export const FILIERA: Record<string, string> = {
+  "matematica-informatica": "Teoretic · Real",
+  "stiinte-ale-naturii": "Teoretic · Real",
+  "filologie-bilingv-engleza": "Teoretic · Uman",
+  "electronica-automatizari": "Tehnologic · Tehnic",
+  mecanica: "Tehnologic · Tehnic",
+  electromecanica: "Tehnologic · Tehnic",
+  "constructii-instalatii": "Tehnologic · Tehnic",
+  "scoala-profesionala": "Profesional · 3 ani",
+};
 
 /* ═══ STATISTICI ═══ */
 export const STATS = [

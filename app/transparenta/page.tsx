@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
 import { fetchDocumente } from "@/lib/fetcher";
+import { PaginaAntet } from "@/components/ui/PaginaAntet";
 
 export const metadata: Metadata = { title: "Transparență instituțională", description: "Documente oficiale LTT." };
 export const revalidate = 60;
@@ -12,28 +13,25 @@ export default async function TransparentaPage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Transparență" }]} />
-      <section className="ltt-sky py-16 px-6 text-center">
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Transparență instituțională</h1>
-      </section>
-      <section className="py-20 px-6 bg-paper dark:bg-dark-bg">
-        <div className="max-w-3xl mx-auto">
+      <PaginaAntet eticheta="Documente publice" titlu="Transparență instituțională" subtitlu="Regulamente, rapoarte, buget și hotărâri, publicate conform Legii 544/2001 și cerințelor ARACIP." />
+      <section className="py-20 px-6 bg-paper">
+        <div className="max-w-6xl mx-auto">
           <AnimatedSection>
             <SectionHeader label="Documente" title="Informații publice" subtitle="Conform Legii 544/2001." />
           </AnimatedSection>
           <AnimatedSection>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 border-t border-line">
               {documente.map((doc: any) => {
                 const inner = (
                   <>
-                    <span className="text-brand-teal">📄</span>
-                    <span className="flex-1">{doc.title}</span>
-                    {doc.fileUrl && <span className="text-brand-accent text-xs font-bold">PDF ↓</span>}
+                                        <span className="flex-1">{doc.title}</span>
+                    {doc.fileUrl ? <span className="ltt-kicker ltt-accent !text-[10px]">PDF ↓</span> : <span className="ltt-kicker text-ink-soft/70 !text-[10px]">În curând</span>}
                   </>
                 );
-                const cls = "font-body text-sm text-gray-900 dark:text-dark-text px-5 py-4 bg-white dark:bg-dark-card rounded-xl border border-gray-200 dark:border-dark-border flex items-center gap-3 hover:border-brand-teal/50 hover:translate-x-1 transition-all";
+                const cls = "font-body text-[15px] text-ink py-4 border-b border-line flex items-center gap-4 transition-colors";
                 
                 return doc.fileUrl ? (
-                  <a key={doc._id} href={doc.fileUrl} target="_blank" rel="noopener noreferrer" className={cls} download>
+                  <a key={doc._id} href={doc.fileUrl} target="_blank" rel="noopener noreferrer" className={`${cls} hover:text-[#c2410c] dark:hover:text-[#ff8f4d]`} download>
                     {inner}
                   </a>
                 ) : (
@@ -45,11 +43,11 @@ export default async function TransparentaPage() {
             </div>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
-            <div className="mt-12 p-6 bg-brand-teal/5 dark:bg-brand-teal/10 rounded-2xl border border-brand-teal/10">
-              <h3 className="font-heading text-lg font-bold text-gray-900 dark:text-dark-text mb-2">Solicitare informații publice</h3>
-              <p className="font-body text-sm text-gray-600 dark:text-dark-muted leading-relaxed">
+            <div className="mt-14 p-8 bg-paper-2 border border-line max-w-3xl">
+              <h3 className="font-heading text-2xl text-ink mb-3">Solicitare informații publice</h3>
+              <p className="font-body text-sm text-ink-soft leading-relaxed">
                 Conform Legii 544/2001, puteți solicita informații la adresa: Str. Educației nr. 1, Turceni 217520 sau pe email la{" "}
-                <a href="mailto:licturceni@yahoo.com" className="font-semibold text-brand-accent hover:underline">licturceni@yahoo.com</a>. Termen: 10 zile lucrătoare.
+                <a href="mailto:licturceni@yahoo.com" className="font-semibold ltt-accent hover:underline">licturceni@yahoo.com</a>. Termen: 10 zile lucrătoare.
               </p>
             </div>
           </AnimatedSection>

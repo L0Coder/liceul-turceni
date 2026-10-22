@@ -25,5 +25,5 @@ const sections = [
 ];
 
 export default function PentruProfesoriPage() {
-  return <PortalPage emoji="👩‍🏫" title="Pentru profesori" subtitle="Resurse, documente, calendare." sections={sections} glowColor="#ff9100" />;
+  return <PortalPage title="Pentru profesori" subtitle="Resurse, documente, calendare." sections={sections} />;
 }

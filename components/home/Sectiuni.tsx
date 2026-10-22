@@ -3,8 +3,9 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { InView, useScrollProgress, usePinned } from "./scroll";
 import { DesenScoala, DesenCaiet, DesenBalon, DesenAtelier, DesenToca, DESEN_PROFIL } from "./Desene";
-import { PROFILE, TESTIMONIALE, calendarAdmitere } from "@/lib/data";
+import { PROFILE, TESTIMONIALE, FILIERA, calendarAdmitere } from "@/lib/data";
 import { QUICK_ACCESS } from "@/lib/constants";
+import { ButonCerneala, LinkSubliniat, Kicker } from "@/components/ui/Buton";
 
 /* ═══ PIESE COMUNE ═══ */
 
@@ -16,30 +17,6 @@ function Sina({ n, eticheta, light = false }: { n: string; eticheta: string; lig
       <span className="ltt-kicker [writing-mode:vertical-rl] text-[10px]">{eticheta}</span>
       <span className={`w-px h-20 ${light ? "bg-white/25" : "bg-line"}`} />
     </div>
-  );
-}
-
-function Kicker({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div className={`ltt-kicker flex items-center gap-3 ${className}`}>
-      <span className="w-8 h-px bg-current opacity-60" />{children}
-    </div>
-  );
-}
-
-function ButonCerneala({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link href={href} className="group inline-flex items-center gap-3 bg-ink text-paper px-7 py-4 ltt-kicker !text-[12px] hover:bg-[#c2410c] hover:text-white transition-colors">
-      {children}<span className="transition-transform group-hover:translate-x-1">→</span>
-    </Link>
-  );
-}
-
-function LinkSubliniat({ href, children, light = false }: { href: string; children: React.ReactNode; light?: boolean }) {
-  return (
-    <Link href={href} className={`ltt-kicker !text-[12px] py-3 border-b transition-colors ${light ? "text-white border-white/40 hover:border-white" : "text-ink border-ink/40 hover:border-ink"}`}>
-      {children}
-    </Link>
   );
 }
 
@@ -256,7 +233,10 @@ export function Drumul() {
             {intuneric && <Scantei />}
           </div>
 
-          <div key={i} className="is-in"><div className="ltt-rise"><TextEtapa e={ETAPE[i]} light={intuneric} /></div></div>
+          <div key={i} className="is-in" aria-hidden="true"><div className="ltt-rise"><TextEtapa e={ETAPE[i]} light={intuneric} /></div></div>
+          <ol className="sr-only">
+            {ETAPE.map((e) => <li key={e.cls}>Clasa a {e.cls}-a, {e.nume}: {e.titlu} {e.text}</li>)}
+          </ol>
         </div>
 
         {/* navigarea pe etape */}
@@ -281,21 +261,11 @@ export function Drumul() {
 
 /* ═══ 03 · PROFILURI ═══ */
 
-const FILIERA: Record<string, string> = {
-  "matematica-informatica": "Teoretic · Real",
-  "stiinte-ale-naturii": "Teoretic · Real",
-  "filologie-bilingv-engleza": "Teoretic · Uman",
-  "electronica-automatizari": "Tehnologic · Tehnic",
-  mecanica: "Tehnologic · Tehnic",
-  electromecanica: "Tehnologic · Tehnic",
-  "constructii-instalatii": "Tehnologic · Tehnic",
-  "scoala-profesionala": "Profesional · 3 ani",
-};
 
 function FisaProfil({ pr, n }: { pr: (typeof PROFILE)[number]; n: number }) {
   const Desen = DESEN_PROFIL[pr.slug];
   return (
-    <InView threshold={0.35} className="h-full grid md:grid-cols-[auto_minmax(0,0.85fr)_minmax(0,1.15fr)] items-center gap-6 md:gap-12">
+    <InView threshold={0.35} className="h-full grid md:grid-cols-[4rem_minmax(0,0.85fr)_minmax(0,1.15fr)] items-center gap-6 md:gap-14">
       <div className="hidden md:block font-heading text-[4.5rem] leading-[0.95] text-ink/15 [writing-mode:vertical-rl] [text-orientation:upright]">{String(n).padStart(2, "0")}</div>
       <div className="text-ink">{Desen && <Desen className="w-48 md:w-full max-w-[300px] mx-auto" />}</div>
       <div className="ltt-rise min-w-0">
@@ -355,7 +325,7 @@ export function Profiluri() {
         <div ref={pista} className="flex h-full items-center pl-12 lg:pl-28 will-change-transform" style={{ transform: `translateX(${-p * dist}px)` }}>
           {intro}
           {PROFILE.map((pr, k) => (
-            <div key={pr.slug} className="shrink-0 w-[82vw] lg:w-[68vw] max-w-[1100px] h-[70vh] pr-20"><FisaProfil pr={pr} n={k + 1} /></div>
+            <div key={pr.slug} className="shrink-0 w-[82vw] lg:w-[68vw] max-w-[1100px] h-[70vh] pr-28"><FisaProfil pr={pr} n={k + 1} /></div>
           ))}
         </div>
         <div className="absolute bottom-10 left-12 lg:left-28 right-12 lg:right-28 flex items-center gap-6">
