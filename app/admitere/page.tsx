@@ -2,7 +2,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { anAdmitere } from "@/lib/constants";
 import type { Metadata } from "next";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
-import { ADMITERE, calendarAdmitere } from "@/lib/data";
+import { ADMITERE, PROFILE_ADMITERE, calendarAdmitere } from "@/lib/data";
 import { CONTACT } from "@/lib/constants";
 import { PaginaAntet } from "@/components/ui/PaginaAntet";
 import { GrilaProfiluri } from "@/components/ui/GrilaProfiluri";
@@ -44,9 +44,9 @@ export default function AdmiterePage() {
           </AnimatedSection>
         </div>
       </section>
-      <section className="py-20 md:py-24 px-6 bg-paper-2">
+      <section className="py-20 md:py-24 px-6 ltt-nuanta">
         <div className="max-w-6xl mx-auto">
-          <AnimatedSection><SectionHeader label="Profiluri" title="Alege-ți viitorul" /></AnimatedSection>
+          <AnimatedSection><SectionHeader label="Profiluri" title="Alege-ți viitorul" subtitle={`Pentru ${anAdmitere()} se fac înscrieri la cele ${PROFILE_ADMITERE.length} profiluri de liceu, teoretic și tehnologic. Școala profesională nu mai primește elevi în clasa a IX-a.`} /></AnimatedSection>
           <GrilaProfiluri />
         </div>
       </section>

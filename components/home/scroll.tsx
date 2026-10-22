@@ -41,7 +41,8 @@ export function InView({ children, className = "", as: Tag = "div", threshold = 
   return <Comp ref={ref} id={id} className={`${className} ${v ? "is-in" : ""}`}>{children}</Comp>;
 }
 
-/** true pe ecrane de cel puțin `px` lățime și fără prefers-reduced-motion: atunci fixăm secțiunile la scroll. */
+/** true pe ecrane de cel puțin `px` lățime și fără prefers-reduced-motion: atunci fixăm secțiunile la scroll.
+    Cine a cerut „mișcare redusă” în sistem primește varianta statică, pe orice ecran. */
 export function usePinned(px = 768) {
   const [ok, setOk] = useState(false);
   useEffect(() => {

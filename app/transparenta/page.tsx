@@ -14,7 +14,7 @@ export default async function TransparentaPage() {
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Transparență" }]} />
       <PaginaAntet eticheta="Documente publice" titlu="Transparență instituțională" subtitlu="Regulamente, rapoarte, buget și hotărâri, publicate conform Legii 544/2001 și cerințelor ARACIP." />
-      <section className="py-20 px-6 bg-paper">
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
             <SectionHeader label="Documente" title="Informații publice" subtitle="Conform Legii 544/2001." />

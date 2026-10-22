@@ -4,7 +4,7 @@ import { PROGRAM_ORE, graficOre } from "@/lib/constants";
 export function ProgramOre() {
   const ore = graficOre();
   return (
-    <section className="py-16 px-6 bg-paper">
+    <section className="py-16 px-6">
       <div className="max-w-3xl mx-auto">
         <h2 className="font-heading text-3xl md:text-4xl text-ink mb-3">Programul orelor</h2>
         <p className="font-body text-[15px] text-ink-soft leading-relaxed mb-6">

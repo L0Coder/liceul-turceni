@@ -7,7 +7,7 @@ import {
   getGalerie, getProfesori, getFaq, getSettings, isSanityConfigured,
 } from "./sanity";
 import { aniDeActivitate, anScolarCurent } from "./constants";
-import { NOUTATI, PARTENERIATE, TESTIMONIALE, STATS, EXAMENE, ADMITERE, TRANSPARENTA, GALERIE_CATEGORII, PROFILE, EVENIMENTE_STATICE, CONTINUT_VERIFICAT } from "./data";
+import { NOUTATI, PARTENERIATE, TESTIMONIALE, STATS, EXAMENE, ADMITERE, TRANSPARENTA, GALERIE_CATEGORII, PROFILE, PROFILE_ADMITERE, EVENIMENTE_STATICE, CONTINUT_VERIFICAT } from "./data";
 import { FAQ_DATA, BLOG_POSTS } from "./data-extra";
 
 // Wrapper sigur — nu crapă dacă Sanity nu e configurat.
@@ -103,7 +103,9 @@ export async function fetchSettings() {
   });
   // Anii de activitate și anul școlar NU se editează manual: sunt calculate
   // din data curentă, ca să nu rămână în urmă la 1 septembrie.
-  return { ...cms, aniExcelenta: String(aniDeActivitate()), anScolar: anScolarCurent() };
+  // Numărul de profiluri se calculează din profilurile cu admitere (lib/data.ts), nu din CMS:
+  // așa nu poate rămâne „8” după ce o specializare intră în lichidare.
+  return { ...cms, profileCount: PROFILE_ADMITERE.length, aniExcelenta: String(aniDeActivitate()), anScolar: anScolarCurent() };
 }
 
 // Re-export date statice care nu sunt în CMS (încă)

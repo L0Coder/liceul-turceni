@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AnimatedSection } from "@/components/ui/SectionHeader";
-import { PROFILE, FILIERA } from "@/lib/data";
+import { PROFILE_ADMITERE as PROFILE, FILIERA } from "@/lib/data";
 import { DESEN_PROFIL } from "@/components/home/Desene";
 import { PaginaAntet } from "@/components/ui/PaginaAntet";
 
@@ -26,7 +26,7 @@ export default function ComparaPage() {
           })}
         </div>
       </section>
-      <section className="py-16 px-6 bg-paper">
+      <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
           {selected.length < 2 ? (
             <div className="py-16 max-w-md">
@@ -35,11 +35,11 @@ export default function ComparaPage() {
             </div>
           ) : (
             <AnimatedSection>
-              <div className={`grid gap-px bg-line border border-line ${selected.length === 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-3"}`}>
+              <div className={`grid border-t border-l border-line ${selected.length === 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-3"}`}>
                 {selected.map(p => {
                   const Desen = DESEN_PROFIL[p.slug];
                   return (
-                    <div key={p.slug} className="bg-paper p-8 is-in">
+                    <div key={p.slug} className="border-r border-b border-line p-8 is-in">
                       {Desen && <Desen className="w-20 text-ink" />}
                       <div className="ltt-kicker ltt-accent !text-[10px] mt-5">{FILIERA[p.slug]}</div>
                       <h2 className="font-heading text-3xl text-ink mt-2">{p.title}</h2>

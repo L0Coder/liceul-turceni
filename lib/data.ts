@@ -14,6 +14,8 @@ export interface Profil {
   slug: string; icon: string; title: string; shortDesc: string; fullDesc: string;
   discipline: string[]; competente: string[]; perspective: string[];
   color: string; glowColor: string; imagini: string[];
+  /** Setat când specializarea nu mai primește elevi noi: textul explică situația claselor rămase. */
+  lichidare?: string;
 }
 
 export const PROFILE: Profil[] = [
@@ -72,8 +74,18 @@ export const PROFILE: Profil[] = [
     discipline: ["Pregătire practică (70%)", "Sudură MIG/MAG/TIG", "Electromecanică", "Protecția muncii", "Matematică aplicată"],
     competente: ["Sudură în toate pozițiile", "Citire desene", "Montaj/demontaj", "Mentenanță", "Certificare profesională"],
     perspective: ["Sudor certificat", "Sectorul energetic", "Mentenanță industrială", "Angajare în Europa"],
-    color: "#d35400", glowColor: "#ff6d00", imagini: ["03_ateliere/Atelier_sudura_1.jpg", "11_parteneriate/CEO_centrala_1.jpg"] },
+    color: "#d35400", glowColor: "#ff6d00", imagini: ["03_ateliere/Atelier_sudura_1.jpg", "11_parteneriate/CEO_centrala_1.jpg"],
+    lichidare: "Școala profesională este în lichidare. Din anul școlar 2026–2027 nu se mai fac înscrieri în clasa a IX-a; elevii din clasele a X-a și a XI-a își continuă studiile până la absolvire." },
 ];
+
+/** Profilurile la care se fac înscrieri (fără cele în lichidare). De aici vine și numărul de profiluri afișat pe site. */
+export const PROFILE_ADMITERE = PROFILE.filter(p => !p.lichidare);
+export const PROFILE_LICHIDARE = PROFILE.filter(p => p.lichidare);
+
+/** „Șapte profiluri.” — numărul scris în litere, pentru titluri. */
+export function numarInLitere(n: number): string {
+  return ["Zero", "Un", "Două", "Trei", "Patru", "Cinci", "Șase", "Șapte", "Opt", "Nouă", "Zece"][n] ?? String(n);
+}
 
 /** Filiera și profilul fiecărei specializări, pentru etichete. */
 export const FILIERA: Record<string, string> = {
@@ -84,7 +96,7 @@ export const FILIERA: Record<string, string> = {
   mecanica: "Tehnologic · Tehnic",
   electromecanica: "Tehnologic · Tehnic",
   "constructii-instalatii": "Tehnologic · Tehnic",
-  "scoala-profesionala": "Profesional · 3 ani",
+  "scoala-profesionala": "Profesional · în lichidare",
 };
 
 /* ═══ STATISTICI ═══ */

@@ -15,7 +15,7 @@ export default async function CalendarPage() {
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Calendar" }]} />
       <PaginaAntet eticheta="Anul școlar" titlu="Calendar școlar" subtitlu="Examene, vacanțe, competiții — totul într-un loc." />
-      <section className="py-20 px-6 bg-paper">
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto"><AnimatedSection><InteractiveCalendar events={events} /></AnimatedSection></div>
       </section>
     </div>

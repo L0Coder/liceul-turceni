@@ -40,7 +40,7 @@ app/                            21 pagini publice + studio + 404
 │   ── PAGINI CONȚINUT ──
 ├── despre/                     Despre noi — istoric, cifre, niveluri, conducere
 ├── admitere/                   Admitere — documente, calendar, profiluri
-├── oferta/                     Oferta educațională — 8 profiluri detaliate
+├── oferta/                     Oferta educațională — profilurile de liceu detaliate
 ├── compara/                    Comparator interactiv de profiluri (2-3 side-by-side)
 ├── noutati/                    Noutăți — citește din Sanity CMS
 ├── blog/                       Jurnal LTT — citește din Sanity CMS
@@ -133,7 +133,7 @@ Site-ul funcționează mereu, indiferent de starea CMS-ului.
 
 ### Conținut care NU e în CMS (e în cod)
 
-- Descrierile celor 8 profiluri educaționale (`lib/data.ts`)
+- Descrierile profilurilor (`lib/data.ts`). O specializare fără înscrieri noi primește câmpul `lichidare`: dispare din homepage, comparator și admitere, rămâne doar ca notă pe pagina Ofertă, iar numărul de profiluri afișat pe site se recalculează singur
 - Testimonialele de pe homepage și graficul absolvenților (`lib/data.ts`) — **fictive, ascunse** până când `CONTINUT_VERIFICAT` din același fișier e trecut pe `true` după înlocuirea lor cu date reale. La fel articolele-exemplu de blog.
 - Informațiile din portaluri (Elevi, Părinți, etc.)
 - Datele de contact (telefon, adresă, email) (`lib/constants.ts`)
@@ -173,7 +173,7 @@ Site-ul include (generate automat, nu necesită întreținere):
 - **Favicon** (`icon.svg`) — logo LTT în tab-ul browserului
 - **robots.txt** — permite indexarea, blochează `/studio`
 - **sitemap.xml** — toate paginile listate pentru Google
-- **OpenGraph image** — imagine cu logo + "8 profiluri · 1604 elevi · din 1982" care apare când cineva dă share pe WhatsApp/Facebook
+- **OpenGraph image** — imagine cu logo + „7 profiluri de liceu · județul Gorj · din 1982” (numărul se calculează din date) care apare când cineva dă share pe WhatsApp/Facebook
 - **Schema.org "School"** — Google înțelege structurat că e o școală (adresă, telefon, coordonate GPS, an înființare)
 - **theme-color** — bara browserului mobil ia culoarea brandului
 

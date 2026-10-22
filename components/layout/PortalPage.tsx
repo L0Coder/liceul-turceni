@@ -12,7 +12,7 @@ export function PortalPage({ title, subtitle, sections, children }: Props) {
     <div className="pt-28">
       <PaginaAntet eticheta="Portal" titlu={title} subtitlu={subtitle} />
       {sections.map((section, si) => (
-        <section key={section.title} className={`py-16 md:py-20 px-6 ${si % 2 === 0 ? "bg-paper" : "bg-paper-2"}`}>
+        <section key={section.title} className={`py-16 md:py-20 px-6 ${si % 2 === 0 ? "" : "ltt-nuanta"}`}>
           <div className="max-w-6xl mx-auto">
             <AnimatedSection><SectionHeader label={String(si + 1).padStart(2, "0")} title={section.title} /></AnimatedSection>
             <AnimatedSection>
