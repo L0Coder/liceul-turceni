@@ -16,8 +16,9 @@ export interface Profil {
   color: string; glowColor: string; imagini: string[];
   /** Specializările (calificările) din clasa a IX-a, la profilurile tehnice. */
   specializari?: string[];
-  /** Setat când specializarea nu mai primește elevi noi: textul explică situația claselor rămase. */
-  lichidare?: string;
+  /** Setat când profilul nu mai primește elevi în clasa a IX-a: textul explică situația claselor rămase.
+      Profilul dispare din homepage, comparator și admitere și rămâne doar ca notă pe pagina Ofertă. */
+  faraInscrieri?: string;
 }
 
 export const PROFILE: Profil[] = [
@@ -66,6 +67,14 @@ export const PROFILE: Profil[] = [
     competente: ["Montaj motoare", "Bobinare", "Instalații de forță", "Securitate electrică", "Diagnosticare"],
     perspective: ["Sectorul energetic", "Electrician industrial", "Energii regenerabile", "Mentenanță centrale"],
     color: "#c0392b", glowColor: "#ff1744", imagini: ["03_ateliere/Atelier_electromecanica_1.jpg", "11_parteneriate/CEO_practica_1.jpg"] },
+  { slug: "constructii-instalatii", icon: "🏗️", title: "Construcții Instalații",
+    shortDesc: "Proiectare clădiri, instalații sanitare și termice.",
+    fullDesc: "Specialiști în proiectarea și execuția construcțiilor civile, instalații sanitare, termice și electrice. Meserie cu cerere mare.",
+    discipline: ["Construcții", "Instalații sanitare", "Instalații termice", "Topografie", "Desen tehnic"],
+    competente: ["Citire planuri", "Execuție zidărie", "Montaj instalații", "Montaj termice", "Topografie"],
+    perspective: ["Constructor", "Instalator", "Diriginte de șantier", "Proiectant", "Antreprenor"],
+    color: "#2aa198", glowColor: "#1de9b6", imagini: ["03_ateliere/Atelier_constructii_1.jpg", "09_clase/Sala_clasa_2.jpg"],
+    faraInscrieri: "În anul școlar 2026–2027 nu s-a format clasă a IX-a la acest profil. Elevii din clasele mai mari își continuă studiile până la absolvire." },
   { slug: "scoala-profesionala", icon: "🔥", title: "Școală Profesională",
     shortDesc: "Sudori și electromecanic centrale. Rată ridicată de angajare.",
     fullDesc: "Două specializări de 3 ani: Sudor și Electromecanic Centrale Electrice. Pregătire 70% practică. Rată ridicată de angajare la Complexul Energetic Oltenia.",
@@ -73,12 +82,14 @@ export const PROFILE: Profil[] = [
     competente: ["Sudură în toate pozițiile", "Citire desene", "Montaj/demontaj", "Mentenanță", "Certificare profesională"],
     perspective: ["Sudor certificat", "Sectorul energetic", "Mentenanță industrială", "Angajare în Europa"],
     color: "#d35400", glowColor: "#ff6d00", imagini: ["03_ateliere/Atelier_sudura_1.jpg", "11_parteneriate/CEO_centrala_1.jpg"],
-    lichidare: "Școala profesională este în lichidare. Din anul școlar 2026–2027 nu se mai fac înscrieri în clasa a IX-a; elevii din clasele a X-a și a XI-a își continuă studiile până la absolvire." },
+    specializari: ["Sudor", "Electromecanic centrale electrice"],
+    faraInscrieri: "Școala profesională este în lichidare. Din anul școlar 2026–2027 nu se mai fac înscrieri în clasa a IX-a; elevii din clasele a X-a și a XI-a își continuă studiile până la absolvire." },
 ];
 
-/** Profilurile la care se fac înscrieri (fără cele în lichidare). De aici vine și numărul de profiluri afișat pe site. */
-export const PROFILE_ADMITERE = PROFILE.filter(p => !p.lichidare);
-export const PROFILE_LICHIDARE = PROFILE.filter(p => p.lichidare);
+/** Profilurile la care se fac înscrieri în clasa a IX-a. De aici vine și numărul de profiluri afișat pe site. */
+export const PROFILE_ADMITERE = PROFILE.filter(p => !p.faraInscrieri);
+/** Profilurile fără clasă a IX-a, cu elevi doar în clasele mai mari. */
+export const PROFILE_FARA_INSCRIERI = PROFILE.filter(p => p.faraInscrieri);
 
 /** „Șapte profiluri.” — numărul scris în litere, pentru titluri. */
 export function numarInLitere(n: number): string {
@@ -93,6 +104,7 @@ export const FILIERA: Record<string, string> = {
   "electronica-automatizari": "Tehnologic · Tehnic",
   mecanica: "Tehnologic · Tehnic",
   electromecanica: "Tehnologic · Tehnic",
+  "constructii-instalatii": "Tehnologic · fără clasa a IX-a",
   "scoala-profesionala": "Profesional · în lichidare",
 };
 

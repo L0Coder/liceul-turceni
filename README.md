@@ -133,7 +133,7 @@ Site-ul funcționează mereu, indiferent de starea CMS-ului.
 
 ### Conținut care NU e în CMS (e în cod)
 
-- Descrierile profilurilor (`lib/data.ts`). O specializare fără înscrieri noi primește câmpul `lichidare`: dispare din homepage, comparator și admitere, rămâne doar ca notă pe pagina Ofertă, iar numărul de profiluri afișat pe site se recalculează singur
+- Descrierile profilurilor (`lib/data.ts`). Un profil fără clasă a IX-a primește câmpul `faraInscrieri` (textul notei): dispare din homepage, comparator și admitere, rămâne doar ca notă pe pagina Ofertă, iar numărul de profiluri afișat pe site se recalculează singur
 - Testimonialele de pe homepage și graficul absolvenților (`lib/data.ts`) — **fictive, ascunse** până când `CONTINUT_VERIFICAT` din același fișier e trecut pe `true` după înlocuirea lor cu date reale. La fel articolele-exemplu de blog.
 - Informațiile din portaluri (Elevi, Părinți, etc.)
 - Datele de contact (telefon, adresă, email) (`lib/constants.ts`)

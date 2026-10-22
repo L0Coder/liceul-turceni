@@ -31,7 +31,7 @@ const niveluri = [
   "Învățământ primar (clasele pregătitoare - IV) - Turceni și structura Strâmba-Jiu",
   "Învățământ gimnazial (clasele V - VIII)",
   "Liceu teoretic - Matematică-Informatică, Științe ale Naturii, Filologie Bilingv Engleză",
-  "Liceu tehnologic - Mecanică, Electronică și automatizări, Electromecanică",
+  "Liceu tehnologic - Mecanică, Electronică și automatizări, Electromecanică; Construcții instalații doar în clasele mai mari, fără clasă a IX-a în 2026–2027",
   "Școală profesională - În lichidare: doar clasele a X-a și a XI-a (sudor, electromecanic centrale electrice), fără înscrieri noi în clasa a IX-a",
 ];
 
