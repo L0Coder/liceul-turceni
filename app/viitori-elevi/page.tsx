@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
 import { GrilaProfiluri } from "@/components/ui/GrilaProfiluri";
+import { PROFILE_ADMITERE } from "@/lib/data";
 import { PaginaAntet } from "@/components/ui/PaginaAntet";
 import { ButonCerneala, LinkSubliniat } from "@/components/ui/Buton";
 
-export const metadata: Metadata = { title: "Pentru viitori elevi", description: "Ești în clasa a VIII-a? Descoperă ce oferă LTT: 8 profiluri, practică reală, Club Robotică." };
+export const metadata: Metadata = { title: "Pentru viitori elevi", description: `Ești în clasa a VIII-a? Descoperă ce oferă LTT: ${PROFILE_ADMITERE.length} profiluri de liceu, practică reală, Club Robotică.` };
 
 export default function ViitoriEleviPage() {
   const motives = [
-    { title: "8 profiluri diverse", desc: "De la IT la Mecanică, sigur găsești ceva." },
+    { title: `${PROFILE_ADMITERE.length} profiluri de liceu`, desc: "De la informatică la construcții, teoretic sau tehnologic." },
     { title: "Practică reală", desc: "Ateliere echipate, practică la firme." },
     { title: "Club Robotică", desc: "Construiești roboți, mergi la competiții." },
     { title: "Erasmus+", desc: "Mobilități în Italia, Spania, Portugalia." },
-    { title: "Meserie cu certificat", desc: "Școala Profesională: 3 ani, cu 70% pregătire practică." },
+    { title: "Meserie cu certificat", desc: "Profilurile tehnice se încheie și cu certificat de calificare profesională." },
     { title: "Modernizare recentă", desc: "Mobilier nou, echipamente digitale prin PNRR (2025)." },
   ];
   const steps = [

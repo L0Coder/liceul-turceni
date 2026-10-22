@@ -67,7 +67,7 @@ export default async function ProfesoriPage() {
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Profesori" }]} />
       <PaginaAntet eticheta="Oamenii liceului" titlu="Profesori și conducere"
-        subtitlu={`${settings.cadreCount} de cadre didactice, de la grădiniță până la clasa a XII-a și școala profesională.`} />
+        subtitlu={`${settings.cadreCount} de cadre didactice, de la grădiniță până la clasa a XII-a.`} />
 
       {/* Conducere */}
       <section className="py-20 md:py-24 px-6">

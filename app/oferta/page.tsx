@@ -2,19 +2,19 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
 import { AnimatedSection } from "@/components/ui/SectionHeader";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
-import { PROFILE, FILIERA } from "@/lib/data";
+import { PROFILE_ADMITERE as PROFILE, PROFILE_LICHIDARE, FILIERA } from "@/lib/data";
 import { anAdmitere } from "@/lib/constants";
 import { PaginaAntet } from "@/components/ui/PaginaAntet";
 import { ButonCerneala, LinkSubliniat } from "@/components/ui/Buton";
 import { DESEN_PROFIL } from "@/components/home/Desene";
 
-export const metadata: Metadata = { title: "Oferta educațională", description: "Cele 8 profiluri educaționale ale Liceului Tehnologic Turceni." };
+export const metadata: Metadata = { title: "Oferta educațională", description: `Cele ${PROFILE.length} profiluri de liceu ale Liceului Tehnologic Turceni: teoretic și tehnologic.` };
 
 export default function OfertaPage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "Oferta educațională" }]} />
-      <PaginaAntet eticheta="8 profiluri · 3 filiere" titlu="Oferta educațională" subtitlu="Liceu teoretic, filieră tehnologică și școală profesională. Fiecare profil, cu disciplinele, competențele și drumurile de după.">
+      <PaginaAntet eticheta={`${PROFILE.length} profiluri · 2 filiere`} titlu="Oferta educațională" subtitlu="Liceu teoretic și filieră tehnologică. Fiecare profil, cu disciplinele, competențele și drumurile de după.">
         <ButonCerneala href="/compara">Compară profilurile</ButonCerneala>
         <LinkSubliniat href="/admitere">Admitere {anAdmitere()}</LinkSubliniat>
       </PaginaAntet>
@@ -67,6 +67,22 @@ export default function OfertaPage() {
           );
         })}
       </div>
+
+      {/* Specializările fără înscrieri noi: doar o notă, pentru elevii și părinții din clasele rămase */}
+      {PROFILE_LICHIDARE.map(p => (
+        <section key={p.slug} id={p.slug} className="scroll-mt-28 px-6 py-16 md:py-20 ltt-nuanta">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.3fr)] gap-6 md:gap-16">
+            <div>
+              <div className="ltt-kicker ltt-accent">{FILIERA[p.slug]}</div>
+              <h2 className="font-heading text-3xl md:text-4xl text-ink mt-3">{p.title}</h2>
+            </div>
+            <div className="max-w-2xl">
+              <p className="font-body text-[16px] text-ink leading-[1.85]">{p.lichidare}</p>
+              <p className="font-body text-[14px] text-ink-soft leading-[1.85] mt-3">Specializări: sudor și electromecanic centrale electrice. Pentru întrebări despre clasele a X-a și a XI-a, secretariatul vă stă la dispoziție.</p>
+            </div>
+          </div>
+        </section>
+      ))}
     </div>
   );
 }

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 import { InView, useScrollProgress, usePinned } from "./scroll";
 import { DesenScoala, DesenCaiet, DesenBalon, DesenAtelier, DesenToca, DESEN_PROFIL } from "./Desene";
-import { PROFILE, TESTIMONIALE, FILIERA, calendarAdmitere } from "@/lib/data";
+import { PROFILE_ADMITERE, TESTIMONIALE, FILIERA, calendarAdmitere, numarInLitere } from "@/lib/data";
 import { QUICK_ACCESS } from "@/lib/constants";
 import { ButonCerneala, LinkSubliniat, Kicker } from "@/components/ui/Buton";
 
@@ -55,7 +55,7 @@ export function HeroAcasa({ admitere, elevi, ani, profileCount }: { admitere: nu
           </h1>
           <p className="ltt-rise font-body text-[17px] leading-[1.85] text-ink-soft max-w-lg mt-7" style={{ transitionDelay: "0.2s" }}>
             Din 1982, elevii din Turceni și din satele din jur învață aici pentru facultate, pentru o meserie sau pentru amândouă.
-            Liceu teoretic, filieră tehnologică și școală profesională — {profileCount} profiluri, sub același acoperiș.
+            Liceu teoretic și filieră tehnologică — {profileCount} profiluri, sub același acoperiș.
           </p>
           <div className="ltt-rise flex flex-wrap items-center gap-8 mt-10" style={{ transitionDelay: "0.3s" }}>
             <ButonCerneala href="/oferta">Vezi cele {profileCount} profiluri</ButonCerneala>
@@ -90,7 +90,7 @@ export function Liceul({ elevi, cadre, profileCount, anScolar }: { elevi: number
     ["1982", "Prima zi de școală: 1 septembrie."],
     [String(elevi), `Elevi în anul școlar ${anScolar}.`],
     [String(cadre), "Cadre didactice."],
-    [String(profileCount), "Profiluri: teoretic, tehnologic, profesional."],
+    [String(profileCount), "Profiluri de liceu: teoretic și tehnologic."],
   ];
   return (
     <section id="liceul" className="relative py-28 md:py-40">
@@ -110,7 +110,7 @@ export function Liceul({ elevi, cadre, profileCount, anScolar }: { elevi: number
             <h2 className="ltt-rise font-heading text-ink text-4xl md:text-5xl leading-[1.12]">Un liceu care te pregătește și pentru facultate, și pentru meserie.</h2>
             <p className="ltt-rise font-body text-[15px] leading-[1.9] text-ink-soft mt-8" style={{ transitionDelay: "0.1s" }}>
               Liceul Tehnologic Turceni a fost înființat la 1 septembrie 1982. În peste patru decenii a devenit un liceu complet:
-              profiluri teoretice, tehnologice și școală profesională, pentru elevi din Turceni și din localitățile din jur ale județului Gorj.
+              profiluri teoretice și tehnologice, pentru elevi din Turceni și din localitățile din jur ale județului Gorj.
             </p>
             <p className="ltt-rise font-body text-[15px] leading-[1.9] text-ink-soft mt-5" style={{ transitionDelay: "0.15s" }}>
               Aici poți pregăti un bacalaureat bun pentru facultate, poți învăța o meserie cu certificat de calificare — sau le poți face pe amândouă.
@@ -148,10 +148,10 @@ const ETAPE = [
     text: "În laboratoarele de fizică, chimie, informatică și electronică, formulele de la tablă devin experimente, circuite și programe care chiar rulează." },
   { cls: "XI", nr: "III", nume: "Atelierul", Desen: DesenAtelier,
     titlu: "Aici meseria se învață cu mâinile.",
-    text: "La profilurile tehnice și la școala profesională, o parte mare din program se face în ateliere: strunguri, freze și CNC, instalații electrice, sudură. Apoi, stagii de practică la agenți economici." },
+    text: "La profilurile tehnice, o parte mare din program se face în ateliere: strunguri, freze și CNC, instalații electrice, montaj. Apoi, stagii de practică la agenți economici." },
   { cls: "XII", nr: "IV", nume: "Absolvirea", Desen: DesenToca,
     titlu: "Bacalaureat, certificat — și un drum ales.",
-    text: "Liceul se încheie cu bacalaureatul și, la profilurile tehnice, cu examenul de certificare a calificării. Școala profesională durează trei ani și se încheie tot cu certificarea calificării." },
+    text: "Liceul se încheie cu bacalaureatul și, la profilurile tehnice, cu examenul de certificare a calificării profesionale. Pleci cu o diplomă pentru facultate și cu o meserie." },
 ];
 
 function TextEtapa({ e, light }: { e: (typeof ETAPE)[number]; light: boolean }) {
@@ -263,7 +263,7 @@ export function Drumul() {
 /* ═══ 03 · PROFILURI ═══ */
 
 
-function FisaProfil({ pr, n }: { pr: (typeof PROFILE)[number]; n: number }) {
+function FisaProfil({ pr, n }: { pr: (typeof PROFILE_ADMITERE)[number]; n: number }) {
   const Desen = DESEN_PROFIL[pr.slug];
   return (
     <InView threshold={0.35} className="h-full grid sm:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:grid-cols-[4rem_minmax(0,0.85fr)_minmax(0,1.15fr)] items-center gap-6 lg:gap-14">
@@ -312,9 +312,9 @@ export function Profiluri() {
   const intro = (
     <InView className="shrink-0 w-[84vw] md:w-[38vw] pr-8 md:pr-10 self-center">
       <Kicker className="ltt-rise text-ink-soft">Oferta educațională</Kicker>
-      <h2 className="ltt-rise font-heading text-[2rem] sm:text-4xl md:text-5xl text-ink leading-[1.1] mt-5">Opt profiluri.<br />Fiecare cu drumul lui.</h2>
+      <h2 className="ltt-rise font-heading text-[2rem] sm:text-4xl md:text-5xl text-ink leading-[1.1] mt-5">{numarInLitere(PROFILE_ADMITERE.length)} profiluri.<br />Fiecare cu drumul lui.</h2>
       <p className="ltt-rise font-body text-[15px] leading-[1.85] text-ink-soft mt-6 max-w-sm">
-        Liceu teoretic, filieră tehnologică și școală profesională. Le poți pune față în față în comparator.
+        Liceu teoretic și filieră tehnologică. Le poți pune față în față în comparator.
       </p>
       <div className="ltt-rise mt-7"><LinkSubliniat href="/compara">Compară profilurile</LinkSubliniat></div>
     </InView>
@@ -325,7 +325,7 @@ export function Profiluri() {
       <section id="profiluri" className="relative py-24">
         <div className="px-6">{intro}</div>
         <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory px-6 pb-6 mt-10">
-          {PROFILE.map((pr, k) => (
+          {PROFILE_ADMITERE.map((pr, k) => (
             <div key={pr.slug} className="snap-center shrink-0 w-[85vw] max-w-[760px] bg-paper-2 border border-line p-6 sm:p-8"><FisaProfil pr={pr} n={k + 1} /></div>
           ))}
         </div>
@@ -339,7 +339,7 @@ export function Profiluri() {
         <Sina n="03" eticheta="Profiluri" />
         <div ref={pista} className="flex h-full items-center pl-6 md:pl-12 lg:pl-28 will-change-transform" style={{ transform: `translateX(${-p * dist}px)` }}>
           {intro}
-          {PROFILE.map((pr, k) => (
+          {PROFILE_ADMITERE.map((pr, k) => (
             <div key={pr.slug} onFocus={aduInEcran} className="shrink-0 w-[84vw] lg:w-[68vw] max-w-[1100px] h-[70svh] pr-8 sm:pr-16 lg:pr-28"><FisaProfil pr={pr} n={k + 1} /></div>
           ))}
         </div>

@@ -23,6 +23,7 @@ const repere = [
   { an: "2016", text: "Locul II la concursul național de educație ecologică Școala Zero Waste - premiu pentru implicarea în protecția mediului." },
   { an: "2020+", text: "Înființarea Clubului de Robotică. Participare la concursuri naționale. Elevă finalistă la competiția Solve for Tomorrow (Samsung România)." },
   { an: "2025", text: "Finalizarea proiectului PNRR de dotare cu mobilier, materiale didactice și echipamente digitale (Contract nr. 1856DOT/31.08.2023). Dotare completă: laptopuri, table interactive, mobilier modern, imprimante, scannere." },
+  { an: "2026", text: "Școala profesională intră în lichidare: din anul școlar 2026–2027 nu se mai fac înscrieri în clasa a IX-a profesională." },
 ];
 
 const niveluri = [
@@ -31,7 +32,7 @@ const niveluri = [
   "Învățământ gimnazial (clasele V - VIII)",
   "Liceu teoretic - Matematică-Informatică, Științe ale Naturii, Filologie Bilingv Engleză",
   "Liceu tehnologic - Electronică Automatizări, Mecanică, Electromecanică, Construcții Instalații",
-  "Școală profesională - Sudor, Electromecanic Centrale Electrice (3 ani, pregătire 70% practică)",
+  "Școală profesională - În lichidare: doar clasele a X-a și a XI-a (sudor, electromecanic centrale electrice), fără înscrieri noi în clasa a IX-a",
 ];
 
 export default async function DesprePage() {
@@ -39,7 +40,7 @@ export default async function DesprePage() {
   const cifre = [
     { nr: String(settings.eleviCount), label: `Elevi în anul școlar ${settings.anScolar}` },
     { nr: String(settings.cadreCount), label: "Cadre didactice" },
-    { nr: String(settings.profileCount), label: "Profiluri de liceu și profesionale" },
+    { nr: String(settings.profileCount), label: "Profiluri de liceu, teoretic și tehnologic" },
     { nr: settings.aniExcelenta, label: "Ani școlari, din 1982–1983 până azi" },
   ];
   return (
@@ -62,7 +63,7 @@ export default async function DesprePage() {
               De-a lungul a peste patru decenii, liceul a evoluat de la o instituție industrială la un centru educațional complet, cu profiluri atât teoretice cât și tehnice, școlarizând elevi din Turceni și din localitățile învecinate ale județului Gorj.
             </p>
             <p>
-              Astăzi, liceul este situat în zona centrală a orașului și oferă educație la toate nivelurile, de la grădiniță la liceu și școală profesională, cu <strong className="text-ink font-medium">{settings.eleviCount} de elevi</strong> și <strong className="text-ink font-medium">{settings.cadreCount} de cadre didactice</strong>.
+              Astăzi, liceul este situat în zona centrală a orașului și oferă educație de la grădiniță până la liceu, cu <strong className="text-ink font-medium">{settings.eleviCount} de elevi</strong> și <strong className="text-ink font-medium">{settings.cadreCount} de cadre didactice</strong>.
             </p>
             <p>
               În 2025, liceul a beneficiat de un proiect PNRR în valoare de <strong className="text-ink font-medium">2.163.924 lei</strong> pentru dotarea cu mobilier modern, laptopuri, table interactive, imprimante multifuncționale și scannere, modernizând laboratoarele de informatică, chimie, fizică, biologie, atelierele și sala de sport.

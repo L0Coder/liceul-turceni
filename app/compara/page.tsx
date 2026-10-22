@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AnimatedSection } from "@/components/ui/SectionHeader";
-import { PROFILE, FILIERA } from "@/lib/data";
+import { PROFILE_ADMITERE as PROFILE, FILIERA } from "@/lib/data";
 import { DESEN_PROFIL } from "@/components/home/Desene";
 import { PaginaAntet } from "@/components/ui/PaginaAntet";
 

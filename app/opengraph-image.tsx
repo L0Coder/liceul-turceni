@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { PROFILE_ADMITERE } from "@/lib/data";
 
 export const runtime = "edge";
 export const alt = "Liceul Tehnologic Turceni";
@@ -37,7 +38,7 @@ export default function OGImage() {
           Turceni
         </div>
         <div style={{ fontSize: 26, color: "rgba(255,255,255,0.75)", marginTop: 28 }}>
-          8 profiluri educaționale · județul Gorj · din 1982
+          {`${PROFILE_ADMITERE.length} profiluri de liceu · județul Gorj · din 1982`}
         </div>
       </div>
     ),
