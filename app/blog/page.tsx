@@ -50,7 +50,7 @@ export default async function BlogPage() {
           <div className="max-w-6xl mx-auto mt-14 grid md:grid-cols-[12rem_1fr] gap-3 md:gap-10">
             <div className="ltt-kicker text-ink-soft !text-[10px] md:pt-3">Pentru elevi și profesori</div>
             <div>
-              <h3 className="font-heading text-3xl text-ink">Vrei să scrii și tu?</h3>
+              <h2 className="font-heading text-3xl text-ink">Vrei să scrii și tu?</h2>
               <p className="font-body text-[15px] text-ink-soft mt-3">
                 Trimite textul tău la <a href="mailto:licturceni@yahoo.com?subject=Jurnal%20LTT" className="text-ink underline underline-offset-4">licturceni@yahoo.com</a>, cu subiectul „Jurnal LTT”.
               </p>

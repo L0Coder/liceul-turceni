@@ -9,9 +9,9 @@ import { PaginaAntet } from "@/components/ui/PaginaAntet";
 export const metadata: Metadata = { title: "Examene", description: "Calendar BAC, Evaluare Națională și rezultate LTT." };
 
 const secs = [
-  { d: EXAMENE.bac, c: "#f26b00", g: "#ff9100" },
-  { d: EXAMENE.evaluare, c: "#2aa198", g: "#1de9b6" },
-  { d: EXAMENE.rezultate, c: "#1f3b5b", g: "#00e5ff" },
+  { d: EXAMENE.bac },
+  { d: EXAMENE.evaluare },
+  { d: EXAMENE.rezultate },
 ];
 
 const resurse = [

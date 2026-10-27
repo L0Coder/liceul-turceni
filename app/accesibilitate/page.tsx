@@ -71,8 +71,8 @@ export default function AccesibilitatePage() {
                 <p className="font-body text-sm text-ink-soft leading-relaxed">
                   Dacă întâmpinați dificultăți de accesare a oricărei pagini de pe acest site, vă rugăm să ne contactați:<br /><br />
                   <span className="font-semibold text-ink">Liceul Tehnologic Turceni</span><br />
-                  Telefon: <a href="tel:+40253335012" className="ltt-accent hover:underline">0253-335012</a><br />
-                  Email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent hover:underline">licturceni@yahoo.com</a><br /><br />
+                  Telefon: <a href="tel:+40253335012" className="ltt-accent underline underline-offset-2 hover:decoration-2">0253-335012</a><br />
+                  Email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent underline underline-offset-2 hover:decoration-2">licturceni@yahoo.com</a><br /><br />
                   Vom încerca să vă oferim informațiile solicitate într-un format accesibil, în termen de 15 zile lucrătoare.
                 </p>
               </div>
@@ -80,7 +80,7 @@ export default function AccesibilitatePage() {
               <div className="bg-paper rounded-sm border border-line p-6">
                 <h2 className="font-heading text-xl font-bold text-ink mb-4">Procedura de aplicare</h2>
                 <p className="font-body text-sm text-ink-soft leading-relaxed">
-                  Dacă nu primiți un răspuns satisfăcător la solicitarea dvs. de accesibilitate, puteți depune o plângere la Autoritatea Națională pentru Administrare și Reglementare în Comunicații (ANCOM) — <a href="https://www.ancom.ro" target="_blank" rel="noopener noreferrer" className="ltt-accent hover:underline">ancom.ro</a>.
+                  Dacă nu primiți un răspuns satisfăcător la solicitarea dvs. de accesibilitate, puteți depune o plângere la Autoritatea Națională pentru Administrare și Reglementare în Comunicații (ANCOM) — <a href="https://www.ancom.ro" target="_blank" rel="noopener noreferrer" className="ltt-accent underline underline-offset-2 hover:decoration-2">ancom.ro</a>.
                 </p>
               </div>
 

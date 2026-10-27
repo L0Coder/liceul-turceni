@@ -110,13 +110,13 @@ export default async function DesprePage() {
           <AnimatedSection><SectionHeader label="Istorie" title="Repere istorice" subtitle="Patru decenii, pe scurt." /></AnimatedSection>
           <ol className="relative border-l border-line ml-2">
             {repere.map((r, i) => (
-              <AnimatedSection key={r.an} delay={i * 0.05}>
-                <li className="relative pl-8 pb-10 last:pb-0">
+              <li key={r.an} className="pb-10 last:pb-0">
+                <AnimatedSection delay={i * 0.05} className="relative pl-8">
                   <span aria-hidden="true" className="absolute -left-[5px] top-3 w-[9px] h-[9px] rounded-full bg-accent-2" />
                   <div className="font-heading text-3xl text-ink">{r.an}</div>
                   <p className="font-body text-[15px] text-ink-soft leading-relaxed mt-2 max-w-xl">{r.text}</p>
-                </li>
-              </AnimatedSection>
+                </AnimatedSection>
+              </li>
             ))}
           </ol>
         </div>
@@ -149,7 +149,7 @@ export default async function DesprePage() {
           <div>
             <h2 className="font-heading text-4xl md:text-5xl text-ink">Vino să ne cunoști.</h2>
             <p className="font-body text-[15px] text-ink-soft mt-4">
-              Str. Educației nr. 1, Turceni · <a href="tel:+40253335012" className="hover:underline underline-offset-4">0253-335012</a> · <a href="mailto:licturceni@yahoo.com" className="hover:underline underline-offset-4">licturceni@yahoo.com</a>
+              Str. Educației nr. 1, Turceni · <a href="tel:+40253335012" className="underline underline-offset-4 hover:decoration-2">0253-335012</a> · <a href="mailto:licturceni@yahoo.com" className="underline underline-offset-4 hover:decoration-2">licturceni@yahoo.com</a>
             </p>
           </div>
           <ButonCerneala href="/contact">Pagina de contact</ButonCerneala>

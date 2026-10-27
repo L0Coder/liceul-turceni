@@ -83,7 +83,7 @@ export default function CookiesPage() {
               <div className="bg-paper rounded-sm border border-line p-6">
                 <h2 className="font-heading text-xl font-bold text-ink mb-4">Contact</h2>
                 <p className="font-body text-sm text-ink-soft leading-relaxed">
-                  Pentru întrebări despre cookies: Liceul Tehnologic Turceni, Tel: <a href="tel:+40253335012" className="ltt-accent hover:underline">0253-335012</a>, Email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent hover:underline">licturceni@yahoo.com</a>.
+                  Pentru întrebări despre cookies: Liceul Tehnologic Turceni, Tel: <a href="tel:+40253335012" className="ltt-accent underline underline-offset-2 hover:decoration-2">0253-335012</a>, Email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent underline underline-offset-2 hover:decoration-2">licturceni@yahoo.com</a>.
                 </p>
               </div>
 

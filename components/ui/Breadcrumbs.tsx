@@ -30,7 +30,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
             <li key={i} className="flex items-center gap-1">
               {i > 0 && <span className="text-line">›</span>}
               {c.href && i < crumbs.length - 1 ? (
-                <Link href={c.href} className="hover:ltt-accent transition-colors">{c.label}</Link>
+                <Link href={c.href} className="hover:text-accent-text transition-colors">{c.label}</Link>
               ) : (
                 <span className="text-ink-soft">{c.label}</span>
               )}

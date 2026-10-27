@@ -69,6 +69,10 @@ html.dark img[src*="imagini"] { filter: brightness(0.8) contrast(1.05); }
 /* Secțiunile fixate la scroll: înălțimea vizibilă reală (pe iPad bara Safari nu mai acoperă nimic) */
 .ltt-sticky { height: 100vh; height: 100svh; }
 
+/* Numere-filigran pur decorative: textul vine din CSS (data-n), ca să nu fie citit ca text
+   și să nu fie verificat la contrast; elementul are și aria-hidden */
+.ltt-filigran::before { content: attr(data-n); }
+
 /* Etichete mici, spațiate (— 01 · LICEUL) */
 .ltt-kicker { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; }
 

@@ -268,7 +268,7 @@ function FisaProfil({ pr, n }: { pr: (typeof PROFILE_ADMITERE)[number]; n: numbe
   const Desen = DESEN_PROFIL[pr.slug];
   return (
     <InView threshold={0.35} className="h-full grid sm:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:grid-cols-[4rem_minmax(0,0.85fr)_minmax(0,1.15fr)] items-center gap-6 lg:gap-14">
-      <div className="hidden lg:block font-heading text-[4.5rem] leading-[0.95] text-ink/15 [writing-mode:vertical-rl] [text-orientation:upright]">{String(n).padStart(2, "0")}</div>
+      <div aria-hidden="true" data-n={String(n).padStart(2, "0")} className="ltt-filigran hidden lg:block font-heading text-[4.5rem] leading-[0.95] text-ink/15 [writing-mode:vertical-rl] [text-orientation:upright]" />
       <div className="text-ink">{Desen && <Desen className="w-28 sm:w-48 md:w-full max-w-[300px] sm:mx-auto" />}</div>
       <div className="ltt-rise min-w-0">
         <div className="ltt-kicker ltt-accent">{FILIERA[pr.slug]}</div>
