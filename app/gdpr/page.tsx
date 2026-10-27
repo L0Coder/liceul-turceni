@@ -168,7 +168,7 @@ export default function GDPRPage() {
                 <Bullet><strong className="text-ink">Dreptul de a nu face obiectul unei decizii automate</strong> (art. 22) — site-ul nu folosește profilare sau decizii automate</Bullet>
                 <Bullet><strong className="text-ink">Dreptul de a retrage consimțământul</strong> (de exemplu, acordul pentru fotografii) — oricând, fără a afecta legalitatea prelucrării anterioare</Bullet>
                 <p>
-                  Cererea se depune în scris la secretariat (personal, prin poștă sau pe email la {email}) ori se trimite responsabilului cu protecția datelor (secțiunea 3). Răspundem în cel mult 30 de zile calendaristice.
+                  Cererea se depune în scris la secretariat (personal, prin poștă sau pe email la {email}) ori se trimite responsabilului cu protecția datelor (secțiunea 3). Răspundem în cel mult o lună de la primirea cererii. Când este necesar, termenul poate fi prelungit cu două luni; în acest caz vă anunțăm în termen de o lună de la primirea cererii, cu motivele întârzierii. Dacă nu dăm curs cererii, vă comunicăm în același termen motivele, precum și posibilitatea de a depune plângere la ANSPDCP și de a vă adresa instanței.
                 </p>
               </Section>
 

@@ -147,11 +147,11 @@ export const ADMITERE = {
     altfel orientativ pe luni; anul se calculează la randare. */
 const CALENDAR_ADMITERE: Record<number, { data: string; eveniment: string }[]> = {
   2027: [
+    { data: "24 - 28 mai 2027", eveniment: "Proba de limba engleză pentru clasa bilingvă (înscriere 19 - 21 mai)" },
     { data: "22 - 25 iunie 2027", eveniment: "Evaluare Națională" },
     { data: "12 - 16 și 19 iulie 2027", eveniment: "Completarea opțiunilor" },
     { data: "22 iulie 2027", eveniment: "Repartizare computerizată - etapa I" },
-    { data: "23 - 27 iulie 2027", eveniment: "Depunerea dosarelor la liceu" },
-    { data: "Iulie - August 2027", eveniment: "Etapa a II-a de admitere" },
+    { data: "9 - 12 august 2027", eveniment: "Etapa a II-a de admitere" },
     { data: "Septembrie 2027", eveniment: "Începerea cursurilor" },
   ],
 };
@@ -226,9 +226,10 @@ export const EVENIMENTE_STATICE = [
   { date: "2027-04-19", title: "Săptămâna verde", type: "eveniment", description: "19 - 23 aprilie 2027. La clasele de liceu tehnologic: săptămână de instruire practică." },
   { date: "2027-04-24", title: "Vacanța de primăvară", type: "vacanta", description: "24 aprilie - 4 mai 2027." },
   { date: "2027-05-05", title: "Reluarea cursurilor - modulul 5", type: "eveniment", description: null },
+  { date: "2027-05-24", title: "Admitere 2027 - proba de limba engleză (clasa bilingvă)", type: "examen", description: "Înscriere 19 - 21 mai; probe 24 - 28 mai; rezultate 2 iunie 2027." },
   { date: "2027-06-04", title: "Ultima zi de cursuri - clasa a XII-a", type: "administrativ", description: null },
   { date: "2027-06-14", title: "Bacalaureat 2027 - probele scrise", type: "examen", description: "14 - 18 iunie 2027." },
   { date: "2027-06-18", title: "Încheierea cursurilor", type: "administrativ", description: "Pentru majoritatea claselor, inclusiv clasa a IX-a. Clasele a X-a și a XI-a de la filiera tehnologică și învățământul profesional: 25 iunie 2027." },
   { date: "2027-06-22", title: "Evaluare Națională 2027", type: "examen", description: "Limba română: 22 iunie; matematică: 24 iunie; limba maternă: 25 iunie 2027." },
-  { date: "2027-07-22", title: "Admitere 2027 - repartizarea computerizată", type: "examen", description: "Opțiunile se completează în 12 - 16 și 19 iulie; dosarele se depun la liceu în 23 - 27 iulie 2027." },
+  { date: "2027-07-22", title: "Admitere 2027 - repartizarea computerizată", type: "examen", description: "Opțiunile se completează în 12 - 16 și 19 iulie 2027. Etapa a II-a: 9 - 12 august 2027." },
 ];
