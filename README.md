@@ -28,7 +28,7 @@ Necesită Node.js 18+ și fișierul `.env.local` configurat (vezi secțiunea San
 app/                            21 pagini publice + studio + 404
 ├── page.tsx                    Homepage
 ├── layout.tsx                  Layout global (Header, Footer, CookieBanner, FloatingContact)
-├── globals.css                 Stiluri globale + dark mode + print
+├── globals.css                 Stiluri globale + dark mode + print (culorile vin din lib/paleta.ts)
 ├── not-found.tsx               Pagina 404
 ├── icon.svg                    Favicon (logo LTT)
 ├── robots.ts                   robots.txt generat (Allow tot, Disallow /studio)
@@ -73,6 +73,7 @@ components/
                                 Desene (ilustrații SVG), scroll (efecte la derulare)
 
 lib/
+├── paleta.ts                   Toate culorile site-ului (luminos, întunecat, siglă)
 ├── constants.ts                Navigare, contact, meta
 ├── data.ts                     Date statice (profiluri, noutăți, transparență)
 ├── data-extra.ts               Date statice (FAQ, blog)
@@ -140,6 +141,7 @@ Site-ul funcționează mereu, indiferent de starea CMS-ului.
 - Programul orelor pentru gimnaziu și liceu — ora de început, durata orei și a pauzei (`PROGRAM_ORE` în `lib/constants.ts`); tabelul de pe paginile Elevi/Părinți și răspunsul din FAQ se generează automat
 - Paginile legale (GDPR, Cookies, Accesibilitate)
 - Structura paginilor, design, logo
+- Culorile site-ului — toate într-un singur fișier, `lib/paleta.ts` (coduri hex, cu un comentariu pentru fiecare). Tailwind le transformă în clase (`bg-accent`, `text-ink`...), deci o culoare schimbată acolo se schimbă peste tot. Pentru text, verifică contrastul (minim 4,5:1 față de fundal)
 
 Pentru a modifica acestea, trebuie editat codul și dat `git push`.
 

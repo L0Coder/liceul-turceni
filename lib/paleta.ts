@@ -23,7 +23,7 @@ export const tema = {
     "accent-text": "#bb4500", // accentul ca text mic, închis destul pentru AA pe ambele hârtii
     "accent-display": "#e25300", // accentul în titlurile mari (AA pentru text mare)
     "accent-2": "#1f8f87", // turcoazul siglei, pentru buline, borduri și sublinieri (nu pentru text mic)
-    footer: "#1f3b5b",     // subsolul, în bleumarinul siglei
+    footer: "#172e48",     // subsolul: bleumarinul siglei, puțin mai adânc ca text-white/50 să treacă AA
   },
   intunecat: {
     paper: "#0f1826",
