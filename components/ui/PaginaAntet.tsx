@@ -9,7 +9,7 @@ export function PaginaAntet({ titlu, subtitlu, eticheta, children }: {
       <div className="max-w-6xl mx-auto">
         {eticheta && <Kicker className="text-ink-soft">{eticheta}</Kicker>}
         <h1 className="font-heading text-ink text-[2.6rem] sm:text-6xl md:text-7xl leading-[1.04] mt-6 max-w-4xl">{titlu}</h1>
-        <svg viewBox="0 0 220 14" className="w-44 mt-6 text-sketch" aria-hidden="true">
+        <svg viewBox="0 0 220 14" className="w-44 mt-6 text-accent-2" aria-hidden="true">
           <path d="M3 9 C50 3 120 6 217 5" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
         </svg>
         {subtitlu && <p className="font-body text-[17px] leading-[1.8] text-ink-soft max-w-2xl mt-6">{subtitlu}</p>}

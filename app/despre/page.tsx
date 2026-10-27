@@ -112,7 +112,7 @@ export default async function DesprePage() {
             {repere.map((r, i) => (
               <AnimatedSection key={r.an} delay={i * 0.05}>
                 <li className="relative pl-8 pb-10 last:pb-0">
-                  <span aria-hidden="true" className="absolute -left-[5px] top-3 w-[9px] h-[9px] rounded-full bg-accent" />
+                  <span aria-hidden="true" className="absolute -left-[5px] top-3 w-[9px] h-[9px] rounded-full bg-accent-2" />
                   <div className="font-heading text-3xl text-ink">{r.an}</div>
                   <p className="font-body text-[15px] text-ink-soft leading-relaxed mt-2 max-w-xl">{r.text}</p>
                 </li>

@@ -52,7 +52,7 @@ export function HeroAcasa({ admitere, elevi, ani, profileCount }: { admitere: nu
         <div className="order-1 lg:order-2">
           <Kicker className="ltt-rise text-ink-soft">Liceu teoretic și tehnologic · Turceni, Gorj</Kicker>
           <h1 className="ltt-rise font-heading text-ink text-[3.1rem] sm:text-6xl lg:text-[5.2rem] leading-[1.02] mt-7" style={{ transitionDelay: "0.1s" }}>
-            Învață temeinic.<br />Alege-ți <span className="italic text-accent-text">drumul.</span>
+            Învață temeinic.<br />Alege-ți <span className="italic text-accent-display">drumul.</span>
           </h1>
           <p className="ltt-rise font-body text-[17px] leading-[1.85] text-ink-soft max-w-lg mt-7" style={{ transitionDelay: "0.2s" }}>
             Din 1982, elevii din Turceni și din satele din jur învață aici pentru facultate, pentru o meserie sau pentru amândouă.

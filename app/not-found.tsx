@@ -7,7 +7,7 @@ export default function NotFound() {
       <div className="max-w-6xl mx-auto w-full">
         <Kicker className="text-ink-soft">Eroare 404</Kicker>
         <h1 className="font-heading text-ink text-5xl md:text-7xl leading-[1.04] mt-6 max-w-3xl">
-          Pagina asta a rămas <span className="italic text-accent-text">nescrisă.</span>
+          Pagina asta a rămas <span className="italic text-accent-display">nescrisă.</span>
         </h1>
         <p className="font-body text-[17px] leading-[1.8] text-ink-soft max-w-xl mt-6">
           Pagina pe care o cauți nu există sau a fost mutată. Poate te ajută una dintre acestea:

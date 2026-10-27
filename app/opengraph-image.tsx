@@ -18,7 +18,7 @@ export default function OGImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: `radial-gradient(circle at 80% 15%, ${sigla.orange}4d, transparent 50%), linear-gradient(180deg, ${tema.luminos.footer} 0%, #2a2621 100%)`,
+          background: `radial-gradient(circle at 80% 15%, ${sigla.orange}4d, transparent 50%), linear-gradient(180deg, ${tema.luminos.footer} 0%, ${comune.night} 100%)`,
           fontFamily: "serif",
         }}
       >

@@ -46,13 +46,13 @@ export function Header({ admitere }: { admitere: number }) {
             <Link key={item.href} href={item.href}
               className={`relative ltt-kicker !text-[11px] !tracking-[0.16em] whitespace-nowrap px-2.5 py-2 transition-colors ${activ(item.href) ? "text-ink" : "text-ink-soft hover:text-ink"}`}>
               {item.label}
-              {activ(item.href) && <span className="absolute left-1/2 -translate-x-1/2 bottom-0 w-1 h-1 rounded-full bg-accent" />}
+              {activ(item.href) && <span className="absolute left-1/2 -translate-x-1/2 bottom-0 w-1 h-1 rounded-full bg-accent-2" />}
             </Link>
           ))}
         </nav>
         <div className="hidden xl:flex items-center gap-3">
           <DarkModeToggle />
-          <Link href="/admitere" className="ltt-kicker !text-[11px] whitespace-nowrap text-paper bg-ink px-5 py-3 hover:bg-accent hover:text-white transition-colors">Admitere {admitere}</Link>
+          <Link href="/admitere" className="ltt-kicker !text-[11px] whitespace-nowrap text-white bg-accent px-5 py-3 hover:bg-accent-hover transition-colors">Admitere {admitere}</Link>
         </div>
         {/* Mobile */}
         <div className="xl:hidden flex items-center gap-2">

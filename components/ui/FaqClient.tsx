@@ -37,7 +37,7 @@ export function FaqClient({ data }: { data: FaqItem[] }) {
         {cats.map(c => (
           <button key={c.k} aria-pressed={f === c.k} onClick={() => setF(c.k)}
             className={`ltt-kicker !text-[11px] pb-2 border-b-2 transition-colors ${
-              f === c.k ? "text-ink border-accent" : "text-ink-soft border-transparent hover:text-ink"
+              f === c.k ? "text-ink border-accent-2" : "text-ink-soft border-transparent hover:text-ink"
             }`}>
             {c.l}
           </button>
