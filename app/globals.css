@@ -14,7 +14,7 @@ body { overflow-x: hidden; }
 /* Focus */
 *:focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 3px; }
 /* Pe subsol și pe secțiunile de noapte, accentul obișnuit nu se vede destul */
-footer :focus-visible, .bg-night :focus-visible { outline-color: rgb(var(--accent-bright)); }
+footer :focus-visible, .bg-night :focus-visible, .bg-band :focus-visible { outline-color: rgb(var(--accent-bright)); }
 
 /* Skip to content */
 .skip-link { position: absolute; top: -100px; left: 16px; z-index: 9999; background: #1f1d1a; color: #fff; padding: 12px 24px; border-radius: 0 0 8px 8px; font-size: 14px; transition: top 0.3s; }
@@ -55,6 +55,8 @@ html.dark body { background-image: none; }
    și portocaliu pal (pentru o secțiune caldă, ca avizierul de pe homepage) */
 .ltt-nuanta { background-color: rgb(var(--accent-2) / 0.07); }
 .ltt-nuanta-calda { background-color: rgb(var(--accent) / 0.06); }
+/* Noaptea, portocaliul închis abia se vede pe bleumarin: cel deschis, la fel de vizibil ca turcoazul */
+html.dark .ltt-nuanta-calda { background-color: rgb(var(--accent-light) / 0.08); }
 
 /* În dark mode, pozele (inclusiv placeholderele crem) se estompează puțin, ca să nu orbească */
 html.dark img[src*="imagini"] { filter: brightness(0.8) contrast(1.05); }

@@ -25,6 +25,7 @@ export const tema = {
     "accent-display": "#e25300", // accentul în titlurile mari (AA pentru text mare)
     "accent-2": "#1f8f87", // turcoazul siglei, pentru buline, borduri și sublinieri (nu pentru text mic)
     footer: "#172e48",     // subsolul: bleumarinul siglei, puțin mai adânc ca text-white/50 să treacă AA
+    band: "#10223a",       // banda de admitere de pe homepage (ca night)
   },
   intunecat: {
     paper: "#0f1826",
@@ -36,6 +37,7 @@ export const tema = {
     "accent-display": "#ff8f4d",
     "accent-2": "#34d1c4",
     footer: "#0a1220",
+    band: "#172c4b",       // noaptea, puțin mai deschisă decât pagina, ca banda să se distingă
   },
 };
 
