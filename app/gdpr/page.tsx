@@ -2,10 +2,11 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
 import { AnimatedSection } from "@/components/ui/SectionHeader";
 import { PaginaAntet } from "@/components/ui/PaginaAntet";
+import { CONTACT, DPO } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Politica de confidențialitate (GDPR)",
-  description: "Politica de protecție a datelor personale — Liceul Tehnologic Turceni. Conform GDPR, Legea 190/2018, Legea 272/2004.",
+  description: "Cum prelucrează site-ul Liceului Tehnologic Turceni datele personale: formularul de contact, harta, fotografiile, documentele publicate și drepturile dumneavoastră.",
 };
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
@@ -21,190 +22,167 @@ function Bullet({ children }: { children: React.ReactNode }) {
   return <div className="flex gap-2"><span className="ltt-accent flex-shrink-0">•</span><span>{children}</span></div>;
 }
 
+const L = "ltt-accent underline underline-offset-2 hover:decoration-2";
+const tel = <a href={`tel:+4${CONTACT.telefon.replace(/\D/g, "")}`} className={L}>{CONTACT.telefon}</a>;
+const email = <a href={`mailto:${CONTACT.email}`} className={L}>{CONTACT.email}</a>;
+const extern = (href: string, text: string) => <a href={href} target="_blank" rel="noopener noreferrer" className={L}>{text}</a>;
+
 export default function GDPRPage() {
   return (
     <div className="pt-28">
       <Breadcrumbs items={[{ label: "GDPR" }]} />
-      <PaginaAntet eticheta="Date personale" titlu="Politica de confidențialitate" subtitlu="Protecția datelor cu caracter personal" />
+      <PaginaAntet eticheta="Date personale" titlu="Politica de confidențialitate" subtitlu="Protecția datelor cu caracter personal pe site-ul liceului" />
 
       <section className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
             <div className="space-y-6">
 
-              {/* Cadrul legal */}
-              <Section title="1. Cadrul legal">
-                <p>Prezenta politică de confidențialitate este elaborată în conformitate cu:</p>
+              <Section title="1. Despre această politică">
+                <p>
+                  Această pagină explică ce date personale sunt prelucrate prin intermediul site-ului liceului: mesajele trimise prin formularul de contact, harta, preferințele de afișare, documentele și fotografiile publicate.
+                </p>
+                <p>
+                  Datele elevilor, ale părinților și ale angajaților prelucrate în activitatea curentă a școlii (înscriere, evidența situației școlare, examene, personal) nu sunt colectate prin site. Informații despre aceste prelucrări se pot solicita de la secretariat sau de la responsabilul cu protecția datelor (secțiunea 3).
+                </p>
+                <p>Cadrul legal:</p>
                 <Bullet>Regulamentul (UE) 2016/679 privind protecția persoanelor fizice în ceea ce privește prelucrarea datelor cu caracter personal (GDPR)</Bullet>
                 <Bullet>Legea nr. 190/2018 privind măsuri de punere în aplicare a GDPR în România</Bullet>
+                <Bullet>Legea nr. 506/2004 privind prelucrarea datelor cu caracter personal și protecția vieții private în sectorul comunicațiilor electronice</Bullet>
                 <Bullet>Legea nr. 272/2004 privind protecția și promovarea drepturilor copilului</Bullet>
                 <Bullet>Legea nr. 544/2001 privind liberul acces la informațiile de interes public</Bullet>
-                <Bullet>Legea nr. 506/2004 privind prelucrarea datelor cu caracter personal și protecția vieții private în sectorul comunicațiilor electronice</Bullet>
               </Section>
 
-              {/* Operatorul de date */}
               <Section title="2. Operatorul de date">
                 <p>
                   <strong className="text-ink">Liceul Tehnologic Turceni</strong><br />
-                  Str. Educației nr. 1, Turceni 217520, Județul Gorj<br />
-                  Telefon: <a href="tel:+40253335012" className="ltt-accent underline underline-offset-2 hover:decoration-2">0253-335012</a> | Fax: 0253-335011<br />
-                  Email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent underline underline-offset-2 hover:decoration-2">licturceni@yahoo.com</a><br />
+                  {CONTACT.adresa}<br />
+                  Telefon: {tel} | Fax: {CONTACT.fax}<br />
+                  Email: {email}<br />
                   CUI: 4666290
                 </p>
                 <p>
-                  În calitate de unitate de învățământ preuniversitar de stat, Liceul Tehnologic Turceni este operator de date cu caracter personal, conform Art. 4 pct. 7 din GDPR.
+                  În calitate de unitate de învățământ preuniversitar de stat, Liceul Tehnologic Turceni este operator de date cu caracter personal, conform art. 4 pct. 7 din GDPR.
                 </p>
               </Section>
 
-              {/* DPO */}
-              <Section title="3. Responsabilul cu Protecția Datelor (DPO)">
+              <Section title="3. Responsabilul cu protecția datelor (DPO)">
                 <p>
-                  Conform Art. 37 din GDPR, instituțiile publice au obligația de a desemna un Responsabil cu Protecția Datelor (DPO — Data Protection Officer).
+                  Pentru orice întrebare sau cerere privind datele dumneavoastră, vă puteți adresa responsabilului cu protecția datelor al liceului:
                 </p>
-                <div className="p-4 bg-paper-2 rounded-sm mt-2">
-                  <p className="font-semibold text-ink mb-1">Responsabil cu Protecția Datelor:</p>
+                <div className="p-4 bg-paper-2 rounded-sm">
                   <p>
-                    {/* NOTĂ: Completați cu datele reale ale DPO-ului desemnat prin decizie a directorului */}
-                    Datele de contact ale DPO-ului desemnat sunt disponibile la secretariatul liceului.<br />
-                    Telefon: <a href="tel:+40253335012" className="ltt-accent underline underline-offset-2 hover:decoration-2">0253-335012</a><br />
-                    Email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent underline underline-offset-2 hover:decoration-2">licturceni@yahoo.com</a>
+                    Email: <a href={`mailto:${DPO.email}?subject=${encodeURIComponent(DPO.mentiune)}`} className={L}>{DPO.email}</a>, cu mențiunea „{DPO.mentiune}”<br />
+                    În scris, la sediul liceului: {CONTACT.adresa}
                   </p>
                 </div>
-                <p className="text-xs text-ink-soft mt-2">
-                  Notă: DPO-ul este desemnat prin decizia directorului unității de învățământ. Datele sale de contact vor fi actualizate pe această pagină la fiecare schimbare.
-                </p>
               </Section>
 
-              {/* Ce date colectam prin site */}
-              <Section title="4. Datele personale colectate prin intermediul site-ului">
-                <p>Prin intermediul acestui site web, colectăm și prelucrăm următoarele categorii de date:</p>
-
-                <div className="mt-3 p-4 bg-paper-2 rounded-sm">
-                  <h3 className="font-semibold text-ink mb-2">a) Formularul de contact</h3>
-                  <Bullet>Date colectate: nume, adresă de email, subiect, conținutul mesajului</Bullet>
-                  <Bullet>Scop: răspunsul la solicitările adresate de părinți, elevi sau terți</Bullet>
-                  <Bullet>Temei legal: interesul legitim al instituției (Art. 6 alin. 1 lit. f din GDPR)</Bullet>
-                  <Bullet>Durata stocării: maximum 1 an de la soluționarea solicitării</Bullet>
+              <Section title="4. Ce date prelucrăm prin site și de ce">
+                <div className="p-4 bg-paper-2 rounded-sm">
+                  <h3 className="font-semibold text-ink mb-2">a) Mesajele trimise prin formularul de contact</h3>
+                  <Bullet>Date: nume, adresă de email, subiect, conținutul mesajului</Bullet>
+                  <Bullet>Scop: răspunsul la solicitările adresate de părinți, elevi sau alte persoane</Bullet>
+                  <Bullet>Temei: îndeplinirea atribuțiilor liceului ca instituție publică, inclusiv soluționarea petițiilor (art. 6 alin. (1) lit. e) din GDPR)</Bullet>
+                  <Bullet>Păstrare: cât este necesar soluționării solicitării, apoi potrivit termenelor de arhivare aplicabile corespondenței liceului</Bullet>
+                  <Bullet>Mesajul ajunge la liceu prin serviciul Formspree (secțiunea 6) sau, dacă formularul deschide aplicația dvs. de email, direct pe adresa liceului</Bullet>
                 </div>
 
-                <div className="mt-3 p-4 bg-paper-2 rounded-sm">
-                  <h3 className="font-semibold text-ink mb-2">b) Cookies</h3>
-                  <Bullet>Date colectate: preferința de consimțământ cookies, preferința de mod afișare (dark/light)</Bullet>
-                  <Bullet>Scop: funcționarea corectă a site-ului</Bullet>
-                  <Bullet>Temei legal: interes legitim pentru cookies strict necesare (Art. 6 alin. 1 lit. f)</Bullet>
-                  <Bullet>Detalii complete: pagina <a href="/cookies" className="ltt-accent underline underline-offset-2 hover:decoration-2">Politica de cookies</a></Bullet>
+                <div className="p-4 bg-paper-2 rounded-sm">
+                  <h3 className="font-semibold text-ink mb-2">b) Preferințele de afișare</h3>
+                  <Bullet>Răspunsul dat bannerului de cookies și alegerea modului luminos sau întunecat se rețin numai în browserul dvs. (stocare locală) și nu sunt transmise liceului</Bullet>
+                  <Bullet>Detalii: <a href="/cookies" className={L}>Politica de cookies</a></Bullet>
                 </div>
 
-                <div className="mt-3 p-4 bg-paper-2 rounded-sm">
-                  <h3 className="font-semibold text-ink mb-2">c) Documente publicate pe site</h3>
-                  <Bullet>Hotărârile CA, regulamentele, rapoartele publicate pe pagina de Transparență pot conține date personale ale angajaților (nume, funcție)</Bullet>
-                  <Bullet>Temei legal: obligație legală — Legea 544/2001 privind accesul la informațiile de interes public (Art. 6 alin. 1 lit. c din GDPR)</Bullet>
+                <div className="p-4 bg-paper-2 rounded-sm">
+                  <h3 className="font-semibold text-ink mb-2">c) Harta de pe pagina Contact</h3>
+                  <Bullet>Harta Google se încarcă numai dacă apăsați „Afișează harta”. Până atunci nu se transmite nimic către Google.</Bullet>
+                  <Bullet>După afișare, Google primește adresa IP a dispozitivului și poate folosi cookies proprii, potrivit {extern("https://policies.google.com/privacy", "politicii Google")}</Bullet>
+                </div>
+
+                <div className="p-4 bg-paper-2 rounded-sm">
+                  <h3 className="font-semibold text-ink mb-2">d) Date tehnice de acces</h3>
+                  <Bullet>La fiecare vizită, furnizorul de găzduire (secțiunea 6) prelucrează adresa IP și datele tehnice ale cererii, necesare livrării paginilor și securității site-ului</Bullet>
+                  <Bullet>Site-ul nu folosește servicii de analiză, publicitate sau profilare</Bullet>
+                </div>
+
+                <div className="p-4 bg-paper-2 rounded-sm">
+                  <h3 className="font-semibold text-ink mb-2">e) Documente publicate pe site</h3>
+                  <Bullet>Documentele de pe pagina Transparență (hotărâri, regulamente, rapoarte) pot conține numele și funcția unor angajați</Bullet>
+                  <Bullet>Temei: obligațiile legale de transparență ale instituției (art. 6 alin. (1) lit. c) din GDPR)</Bullet>
+                  <Bullet>Se publică numai datele necesare scopului: fără CNP, semnături, adrese sau telefoane personale</Bullet>
                 </div>
               </Section>
 
-              {/* Protecția datelor minorilor */}
-              <Section title="5. Protecția datelor elevilor minori">
+              <Section title="5. Elevii minori și fotografiile">
                 <div className="p-5 bg-paper-2 border-l-2 border-accent">
                   <p className="ltt-kicker !text-[11px] ltt-accent mb-2">⚠ Secțiune cu atenție specială</p>
                   <p className="text-ink">
-                    Conform Legii nr. 272/2004 și a principiului interesului superior al copilului, Liceul Tehnologic Turceni acordă protecție sporită datelor cu caracter personal ale elevilor minori.
+                    Conform Legii nr. 272/2004 și principiului interesului superior al copilului, liceul acordă protecție sporită datelor elevilor minori.
                   </p>
                 </div>
-
-                <p className="mt-3">Măsuri implementate:</p>
-
-                <Bullet><strong className="text-ink">Nu publicăm liste nominale cu elevi</strong> pe site (cu nume, note, CNP sau alte date identificabile)</Bullet>
-                <Bullet><strong className="text-ink">Fotografiile cu elevi minori</strong> sunt publicate pe site doar cu acordul scris al părintelui/tutorelui legal. Formularul de consimțământ este disponibil la secretariatul liceului.</Bullet>
-                <Bullet><strong className="text-ink">Rezultatele examenelor</strong> (BAC, Evaluare Națională) nu sunt publicate nominal pe site. Site-ul trimite la sursele oficiale (bacalaureat.edu.ro, evaluare.edu.ro).</Bullet>
-                <Bullet><strong className="text-ink">Părinții/tutorii legali pot solicita oricând:</strong> eliminarea fotografiilor care îi includ pe copiii lor, accesul la datele personale ale copilului, rectificarea sau ștergerea datelor.</Bullet>
-                <Bullet><strong className="text-ink">Consimțământul</strong> pentru prelucrarea datelor elevilor sub 16 ani este dat de părintele/tutorele legal, conform Art. 8 din GDPR coroborat cu Art. 2 din Legea 190/2018.</Bullet>
-
-                <p className="mt-2 text-xs text-ink-soft">
-                  Notă: Fotografiile realizate de părinți la evenimentele școlare, pentru uzul personal al familiei, nu intră sub incidența GDPR (excepția de uz casnic/personal).
-                </p>
-              </Section>
-
-              {/* Drepturile persoanelor vizate */}
-              <Section title="6. Drepturile dumneavoastră">
-                <p>Conform GDPR, aveți următoarele drepturi privind datele dumneavoastră personale:</p>
-
-                <Bullet><strong className="text-ink">Dreptul de acces</strong> (Art. 15) — să aflați ce date deținem despre dumneavoastră sau despre copilul dumneavoastră</Bullet>
-                <Bullet><strong className="text-ink">Dreptul la rectificare</strong> (Art. 16) — să corectați datele inexacte</Bullet>
-                <Bullet><strong className="text-ink">Dreptul la ștergere</strong> (Art. 17) — &quot;dreptul de a fi uitat&quot; — să solicitați ștergerea datelor, în condițiile legii</Bullet>
-                <Bullet><strong className="text-ink">Dreptul la restricționarea prelucrării</strong> (Art. 18)</Bullet>
-                <Bullet><strong className="text-ink">Dreptul la portabilitatea datelor</strong> (Art. 20) — aplicabil doar pentru datele furnizate pe bază de consimțământ sau contract, prelucrate automat</Bullet>
-                <Bullet><strong className="text-ink">Dreptul la opoziție</strong> (Art. 21) — să vă opuneți prelucrării în anumite situații</Bullet>
-                <Bullet><strong className="text-ink">Dreptul de a nu fi supus unei decizii automate</strong> (Art. 22) — site-ul nu utilizează profilare sau luare automată a deciziilor</Bullet>
-                <Bullet><strong className="text-ink">Dreptul de a retrage consimțământul</strong> — în orice moment, fără a afecta legalitatea prelucrării anterioare</Bullet>
-
-                <p className="mt-3">
-                  Pentru exercitarea acestor drepturi, adresați o cerere scrisă la secretariatul liceului (personal, prin poștă sau pe email la <a href="mailto:licturceni@yahoo.com" className="ltt-accent underline underline-offset-2 hover:decoration-2">licturceni@yahoo.com</a>). Răspunsul va fi transmis în maximum 30 de zile calendaristice.
-                </p>
-              </Section>
-
-              {/* Transferul datelor */}
-              <Section title="7. Transferul datelor către terți">
+                <Bullet><strong className="text-ink">Nu publicăm liste nominale cu elevi</strong> (nume, note, CNP sau alte date de identificare).</Bullet>
+                <Bullet><strong className="text-ink">Rezultatele examenelor</strong> (Bacalaureat, Evaluare Națională) nu se publică nominal pe site; trimitem la sursele oficiale (bacalaureat.edu.ro, evaluare.edu.ro).</Bullet>
+                <Bullet><strong className="text-ink">Fotografiile în care pot fi recunoscuți elevi minori</strong> se publică numai cu acordul scris al părintelui sau al tutorelui legal, inclusiv cele de la evenimentele deschise publicului. Formularul de acord este distribuit anual, este disponibil la secretariat și poate fi retras oricând.</Bullet>
+                <Bullet><strong className="text-ink">La evenimentele deschise publicului</strong> (Ziua Porților Deschise, festivități), participanții sunt informați că se fac fotografii și pot cere ulterior eliminarea imaginilor în care apar.</Bullet>
+                <Bullet><strong className="text-ink">Fotografiile cadrelor didactice</strong> se publică cu acordul persoanei, în prezentarea echipei.</Bullet>
+                <Bullet><strong className="text-ink">Fotografiile făcute de părinți</strong> la evenimentele școlare, pentru uzul familiei, nu sunt prelucrate de liceu. Vă rugăm să nu publicați imagini în care apar alți copii fără acordul părinților lor.</Bullet>
                 <p>
-                  Prin funcționarea site-ului, anumite date pot fi transferate către următorii furnizori de servicii:
+                  Cererile de eliminare a unei fotografii se adresează secretariatului (telefon: {tel}, email: {email}). Fotografia se elimină de pe site în cel mult 5 zile lucrătoare.
                 </p>
+              </Section>
 
-                <div className="mt-3 p-4 bg-paper-2 rounded-sm">
-                  <h3 className="font-semibold text-ink mb-2">Furnizori de servicii</h3>
-                  <Bullet><strong className="text-ink">Vercel Inc.</strong> (SUA) — găzduirea site-ului web. Date prelucrate: adrese IP ale vizitatorilor, în cadrul furnizării serviciului de hosting. <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="ltt-accent underline underline-offset-2 hover:decoration-2">Politica Vercel</a></Bullet>
-                  <Bullet><strong className="text-ink">Sanity AS</strong> (Norvegia, SEE) — sistem de administrare a conținutului (CMS). Date prelucrate: conținutul publicat de administratorii site-ului. <a href="https://www.sanity.io/legal/privacy" target="_blank" rel="noopener noreferrer" className="ltt-accent underline underline-offset-2 hover:decoration-2">Politica Sanity</a></Bullet>
-                  <Bullet><strong className="text-ink">Formspree Inc.</strong> (SUA) — procesarea mesajelor din formularul de contact. Date prelucrate: nume, email, mesajul transmis. <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="ltt-accent underline underline-offset-2 hover:decoration-2">Politica Formspree</a></Bullet>
+              <Section title="6. Furnizorii site-ului și transferul datelor">
+                <p>Site-ul folosește următorii furnizori de servicii, care pot prelucra date în numele liceului:</p>
+                <div className="p-4 bg-paper-2 rounded-sm">
+                  <Bullet><strong className="text-ink">Vercel Inc.</strong> (SUA) — găzduirea site-ului. Date: adresa IP și datele tehnice ale vizitelor. {extern("https://vercel.com/legal/privacy-policy", "Politica Vercel")}</Bullet>
+                  <Bullet><strong className="text-ink">Formspree Inc.</strong> (SUA) — transmiterea mesajelor din formularul de contact. Date: nume, email, mesaj. {extern("https://formspree.io/legal/privacy-policy", "Politica Formspree")}</Bullet>
+                  <Bullet><strong className="text-ink">Sanity AS</strong> (Norvegia) — sistemul de administrare a conținutului. Date: conținutul publicat și conturile administratorilor site-ului. {extern("https://www.sanity.io/legal/privacy", "Politica Sanity")}</Bullet>
                 </div>
-
-                <p className="mt-3">
-                  Transferul datelor către SUA (Vercel, Formspree) se realizează în baza clauzelor contractuale standard ale Comisiei Europene și/sau a Cadrului de protecție a datelor UE-SUA (EU-US Data Privacy Framework), conform Art. 46 din GDPR.
-                </p>
-
                 <p>
-                  <strong className="text-ink">Nu vindem, nu cedăm și nu transmitem date personale către terți în scopuri comerciale sau de marketing.</strong>
+                  Harta Google (secțiunea 4 c) se încarcă numai la cererea dvs.; Google prelucrează datele respective potrivit propriei politici.
+                </p>
+                <p>
+                  Pentru furnizorii din afara Spațiului Economic European, transferul se face pe baza garanțiilor prevăzute de capitolul V din GDPR, precizate de fiecare furnizor (clauzele contractuale standard ale Comisiei Europene sau Cadrul UE-SUA privind protecția datelor).
+                </p>
+                <p>
+                  <strong className="text-ink">Nu vindem și nu transmitem date personale în scopuri comerciale sau de marketing.</strong>
                 </p>
               </Section>
 
-              {/* Securitate */}
-              <Section title="8. Securitatea datelor">
-                <p>Măsuri tehnice și organizatorice implementate pentru protecția datelor:</p>
-                <Bullet>Comunicare criptată HTTPS/TLS pe întreg site-ul</Bullet>
-                <Bullet>Acces la panoul de administrare (CMS) restricționat prin autentificare (Google/GitHub OAuth)</Bullet>
-                <Bullet>Roluri de acces diferențiate în CMS (Administrator, Editor, Viewer)</Bullet>
-                <Bullet>Nu se stochează parole sau date financiare ale utilizatorilor</Bullet>
-                <Bullet>Backup automat al conținutului (Sanity cloud + GitHub + Vercel)</Bullet>
-                <Bullet>Headere de securitate HTTP implementate (X-Content-Type-Options, X-Frame-Options, Referrer-Policy)</Bullet>
+              <Section title="7. Securitatea datelor">
+                <Bullet>Comunicare criptată (HTTPS) pe întreg site-ul</Bullet>
+                <Bullet>Panoul de administrare a conținutului este accesibil numai cu autentificare</Bullet>
+                <Bullet>Site-ul nu are conturi de utilizator și nu stochează parole sau date financiare ale vizitatorilor</Bullet>
+                <Bullet>Antete de securitate HTTP (X-Content-Type-Options, X-Frame-Options, Referrer-Policy)</Bullet>
               </Section>
 
-              {/* Fotografii */}
-              <Section title="9. Publicarea fotografiilor pe site">
+              <Section title="8. Drepturile dumneavoastră">
+                <p>Conform GDPR, aveți următoarele drepturi privind datele dumneavoastră și, ca părinte sau tutore, privind datele copilului:</p>
+                <Bullet><strong className="text-ink">Dreptul de acces</strong> (art. 15) — să aflați ce date deținem</Bullet>
+                <Bullet><strong className="text-ink">Dreptul la rectificare</strong> (art. 16) — să corectați datele inexacte</Bullet>
+                <Bullet><strong className="text-ink">Dreptul la ștergere</strong> (art. 17) — în condițiile legii; nu se aplică datelor pe care liceul are obligația legală să le păstreze</Bullet>
+                <Bullet><strong className="text-ink">Dreptul la restricționarea prelucrării</strong> (art. 18)</Bullet>
+                <Bullet><strong className="text-ink">Dreptul la portabilitatea datelor</strong> (art. 20) — pentru datele furnizate pe bază de consimțământ sau contract și prelucrate automat</Bullet>
+                <Bullet><strong className="text-ink">Dreptul la opoziție</strong> (art. 21) — în situațiile prevăzute de lege</Bullet>
+                <Bullet><strong className="text-ink">Dreptul de a nu face obiectul unei decizii automate</strong> (art. 22) — site-ul nu folosește profilare sau decizii automate</Bullet>
+                <Bullet><strong className="text-ink">Dreptul de a retrage consimțământul</strong> (de exemplu, acordul pentru fotografii) — oricând, fără a afecta legalitatea prelucrării anterioare</Bullet>
                 <p>
-                  Publicarea fotografiilor pe site-ul liceului se face cu respectarea strictă a GDPR și a Legii 272/2004:
-                </p>
-                <Bullet><strong className="text-ink">Fotografii cu elevi minori:</strong> se publică DOAR cu acordul scris al părintelui/tutorelui legal. Formularul de consimțământ este distribuit anual și poate fi retras oricând.</Bullet>
-                <Bullet><strong className="text-ink">Fotografii la evenimente publice:</strong> la evenimentele deschise publicului (Ziua Porților Deschise, festivități), participanții sunt informați că se realizează fotografii. Aceștia pot solicita ulterior eliminarea imaginilor.</Bullet>
-                <Bullet><strong className="text-ink">Fotografii cu cadre didactice:</strong> se publică cu acordul persoanei respective, în cadrul prezentării echipei didactice.</Bullet>
-                <Bullet><strong className="text-ink">Fotografii realizate de părinți</strong> la evenimentele școlare, pentru uzul personal al familiei, nu intră sub incidența GDPR.</Bullet>
-                <p className="mt-2">
-                  Solicitările de eliminare a fotografiilor se adresează la secretariatul liceului (telefon: <a href="tel:+40253335012" className="ltt-accent underline underline-offset-2 hover:decoration-2">0253-335012</a>, email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent underline underline-offset-2 hover:decoration-2">licturceni@yahoo.com</a>). Fotografiile vor fi eliminate în maximum 5 zile lucrătoare.
+                  Cererea se depune în scris la secretariat (personal, prin poștă sau pe email la {email}) ori se trimite responsabilului cu protecția datelor (secțiunea 3). Răspundem în cel mult 30 de zile calendaristice.
                 </p>
               </Section>
 
-              {/* Incidenta de securitate */}
-              <Section title="10. Incidente de securitate (breșe de date)">
+              <Section title="9. Incidente de securitate">
                 <p>
-                  Conform Art. 33 și Art. 34 din GDPR, în cazul unei breșe de securitate a datelor cu caracter personal:
+                  Un incident de securitate care afectează date personale se documentează intern, se iau imediat măsuri de limitare, iar autoritatea de supraveghere și, după caz, persoanele afectate sunt notificate în condițiile și termenele prevăzute de art. 33 și 34 din GDPR.
                 </p>
-                <Bullet>Operatorul notifică ANSPDCP în maximum 72 de ore de la constatare</Bullet>
-                <Bullet>Dacă breșa prezintă risc ridicat pentru persoanele vizate, acestea sunt informate fără întârziere</Bullet>
-                <Bullet>Incidentul este documentat intern, inclusiv măsurile corective adoptate</Bullet>
               </Section>
 
-              {/* Plangeri */}
-              <Section title="11. Plângeri">
+              <Section title="10. Plângeri">
                 <p>
-                  Dacă considerați că prelucrarea datelor dumneavoastră personale încalcă prevederile GDPR, aveți dreptul de a depune o plângere la:
+                  Dacă considerați că prelucrarea datelor dumneavoastră încalcă legea, puteți depune o plângere la:
                 </p>
-                <div className="p-4 bg-paper-2 rounded-sm mt-2">
+                <div className="p-4 bg-paper-2 rounded-sm">
                   <p className="font-semibold text-ink">
                     Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP)
                   </p>
@@ -212,39 +190,34 @@ export default function GDPRPage() {
                     B-dul G-ral. Gheorghe Magheru nr. 28-30, Sector 1, București<br />
                     Telefon: +40.318.059.211 | Fax: +40.318.059.602<br />
                     Email: anspdcp@dataprotection.ro<br />
-                    Website: <a href="https://www.dataprotection.ro" target="_blank" rel="noopener noreferrer" className="ltt-accent underline underline-offset-2 hover:decoration-2">www.dataprotection.ro</a>
+                    Website: {extern("https://www.dataprotection.ro", "www.dataprotection.ro")}
                   </p>
                 </div>
-                <p className="mt-2">
-                  Înainte de a depune o plângere la ANSPDCP, vă încurajăm să ne contactați direct pentru a încerca soluționarea problemei.
+                <p>
+                  Vă încurajăm ca, înainte, să ne contactați direct, pentru a încerca să rezolvăm împreună problema.
                 </p>
               </Section>
 
-              {/* Modificari */}
-              <Section title="12. Modificarea politicii de confidențialitate">
+              <Section title="11. Modificarea politicii">
                 <p>
-                  Această politică poate fi actualizată periodic, în funcție de modificările legislative sau de schimbările în modul de prelucrare a datelor. Data ultimei actualizări este afișată mai jos. Vă recomandăm să consultați periodic această pagină.
+                  Politica se actualizează la schimbările legislative sau la schimbarea modului în care site-ul prelucrează date. Data ultimei actualizări este afișată mai jos.
                 </p>
               </Section>
 
-              {/* Contact */}
-              <Section title="13. Contact">
-                <p>
-                  Pentru orice întrebări sau solicitări privind protecția datelor personale:
-                </p>
-                <div className="p-4 bg-paper-2 rounded-sm mt-2">
+              <Section title="12. Contact">
+                <div className="p-4 bg-paper-2 rounded-sm">
                   <p>
                     <strong className="text-ink">Liceul Tehnologic Turceni</strong><br />
-                    Str. Educației nr. 1, Turceni 217520, Județul Gorj<br />
-                    Telefon: <a href="tel:+40253335012" className="ltt-accent underline underline-offset-2 hover:decoration-2">0253-335012</a> | Fax: 0253-335011<br />
-                    Email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent underline underline-offset-2 hover:decoration-2">licturceni@yahoo.com</a><br />
-                    Program: Luni — Vineri, 8:00 — 16:00
+                    {CONTACT.adresa}<br />
+                    Telefon: {tel} | Fax: {CONTACT.fax}<br />
+                    Email: {email}<br />
+                    Program: {CONTACT.program}
                   </p>
                 </div>
               </Section>
 
               <p className="font-body text-xs text-ink-soft text-center">
-                Ultima actualizare: martie 2026
+                Ultima actualizare: octombrie 2026
               </p>
 
             </div>

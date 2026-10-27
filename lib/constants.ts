@@ -79,6 +79,14 @@ export const CONTACT = {
   facebook: "https://www.facebook.com/Turceni/",
 } as const;
 
+/* ═══ RESPONSABILUL CU PROTECȚIA DATELOR (DPO) ═══
+   Datele de contact ale DPO se publică pe pagina GDPR. Până există o adresă dedicată,
+   mesajele merg pe adresa liceului, cu mențiunea de mai jos; adresa nouă se trece DOAR aici. */
+export const DPO = {
+  email: CONTACT.email,
+  mentiune: "În atenția responsabilului cu protecția datelor (DPO)",
+} as const;
+
 /* ═══ ADRESA SITE-ULUI ═══
    SURSĂ UNICĂ. Folosită de sitemap, robots.txt, breadcrumbs, OpenGraph și
    Schema.org — toate trebuie să indice ACELAȘI domeniu, altfel Google și
