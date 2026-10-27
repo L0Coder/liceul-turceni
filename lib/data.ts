@@ -156,6 +156,11 @@ const CALENDAR_ADMITERE: Record<number, { data: string; eveniment: string }[]> =
   ],
 };
 
+/** Calendarul anului e cel publicat de minister (true) sau doar orientativ pe luni (false). */
+export function calendarAdmitereOficial(an: number = anAdmitere()) {
+  return an in CALENDAR_ADMITERE;
+}
+
 export function calendarAdmitere(an: number = anAdmitere()) {
   if (CALENDAR_ADMITERE[an]) return CALENDAR_ADMITERE[an];
   return [

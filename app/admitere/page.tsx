@@ -2,7 +2,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { anAdmitere } from "@/lib/constants";
 import type { Metadata } from "next";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
-import { ADMITERE, PROFILE_ADMITERE, calendarAdmitere } from "@/lib/data";
+import { ADMITERE, PROFILE_ADMITERE, calendarAdmitere, calendarAdmitereOficial } from "@/lib/data";
 import { CONTACT } from "@/lib/constants";
 import { PaginaAntet } from "@/components/ui/PaginaAntet";
 import { GrilaProfiluri } from "@/components/ui/GrilaProfiluri";
@@ -40,7 +40,11 @@ export default function AdmiterePage() {
                 </li>
               ))}
             </ol>
-            <p className="font-body text-[13px] text-ink-soft mt-4">Calendar orientativ. Datele exacte se stabilesc prin ordin al ministrului educației și se publică în secțiunea Noutăți.</p>
+            <p className="font-body text-[13px] text-ink-soft mt-4">
+              {calendarAdmitereOficial()
+                ? <>Datele sunt cele din calendarul admiterii stabilit de Ministerul Educației. Înainte de fiecare etapă, verificați anunțurile oficiale pe <a href="https://www.edu.ro/admitere-liceu-si-inv-profesional" target="_blank" rel="noopener noreferrer" className="ltt-accent underline underline-offset-2 hover:decoration-2">edu.ro</a> și la <a href="https://www.isjgorj.ro/admitere/" target="_blank" rel="noopener noreferrer" className="ltt-accent underline underline-offset-2 hover:decoration-2">ISJ Gorj</a>.</>
+                : "Calendar orientativ. Datele exacte se stabilesc prin ordin al ministrului educației și se publică în secțiunea Noutăți."}
+            </p>
           </AnimatedSection>
         </div>
       </section>
