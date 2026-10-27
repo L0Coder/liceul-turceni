@@ -3,7 +3,8 @@
    (--paper, --accent...) și în clase (bg-paper, text-accent, hover:bg-accent-hover...).
    Imaginea de previzualizare (opengraph) și culoarea barei browserului le citesc direct de aici.
    Valorile sunt hex obișnuit; opacitatea se pune din clase (bg-accent/10, text-chalk/75).
-   Paleta pornește de la siglă: bleumarin pentru cerneală, portocaliu și turcoaz pentru accente. */
+   Paleta pornește de la siglă: bleumarin pentru cerneală, portocaliu și turcoaz pentru accente.
+   Secțiunile nuanțate (.ltt-nuanta, .ltt-nuanta-calda din globals.css) sunt accent-2 și accent, transparente. */
 
 /** Culorile siglei LTT. */
 export const sigla = {
@@ -15,11 +16,11 @@ export const sigla = {
 /** Culori care se schimbă între modul luminos și cel întunecat. */
 export const tema = {
   luminos: {
-    paper: "#fbf8f2",      // hârtia: fundalul paginii, alb cald
-    "paper-2": "#f3eee4",  // hârtie puțin mai închisă: carduri, casete
+    paper: "#fdfbf7",      // hârtia: fundalul paginii, alb abia cald
+    "paper-2": "#f5f2ec",  // hârtie puțin mai închisă: carduri, casete
     ink: "#16263b",        // cerneala: textul principal, bleumarin foarte închis
     "ink-soft": "#4a5a6e", // text secundar
-    line: "#e2dccf",       // linii și borduri
+    line: "#e5e0d6",       // linii și borduri
     "accent-text": "#bb4500", // accentul ca text mic, închis destul pentru AA pe ambele hârtii
     "accent-display": "#e25300", // accentul în titlurile mari (AA pentru text mare)
     "accent-2": "#1f8f87", // turcoazul siglei, pentru buline, borduri și sublinieri (nu pentru text mic)
