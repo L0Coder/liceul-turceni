@@ -30,13 +30,13 @@ export default function CookiesPage() {
                 <h2 className="font-heading text-xl font-bold text-ink mb-4">Ce cookies folosim?</h2>
                 <div className="space-y-4">
                   <div className="p-5 bg-paper-2 border-l-2 border-ink/40">
-                    <h3 className="ltt-kicker !text-[11px] text-ink mb-2">Cookies strict necesare</h3>
+                    <h3 className="ltt-kicker !text-[11px] text-ink mb-2">Preferințe păstrate în browser (strict necesare)</h3>
                     <p className="font-body text-xs text-ink-soft">
-                      Esențiale pentru funcționarea site-ului. Nu colectează date personale. Nu necesită consimțământ.
+                      Site-ul nu setează cookies proprii. Două preferințe se păstrează în stocarea locală a browserului și nu sunt transmise liceului. Sunt strict necesare și nu necesită consimțământ.
                     </p>
                     <div className="mt-2 font-body text-xs text-ink-soft">
-                      Exemplu: <code className="bg-paper-2 px-1 rounded">ltt-cookie-consent</code> — stochează alegerea dvs. privind cookies.
-                      <code className="bg-paper-2 px-1 rounded ml-1">ltt-dark-mode</code> — preferința de dark/light mode.
+                      <code className="bg-paper-2 px-1 rounded">ltt-cookie-consent</code> — răspunsul dat bannerului de cookies.
+                      <code className="bg-paper-2 px-1 rounded ml-1">ltt-dark-mode</code> — modul de afișare ales (luminos sau întunecat).
                     </div>
                   </div>
 
@@ -69,14 +69,14 @@ export default function CookiesPage() {
               <div className="bg-paper rounded-sm border border-line p-6">
                 <h2 className="font-heading text-xl font-bold text-ink mb-4">Cookies de la terți</h2>
                 <p className="font-body text-sm text-ink-soft leading-relaxed">
-                  Panoul de administrare (Sanity Studio) la adresa /studio folosește cookies proprii pentru autentificare. Formularul de contact (Formspree) poate seta cookies tehnice la trimiterea mesajului. Acestea sunt strict necesare pentru funcționarea serviciilor respective.
+                  Harta Google de pe pagina Contact se încarcă numai dacă apăsați „Afișează harta”; după afișare, Google poate folosi cookies proprii, potrivit <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="ltt-accent underline underline-offset-2 hover:decoration-2">politicii Google</a>. La trimiterea unui mesaj prin formularul de contact, datele ajung la serviciul Formspree, potrivit politicii acestuia. Panoul de administrare (/studio), folosit doar de administratorii site-ului, folosește cookies pentru autentificare.
                 </p>
               </div>
 
               <div className="bg-paper rounded-sm border border-line p-6">
                 <h2 className="font-heading text-xl font-bold text-ink mb-4">Cum dezactivezi cookies?</h2>
                 <p className="font-body text-sm text-ink-soft leading-relaxed">
-                  Puteți controla și șterge cookies din setările browser-ului dvs. Rețineți că dezactivarea cookies poate afecta funcționalitatea site-ului (de exemplu, preferința dark mode nu va fi salvată).
+                  Puteți controla și șterge cookies din setările browser-ului dvs. Rețineți că dezactivarea cookies poate afecta funcționalitatea site-ului (de exemplu, preferința pentru modul luminos sau întunecat nu va fi salvată).
                 </p>
               </div>
 
@@ -87,7 +87,7 @@ export default function CookiesPage() {
                 </p>
               </div>
 
-              <p className="font-body text-xs text-ink-soft text-center">Ultima actualizare: martie 2026</p>
+              <p className="font-body text-xs text-ink-soft text-center">Ultima actualizare: octombrie 2026</p>
             </div>
           </AnimatedSection>
         </div>
