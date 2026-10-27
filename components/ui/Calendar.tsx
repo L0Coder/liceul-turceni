@@ -45,8 +45,8 @@ export function InteractiveCalendar({ events }: { events: CalEvent[] }) {
             return (
               <button key={d} onClick={() => setSel(isSel ? null : ds)} role="gridcell" aria-selected={isSel}
                 className={`h-12 rounded-sm font-body text-sm relative transition-all focus-visible:ring-2 focus-visible:ring-ink ${
-                  isSel ? "bg-ink text-paper font-bold" : has ? "bg-[#c2410c]/10 text-ink font-semibold" : "text-ink-soft hover:bg-paper-2"
-                } ${isToday && !isSel ? "ring-2 ring-[#c2410c]/60" : ""}`}>
+                  isSel ? "bg-ink text-paper font-bold" : has ? "bg-accent-2/15 text-ink font-semibold" : "text-ink-soft hover:bg-paper-2"
+                } ${isToday && !isSel ? "ring-2 ring-accent-2/70" : ""}`}>
                 {d}
                 {has && !isSel && <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-0.5">
                   {ev.slice(0, 2).map((e, j) => <div key={j} className={`w-1 h-1 rounded-full ${typeColor[e.type] || "bg-gray-400"}`} />)}

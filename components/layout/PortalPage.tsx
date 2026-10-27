@@ -21,7 +21,7 @@ export function PortalPage({ title, subtitle, sections, children }: Props) {
                   const inner = (
                     <>
                       <span>
-                        <span className="block font-heading text-2xl text-ink group-hover:text-[#c2410c] dark:group-hover:text-[#ff8f4d] transition-colors">{item.label}</span>
+                        <span className="block font-heading text-2xl text-ink group-hover:text-accent-text transition-colors">{item.label}</span>
                         <span className="block font-body text-[14px] text-ink-soft mt-1">{item.desc}</span>
                       </span>
                       <span aria-hidden="true" className="font-body text-ink-soft transition-transform group-hover:translate-x-1">{item.external ? "↗" : "→"}</span>

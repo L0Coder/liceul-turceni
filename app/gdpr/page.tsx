@@ -104,7 +104,7 @@ export default function GDPRPage() {
 
               {/* Protecția datelor minorilor */}
               <Section title="5. Protecția datelor elevilor minori">
-                <div className="p-5 bg-paper-2 border-l-2 border-[#c2410c]">
+                <div className="p-5 bg-paper-2 border-l-2 border-accent">
                   <p className="ltt-kicker !text-[11px] ltt-accent mb-2">⚠ Secțiune cu atenție specială</p>
                   <p className="text-ink">
                     Conform Legii nr. 272/2004 și a principiului interesului superior al copilului, Liceul Tehnologic Turceni acordă protecție sporită datelor cu caracter personal ale elevilor minori.

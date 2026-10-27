@@ -34,7 +34,7 @@ const link = "font-body text-[14px] text-white/65 hover:text-white transition-co
 
 export function Footer() {
   return (
-    <footer className="bg-[#1f1d1a] dark:bg-[#0c0d10] text-white pt-20 pb-28 md:pb-10 px-6">
+    <footer className="bg-footer text-white pt-20 pb-28 md:pb-10 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] gap-x-8 gap-y-12">
           <div className="col-span-2 lg:col-span-1">

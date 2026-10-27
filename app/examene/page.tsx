@@ -52,7 +52,7 @@ export default function ExamenePage() {
                 <li key={i} className="border-b border-line">
                   <a href={r.href} target="_blank" rel="noopener noreferrer" className="group flex justify-between items-center gap-6 py-5">
                     <span>
-                      <span className="block font-heading text-xl text-ink group-hover:text-[#c2410c] dark:group-hover:text-[#ff8f4d] transition-colors">{r.label}</span>
+                      <span className="block font-heading text-xl text-ink group-hover:text-accent-text transition-colors">{r.label}</span>
                       <span className="block font-body text-[13px] text-ink-soft mt-1">{r.desc}</span>
                     </span>
                     <span aria-hidden="true" className="text-ink-soft">↗</span>

@@ -24,7 +24,7 @@ export function FloatingContact() {
         </div>
       )}
       <button onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="contact-rapid"
-        className="w-14 h-14 rounded-full bg-[#c2410c] text-white hover:bg-[#a8380a] shadow-xl ring-1 ring-black/10 transition-colors grid place-items-center"
+        className="w-14 h-14 rounded-full bg-accent text-white hover:bg-accent-hover shadow-xl ring-1 ring-black/10 transition-colors grid place-items-center"
         aria-label={open ? "Închide contactul rapid" : "Contact rapid: telefon și email"}>
         {open
           ? <svg {...icon}><path d="M6 6l12 12M18 6L6 18" /></svg>

@@ -12,7 +12,9 @@ body { overflow-x: hidden; }
 ::-webkit-scrollbar-thumb:hover { background: rgb(var(--ink) / 0.4); }
 
 /* Focus */
-*:focus-visible { outline: 2px solid #c2410c; outline-offset: 3px; }
+*:focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 3px; }
+/* Pe subsol și pe secțiunile de noapte, accentul obișnuit nu se vede destul */
+footer :focus-visible, .bg-night :focus-visible { outline-color: rgb(var(--accent-bright)); }
 
 /* Skip to content */
 .skip-link { position: absolute; top: -100px; left: 16px; z-index: 9999; background: #1f1d1a; color: #fff; padding: 12px 24px; border-radius: 0 0 8px 8px; font-size: 14px; transition: top 0.3s; }
@@ -36,16 +38,8 @@ body { overflow-x: hidden; }
 }
 
 /* ═══ HÂRTIE ȘI CERNEALĂ ═══
-   Paleta întregului site. Culorile sunt canale RGB, ca tailwind să poată pune opacitate
-   (bg-paper/80, text-ink/60). În dark mode hârtia devine noapte, cerneala devine cretă. */
-:root {
-  --paper: 244 240 232; --paper-2: 236 231 220;
-  --ink: 31 29 26; --ink-soft: 88 84 77; --line: 216 208 194;
-}
-html.dark {
-  --paper: 19 21 25; --paper-2: 26 29 34;
-  --ink: 236 232 224; --ink-soft: 166 160 150; --line: 52 56 63;
-}
+   Paleta întregului site stă în lib/paleta.ts; tailwind.config.ts o pune aici ca variabile CSS
+   (--paper, --ink, --accent...). În dark mode hârtia devine noapte, cerneala devine cretă. */
 body { color: rgb(var(--ink)); }
 /* Textura de hârtie: fibre (SVG fără filtre) + granulație (PNG mic), direct în CSS, ca să apară
    odată cu pagina și la fel în orice browser. Stă doar pe fundalul paginii, continuă de sus până jos;
@@ -64,8 +58,7 @@ html.dark body { background-image: none; }
 html.dark img[src*="imagini"] { filter: brightness(0.8) contrast(1.05); }
 
 /* Accentul ca text mic: portocaliul liceului, închis destul pentru AA pe ambele hârtii */
-.ltt-accent { color: #b03c0b; }
-html.dark .ltt-accent { color: #ff8f4d; }
+.ltt-accent { color: rgb(var(--accent-text)); }
 
 /* Titlurile: serif editorial, greutate normală, ca în tipar */
 .font-heading { font-weight: 400; letter-spacing: -0.012em; }

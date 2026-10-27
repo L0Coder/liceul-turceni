@@ -7,7 +7,7 @@ const plin = "group inline-flex items-center justify-center gap-3 px-7 py-4 ltt-
 export function ButonCerneala({ href, children, light = false, onClick, type }: {
   href?: string; children: React.ReactNode; light?: boolean; onClick?: () => void; type?: "submit" | "button";
 }) {
-  const cls = `${plin} ${light ? "bg-[#f1ece2] text-[#15120f] hover:bg-[#ff7a1a]" : "bg-ink text-paper hover:bg-[#c2410c] hover:text-white"}`;
+  const cls = `${plin} ${light ? "bg-chalk text-night hover:bg-accent-bright" : "bg-ink text-paper hover:bg-accent hover:text-white"}`;
   const inner = <>{children}<span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span></>;
   if (href) return <Link href={href} className={cls}>{inner}</Link>;
   return <button type={type ?? "button"} onClick={onClick} className={cls}>{inner}</button>;
