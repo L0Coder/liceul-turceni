@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
 import { SectionHeader, AnimatedSection } from "@/components/ui/SectionHeader";
 import { fetchProfesori, fetchSettings } from "@/lib/fetcher";
+import { imagineCms } from "@/lib/sanity";
 import { CONDUCERE } from "@/lib/constants";
 import { PaginaAntet } from "@/components/ui/PaginaAntet";
 
@@ -78,7 +79,8 @@ export default async function ProfesoriPage() {
               <AnimatedSection key={p._id} delay={i * 0.1} className="border-r border-b border-line p-7">
                 {p.imageUrl ? (
                   <div className="aspect-[4/5] overflow-hidden bg-paper-2 border border-line">
-                    <img src={p.imageUrl} alt={p.name} className="w-full h-full object-cover" />
+                    {/* eslint-disable-next-line @next/next/no-img-element -- poza e deja micșorată de CDN-ul Sanity (imagineCms) */}
+                    <img {...imagineCms(p.imageUrl, 400)} alt={p.name} className="w-full h-full object-cover" />
                   </div>
                 ) : (
                   <div aria-hidden="true" className="aspect-[4/5] bg-paper-2 border border-line grid place-items-center">

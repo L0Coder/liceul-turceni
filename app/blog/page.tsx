@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
 import { AnimatedSection } from "@/components/ui/SectionHeader";
 import { fetchArticole } from "@/lib/fetcher";
+import { imagineCms } from "@/lib/sanity";
 import { PaginaAntet } from "@/components/ui/PaginaAntet";
 
 export const metadata: Metadata = { title: "Blog — Jurnal LTT", description: "Povești și experiențe ale elevilor LTT." };
@@ -26,7 +27,8 @@ export default async function BlogPage() {
                 <div className="max-w-3xl">
                   {post.imageUrl && (
                     <div className="aspect-[16/9] overflow-hidden border border-line bg-paper-2 mb-8">
-                      <img src={post.imageUrl} alt={post.title} className="w-full h-full object-cover" loading="lazy" />
+                      {/* eslint-disable-next-line @next/next/no-img-element -- poza e deja micșorată de CDN-ul Sanity (imagineCms) */}
+                      <img {...imagineCms(post.imageUrl, 800)} alt={post.title} className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   )}
                   <h2 className="font-heading text-3xl md:text-4xl text-ink leading-snug">{post.title}</h2>

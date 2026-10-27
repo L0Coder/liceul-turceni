@@ -2,7 +2,7 @@
    trasa singură (vezi .ltt-draw în globals.css). Culoarea vine din currentColor (cerneala),
    iar fiecare desen are un singur detaliu în portocaliul liceului — ca firul de aur din kintsugi. */
 
-import type { SVGProps } from "react";
+import type { JSX, SVGProps } from "react";
 import { comune } from "@/lib/paleta";
 
 const ACCENT = comune.sketch;
