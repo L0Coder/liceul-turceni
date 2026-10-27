@@ -10,11 +10,15 @@ După verificare se bifează și se trec data și persoana; dacă ceva e greșit
 Textul Regulamentului se citește pe eur-lex.europa.eu, forma consolidată a Regulamentului (UE) 2016/679.
 
 - [ ] **Temeiul pentru mesajele din formularul de contact:** art. 6 alin. (1) lit. e) (sarcină de interes public).
-      De confirmat pe art. 6 alin. (1), inclusiv fraza de după lit. f), despre autoritățile publice.
+      Că interesul legitim (lit. f) nu e disponibil autorităților publice în îndeplinirea atribuțiilor e confirmat în
+      skillul jurist-ro (art. 6 alin. (1) ultimul paragraf, 27.10.2026). Rămâne de stabilit **norma** pe care se
+      sprijină sarcina (de exemplu, regimul petițiilor).
 - [ ] **Temeiul pentru documentele de pe pagina Transparență:** art. 6 alin. (1) lit. c) (obligație legală).
       De confirmat **care act impune publicarea** fiecărui tip de document (ROFUIP, Legea 198/2023, Legea 544/2001).
 - [ ] **Calitatea de operator** a liceului (art. 4 pct. 7) și lista drepturilor (art. 15–22), cu limita ștergerii (art. 17 alin. (3)).
-- [ ] **Termenul de răspuns de 30 de zile calendaristice** (angajament al liceului): de comparat cu art. 12 alin. (3).
+- [ ] **Termenul de răspuns:** „în cel mult o lună”, prelungire „cu două luni atunci când este necesar”, anunțată în prima lună,
+      iar refuzul comunicat tot într-o lună, cu căile de atac (art. 12 alin. (3)–(4)). Formularea urmează textul citat
+      în skillul jurist-ro (verificat 27.10.2026); de reconfirmat pe eur-lex.
 - [ ] **Incidentele de securitate:** formularea trimite la art. 33 și 34, fără cifre; de confirmat procedura internă.
 - [ ] **Transferurile în afara SEE:** dacă Vercel și Formspree au mecanisme valabile (clauze contractuale standard,
       Cadrul UE-SUA), pe vercel.com/legal și formspree.io/legal.
@@ -34,8 +38,13 @@ Textul Regulamentului se citește pe eur-lex.europa.eu, forma consolidată a Reg
 
 - [ ] **Evaluarea Națională 2027:** date (simulare 16–18.03; probe 22, 24, 25.06; rezultate inițiale 30.06)
       și ordinul de aprobare, pe edu.ro și în Monitorul Oficial. Pe site nu e trecut numărul ordinului.
-- [ ] **Admiterea 2027:** opțiuni 12–16 și 19.07, repartizare 22.07, dosare 23–27.07 (`CALENDAR_ADMITERE`),
-      pe edu.ro (ordinul calendarului admiterii) și la ISJ Gorj.
+- [ ] **Admiterea 2027** (`CALENDAR_ADMITERE`): proba de limba engleză pentru clasa bilingvă 24–28.05 (înscriere
+      19–21.05), opțiuni 12–16 și 19.07, repartizare 22.07, etapa a II-a 9–12.08. OMEC nr. 5.831/19.10.2026
+      (MO 893/26.10.2026) conține calendarul; ordinul nu a fost deschis. De confirmat pe edu.ro și la ISJ Gorj,
+      inclusiv data depunerii dosarelor după repartizare, care nu e trecută pe site.
+- [ ] **Probe suplimentare de admitere la liceele tehnologice:** dacă liceul le organizează în 2027, procedura cu
+      partenerii se elaborează până la 6.11.2026 și se publică pe site până la 13.11.2026 (după proiectul calendarului;
+      de confirmat pe ordin).
 - [ ] **Vacanța din februarie, Gorj: 22–26.02.2027:** Hotărârea CA a ISJ Gorj nr. 17/06.04.2026.
 - [ ] **Simulările județene:** Bacalaureat 18–20.01.2027, Evaluare Națională 18–19.01.2027 (document ISJ Gorj).
 - [ ] **Școala altfel (14–18.12.2026) și Săptămâna verde (19–23.04.2027):** decizia unității.
