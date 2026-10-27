@@ -1,28 +1,27 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 
-export function CookieBanner() {
-  const [visible, setVisible] = useState(false);
-  const [mounted, setMounted] = useState(false);
+// Răspunsul salvat există doar în browser: pe server (și la hidratare) bannerul nu apare
+const faraAbonare = () => () => {};
+const raspunsSalvat = () => localStorage.getItem("ltt-cookie-consent");
+const peServer = () => "server";
 
-  useEffect(() => {
-    setMounted(true);
-    const consent = localStorage.getItem("ltt-cookie-consent");
-    if (!consent) setVisible(true);
-  }, []);
+export function CookieBanner() {
+  const salvat = useSyncExternalStore(faraAbonare, raspunsSalvat, peServer);
+  const [raspunsAcum, setRaspunsAcum] = useState(false);
 
   const accept = () => {
     localStorage.setItem("ltt-cookie-consent", "accepted");
-    setVisible(false);
+    setRaspunsAcum(true);
   };
 
   const decline = () => {
     localStorage.setItem("ltt-cookie-consent", "declined");
-    setVisible(false);
+    setRaspunsAcum(true);
   };
 
-  if (!mounted || !visible) return null;
+  if (salvat !== null || raspunsAcum) return null;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-[9998] p-3 sm:p-4 no-print">

@@ -17,7 +17,9 @@ export function Header({ admitere }: { admitere: number }) {
     return () => window.removeEventListener("scroll", h);
   }, []);
 
-  useEffect(() => { setMenuOpen(false); }, [pathname]);
+  // La schimbarea paginii, meniul mobil se închide (în timpul randării, nu într-un efect)
+  const [meniuPentru, setMeniuPentru] = useState(pathname);
+  if (meniuPentru !== pathname) { setMeniuPentru(pathname); setMenuOpen(false); }
 
   useEffect(() => {
     if (!menuOpen) return;

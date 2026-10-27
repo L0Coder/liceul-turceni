@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Linterul rulează cu `npm run lint`; nu blochează publicarea pe Vercel
-  eslint: { ignoreDuringBuilds: true },
   images: {
     formats: ['image/webp'],
     remotePatterns: [

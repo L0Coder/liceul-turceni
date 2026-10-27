@@ -1,5 +1,5 @@
 import { createClient } from "next-sanity";
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 import { sanityConfig } from "@/sanity/env";
 
 // ═══ HELPER: verifică dacă Sanity e configurat ═══
@@ -22,7 +22,7 @@ function getClient() {
 export function urlFor(source: any) {
   const c = getClient();
   if (!c) return null;
-  return imageUrlBuilder(c).image(source);
+  return createImageUrlBuilder(c).image(source);
 }
 
 // Poză din CMS la lățimea la care e afișată (și dublu, pentru ecrane retina): CDN-ul Sanity o
