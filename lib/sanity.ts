@@ -1,5 +1,5 @@
 import { createClient } from "next-sanity";
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 import { sanityConfig } from "@/sanity/env";
 
 // ═══ HELPER: verifică dacă Sanity e configurat ═══
@@ -22,7 +22,17 @@ function getClient() {
 export function urlFor(source: any) {
   const c = getClient();
   if (!c) return null;
-  return imageUrlBuilder(c).image(source);
+  return createImageUrlBuilder(c).image(source);
+}
+
+// Poză din CMS la lățimea la care e afișată (și dublu, pentru ecrane retina): CDN-ul Sanity o
+// micșorează, fără s-o mărească, și alege formatul (WebP...). Altfel se trimite fișierul încărcat,
+// adesea o poză de telefon de câțiva MB. Pozele locale (/imagini/...) rămân neschimbate.
+export function imagineCms(url: string, latime: number): { src: string; srcSet?: string } {
+  const b = url.startsWith("https://cdn.sanity.io/images/") ? urlFor(url) : null;
+  if (!b) return { src: url };
+  const la = (w: number) => b.width(w).fit("max").auto("format").url();
+  return { src: la(latime), srcSet: `${la(latime)} 1x, ${la(latime * 2)} 2x` };
 }
 
 // ═══ QUERIES ═══

@@ -18,7 +18,9 @@ npm run dev
 - Site: http://localhost:3000
 - Panou administrare: http://localhost:3000/studio
 
-Necesită Node.js 18+ și fișierul `.env.local` configurat (vezi secțiunea Sanity CMS).
+Necesită Node.js 22.12+ (cerut de Sanity 6; Vercel îl ia din `engines` din package.json) și fișierul `.env.local` configurat (vezi secțiunea Sanity CMS).
+
+Verificarea codului: `npm run lint` (ESLint). Nu rulează la publicarea pe Vercel, ca să nu o blocheze.
 
 ---
 
@@ -256,9 +258,9 @@ Vercel redeploy automat în 1-2 minute.
 
 ## Tehnologii
 
-- **Next.js 14** + TypeScript
+- **Next.js 16** + React 19 + TypeScript
 - **Tailwind CSS** — stilizare
-- **Sanity v3** — CMS headless
+- **Sanity v6** — CMS headless
 - **Formspree** — formular contact
 - **Vercel** — hosting gratuit
 - **Playfair Display + DM Sans** — fonturi

@@ -2,7 +2,6 @@ import { ImageResponse } from "next/og";
 import { PROFILE_ADMITERE } from "@/lib/data";
 import { sigla, tema, comune } from "@/lib/paleta";
 
-export const runtime = "edge";
 export const alt = "Liceul Tehnologic Turceni";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";

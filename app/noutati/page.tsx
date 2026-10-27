@@ -2,6 +2,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
 import { AnimatedSection } from "@/components/ui/SectionHeader";
 import { fetchNoutati } from "@/lib/fetcher";
+import { imagineCms } from "@/lib/sanity";
 import { PaginaAntet } from "@/components/ui/PaginaAntet";
 
 export const metadata: Metadata = { title: "Noutăți", description: "Ultimele noutăți de la Liceul Tehnologic Turceni." };
@@ -30,7 +31,8 @@ export default async function NoutatiPage() {
                   <p className="font-body text-[16px] text-ink-soft leading-[1.85] mt-4">{n.content}</p>
                   {n.imageUrl && (
                     <div className="mt-6 aspect-[16/9] overflow-hidden border border-line bg-paper-2">
-                      <img src={n.imageUrl} alt={n.title} className="w-full h-full object-cover" loading="lazy" />
+                      {/* eslint-disable-next-line @next/next/no-img-element -- poza e deja micșorată de CDN-ul Sanity (imagineCms) */}
+                      <img {...imagineCms(n.imageUrl, 800)} alt={n.title} className="w-full h-full object-cover" loading="lazy" />
                     </div>
                   )}
                 </div>

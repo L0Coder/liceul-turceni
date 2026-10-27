@@ -6,29 +6,41 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
-    "next": "14.2.21",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "sanity": "3.57.4",
-    "@sanity/image-url": "1.1.0",
-    "next-sanity": "9.8.12",
-    "styled-components": "6.1.14"
+    "@sanity/image-url": "2.1.1",
+    "next": "16.4.3",
+    "next-sanity": "13.4.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "sanity": "6.20.0",
+    "styled-components": "6.6.0"
   },
   "devDependencies": {
     "@types/node": "20.17.0",
-    "@types/react": "18.3.12",
-    "@types/react-dom": "18.3.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
     "autoprefixer": "10.4.20",
-    "eslint": "8.57.1",
-    "eslint-config-next": "14.2.21",
-    "postcss": "8.4.49",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.3",
+    "postcss": "8.5.32",
     "tailwindcss": "3.4.17",
     "typescript": "5.6.3"
   },
   "overrides": {
-    "sanity": "3.57.4"
+    "@vercel/frameworks": {
+      "js-yaml": "3.15.2",
+      "smol-toml": "1.9.1"
+    },
+    "@module-federation/dts-plugin": {
+      "undici": "7.30.1"
+    },
+    "typeid-js": {
+      "uuid": "11.1.1"
+    }
+  },
+  "engines": {
+    "node": ">=22.12"
   }
 }

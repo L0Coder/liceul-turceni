@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 
 const icon = { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, "aria-hidden": true };
 
@@ -35,22 +35,24 @@ export function FloatingContact() {
 }
 
 /* ═══ DARK MODE TOGGLE ═══ */
+// Modul îl alege scriptul din layout.tsx înainte de randare (clasa .dark pe <html>);
+// butonul doar urmărește clasa. Pe server nu se știe modul, deci se randează un loc gol.
+function urmaresteModul(schimbat: () => void) {
+  const o = new MutationObserver(schimbat);
+  o.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  return () => o.disconnect();
+}
+const modIntunecat = () => document.documentElement.classList.contains("dark");
+const modNecunoscut = () => null;
+
 export function DarkModeToggle() {
-  const [dark, setDark] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    setMounted(true);
-    const saved = localStorage.getItem("ltt-dark-mode");
-    if (saved === "true" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-      setDark(true); document.documentElement.classList.add("dark");
-    }
-  }, []);
+  const dark = useSyncExternalStore(urmaresteModul, modIntunecat, modNecunoscut);
   const toggle = () => {
-    const next = !dark; setDark(next);
+    const next = !dark;
     document.documentElement.classList.toggle("dark", next);
     localStorage.setItem("ltt-dark-mode", String(next));
   };
-  if (!mounted) return <div className="w-9 h-9" />;
+  if (dark === null) return <div className="w-9 h-9" />;
   return (
     <button onClick={toggle} className="w-9 h-9 rounded-full grid place-items-center text-ink-soft border border-line hover:text-ink hover:border-ink/40 transition-colors"
       aria-label={dark ? "Mod luminos" : "Mod întunecat"} title={dark ? "Mod luminos" : "Mod întunecat"}>
