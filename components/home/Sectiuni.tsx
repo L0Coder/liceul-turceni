@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 import { InView, useScrollProgress, usePinned } from "./scroll";
 import { DesenScoala, DesenCaiet, DesenBalon, DesenAtelier, DesenToca, DESEN_PROFIL } from "./Desene";
-import { PROFILE_ADMITERE, TESTIMONIALE, FILIERA, calendarAdmitere, numarInLitere } from "@/lib/data";
+import { PROFILE_ADMITERE, TESTIMONIALE, FILIERA, calendarAdmitere, calendarAdmitereOficial, numarInLitere } from "@/lib/data";
 import { QUICK_ACCESS } from "@/lib/constants";
 import { ButonCerneala, LinkSubliniat, Kicker } from "@/components/ui/Buton";
 import { comune } from "@/lib/paleta";
@@ -448,14 +448,19 @@ export function Admitere({ admitere }: { admitere: number }) {
             <LinkSubliniat href="/contact" light>Contact secretariat</LinkSubliniat>
           </div>
         </div>
-        <ol className="ltt-rise border-t border-white/15" style={{ transitionDelay: "0.15s" }}>
-          {calendarAdmitere(admitere).map((c) => (
-            <li key={c.eveniment} className="grid grid-cols-[10rem_1fr] gap-6 border-b border-white/15 py-5">
-              <span className="ltt-kicker !text-[10px] text-accent-light pt-1">{c.data}</span>
-              <span className="font-heading text-xl">{c.eveniment}</span>
-            </li>
-          ))}
-        </ol>
+        <div className="ltt-rise" style={{ transitionDelay: "0.15s" }}>
+          <ol className="border-t border-white/15">
+            {calendarAdmitere(admitere).map((c) => (
+              <li key={c.eveniment} className="grid grid-cols-[10rem_1fr] gap-6 border-b border-white/15 py-5">
+                <span className="ltt-kicker !text-[10px] text-accent-light pt-1">{c.data}</span>
+                <span className="font-heading text-xl">{c.eveniment}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="font-body text-[12px] text-white/60 mt-4">
+            {calendarAdmitereOficial(admitere) ? "Calendarul Ministerului Educației; datele oficiale: edu.ro și ISJ Gorj." : "Calendar orientativ; datele exacte se anunță în secțiunea Noutăți."}
+          </p>
+        </div>
       </InView>
     </section>
   );

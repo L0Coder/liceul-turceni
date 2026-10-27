@@ -143,7 +143,7 @@ export default function GDPRPage() {
                   Harta Google (secțiunea 4 c) se încarcă numai la cererea dvs.; Google prelucrează datele respective potrivit propriei politici.
                 </p>
                 <p>
-                  Pentru furnizorii din afara Spațiului Economic European, transferul se face pe baza garanțiilor prevăzute de capitolul V din GDPR, precizate de fiecare furnizor (clauzele contractuale standard ale Comisiei Europene sau Cadrul UE-SUA privind protecția datelor).
+                  Vercel și Formspree prelucrează date în afara Spațiului Economic European. Transferurile se fac numai pe baza garanțiilor prevăzute de capitolul V din GDPR; mecanismul folosit de fiecare furnizor este descris în politica sa (linkurile de mai sus).
                 </p>
                 <p>
                   <strong className="text-ink">Nu vindem și nu transmitem date personale în scopuri comerciale sau de marketing.</strong>
