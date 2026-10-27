@@ -13,7 +13,7 @@ export const CONTINUT_VERIFICAT = {
 export interface Profil {
   slug: string; icon: string; title: string; shortDesc: string; fullDesc: string;
   discipline: string[]; competente: string[]; perspective: string[];
-  color: string; glowColor: string; imagini: string[];
+  imagini: string[];
   /** Specializările (calificările) din clasa a IX-a, la profilurile tehnice. */
   specializari?: string[];
   /** Setat când profilul nu mai primește elevi în clasa a IX-a: textul explică situația claselor rămase.
@@ -28,21 +28,21 @@ export const PROFILE: Profil[] = [
     discipline: ["Matematică", "Informatică", "Fizică", "Limba engleză", "TIC"],
     competente: ["Programare (C++, Python)", "Algoritmi", "Dezvoltare web", "Baze de date", "Gândire logico-matematică"],
     perspective: ["Facultatea de Informatică", "Politehnică", "Inginerie software", "Data scientist"],
-    color: "#3498db", glowColor: "#00b0ff", imagini: ["02_laboratoare/Lab_informatica_1.jpg", "02_laboratoare/Lab_informatica_2.jpg"] },
+    imagini: ["02_laboratoare/Lab_informatica_1.jpg", "02_laboratoare/Lab_informatica_2.jpg"] },
   { slug: "stiinte-ale-naturii", icon: "🔬", title: "Științe ale Naturii",
     shortDesc: "Biologie, chimie, fizică. Pregătire pentru medicină și științe.",
     fullDesc: "Profilul Științe ale Naturii pregătește pentru cariere în medicină, farmacie, biochimie și cercetare. Laboratoarele de chimie și biologie sunt echipate modern.",
     discipline: ["Biologie", "Chimie", "Fizică", "Matematică", "Limba engleză"],
     competente: ["Analiză de laborator", "Metode experimentale", "Chimie organică", "Biologie celulară", "Cercetare"],
     perspective: ["Medicină", "Farmacie", "Biologie", "Chimie", "Biotehnologie"],
-    color: "#27ae60", glowColor: "#00e676", imagini: ["02_laboratoare/Lab_chimie_1.jpg", "02_laboratoare/Lab_fizica_1.jpg"] },
+    imagini: ["02_laboratoare/Lab_chimie_1.jpg", "02_laboratoare/Lab_fizica_1.jpg"] },
   { slug: "filologie-bilingv-engleza", icon: "🌍", title: "Filologie — bilingv engleză",
     shortDesc: "Limbi moderne, literatură, comunicare. Deschidere internațională.",
     fullDesc: "Pregătire intensivă în limba engleză, literatură universală și comunicare. Certificări Cambridge și proiecte Erasmus+ internaționale.",
     discipline: ["Limba engleză (intensiv)", "Limba română", "Literatură universală", "Limba franceză", "Istorie"],
     competente: ["Nivel B2-C1 engleză", "Comunicare interculturală", "Traducere", "Redactare academică", "Analiză literară"],
     perspective: ["Litere", "Relații Internaționale", "Comunicare", "Jurnalism", "Traducere"],
-    color: "#8e44ad", glowColor: "#d500f9", imagini: ["09_clase/Sala_clasa_1.jpg", "07_erasmus/Erasmus_grup_1.jpg"] },
+    imagini: ["09_clase/Sala_clasa_1.jpg", "07_erasmus/Erasmus_grup_1.jpg"] },
   { slug: "mecanica", icon: "⚙️", title: "Mecanică",
     specializari: ["Tehnician mecanic pentru întreținere și reparații", "Lăcătuș construcții metalice și utilaj tehnologic"],
     shortDesc: "Proiectare, fabricare, mentenanță. Baza industriei.",
@@ -50,7 +50,7 @@ export const PROFILE: Profil[] = [
     discipline: ["Mecanică", "Desen tehnic", "Tehnologie mecanică", "Rezistența materialelor", "Matematică"],
     competente: ["Operare strung/freză", "Desen tehnic CAD", "Citire scheme", "Măsurători de precizie", "Mentenanță"],
     perspective: ["Inginer mecanic", "Operator CNC", "Mentenanță industrială", "Industria auto", "Industria energetică"],
-    color: "#2c3e50", glowColor: "#00e5ff", imagini: ["03_ateliere/Atelier_mecanica_1.jpg", "03_ateliere/Atelier_mecanica_2.jpg"] },
+    imagini: ["03_ateliere/Atelier_mecanica_1.jpg", "03_ateliere/Atelier_mecanica_2.jpg"] },
   { slug: "electronica-automatizari", icon: "⚡", title: "Electronică și automatizări",
     specializari: ["Tehnician în automatizări", "Electronist aparate și echipamente"],
     shortDesc: "Circuite, PLC-uri, sisteme automate. Industria viitorului.",
@@ -58,7 +58,7 @@ export const PROFILE: Profil[] = [
     discipline: ["Electronică", "Automatizări", "Măsurări electrice", "Informatică aplicată", "Matematică"],
     competente: ["Proiectare circuite", "Programare PLC", "Sisteme SCADA", "Senzori", "Depanare"],
     perspective: ["Inginer automatist", "Tehnician electronist", "Sectorul energetic", "Industria auto", "Energii regenerabile"],
-    color: "#f26b00", glowColor: "#ff9100", imagini: ["02_laboratoare/Lab_electronica_1.jpg", "02_laboratoare/Lab_electronica_2.jpg"] },
+    imagini: ["02_laboratoare/Lab_electronica_1.jpg", "02_laboratoare/Lab_electronica_2.jpg"] },
   { slug: "electromecanica", icon: "🔧", title: "Electromecanică",
     specializari: ["Tehnician electromecanic", "Electromecanic centrale electrice"],
     shortDesc: "Motoare, generatoare, sisteme energetice. Parteneriat cu CEO.",
@@ -66,14 +66,14 @@ export const PROFILE: Profil[] = [
     discipline: ["Electromecanică", "Mașini electrice", "Instalații electrice", "Automatizări", "Protecția muncii"],
     competente: ["Montaj motoare", "Bobinare", "Instalații de forță", "Securitate electrică", "Diagnosticare"],
     perspective: ["Sectorul energetic", "Electrician industrial", "Energii regenerabile", "Mentenanță centrale"],
-    color: "#c0392b", glowColor: "#ff1744", imagini: ["03_ateliere/Atelier_electromecanica_1.jpg", "11_parteneriate/CEO_practica_1.jpg"] },
+    imagini: ["03_ateliere/Atelier_electromecanica_1.jpg", "11_parteneriate/CEO_practica_1.jpg"] },
   { slug: "constructii-instalatii", icon: "🏗️", title: "Construcții Instalații",
     shortDesc: "Proiectare clădiri, instalații sanitare și termice.",
     fullDesc: "Specialiști în proiectarea și execuția construcțiilor civile, instalații sanitare, termice și electrice. Meserie cu cerere mare.",
     discipline: ["Construcții", "Instalații sanitare", "Instalații termice", "Topografie", "Desen tehnic"],
     competente: ["Citire planuri", "Execuție zidărie", "Montaj instalații", "Montaj termice", "Topografie"],
     perspective: ["Constructor", "Instalator", "Diriginte de șantier", "Proiectant", "Antreprenor"],
-    color: "#2aa198", glowColor: "#1de9b6", imagini: ["03_ateliere/Atelier_constructii_1.jpg", "09_clase/Sala_clasa_2.jpg"],
+    imagini: ["03_ateliere/Atelier_constructii_1.jpg", "09_clase/Sala_clasa_2.jpg"],
     faraInscrieri: "În anul școlar 2026–2027 nu s-a format clasă a IX-a la acest profil. Elevii din clasele mai mari își continuă studiile până la absolvire." },
   { slug: "scoala-profesionala", icon: "🔥", title: "Școală Profesională",
     shortDesc: "Sudori și electromecanic centrale. Rată ridicată de angajare.",
@@ -81,7 +81,7 @@ export const PROFILE: Profil[] = [
     discipline: ["Pregătire practică (70%)", "Sudură MIG/MAG/TIG", "Electromecanică", "Protecția muncii", "Matematică aplicată"],
     competente: ["Sudură în toate pozițiile", "Citire desene", "Montaj/demontaj", "Mentenanță", "Certificare profesională"],
     perspective: ["Sudor certificat", "Sectorul energetic", "Mentenanță industrială", "Angajare în Europa"],
-    color: "#d35400", glowColor: "#ff6d00", imagini: ["03_ateliere/Atelier_sudura_1.jpg", "11_parteneriate/CEO_centrala_1.jpg"],
+    imagini: ["03_ateliere/Atelier_sudura_1.jpg", "11_parteneriate/CEO_centrala_1.jpg"],
     specializari: ["Sudor", "Electromecanic centrale electrice"],
     faraInscrieri: "Școala profesională este în lichidare. Din anul școlar 2026–2027 nu se mai fac înscrieri în clasa a IX-a; elevii din clasele a X-a și a XI-a își continuă studiile până la absolvire." },
 ];
@@ -109,18 +109,18 @@ export const FILIERA: Record<string, string> = {
 };
 
 /* ═══ NOUTĂȚI ═══ */
-export interface Noutate { slug: string; date: string; category: string; title: string; excerpt: string; content: string; image?: string; glowColor: string; }
+export interface Noutate { slug: string; date: string; category: string; title: string; excerpt: string; content: string; image?: string; }
 
 export const NOUTATI: Noutate[] = [
   { slug: "an-scolar-2026-2027", date: "7 septembrie 2026", category: "Eveniment", title: "A început anul școlar 2026-2027",
     excerpt: "Cursurile au început luni, 7 septembrie 2026. Anul școlar are 36 de săptămâni, organizate în 5 module.",
-    content: "Anul școlar 2026-2027 a început luni, 7 septembrie 2026, și are 36 de săptămâni de cursuri, organizate în 5 module separate de vacanțe. Cursurile se încheie pe 4 iunie 2027 pentru clasa a XII-a, pe 11 iunie 2027 pentru clasa a VIII-a, pe 18 iunie 2027 pentru majoritatea claselor și pe 25 iunie 2027 pentru clasele de la filiera tehnologică, cu excepțiile prevăzute în ordin. Sursa: Ordinul ministrului educației nr. 3194/2026.", glowColor: "#00e5ff" },
+    content: "Anul școlar 2026-2027 a început luni, 7 septembrie 2026, și are 36 de săptămâni de cursuri, organizate în 5 module separate de vacanțe. Cursurile se încheie pe 4 iunie 2027 pentru clasa a XII-a, pe 11 iunie 2027 pentru clasa a VIII-a, pe 18 iunie 2027 pentru majoritatea claselor și pe 25 iunie 2027 pentru clasele de la filiera tehnologică, cu excepțiile prevăzute în ordin. Sursa: Ordinul ministrului educației nr. 3194/2026." },
   { slug: "bac-2027-calendar", date: "7 septembrie 2026", category: "Examen", title: "Calendarul Bacalaureatului 2027",
     excerpt: "Probele de competențe în aprilie, probele scrise între 14 și 18 iunie 2027.",
-    content: "Calendarul bacalaureatului 2027 a fost aprobat prin Ordinul nr. 5211/2026, publicat în Monitorul Oficial nr. 758 din 7 septembrie 2026. Probele de competențe: 12 - 23 aprilie 2027 (înscriere 5 - 9 aprilie). Probele scrise: 14 iunie - limba și literatura română; 15 iunie - proba obligatorie a profilului; 17 iunie - proba la alegere a profilului și specializării; 18 iunie - limba și literatura maternă. Rezultate inițiale: 23 iunie 2027.", glowColor: "#ff9100" },
+    content: "Calendarul bacalaureatului 2027 a fost aprobat prin Ordinul nr. 5211/2026, publicat în Monitorul Oficial nr. 758 din 7 septembrie 2026. Probele de competențe: 12 - 23 aprilie 2027 (înscriere 5 - 9 aprilie). Probele scrise: 14 iunie - limba și literatura română; 15 iunie - proba obligatorie a profilului; 17 iunie - proba la alegere a profilului și specializării; 18 iunie - limba și literatura maternă. Rezultate inițiale: 23 iunie 2027." },
   { slug: "vacante-2026-2027", date: "16 februarie 2026", category: "Calendar", title: "Vacanțele anului școlar 2026-2027",
     excerpt: "Toamnă, iarnă, februarie, primăvară și vară - datele oficiale.",
-    content: "Vacanța de toamnă: 24 octombrie - 1 noiembrie 2026. Vacanța de iarnă: 23 decembrie 2026 - 10 ianuarie 2027. Vacanța din februarie: o săptămână între 15 februarie și 7 martie 2027, stabilită de Inspectoratul Școlar Județean Gorj. Vacanța de primăvară: 24 aprilie - 4 mai 2027. Vacanța de vară: 19 iunie - 5 septembrie 2027. Sursa: Ordinul nr. 3194/2026, Monitorul Oficial nr. 126 din 16 februarie 2026.", glowColor: "#1de9b6" },
+    content: "Vacanța de toamnă: 24 octombrie - 1 noiembrie 2026. Vacanța de iarnă: 23 decembrie 2026 - 10 ianuarie 2027. Vacanța din februarie: o săptămână între 15 februarie și 7 martie 2027, stabilită de Inspectoratul Școlar Județean Gorj. Vacanța de primăvară: 24 aprilie - 4 mai 2027. Vacanța de vară: 19 iunie - 5 septembrie 2027. Sursa: Ordinul nr. 3194/2026, Monitorul Oficial nr. 126 din 16 februarie 2026." },
 ];
 
 /* ═══ TESTIMONIALE ═══ */

@@ -47,8 +47,8 @@ export default function GDPRPage() {
                 <p>
                   <strong className="text-ink">Liceul Tehnologic Turceni</strong><br />
                   Str. Educației nr. 1, Turceni 217520, Județul Gorj<br />
-                  Telefon: <a href="tel:+40253335012" className="ltt-accent hover:underline">0253-335012</a> | Fax: 0253-335011<br />
-                  Email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent hover:underline">licturceni@yahoo.com</a><br />
+                  Telefon: <a href="tel:+40253335012" className="ltt-accent underline underline-offset-2 hover:decoration-2">0253-335012</a> | Fax: 0253-335011<br />
+                  Email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent underline underline-offset-2 hover:decoration-2">licturceni@yahoo.com</a><br />
                   CUI: 4666290
                 </p>
                 <p>
@@ -66,8 +66,8 @@ export default function GDPRPage() {
                   <p>
                     {/* NOTĂ: Completați cu datele reale ale DPO-ului desemnat prin decizie a directorului */}
                     Datele de contact ale DPO-ului desemnat sunt disponibile la secretariatul liceului.<br />
-                    Telefon: <a href="tel:+40253335012" className="ltt-accent hover:underline">0253-335012</a><br />
-                    Email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent hover:underline">licturceni@yahoo.com</a>
+                    Telefon: <a href="tel:+40253335012" className="ltt-accent underline underline-offset-2 hover:decoration-2">0253-335012</a><br />
+                    Email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent underline underline-offset-2 hover:decoration-2">licturceni@yahoo.com</a>
                   </p>
                 </div>
                 <p className="text-xs text-ink-soft mt-2">
@@ -92,7 +92,7 @@ export default function GDPRPage() {
                   <Bullet>Date colectate: preferința de consimțământ cookies, preferința de mod afișare (dark/light)</Bullet>
                   <Bullet>Scop: funcționarea corectă a site-ului</Bullet>
                   <Bullet>Temei legal: interes legitim pentru cookies strict necesare (Art. 6 alin. 1 lit. f)</Bullet>
-                  <Bullet>Detalii complete: pagina <a href="/cookies" className="ltt-accent hover:underline">Politica de cookies</a></Bullet>
+                  <Bullet>Detalii complete: pagina <a href="/cookies" className="ltt-accent underline underline-offset-2 hover:decoration-2">Politica de cookies</a></Bullet>
                 </div>
 
                 <div className="mt-3 p-4 bg-paper-2 rounded-sm">
@@ -138,7 +138,7 @@ export default function GDPRPage() {
                 <Bullet><strong className="text-ink">Dreptul de a retrage consimțământul</strong> — în orice moment, fără a afecta legalitatea prelucrării anterioare</Bullet>
 
                 <p className="mt-3">
-                  Pentru exercitarea acestor drepturi, adresați o cerere scrisă la secretariatul liceului (personal, prin poștă sau pe email la <a href="mailto:licturceni@yahoo.com" className="ltt-accent hover:underline">licturceni@yahoo.com</a>). Răspunsul va fi transmis în maximum 30 de zile calendaristice.
+                  Pentru exercitarea acestor drepturi, adresați o cerere scrisă la secretariatul liceului (personal, prin poștă sau pe email la <a href="mailto:licturceni@yahoo.com" className="ltt-accent underline underline-offset-2 hover:decoration-2">licturceni@yahoo.com</a>). Răspunsul va fi transmis în maximum 30 de zile calendaristice.
                 </p>
               </Section>
 
@@ -150,9 +150,9 @@ export default function GDPRPage() {
 
                 <div className="mt-3 p-4 bg-paper-2 rounded-sm">
                   <h3 className="font-semibold text-ink mb-2">Furnizori de servicii</h3>
-                  <Bullet><strong className="text-ink">Vercel Inc.</strong> (SUA) — găzduirea site-ului web. Date prelucrate: adrese IP ale vizitatorilor, în cadrul furnizării serviciului de hosting. <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="ltt-accent hover:underline">Politica Vercel</a></Bullet>
-                  <Bullet><strong className="text-ink">Sanity AS</strong> (Norvegia, SEE) — sistem de administrare a conținutului (CMS). Date prelucrate: conținutul publicat de administratorii site-ului. <a href="https://www.sanity.io/legal/privacy" target="_blank" rel="noopener noreferrer" className="ltt-accent hover:underline">Politica Sanity</a></Bullet>
-                  <Bullet><strong className="text-ink">Formspree Inc.</strong> (SUA) — procesarea mesajelor din formularul de contact. Date prelucrate: nume, email, mesajul transmis. <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="ltt-accent hover:underline">Politica Formspree</a></Bullet>
+                  <Bullet><strong className="text-ink">Vercel Inc.</strong> (SUA) — găzduirea site-ului web. Date prelucrate: adrese IP ale vizitatorilor, în cadrul furnizării serviciului de hosting. <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="ltt-accent underline underline-offset-2 hover:decoration-2">Politica Vercel</a></Bullet>
+                  <Bullet><strong className="text-ink">Sanity AS</strong> (Norvegia, SEE) — sistem de administrare a conținutului (CMS). Date prelucrate: conținutul publicat de administratorii site-ului. <a href="https://www.sanity.io/legal/privacy" target="_blank" rel="noopener noreferrer" className="ltt-accent underline underline-offset-2 hover:decoration-2">Politica Sanity</a></Bullet>
+                  <Bullet><strong className="text-ink">Formspree Inc.</strong> (SUA) — procesarea mesajelor din formularul de contact. Date prelucrate: nume, email, mesajul transmis. <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="ltt-accent underline underline-offset-2 hover:decoration-2">Politica Formspree</a></Bullet>
                 </div>
 
                 <p className="mt-3">
@@ -185,7 +185,7 @@ export default function GDPRPage() {
                 <Bullet><strong className="text-ink">Fotografii cu cadre didactice:</strong> se publică cu acordul persoanei respective, în cadrul prezentării echipei didactice.</Bullet>
                 <Bullet><strong className="text-ink">Fotografii realizate de părinți</strong> la evenimentele școlare, pentru uzul personal al familiei, nu intră sub incidența GDPR.</Bullet>
                 <p className="mt-2">
-                  Solicitările de eliminare a fotografiilor se adresează la secretariatul liceului (telefon: <a href="tel:+40253335012" className="ltt-accent hover:underline">0253-335012</a>, email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent hover:underline">licturceni@yahoo.com</a>). Fotografiile vor fi eliminate în maximum 5 zile lucrătoare.
+                  Solicitările de eliminare a fotografiilor se adresează la secretariatul liceului (telefon: <a href="tel:+40253335012" className="ltt-accent underline underline-offset-2 hover:decoration-2">0253-335012</a>, email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent underline underline-offset-2 hover:decoration-2">licturceni@yahoo.com</a>). Fotografiile vor fi eliminate în maximum 5 zile lucrătoare.
                 </p>
               </Section>
 
@@ -212,7 +212,7 @@ export default function GDPRPage() {
                     B-dul G-ral. Gheorghe Magheru nr. 28-30, Sector 1, București<br />
                     Telefon: +40.318.059.211 | Fax: +40.318.059.602<br />
                     Email: anspdcp@dataprotection.ro<br />
-                    Website: <a href="https://www.dataprotection.ro" target="_blank" rel="noopener noreferrer" className="ltt-accent hover:underline">www.dataprotection.ro</a>
+                    Website: <a href="https://www.dataprotection.ro" target="_blank" rel="noopener noreferrer" className="ltt-accent underline underline-offset-2 hover:decoration-2">www.dataprotection.ro</a>
                   </p>
                 </div>
                 <p className="mt-2">
@@ -236,8 +236,8 @@ export default function GDPRPage() {
                   <p>
                     <strong className="text-ink">Liceul Tehnologic Turceni</strong><br />
                     Str. Educației nr. 1, Turceni 217520, Județul Gorj<br />
-                    Telefon: <a href="tel:+40253335012" className="ltt-accent hover:underline">0253-335012</a> | Fax: 0253-335011<br />
-                    Email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent hover:underline">licturceni@yahoo.com</a><br />
+                    Telefon: <a href="tel:+40253335012" className="ltt-accent underline underline-offset-2 hover:decoration-2">0253-335012</a> | Fax: 0253-335011<br />
+                    Email: <a href="mailto:licturceni@yahoo.com" className="ltt-accent underline underline-offset-2 hover:decoration-2">licturceni@yahoo.com</a><br />
                     Program: Luni — Vineri, 8:00 — 16:00
                   </p>
                 </div>

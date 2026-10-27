@@ -31,19 +31,20 @@ export function InteractiveCalendar({ events }: { events: CalEvent[] }) {
       <div className="lg:col-span-3 bg-paper rounded-sm border border-line p-6">
         <div className="flex items-center justify-between mb-6">
           <button onClick={prev} className="w-10 h-10 rounded-full border border-line hover:bg-paper-2 flex items-center justify-center font-body" aria-label="Luna anterioară">←</button>
-          <h3 className="font-heading text-xl font-bold text-ink">{MONTHS[month]} {year}</h3>
+          <h2 className="font-heading text-xl font-bold text-ink">{MONTHS[month]} {year}</h2>
           <button onClick={next} className="w-10 h-10 rounded-full border border-line hover:bg-paper-2 flex items-center justify-center font-body" aria-label="Luna următoare">→</button>
         </div>
         <div className="grid grid-cols-7 gap-1 mb-2">
           {DAYS.map(d => <div key={d} className="text-center font-body text-xs font-semibold text-ink-soft py-2">{d}</div>)}
         </div>
-        <div className="grid grid-cols-7 gap-1" role="grid" aria-label="Calendar">
+        <div className="grid grid-cols-7 gap-1" role="group" aria-label={`Zilele lunii ${MONTHS[month].toLowerCase()} ${year}`}>
           {Array.from({ length: first }).map((_, i) => <div key={`e${i}`} className="h-12" />)}
           {Array.from({ length: days }).map((_, i) => {
             const d = i + 1; const ds = dateStr(d); const ev = eventsFor(d);
             const isSel = sel === ds; const has = ev.length > 0; const isToday = ds === todayStr;
             return (
-              <button key={d} onClick={() => setSel(isSel ? null : ds)} role="gridcell" aria-selected={isSel}
+              <button key={d} onClick={() => setSel(isSel ? null : ds)} aria-pressed={isSel}
+                aria-label={`${d} ${MONTHS[month].toLowerCase()}${has ? `, ${ev.length} ${ev.length === 1 ? "eveniment" : "evenimente"}` : ""}`}
                 className={`h-12 rounded-sm font-body text-sm relative transition-all focus-visible:ring-2 focus-visible:ring-ink ${
                   isSel ? "bg-ink text-paper font-bold" : has ? "bg-accent-2/15 text-ink font-semibold" : "text-ink-soft hover:bg-paper-2"
                 } ${isToday && !isSel ? "ring-2 ring-accent-2/70" : ""}`}>
@@ -57,9 +58,9 @@ export function InteractiveCalendar({ events }: { events: CalEvent[] }) {
         </div>
       </div>
       <div className="lg:col-span-2 bg-paper rounded-sm border border-line p-6">
-        <h3 className="font-heading text-lg font-bold text-ink mb-4">
+        <h2 className="font-heading text-lg font-bold text-ink mb-4">
           {sel ? `${parseInt(sel.split("-")[2])} ${MONTHS[month].toLowerCase()}` : `${MONTHS[month]} — evenimente`}
-        </h3>
+        </h2>
         <div className="space-y-3 max-h-96 overflow-y-auto">
           {(sel ? events.filter(e => e.date === sel) : monthEvents).map((e, i) => (
             <div key={e._id || i} className="p-3 rounded-sm bg-paper-2 flex gap-3 items-start cursor-pointer" onClick={() => setSel(e.date)}>

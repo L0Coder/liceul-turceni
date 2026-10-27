@@ -29,7 +29,7 @@ export function CookieBanner() {
       <div className="max-w-3xl mx-auto bg-paper border border-line rounded-sm shadow-2xl px-4 py-3 sm:p-5 flex items-center gap-3 sm:gap-5">
         <p className="flex-1 font-body text-xs sm:text-sm text-ink-soft leading-snug">
           Folosim doar cookies necesare funcționării site-ului, fără urmărire.{" "}
-          <Link href="/cookies" className="ltt-accent hover:underline whitespace-nowrap">Detalii</Link>
+          <Link href="/cookies" className="ltt-accent underline underline-offset-2 hover:decoration-2 whitespace-nowrap">Detalii</Link>
         </p>
         <div className="flex gap-2 flex-shrink-0">
           <button onClick={decline}

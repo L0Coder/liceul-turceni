@@ -47,7 +47,7 @@ export default async function TransparentaPage() {
               <h3 className="font-heading text-2xl text-ink mb-3">Solicitare informații publice</h3>
               <p className="font-body text-sm text-ink-soft leading-relaxed">
                 Conform Legii 544/2001, puteți solicita informații la adresa: Str. Educației nr. 1, Turceni 217520 sau pe email la{" "}
-                <a href="mailto:licturceni@yahoo.com" className="font-semibold ltt-accent hover:underline">licturceni@yahoo.com</a>. Termen: 10 zile lucrătoare.
+                <a href="mailto:licturceni@yahoo.com" className="font-semibold ltt-accent underline underline-offset-2 hover:decoration-2">licturceni@yahoo.com</a>. Termen: 10 zile lucrătoare.
               </p>
             </div>
           </AnimatedSection>
