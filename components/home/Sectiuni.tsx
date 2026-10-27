@@ -324,7 +324,7 @@ export function Profiluri() {
 
   if (!pinned) {
     return (
-      <section id="profiluri" className="relative py-24">
+      <section id="profiluri" className="relative py-24 ltt-nuanta">
         <div className="px-6">{intro}</div>
         <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory px-6 pb-6 mt-10">
           {PROFILE_ADMITERE.map((pr, k) => (
@@ -336,7 +336,7 @@ export function Profiluri() {
   }
 
   return (
-    <section id="profiluri" ref={ref} className="relative" style={{ height: `calc(100vh + ${dist}px)` }}>
+    <section id="profiluri" ref={ref} className="relative ltt-nuanta" style={{ height: `calc(100vh + ${dist}px)` }}>
       <div ref={fixat} className="ltt-sticky sticky top-0 overflow-hidden [overflow:clip]">
         <Sina n="03" eticheta="Profiluri" />
         <div ref={pista} className="flex h-full items-center pl-6 md:pl-12 lg:pl-28 will-change-transform" style={{ transform: `translateX(${-p * dist}px)` }}>
@@ -360,7 +360,7 @@ interface NoutateItem { _id?: string; slug: string; title: string; category: str
 
 export function Noutati({ noutati }: { noutati: NoutateItem[] }) {
   return (
-    <section id="noutati" className="relative py-28 md:py-36 ltt-nuanta">
+    <section id="noutati" className="relative py-28 md:py-36 ltt-nuanta-calda">
       <Sina n="04" eticheta="Noutăți" />
       <div className="max-w-6xl mx-auto px-6 md:px-12 grid lg:grid-cols-[1.6fr_1fr] gap-16">
         <InView>
