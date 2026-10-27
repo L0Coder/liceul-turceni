@@ -431,7 +431,7 @@ export function Voci() {
 
 export function Admitere({ admitere }: { admitere: number }) {
   return (
-    <section id="admitere" className="relative py-28 md:py-36 bg-night text-chalk overflow-hidden">
+    <section id="admitere" className="relative py-28 md:py-36 bg-band text-chalk overflow-hidden">
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 80% 20%, rgb(var(--accent-bright) / 0.22), transparent 45%)" }} />
       <Sina n="06" eticheta="Admitere" light />
       <InView className="relative max-w-6xl mx-auto px-6 md:px-12 grid lg:grid-cols-[1.1fr_1fr] gap-16 items-end">
