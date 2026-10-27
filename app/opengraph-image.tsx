@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { PROFILE_ADMITERE } from "@/lib/data";
+import { sigla, tema, comune } from "@/lib/paleta";
 
 export const runtime = "edge";
 export const alt = "Liceul Tehnologic Turceni";
@@ -17,24 +18,24 @@ export default function OGImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "radial-gradient(circle at 80% 15%, rgba(242,107,0,0.30), transparent 50%), linear-gradient(180deg, #1f1d1a 0%, #2a2621 100%)",
+          background: `radial-gradient(circle at 80% 15%, ${sigla.orange}4d, transparent 50%), linear-gradient(180deg, ${tema.luminos.footer} 0%, #2a2621 100%)`,
           fontFamily: "serif",
         }}
       >
         {/* Logo-ul liceului, ca în antetul site-ului */}
         <div style={{ display: "flex", alignItems: "flex-end", gap: 14, marginBottom: 40 }}>
           <svg width="200" height="93" viewBox="60 20 280 130">
-            <path d="M80 30 L80 120 L100 140 L162 140" stroke="#f1ece2" fill="none" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
-            <rect x="190" y="28" width="28" height="110" rx="2" fill="#f26b00" />
-            <rect x="162" y="28" width="84" height="28" rx="2" fill="#f26b00" />
-            <rect x="274" y="28" width="28" height="110" rx="2" fill="#2aa198" />
-            <rect x="246" y="28" width="84" height="28" rx="2" fill="#2aa198" />
+            <path d="M80 30 L80 120 L100 140 L162 140" stroke={comune.chalk} fill="none" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" />
+            <rect x="190" y="28" width="28" height="110" rx="2" fill={sigla.orange} />
+            <rect x="162" y="28" width="84" height="28" rx="2" fill={sigla.orange} />
+            <rect x="274" y="28" width="28" height="110" rx="2" fill={sigla.teal} />
+            <rect x="246" y="28" width="84" height="28" rx="2" fill={sigla.teal} />
           </svg>
         </div>
-        <div style={{ fontSize: 64, fontWeight: 400, color: "#f1ece2", textAlign: "center", lineHeight: 1.15 }}>
+        <div style={{ fontSize: 64, fontWeight: 400, color: comune.chalk, textAlign: "center", lineHeight: 1.15 }}>
           Liceul Tehnologic
         </div>
-        <div style={{ fontSize: 64, fontWeight: 400, color: "#f1ece2", textAlign: "center", lineHeight: 1.15 }}>
+        <div style={{ fontSize: 64, fontWeight: 400, color: comune.chalk, textAlign: "center", lineHeight: 1.15 }}>
           Turceni
         </div>
         <div style={{ fontSize: 26, color: "rgba(255,255,255,0.75)", marginTop: 28 }}>

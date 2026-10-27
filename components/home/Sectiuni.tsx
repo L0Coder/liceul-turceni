@@ -6,6 +6,7 @@ import { DesenScoala, DesenCaiet, DesenBalon, DesenAtelier, DesenToca, DESEN_PRO
 import { PROFILE_ADMITERE, TESTIMONIALE, FILIERA, calendarAdmitere, numarInLitere } from "@/lib/data";
 import { QUICK_ACCESS } from "@/lib/constants";
 import { ButonCerneala, LinkSubliniat, Kicker } from "@/components/ui/Buton";
+import { comune } from "@/lib/paleta";
 
 /* ═══ PIESE COMUNE ═══ */
 
@@ -51,7 +52,7 @@ export function HeroAcasa({ admitere, elevi, ani, profileCount }: { admitere: nu
         <div className="order-1 lg:order-2">
           <Kicker className="ltt-rise text-ink-soft">Liceu teoretic și tehnologic · Turceni, Gorj</Kicker>
           <h1 className="ltt-rise font-heading text-ink text-[3.1rem] sm:text-6xl lg:text-[5.2rem] leading-[1.02] mt-7" style={{ transitionDelay: "0.1s" }}>
-            Învață temeinic.<br />Alege-ți <span className="italic text-[#c2410c] dark:text-[#ff8f4d]">drumul.</span>
+            Învață temeinic.<br />Alege-ți <span className="italic text-accent-text">drumul.</span>
           </h1>
           <p className="ltt-rise font-body text-[17px] leading-[1.85] text-ink-soft max-w-lg mt-7" style={{ transitionDelay: "0.2s" }}>
             Din 1982, elevii din Turceni și din satele din jur învață aici pentru facultate, pentru o meserie sau pentru amândouă.
@@ -77,7 +78,7 @@ export function HeroAcasa({ admitere, elevi, ani, profileCount }: { admitere: nu
       </p>
       <div className="hidden xl:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col items-center gap-5 text-ink-soft" aria-hidden="true">
         <span className="ltt-kicker [writing-mode:vertical-rl] !text-[10px]">Carte · Meserie · Drum</span>
-        <span className="w-7 h-7 grid place-items-center bg-[#c2410c] text-white font-heading text-[10px] tracking-wider">LTT</span>
+        <span className="w-7 h-7 grid place-items-center bg-accent text-white font-heading text-[10px] tracking-wider">LTT</span>
       </div>
     </InView>
   );
@@ -101,8 +102,8 @@ export function Liceul({ elevi, cadre, profileCount, anScolar }: { elevi: number
           <div className="ltt-rise relative max-w-sm mx-auto w-full">
             <div className="relative bg-[#26332d] border-[10px] border-[#7a5a3c] shadow-[0_30px_60px_-20px_rgba(31,29,26,0.45)] aspect-[4/5] p-8 flex flex-col justify-center">
               <p className="font-heading italic text-[#f1efe6] text-5xl sm:text-6xl leading-[1.05] -rotate-2">Carte<br /><span className="pl-10">și</span><br />meserie.</p>
-              <svg viewBox="0 0 200 20" className="w-40 mt-4 -rotate-2" aria-hidden="true"><path d="M4 12 Q60 2 120 10 T196 8" fill="none" stroke="#ff9a5c" strokeWidth="3" strokeLinecap="round" opacity="0.85" /></svg>
-              <span className="absolute bottom-5 right-5 w-8 h-8 grid place-items-center bg-[#c2410c] text-white font-heading text-[10px] tracking-wider">LTT</span>
+              <svg viewBox="0 0 200 20" className="w-40 mt-4 -rotate-2" aria-hidden="true"><path d="M4 12 Q60 2 120 10 T196 8" fill="none" stroke={comune["accent-light"]} strokeWidth="3" strokeLinecap="round" opacity="0.85" /></svg>
+              <span className="absolute bottom-5 right-5 w-8 h-8 grid place-items-center bg-accent text-white font-heading text-[10px] tracking-wider">LTT</span>
             </div>
             <div className="h-3 mx-3 bg-[#5f452d]" />
           </div>
@@ -157,11 +158,11 @@ const ETAPE = [
 function TextEtapa({ e, light }: { e: (typeof ETAPE)[number]; light: boolean }) {
   return (
     <div className="flex gap-6 md:gap-8 items-start">
-      <div className={`hidden sm:block font-heading text-6xl md:text-8xl leading-none w-24 md:w-36 shrink-0 ${light ? "text-[#f1ece2]" : "text-ink"}`}>{e.cls}</div>
+      <div className={`hidden sm:block font-heading text-6xl md:text-8xl leading-none w-24 md:w-36 shrink-0 ${light ? "text-chalk" : "text-ink"}`}>{e.cls}</div>
       <div className="max-w-md pt-1">
-        <div className={`ltt-kicker ${light ? "text-[#ff8f4d]" : "ltt-accent"}`}><span className="sm:hidden">Clasa a {e.cls}-a · </span>{e.nume}</div>
-        <h3 className={`font-heading text-xl sm:text-2xl md:text-3xl mt-2 sm:mt-3 leading-snug ${light ? "text-[#f1ece2]" : "text-ink"}`}>{e.titlu}</h3>
-        <p className={`font-body text-[13px] sm:text-[14px] leading-[1.75] sm:leading-[1.85] mt-2 sm:mt-4 ${light ? "text-[#f1ece2]/75" : "text-ink-soft"}`}>{e.text}</p>
+        <div className={`ltt-kicker ${light ? "text-accent-light" : "ltt-accent"}`}><span className="sm:hidden">Clasa a {e.cls}-a · </span>{e.nume}</div>
+        <h3 className={`font-heading text-xl sm:text-2xl md:text-3xl mt-2 sm:mt-3 leading-snug ${light ? "text-chalk" : "text-ink"}`}>{e.titlu}</h3>
+        <p className={`font-body text-[13px] sm:text-[14px] leading-[1.75] sm:leading-[1.85] mt-2 sm:mt-4 ${light ? "text-chalk/75" : "text-ink-soft"}`}>{e.text}</p>
       </div>
     </div>
   );
@@ -172,7 +173,7 @@ function Scantei() {
   return (
     <svg viewBox="-150 -150 300 300" className="absolute left-[6%] bottom-[8%] w-56 h-56 pointer-events-none" aria-hidden="true">
       {s.map(([x, y], i) => (
-        <circle key={i} className="ltt-spark" r={i % 3 ? 1.6 : 2.4} fill={i % 2 ? "#ffb15c" : "#ff7a1a"}
+        <circle key={i} className="ltt-spark" r={i % 3 ? 1.6 : 2.4} fill={i % 2 ? comune["accent-pale"] : comune["accent-bright"]}
           style={{ ["--sx" as string]: `${x}px`, ["--sy" as string]: `${y}px`, animationDelay: `${(i * 0.13) % 0.9}s` } as React.CSSProperties} />
       ))}
     </svg>
@@ -195,7 +196,7 @@ export function Drumul() {
   const titlu = (light: boolean) => (
     <div>
       <Kicker className={light ? "text-white/60" : "text-ink-soft"}>De la admitere la absolvire</Kicker>
-      <h2 className={`font-heading text-[1.7rem] sm:text-4xl md:text-5xl leading-[1.1] mt-3 sm:mt-5 transition-colors duration-700 ${light ? "text-[#f1ece2]" : "text-ink"}`}>Patru ani,{" "}<br className="hidden sm:inline" />patru etape.</h2>
+      <h2 className={`font-heading text-[1.7rem] sm:text-4xl md:text-5xl leading-[1.1] mt-3 sm:mt-5 transition-colors duration-700 ${light ? "text-chalk" : "text-ink"}`}>Patru ani,{" "}<br className="hidden sm:inline" />patru etape.</h2>
     </div>
   );
 
@@ -217,9 +218,9 @@ export function Drumul() {
 
   return (
     <section id="drumul" ref={ref} className="relative" style={{ height: `${ETAPE.length * 100 + 60}vh` }}>
-      <div className={`ltt-sticky sticky top-0 overflow-hidden transition-colors duration-700 ${intuneric ? "bg-[#15120f]" : "bg-transparent"}`}>
+      <div className={`ltt-sticky sticky top-0 overflow-hidden transition-colors duration-700 ${intuneric ? "bg-night" : "bg-transparent"}`}>
         <div className={`absolute inset-0 transition-opacity duration-700 pointer-events-none ${intuneric ? "opacity-100" : "opacity-0"}`}
-          style={{ background: "radial-gradient(circle at 64% 46%, rgba(255,122,26,0.38), rgba(255,122,26,0.08) 30%, transparent 55%)" }} />
+          style={{ background: "radial-gradient(circle at 64% 46%, rgb(var(--accent-bright) / 0.38), rgb(var(--accent-bright) / 0.08) 30%, transparent 55%)" }} />
         <Sina n="02" eticheta="Drumul" light={intuneric} />
 
         <div className="relative h-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-24 pt-20 sm:pt-24 pb-14 sm:pb-16 grid grid-rows-[auto_1fr_auto] gap-2">
@@ -228,7 +229,7 @@ export function Drumul() {
           <div className="relative">
             {ETAPE.map((e, k) => (
               <div key={e.cls} className={`absolute inset-0 flex items-center justify-center md:justify-end md:pr-[18%] transition-all duration-700 ${k === i ? "opacity-100 scale-100 is-in" : "opacity-0 scale-95"}`}>
-                <e.Desen className={`h-[min(30svh,240px)] sm:h-[min(46vh,420px)] w-auto transition-colors duration-700 ${intuneric ? "text-[#f1ece2]" : "text-ink"}`} />
+                <e.Desen className={`h-[min(30svh,240px)] sm:h-[min(46vh,420px)] w-auto transition-colors duration-700 ${intuneric ? "text-chalk" : "text-ink"}`} />
               </div>
             ))}
             {intuneric && <Scantei />}
@@ -245,7 +246,7 @@ export function Drumul() {
           {ETAPE.map((e, k) => (
             <button key={e.cls} onClick={() => mergiLa(k)} className="group flex items-center gap-3" aria-current={k === i ? "step" : undefined}>
               <span className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full grid place-items-center font-heading text-[11px] sm:text-[12px] border transition-all ${
-                k <= i ? (intuneric ? "bg-[#ff7a1a] border-[#ff7a1a] text-[#15120f]" : "bg-ink border-ink text-paper") : (intuneric ? "border-white/25 text-white/50" : "border-line text-ink-soft")}`}>{e.cls}</span>
+                k <= i ? (intuneric ? "bg-accent-bright border-accent-bright text-night" : "bg-ink border-ink text-paper") : (intuneric ? "border-white/25 text-white/50" : "border-line text-ink-soft")}`}>{e.cls}</span>
               <span className={`hidden md:inline ltt-kicker !text-[10px] transition-opacity ${k === i ? "opacity-100" : "opacity-50 group-hover:opacity-100"} ${intuneric ? "text-white/80" : "text-ink-soft"}`}>{e.nume}</span>
             </button>
           ))}
@@ -253,7 +254,7 @@ export function Drumul() {
 
         <div className="absolute bottom-8 left-6 sm:left-12 lg:left-24 right-6 sm:right-12 lg:right-24 h-px">
           <div className={`absolute inset-0 ${intuneric ? "bg-white/20" : "bg-line"}`} />
-          <div className="absolute left-0 -top-px h-[2px] bg-[#c2410c]" style={{ width: `${p * 100}%` }} />
+          <div className="absolute left-0 -top-px h-[2px] bg-accent" style={{ width: `${p * 100}%` }} />
         </div>
       </div>
     </section>
@@ -373,7 +374,7 @@ export function Noutati({ noutati }: { noutati: NoutateItem[] }) {
                     <div>{n.date}</div><div className="ltt-kicker ltt-accent !text-[10px] mt-1.5">{n.category}</div>
                   </div>
                   <div>
-                    <h3 className="font-heading text-2xl text-ink leading-snug group-hover:text-[#c2410c] dark:group-hover:text-[#ff8f4d] transition-colors">{n.title}</h3>
+                    <h3 className="font-heading text-2xl text-ink leading-snug group-hover:text-accent-text transition-colors">{n.title}</h3>
                     <p className="font-body text-[14px] leading-relaxed text-ink-soft mt-2">{n.excerpt}</p>
                   </div>
                 </Link>
@@ -430,18 +431,18 @@ export function Voci() {
 
 export function Admitere({ admitere }: { admitere: number }) {
   return (
-    <section id="admitere" className="relative py-28 md:py-36 bg-[#15120f] text-[#f1ece2] overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 80% 20%, rgba(255,122,26,0.22), transparent 45%)" }} />
+    <section id="admitere" className="relative py-28 md:py-36 bg-night text-chalk overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 80% 20%, rgb(var(--accent-bright) / 0.22), transparent 45%)" }} />
       <Sina n="06" eticheta="Admitere" light />
       <InView className="relative max-w-6xl mx-auto px-6 md:px-12 grid lg:grid-cols-[1.1fr_1fr] gap-16 items-end">
         <div>
           <Kicker className="ltt-rise text-white/60">Admitere {admitere}</Kicker>
-          <h2 className="ltt-rise font-heading text-5xl md:text-7xl leading-[1.02] mt-6">Clasa a IX-a începe în <span className="italic text-[#ff8f4d]">septembrie.</span></h2>
+          <h2 className="ltt-rise font-heading text-5xl md:text-7xl leading-[1.02] mt-6">Clasa a IX-a începe în <span className="italic text-accent-light">septembrie.</span></h2>
           <p className="ltt-rise font-body text-[15px] leading-[1.85] text-white/70 mt-8 max-w-md">
             Documentele, calendarul și profilurile — toate într-un singur loc. Dacă ai întrebări, scrie-ne sau sună la secretariat.
           </p>
           <div className="ltt-rise flex flex-wrap items-center gap-8 mt-10">
-            <Link href="/admitere" className="group inline-flex items-center gap-3 bg-[#f1ece2] text-[#15120f] px-7 py-4 ltt-kicker !text-[12px] hover:bg-[#ff7a1a] transition-colors">
+            <Link href="/admitere" className="group inline-flex items-center gap-3 bg-chalk text-night px-7 py-4 ltt-kicker !text-[12px] hover:bg-accent-bright transition-colors">
               Cum te înscrii<span className="transition-transform group-hover:translate-x-1">→</span>
             </Link>
             <LinkSubliniat href="/contact" light>Contact secretariat</LinkSubliniat>
@@ -450,7 +451,7 @@ export function Admitere({ admitere }: { admitere: number }) {
         <ol className="ltt-rise border-t border-white/15" style={{ transitionDelay: "0.15s" }}>
           {calendarAdmitere(admitere).map((c) => (
             <li key={c.eveniment} className="grid grid-cols-[10rem_1fr] gap-6 border-b border-white/15 py-5">
-              <span className="ltt-kicker !text-[10px] text-[#ff8f4d] pt-1">{c.data}</span>
+              <span className="ltt-kicker !text-[10px] text-accent-light pt-1">{c.data}</span>
               <span className="font-heading text-xl">{c.eveniment}</span>
             </li>
           ))}

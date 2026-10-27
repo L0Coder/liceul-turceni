@@ -6,6 +6,7 @@ import { FloatingContact } from "@/components/ui/Widgets";
 import { CookieBanner } from "@/components/ui/CookieBanner";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { SITE_META, anAdmitere, IS_PRODUCTION_DOMAIN } from "@/lib/constants";
+import { tema } from "@/lib/paleta";
 import "./globals.css";
 
 // Titluri: serif editorial (Newsreader), corp de text: DM Sans.
@@ -28,8 +29,8 @@ export const revalidate = 3600;
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4f0e8" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f1420" },
+    { media: "(prefers-color-scheme: light)", color: tema.luminos.paper },
+    { media: "(prefers-color-scheme: dark)", color: tema.intunecat.paper },
   ],
 };
 

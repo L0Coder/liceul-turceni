@@ -31,7 +31,7 @@ export default async function TransparentaPage() {
                 const cls = "font-body text-[15px] text-ink py-4 border-b border-line flex items-center gap-4 transition-colors";
                 
                 return doc.fileUrl ? (
-                  <a key={doc._id} href={doc.fileUrl} target="_blank" rel="noopener noreferrer" className={`${cls} hover:text-[#c2410c] dark:hover:text-[#ff8f4d]`} download>
+                  <a key={doc._id} href={doc.fileUrl} target="_blank" rel="noopener noreferrer" className={`${cls} hover:text-accent-text`} download>
                     {inner}
                   </a>
                 ) : (

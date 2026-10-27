@@ -13,7 +13,7 @@ function Acc({ id, q, a }: { id: string; q: string; a: string }) {
     <div className="border-b border-line">
       <button onClick={() => setOpen(!open)} aria-expanded={open} aria-controls={`faq-${id}`}
         className="group w-full flex items-start justify-between gap-6 py-6 text-left">
-        <span className="font-heading text-xl md:text-2xl text-ink group-hover:text-[#c2410c] dark:group-hover:text-[#ff8f4d] transition-colors">{q}</span>
+        <span className="font-heading text-xl md:text-2xl text-ink group-hover:text-accent-text transition-colors">{q}</span>
         <span aria-hidden="true" className={`mt-1 w-7 h-7 rounded-full border border-line grid place-items-center text-ink-soft flex-shrink-0 transition-transform duration-300 ${open ? "rotate-45" : ""}`}>+</span>
       </button>
       <div id={`faq-${id}`} className={`grid transition-[grid-template-rows] duration-300 ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
@@ -37,7 +37,7 @@ export function FaqClient({ data }: { data: FaqItem[] }) {
         {cats.map(c => (
           <button key={c.k} aria-pressed={f === c.k} onClick={() => setF(c.k)}
             className={`ltt-kicker !text-[11px] pb-2 border-b-2 transition-colors ${
-              f === c.k ? "text-ink border-[#c2410c]" : "text-ink-soft border-transparent hover:text-ink"
+              f === c.k ? "text-ink border-accent" : "text-ink-soft border-transparent hover:text-ink"
             }`}>
             {c.l}
           </button>

@@ -52,7 +52,7 @@ export function FormularContact() {
       <div><label htmlFor="message" className={eticheta}>Mesaj</label><textarea id="message" name="message" required rows={6} className={`${camp} resize-y`} /></div>
       <div className="flex flex-wrap items-center gap-5 pt-2">
         <button type="submit" disabled={stare === "trimit"}
-          className="group inline-flex items-center gap-3 bg-ink text-paper px-7 py-4 ltt-kicker !text-[12px] hover:bg-[#c2410c] hover:text-white transition-colors disabled:opacity-60">
+          className="group inline-flex items-center gap-3 bg-ink text-paper px-7 py-4 ltt-kicker !text-[12px] hover:bg-accent hover:text-white transition-colors disabled:opacity-60">
           {stare === "trimit" ? "Se trimite…" : "Trimite mesajul"}<span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
         </button>
         <p aria-live="polite" className="font-body text-[13px] text-ink-soft">

@@ -3,8 +3,9 @@
    iar fiecare desen are un singur detaliu în portocaliul liceului — ca firul de aur din kintsugi. */
 
 import type { SVGProps } from "react";
+import { comune } from "@/lib/paleta";
 
-const ACCENT = "#e2621b";
+const ACCENT = comune.sketch;
 const linie = { fill: "none", stroke: "currentColor", strokeWidth: 2.2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
 
 function P(props: SVGProps<SVGPathElement>) {
