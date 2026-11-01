@@ -42,15 +42,28 @@ Textul Regulamentului se citește pe eur-lex.europa.eu, forma consolidată a Reg
       19–21.05), opțiuni 12–16 și 19.07, repartizare 22.07, etapa a II-a 9–12.08. OMEC nr. 5.831/19.10.2026
       (MO 893/26.10.2026) conține calendarul; ordinul nu a fost deschis. De confirmat pe edu.ro și la ISJ Gorj,
       inclusiv data depunerii dosarelor după repartizare, care nu e trecută pe site.
-- [ ] **Probe suplimentare de admitere la liceele tehnologice:** dacă liceul le organizează în 2027, procedura cu
-      partenerii se elaborează până la 6.11.2026 și se publică pe site până la 13.11.2026 (după proiectul calendarului;
-      de confirmat pe ordin).
+- [x] **Probe suplimentare de admitere la liceele tehnologice:** liceul nu le organizează în 2027 (comunicat
+      1.11.2026), deci termenele unității (procedura până la 6.11.2026, publicarea până la 13.11.2026) nu se aplică.
+      Dacă un partener le cere totuși, termenele se confirmă pe ordinul calendarului admiterii.
 - [ ] **Vacanța din februarie, Gorj: 22–26.02.2027:** Hotărârea CA a ISJ Gorj nr. 17/06.04.2026.
 - [ ] **Simulările județene:** Bacalaureat 18–20.01.2027, Evaluare Națională 18–19.01.2027 (document ISJ Gorj).
 - [ ] **Școala altfel (14–18.12.2026) și Săptămâna verde (19–23.04.2027):** decizia unității.
 - [ ] **Rezultatele recente** (pagina Examene): dacă se dorește media liceului la EN 2026, de luat de la ISJ Gorj sau bacplus.ro.
 
-## 4. Platforma
+## 4. Declarația de accesibilitate (`app/accesibilitate/page.tsx`)
+
+- [ ] **Actul normativ:** pagina citează acum generic „legislația privind accesibilitatea site-urilor web ale
+      organismelor din sectorul public, care transpune Directiva (UE) 2016/2102”. Până în noiembrie 2026 citase
+      „HG 780/2022 privind condițiile de accesibilitate pentru produse și servicii”, act care nu a putut fi găsit
+      (titlul seamănă cu Legea nr. 232/2022, care privește produsele și serviciile). Sursele secundare indică
+      **OUG nr. 112/2018, aprobată prin Legea nr. 90/2019**: de confirmat pe legislatie.just.ro și trecut pe pagină.
+- [ ] **Autoritatea pentru plângeri:** pagina o descrie generic. Până în noiembrie 2026 numea ANCOM; sursele secundare
+      indică **Autoritatea pentru Digitalizarea României (ADR)**. De confirmat în actul de mai sus și trecută pe pagină,
+      cu adresa de contact.
+- [ ] **Termenul de răspuns de 15 zile lucrătoare** (angajament al liceului): de comparat cu termenul din act, dacă există.
+- [ ] **Actualizarea periodică a declarației:** de verificat dacă actul cere o revizuire anuală.
+
+## 5. Platforma
 
 - [ ] **Panoul `/studio` după trecerea la Sanity 6:** autentificare, deschiderea unui anunț, editare, publicare.
 - [ ] **Conținutul din CMS** (anunțuri, evenimente, documente): la zi și fără date personale inutile.
