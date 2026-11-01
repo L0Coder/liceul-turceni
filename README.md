@@ -147,7 +147,7 @@ Site-ul funcționează mereu, indiferent de starea CMS-ului.
 
 Pentru a modifica acestea, trebuie editat codul și dat `git push`.
 
-Afirmațiile de pe site care așteaptă confirmarea pe sursa oficială (politica GDPR, calendarele 2027, panoul `/studio`) sunt listate, cu locul de verificare, în [`docs/de-verificat.md`](docs/de-verificat.md).
+Afirmațiile de pe site care așteaptă confirmarea pe sursa oficială (politica GDPR, declarația de accesibilitate, calendarele 2027, panoul `/studio`) sunt listate, cu locul de verificare, în [`docs/de-verificat.md`](docs/de-verificat.md).
 
 ---
 
